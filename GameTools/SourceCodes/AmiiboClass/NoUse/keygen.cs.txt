@@ -1,0 +1,175 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace AnterStudio.GameTools.AmiiboClass
+{
+    class keygen
+    {
+        public byte[] bcc;
+
+        public byte[] seed;
+        private byte[] SerBytes;
+        public MasterKeys data;
+        public MasterKeys tag;
+        public DerivedKeys dataKeys;
+        public DerivedKeys tagKeys;
+        public byte[] key_retail =
+        {
+            #region key_retail.bin数据
+            0x1D,   0x16,   0x4B,   0x37,   0x5B,   0x72,   0xA5,   0x57,
+            0x28,   0xB9,   0x1D,   0x64,   0xB6,   0xA3,   0xC2,   0x05,
+            0x75,   0x6E,   0x66,   0x69,   0x78,   0x65,   0x64,   0x20,
+            0x69,   0x6E,   0x66,   0x6F,   0x73,   0x00,   0x00,   0x0E,
+            0xDB,   0x4B,   0x9E,   0x3F,   0x45,   0x27,   0x8F,   0x39,
+            0x7E,   0xFF,   0x9B,   0x4F,   0xB9,   0x93,   0x00,   0x00,
+            0x04,   0x49,   0x17,   0xDC,   0x76,   0xB4,   0x96,   0x40,
+            0xD6,   0xF8,   0x39,   0x39,   0x96,   0x0F,   0xAE,   0xD4,
+            0xEF,   0x39,   0x2F,   0xAA,   0xB2,   0x14,   0x28,   0xAA,
+            0x21,   0xFB,   0x54,   0xE5,   0x45,   0x05,   0x47,   0x66,
+            0x7F,   0x75,   0x2D,   0x28,   0x73,   0xA2,   0x00,   0x17,
+            0xFE,   0xF8,   0x5C,   0x05,   0x75,   0x90,   0x4B,   0x6D,
+            0x6C,   0x6F,   0x63,   0x6B,   0x65,   0x64,   0x20,   0x73,
+            0x65,   0x63,   0x72,   0x65,   0x74,   0x00,   0x00,   0x10,
+            0xFD,   0xC8,   0xA0,   0x76,   0x94,   0xB8,   0x9E,   0x4C,
+            0x47,   0xD3,   0x7D,   0xE8,   0xCE,   0x5C,   0x74,   0xC1,
+            0x04,   0x49,   0x17,   0xDC,   0x76,   0xB4,   0x96,   0x40,
+            0xD6,   0xF8,   0x39,   0x39,   0x96,   0x0F,   0xAE,   0xD4,
+            0xEF,   0x39,   0x2F,   0xAA,   0xB2,   0x14,   0x28,   0xAA,
+            0x21,   0xFB,   0x54,   0xE5,   0x45,   0x05,   0x47,   0x66
+            #endregion
+        };
+
+        public class MasterKeys
+        {
+            public byte[] hmacKey { get; set; }
+            public char[] typeString { get; set; }
+            public byte rfu { get; set; }
+            public byte magicBytesSize { get; set; }
+            public byte[] magicBytes { get; set; }
+            public byte[] xorPad { get; set; }
+            public string typeStringToString { get; set; }
+            public MasterKeys(byte[] key, int offser)
+            {
+                hmacKey = new byte[16];
+                typeString = new char[14];
+                rfu = new byte();
+                magicBytesSize = new byte();
+                magicBytes = new byte[16];
+                xorPad = new byte[32];
+                typeStringToString = "";
+
+                for (int i = 0; i < hmacKey.Length; i++)
+                {
+                    hmacKey[i] = key[offser + 0x00 + i];
+                }
+                for (int i = 0; i < typeString.Length; i++)
+                {
+                    typeString[i] = (char)key[offser + 0x10 + i];
+                }
+                rfu = key[offser + 0x1e];
+                magicBytesSize = key[offser + 0x1f];
+                for (int i = 0; i < magicBytes.Length; i++)
+                {
+                    magicBytes[i] = key[offser + 0x20 + i];
+                }
+                for (int i = 0; i < xorPad.Length; i++)
+                {
+                    xorPad[i] = key[offser + 0x30 + i];
+                }
+                for (int i = 0; i < typeString.Length; i++)
+                {
+                    typeStringToString += typeString[i];
+                }
+            }
+        }
+
+        public class DerivedKeys
+        {
+            public byte[] aesKey;
+            public byte[] aesIV;
+            public byte[] hmacKey;
+            public byte[] outputSeed;
+
+            public DerivedKeys(MasterKeys baseKeys,byte[] baseSeed)
+            {
+                aesKey = new byte[16];
+                aesIV = new byte[16];
+                hmacKey = new byte[16];
+                outputSeed = new byte[64+ baseKeys.magicBytesSize];
+                int outputSize = 0;
+
+                for (int i = 0x000; i < baseKeys.typeString.Length; i++)
+                {
+                    outputSeed[0x000 + i] = (byte)baseKeys.typeString[0x000 + i];
+                }
+                outputSize += baseKeys.typeString.Length;
+
+                for (int i = 0x000; i < 16 - baseKeys.typeString.Length; i++)
+                {
+                    outputSeed[baseKeys.typeString.Length + i] = 0x00;
+                }
+                outputSize += 16 - baseKeys.typeString.Length;
+
+                for (int i = 0x000; i < baseKeys.magicBytesSize; i++)
+                {
+                    outputSeed[0x016 + i] = baseKeys.magicBytes[i];
+                }
+                outputSize += baseKeys.magicBytesSize;
+
+                for (int i = 0x000; i < 16; i++)
+                {
+                    outputSeed[outputSize + i] = baseSeed[0x10 + i];
+                }
+                outputSize += 16;
+
+                for (int i = 0x000; i < 32; i++)
+                {
+                    outputSeed[outputSize + i] = (byte)(baseSeed[0x20 + i] ^ baseKeys.xorPad[i]);
+                        }
+                outputSize += 32;
+            }
+        }
+
+        public keygen(byte[] tagData)
+        {
+            SerBytes = new byte[520];
+            seed = new byte[64];
+
+            #region 复制数据
+            for (int i = 0x000; i < 0x008; i++) { SerBytes[0x000 + i] = tagData[0x008 + i]; }
+            for (int i = 0x000; i < 0x020; i++) { SerBytes[0x008 + i] = tagData[0x080 + i]; }
+            for (int i = 0x000; i < 0x024; i++) { SerBytes[0x028 + i] = tagData[0x010 + i]; }
+            for (int i = 0x000; i < 0x168; i++) { SerBytes[0x04C + i] = tagData[0x0A0 + i]; }
+            for (int i = 0x000; i < 0x020; i++) { SerBytes[0x1B4 + i] = tagData[0x034 + i]; }
+            for (int i = 0x000; i < 0x008; i++) { SerBytes[0x1D4 + i] = tagData[0x000 + i]; }
+            for (int i = 0x000; i < 0x02C; i++) { SerBytes[0x1DC + i] = tagData[0x054 + i]; }
+
+            for (int i = 0x00; i < 0x02; i++) { seed[0x00 + i] = SerBytes[0x029 + i]; }
+            for (int i = 0x00; i < 0x0E; i++) { seed[0x02 + i] = 0x00; }
+            for (int i = 0x00; i < 0x08; i++) { seed[0x10 + i] = SerBytes[0x1D4 + i]; }
+            for (int i = 0x00; i < 0x08; i++) { seed[0x18 + i] = SerBytes[0x1D4 + i]; }
+            for (int i = 0x00; i < 0x20; i++) { seed[0x20 + i] = SerBytes[0x1E8 + i]; }
+            #endregion
+
+            data = new MasterKeys(key_retail, 0x00);
+            tag = new MasterKeys(key_retail, 0x50);
+            dataKeys = new DerivedKeys(data,seed);
+            tagKeys = new DerivedKeys(tag,seed);
+            bcc = new byte[2];
+            bcc[0] = (byte)(0x88 ^ tagData[0] ^ tagData[1] ^ tagData[2]);
+            bcc[1] = (byte)(tagData[4] ^ tagData[5] ^ tagData[6] ^ tagData[7]);
+        }
+
+        public keygen()
+        {
+       
+        }
+
+        public byte[] getKeygen()
+        {
+            return key_retail;
+        }
+    }
+}

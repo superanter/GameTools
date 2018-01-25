@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3ABEE0A-7E94-49D9-913D-EA8439F4D282}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnterStudio.GameTools</RootNamespace>
+    <AssemblyName>GameTools</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>SourceCodes\MainIcon.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>D1DEA0F43D0B10AD255C464474697FF8FF7C6F4B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>GameTools_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/GameTools/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SourceCodes\AmiiboClass\NoUse\AESHelper.cs.txt" />
+    <Compile Include="SourceCodes\AmiiboClass\AmiiboFileMessage.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\FileToCRC32.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\frmAmiibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\AmiiboClass\frmAmiibo.Designer.cs">
+      <DependentUpon>frmAmiibo.cs</DependentUpon>
+    </Compile>
+    <Content Include="SourceCodes\AmiiboClass\NoUse\HashEncrypt.cs.txt" />
+    <Content Include="SourceCodes\AmiiboClass\NoUse\keygen.cs.txt" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Amiibo_Class.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\CountryCode_Class.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Editor.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\AesFastEngine.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\BufferedBlockCipher.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\BufferedCipherBase.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\CipherUtilities.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\HMac.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\IBlockCipher.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\ICipherParameters.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\KeyParameter.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\ParametersWithIV.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\Sha256Digest.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\SicBlockCipher.cs" />
+    <Content Include="SourceCodes\AmiiboClass\NoUse\CSRG.cs.txt" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\TagMo\EditorSSB.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\TagMo\EditorTP.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\AmiiboKeys.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\ArraySegmentExtensions.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\DrbgCtx.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\Helper_Class.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\KeygenDerivedkeys.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\KeygenMasterkeys.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\NativeHelpers.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\NtagHelpers.cs" />
+    <Compile Include="SourceCodes\DsRomClass\frmDsRom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\DsRomClass\frmDsRom.Designer.cs">
+      <DependentUpon>frmDsRom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\DsSaveClass\CardList.cs" />
+    <Compile Include="SourceCodes\DsSaveClass\CardInfo.cs" />
+    <Compile Include="SourceCodes\DsSaveClass\frmDsSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\DsSaveClass\frmDsSave.designer.cs">
+      <DependentUpon>frmDsSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\DsSaveClass\InputFileInfo.cs" />
+    <Compile Include="SourceCodes\DsSaveClass\MainFormInfo.cs" />
+    <Compile Include="SourceCodes\DsSaveClass\GetShortName.cs" />
+    <Compile Include="SourceCodes\DsSaveClass\WriteData.cs" />
+    <Compile Include="SourceCodes\frmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\frmAboutBox.Designer.cs">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\LangugePackClass.cs" />
+    <Compile Include="SourceCodes\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\OtherToolsClass\frmOtherTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\OtherToolsClass\frmOtherTools.Designer.cs">
+      <DependentUpon>frmOtherTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SourceCodes\AmiiboClass\frmAmiibo.resx">
+      <DependentUpon>frmAmiibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\DsRomClass\frmDsRom.resx">
+      <DependentUpon>frmDsRom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\DsSaveClass\frmDsSave.resx">
+      <DependentUpon>frmDsSave.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\frmAboutBox.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.resx">
+      <DependentUpon>frmOtherTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\SwitchSaveClass\frmSwitchSave.resx">
+      <DependentUpon>frmSwitchSave.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\WiiSaveClass\frmWiiSave.resx">
+      <DependentUpon>frmWiiSave.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\SoftVersionClass.cs" />
+    <Compile Include="SourceCodes\SwitchSaveClass\frmSwitchSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\SwitchSaveClass\frmSwitchSave.Designer.cs">
+      <DependentUpon>frmSwitchSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCodes\WiiSaveClass\frmWiiSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\WiiSaveClass\frmWiiSave.designer.cs">
+      <DependentUpon>frmWiiSave.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Main_Form.cs.txt" />
+    <Content Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\AesFastEngine - 复制.txt" />
+    <Content Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\IBufferedCipher.cs.txt" />
+    <Content Include="SourceCodes\MainIcon.ico" />
+    <None Include="Resources\Picture\anter256_01.bmp" />
+    <None Include="Resources\Picture\anter32_01.gif" />
+    <Content Include="编写日志.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SourceCodes\app.config" />
+    <None Include="SourceCodes\LangugePackINI\LangugePack_CHS.ini" />
+    <None Include="SourceCodes\LangugePackINI\LangugePack_CHT.ini" />
+    <None Include="SourceCodes\LangugePackINI\LangugePack_ENG.ini" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
