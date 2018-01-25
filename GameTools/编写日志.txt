@@ -525,7 +525,7 @@
 2017-01-22
 1、初步设计了软件开始界面；
 2、完成从DS Save Tools 到Game Tools的文件迁移；
-3、新软件名称定为“Anter's Game Tools”，版本号暂为1.0.0；
+3、新软件名称定为“Anter’s Game Tools”，版本号暂为1.0.0；
 4、实现了子窗口打开及关闭时主窗口的隐藏和显示;
 5、修改了InputFIleInfo类中GetInputFileMode方法中读取txtNoGba1出错时的处理。（出错原因不明）。
 
@@ -708,7 +708,7 @@
 [Main]
 1、修改了源代码文件路径，将所有源代码放入了SourceCodes文件夹。
 [Amiibo]
-1、导入了加密、解密支持代码，并在系统内实现；Kellogg's Cereal
+1、导入了加密、解密支持代码，并在系统内实现；
 
 2018-01-25
 [Main]
