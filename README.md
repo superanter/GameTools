@@ -28,7 +28,7 @@
 	* Amiibo Tools：
 	  * [amiitool](https://github.com/socram8888/amiitool)
 	  * [neoeinstein/bouncycastle](https://github.com/neoeinstein/bouncycastle)
-    * [Falco20019/libamiibo](https://github.com/Falco20019/libamiibo)
+          * [Falco20019/libamiibo](https://github.com/Falco20019/libamiibo)
 	  * [HiddenRamblings/TagMo](https://github.com/HiddenRamblings/TagMo)
 	  * [AcK77/AmiiBomb-uino](https://github.com/AcK77/AmiiBomb-uino)
 	  * [AmiiboAPI](https://github.com/N3evin/AmiiboAPI)
