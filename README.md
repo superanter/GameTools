@@ -21,6 +21,7 @@
 	* 2017-01-22 开始制作 ANTer's Game Tools；
 	* 2017-08-08 加入Amiibo相关功能；
 	* 2018-01-24 加入Amiibo解密功能；
+	* 2018-01-25 源代码上传到GitHub；
 	
 * 感谢列表
 	* Ds Save Tools:
