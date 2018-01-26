@@ -45,7 +45,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             CardDat[0][25] = new CardClass(0, "SUNNY FLASH", "SYFH", "0000100000", 1, 1, ".sav", 0, "DSGBA OEM产品，slot1+2接口，使用内置存储芯片，标准256K存档格式。");
             CardDat[0][26] = new CardClass(0, "(EMU) NO$GBA (Raw)", "NO$GBA", "0000010000", 1, 0, ".sav", 0, "PC用模拟器，使用512K标准存档格式或自有的特有存档格式。");
             CardDat[0][27] = new CardClass(0, "DeSmuME（Normal）", "DSM-N", "1110110000", 5, 0, ".sav", 0, "PC用模拟器，用来导入/导出存档的标准格式存档，需手动选择存档大小。");
-            CardDat[0][28] = new CardClass(0, "DeSmuME（Add）(暂未支持)", "DSM-A", "1110110000", 5, 0, ".dsv", 3, "PC用模拟器，自用存档格式，标准存档+122字节附加说明，需手动选择存档大小。（暂未支持）");
+            CardDat[0][28] = new CardClass(0, "DeSmuME（Add）(测试)", "DSM-A", "1110110000", 5, 0, ".dsv", 3, "PC用模拟器，自用存档格式，标准存档+122字节附加说明，需手动选择存档大小。（测试）");
             #endregion
 
             #region GBA烧录卡列表

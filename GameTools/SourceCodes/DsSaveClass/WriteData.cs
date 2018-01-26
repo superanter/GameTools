@@ -156,7 +156,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             }
         }
 
-        public static string DeSmuMEAdding(FileStream sro)	//DeSmuME附加的122字节信息
+        public static string DeSmuMEAdding(int CopyFileSize,FileStream sro)	//DeSmuME附加的122字节信息 2018-01-26
         {
             try
             {
@@ -167,14 +167,42 @@ namespace AnterStudio.GameTools.DsSaveClass
 
                     sw.AutoFlush = true;								//自动更新
                     sw.Write(txtDeSmuME1);
+
+                    byte[] temp = new byte[24];
                     for (int i = 0; i < 24; i++)
                     {
-                        sro.WriteByte(0x00);
+                        temp[i] = 0x00;
                     }
+
+                    if(CopyFileSize == 64*1024)
+                    {
+                        temp[2] = 0x01;
+                        temp[6] = 0x01;
+                        temp[8] = 0x03;
+                        temp[12] = 0x02;
+                        temp[18] = 0x01;
+                    }
+                    else
+                    {
+                        temp[2] = 0x08;
+                        temp[6] = 0x08;
+                        temp[8] = 0x06;
+                        temp[12] = 0x03;
+                        temp[18] = 0x08;
+                    }
+                    sro.Write(temp, 0, temp.Length);
                     sw.Write(txtDeSmuME2);
-                    //sw.AutoFlush = false;                               //2017/02/04删除
-                    //sw.Flush();                                         //2017/02/04删除
-                    //sw.Close();                                         //2017/02/04删除
+                    //      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+                    //2050h 72 3A 00 00 Z1 00 00 00 Z2 00 Z3 00 00 00 Z4 00
+                    //2060h 00 00 00 00 Z5 00 00 00 01 00 7C 2D 44 45 53 4D
+                    //2070h 55 4D 45 20 53 41 56 45 2D 7C
+
+                    //地址  64  OTHER
+                    //Z1    01  08 
+                    //Z2    01  08
+                    //Z3    03  06
+                    //Z4    02  03
+                    //Z5    01  08
                 }
                 return null;
             }
@@ -329,7 +357,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                 else if (mfiMainInfo.CardIs == 3)      // 目标存档为DeSmuME模拟器的dsv格式(CardIs=3)时，附加122字节
                 {
                     iOutputLenghAdd = 122;
-                    sReturnStr[0] = WriteData.DeSmuMEAdding(sro);
+                    sReturnStr[0] = WriteData.DeSmuMEAdding(CopyFileSize, sro);
                 }
                 sro.Close();
 
