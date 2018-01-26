@@ -80,7 +80,7 @@
     <Compile Include="SourceCodes\AmiiboClass\AmiiboMessage.cs" />
     <Content Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Amiibo_Class.cs.txt" />
     <Content Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Editor.cs.txt" />
-    <Compile Include="SourceCodes\AmiiboClass\nfc_Message.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Message_NFC.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\AesFastEngine.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\BufferedBlockCipher.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\BufferedCipherBase.cs" />
@@ -92,8 +92,8 @@
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\ParametersWithIV.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\Sha256Digest.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\SicBlockCipher.cs" />
-    <Compile Include="SourceCodes\AmiiboClass\EditorSSB.cs" />
-    <Compile Include="SourceCodes\AmiiboClass\EditorTP.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Message_SSB.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\Message_TP.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\AmiiboKeys.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\ArraySegmentExtensions.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\DrbgCtx.cs" />

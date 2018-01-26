@@ -8,7 +8,7 @@ namespace AnterStudio.GameTools.DsSaveClass
     {
         #region 特殊烧录卡的附加处理（4）
 
-        public static string M3Adding(string ShortName, string LongName, FileStream sro, int SelectMode, bool M3Add1M)	//M3附加的1k信息（ROM文件来源）
+        private static string M3Adding(string ShortName, string LongName, FileStream sro, int SelectMode, bool M3Add1M)	//M3附加的1k信息（ROM文件来源）
         {
             string M3SaveMode = "";
 
@@ -78,7 +78,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             }
         }
 
-        public static string M3AddingDAT(string InputDatName, FileStream sro, int SelectMode, bool M3Add1M)	//M3附加的1k信息（DAT文件来源）
+        private static string M3AddingDAT(string InputDatName, FileStream sro, int SelectMode, bool M3Add1M)	//M3附加的1k信息（DAT文件来源）
         {
             try
             {
@@ -127,7 +127,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             }
         }
 
-        public static string DSLinkAdding(InputFileInfo ifiFileMode, FileStream sro)	//DSLink 附加的8k信息
+        private static string DSLinkAdding(InputFileInfo ifiFileMode, FileStream sro)	//DSLink 附加的8k信息
         {
             int x = ifiFileMode.Buffer.Length;
             int lengthMax = 8 * 1024;
@@ -156,7 +156,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             }
         }
 
-        public static string DeSmuMEAdding(int CopyFileSize,FileStream sro)	//DeSmuME附加的122字节信息 2018-01-26
+        private static string DeSmuMEAdding(int CopyFileSize,FileStream sro)	//DeSmuME附加的122字节信息 2018-01-26
         {
             try
             {
@@ -383,5 +383,6 @@ namespace AnterStudio.GameTools.DsSaveClass
         }
 
         #endregion
+
     }
 }

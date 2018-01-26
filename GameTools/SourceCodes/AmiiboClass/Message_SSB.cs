@@ -7,7 +7,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 {
     //Code From TagMo
 
-    class EditorSSB
+    class Message_SSB
     {
         private static int OFFSET_APP_DATA = 0xDC;
 
@@ -50,12 +50,12 @@ namespace AnterStudio.GameTools.AmiiboClass
 
         public int LEVEL = new int();
 
-        public EditorSSB()
+        public Message_SSB()
         {
             throw new System.NotImplementedException();
         }
 
-        public EditorSSB(byte[] data)
+        public Message_SSB(byte[] data)
         {
 
             LEVEL_THRESHOLDS = new int[]{ 0x00, 0x08, 0x010, 0x01D, 0x02D, 0x048,

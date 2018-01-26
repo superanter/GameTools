@@ -27,7 +27,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// <summary>
         /// 文件体积
         /// </summary>
-        public long Lengh { get; }
+        public long Length { get; }
         /// <summary>
         /// 标识字符串1-8
         /// </summary>
@@ -63,15 +63,15 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// <summary>
         /// 文件MCAS标准文件名
         /// </summary>
-        public string McasName { get; }
+        public string mcasName { get; }
         /// <summary>
         /// 是否为04开头
         /// </summary>
         public bool isBegin04 { get; }
         /// <summary>
-        /// 解密后的CRC532
+        /// 解密后的CRC32_Decrypted
         /// </summary>
-        public string CRC532 { get; }
+        public string CRC32_Decrypted { get; }
         /// <summary>
         /// Amiibo完整数据
         /// </summary>
@@ -79,11 +79,11 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// <summary>
         /// Amiibo完整数据(解密后)
         /// </summary>
-        public byte[] AmiiboDataNew { get; }
+        public byte[] AmiiboDataDecrypted { get; }
 
-        public nfc_Message Nfc_Message;
-        public EditorTP msgTP;
-        public EditorSSB msgSSB;
+        public Message_NFC msgNFC;
+        public Message_TP msgTP;
+        public Message_SSB msgSSB;
         public AmiiboMessage IdMessage;
 
         #endregion
@@ -100,11 +100,11 @@ namespace AnterStudio.GameTools.AmiiboClass
             FileInfo fi = new FileInfo(this.FullName);
             this.Name = fi.Name;
             this.DirectoryName = fi.DirectoryName;
-            this.Lengh = fi.Length;
+            this.Length = fi.Length;
 
             this.AmiiboData = GetFileData(this.FullName);
 
-            if (this.Lengh >= 532)                                          //2018-01-24
+            if (this.Length >= 532)                                          //2018-01-24
             {
                 //解密
                 AmiiboKeys AmiiKeys;
@@ -122,11 +122,11 @@ namespace AnterStudio.GameTools.AmiiboClass
                     //AmiiKeys = AmiiboKeys.LoadKeys("KeyTemp.bin");
                     AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
                     AmiiKeys.Unpack(this.AmiiboData, Decrypted);
-                    this.AmiiboDataNew = Decrypted;
-                    this.Nfc_Message = new nfc_Message(AmiiboDataNew);
+                    this.AmiiboDataDecrypted = Decrypted;
+                    this.msgNFC = new Message_NFC(AmiiboDataDecrypted);
 
-                    msgTP = new EditorTP(AmiiboDataNew);
-                    msgSSB = new EditorSSB(AmiiboDataNew);
+                    msgTP = new Message_TP(AmiiboDataDecrypted);
+                    msgSSB = new Message_SSB(AmiiboDataDecrypted);
                 }
                 catch
                 {
@@ -141,14 +141,14 @@ namespace AnterStudio.GameTools.AmiiboClass
             IdMessage = new AmiiboMessage(this.SerA + this.SerB);            //2018-01-25
 
             FileToCRC32 crc32 = new FileToCRC32();
-            this.CRC32 = crc32.ComputeCRC32(this.AmiiboData,0, (int)this.Lengh);
-            if(this.Lengh >= 532)                                                   //2017-09-29
+            this.CRC32 = crc32.ComputeCRC32(this.AmiiboData,0, (int)this.Length);
+            if(this.Length >= 532)                                                   //2017-09-29
             {
-                this.CRC532 = crc32.ComputeCRC32(this.AmiiboDataNew, 0x2c, 0x188);      //2018-01-26 0x2c~0x1b3 392
+                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x2c, 0x188);      //2018-01-26 0x2c~0x1b3 392
             }
 
             getMcasName myMcasName = new getMcasName(this.CRC32);
-            this.McasName = myMcasName.Mcas_Name;
+            this.mcasName = myMcasName.Mcas_Name;
 
             string strSsbLevel = "-";
             try
@@ -158,9 +158,12 @@ namespace AnterStudio.GameTools.AmiiboClass
             catch
             { }
 
-            this.NewName = (this.isBegin04 ? "" : "[E]") + "[" + this.IdMessage.GameShortName + "] " + this.IdMessage.Number + "-"
-                    + this.IdMessage.AmiiboName + " [" + this.CRC532 + "-" + this.NTAG_ID + "-" + this.Lengh.ToString("000") + "-" 
-                    + this.CRC32 + "][" + strSsbLevel + "].bin";
+            this.NewName = this.isBegin04 ? "" : "[E]";
+            this.NewName += "[" + this.IdMessage.GameShortName + "]";
+            this.NewName += " " + this.IdMessage.Number + "-" + this.IdMessage.AmiiboName + " ";
+            this.NewName += "[" + this.CRC32_Decrypted + "-" + this.NTAG_ID + "-" + this.Length.ToString("000") + "-" + this.CRC32 + "]";
+            this.NewName += "[" + strSsbLevel + "]";
+            this.NewName += ".bin";
 
             this.NetPath = "http://amiibo.life/nfc/" + this.SerA + "-" + this.SerB;
             this.PicturePath = "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_" + this.SerA.ToLower() + "-" + this.SerB.ToLower() + ".png";
@@ -196,14 +199,14 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// 从AmiiboData中获取字符串   2017-08-22
         /// </summary>
         /// <param name="FirstNo">开始位置，0则为从头读取</param>
-        /// <param name="ReadLengh">读取的字节数</param>
+        /// <param name="ReadLength">读取的字节数</param>
         /// <returns></returns>
-        private string GetFileString(int FirstNo, int ReadLengh)
+        private string GetFileString(int FirstNo, int ReadLength)
         {
             string StrReturn = "";
-            if(AmiiboData.Length >= FirstNo + ReadLengh)
+            if(AmiiboData.Length >= FirstNo + ReadLength)
             {
-                for (int i = FirstNo; i < FirstNo + ReadLengh; i++)
+                for (int i = FirstNo; i < FirstNo + ReadLength; i++)
                 {
                     StrReturn += this.AmiiboData[i].ToString("x").ToUpper().PadLeft(2, '0');
                 }

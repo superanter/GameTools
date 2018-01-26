@@ -41,7 +41,7 @@ namespace AnterStudio.GameTools.DsRomClass
             {
                 FileInfo RomInfo = new FileInfo(strFileName);
                 txtName.Text = RomInfo.Name.ToString();
-                txtSize.Text = ((RomInfo.Length)/1024768).ToString() + "MB";
+                txtSize.Text = ((RomInfo.Length)/1024/1024).ToString() + "MB";
                 string[] strGameInfo = GetRomMessage(strFileName);
                 txtGameName.Text = strGameInfo[1];
                 txtGameText.Text = strGameInfo[2];

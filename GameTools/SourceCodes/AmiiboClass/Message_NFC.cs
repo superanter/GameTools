@@ -6,7 +6,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 {
     //Code from AmiiBomb
 
-    class nfc_Message
+    class Message_NFC
     {
         public string NFC_ID { get; }
         public string Character_ID { get; }
@@ -21,12 +21,12 @@ namespace AnterStudio.GameTools.AmiiboClass
         public string Amiibo_LastModifiedDate { get; }
 
         #region 构造函数
-        public nfc_Message()
+        public Message_NFC()
         {
             throw new System.NotImplementedException();
         }
 
-        public nfc_Message(byte[] AmiiboDataNew)
+        public Message_NFC(byte[] AmiiboDataNew)
         {
             this.NFC_ID = this.Get_NFC_ID(AmiiboDataNew);
             this.Character_ID = this.Get_Character_ID(AmiiboDataNew);

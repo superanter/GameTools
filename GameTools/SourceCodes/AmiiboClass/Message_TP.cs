@@ -7,7 +7,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 {
     //Code From TagMo
 
-    class EditorTP
+    class Message_TP
     {
         private static int OFFSET_APP_DATA = 0xED;
 
@@ -18,12 +18,12 @@ namespace AnterStudio.GameTools.AmiiboClass
         public int LEVEL = new int();
         public int HEARTS = new int();
 
-        public EditorTP()
+        public Message_TP()
         {
             throw new System.NotImplementedException();
         }
 
-        public EditorTP(byte[] date)
+        public Message_TP(byte[] date)
         {
             APP_DATA = (int)date[OFFSET_APP_DATA];
             LEVEL = (int)date[OFFSET_LEVEL];

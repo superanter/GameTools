@@ -48,8 +48,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 myFileMessage = new AmiiboFileMessage(myString);
                 ShowFileMessage();
                 ShowFileMessage2();
-                ShowBytes(myFileMessage.AmiiboDataNew);
-                if (myFileMessage.Lengh != 540)
+                ShowBytes(myFileMessage.AmiiboDataDecrypted);
+                if (myFileMessage.Length != 540)
                 {
                     btnTo540.Enabled = true;
                 }
@@ -224,7 +224,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 
             ShowMessage("Ser: " + myFileMessage.SerA + "-" + myFileMessage.SerB + "\n");
             ShowMessage("NTAG 215 ID: " + myFileMessage.NTAG_ID + "\n");
-            ShowMessage("Size: " + myFileMessage.Lengh + "Bytes\n");
+            ShowMessage("Size: " + myFileMessage.Length + "Bytes\n");
             //ShowMessage("Main Number: " + myFileMessage.MainNumber + "\n");
             ShowMessage("Amiibo Series: " + myFileMessage.AmiiboSeries + "\n");
             ShowMessage("Game Short Name: " + myFileMessage.IdMessage.GameShortName + "\n");
@@ -238,7 +238,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             ShowMessage("09~12: " + strSerAB.Remove(0, 8).Remove(4) + ": " + myFileMessage.IdMessage.Ser09to12stringA + " - " + myFileMessage.IdMessage.Ser09to12stringB + "\n");
             ShowMessage("13~14:   " + strSerAB.Remove(0, 12).Remove(2) + ": " + myFileMessage.IdMessage.Ser13to14string + "\n");
             ShowMessage("15~16:   " + strSerAB.Remove(0, 14) + ": " + myFileMessage.IdMessage.Ser15to16string + "\n");
-            ShowMessage("MCAS Name:   " + myFileMessage.McasName + "\n");
+            ShowMessage("MCAS Name:   " + myFileMessage.mcasName + "\n");
         }
 
         /// <summary>
@@ -294,20 +294,20 @@ namespace AnterStudio.GameTools.AmiiboClass
         private void ShowFileMessage2()
         {
             lblMessage2.Text = "";
-            lblMessage2.Text += "NFC_ID: " + myFileMessage.Nfc_Message.NFC_ID.ToString() + "\n";
-            lblMessage2.Text += "Character_ID: " + myFileMessage.Nfc_Message.Character_ID.ToString() + "\n";
-            lblMessage2.Text += "GameSeries_ID: " + myFileMessage.Nfc_Message.GameSeries_ID.ToString() + "\n";
+            lblMessage2.Text += "NFC_ID: " + myFileMessage.msgNFC.NFC_ID.ToString() + "\n";
+            lblMessage2.Text += "Character_ID: " + myFileMessage.msgNFC.Character_ID.ToString() + "\n";
+            lblMessage2.Text += "GameSeries_ID: " + myFileMessage.msgNFC.GameSeries_ID.ToString() + "\n";
             lblMessage2.Text += "\n";
-            lblMessage2.Text += "Amiibo_Nickname: " + myFileMessage.Nfc_Message.Amiibo_Nickname.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_Nickname: " + myFileMessage.msgNFC.Amiibo_Nickname.ToString() + "\n";
             lblMessage2.Text += "\n";
-            lblMessage2.Text += "Amiibo_Mii_Nickname: " + myFileMessage.Nfc_Message.Amiibo_Mii_Nickname.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_Mii_Nickname: " + myFileMessage.msgNFC.Amiibo_Mii_Nickname.ToString() + "\n";
             lblMessage2.Text += "\n";
-            lblMessage2.Text += "Amiibo_Write_Counter: " + myFileMessage.Nfc_Message.Amiibo_Write_Counter.ToString() + "\n";
-            lblMessage2.Text += "Amiibo_AppID: " + myFileMessage.Nfc_Message.Amiibo_AppID.ToString() + "\n";
-            lblMessage2.Text += "Amiibo_Initialized_AppID: " + myFileMessage.Nfc_Message.Amiibo_Initialized_AppID.ToString() + "\n";
-            lblMessage2.Text += "Amiibo_Country: " + myFileMessage.Nfc_Message.Amiibo_Country.ToString() + "\n";
-            lblMessage2.Text += "Amiibo_Initialize_UserData: " + myFileMessage.Nfc_Message.Amiibo_Initialize_UserData.ToString() + "\n";
-            lblMessage2.Text += "Amiibo_LastModifiedDate: " + myFileMessage.Nfc_Message.Amiibo_LastModifiedDate.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_Write_Counter: " + myFileMessage.msgNFC.Amiibo_Write_Counter.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_AppID: " + myFileMessage.msgNFC.Amiibo_AppID.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_Initialized_AppID: " + myFileMessage.msgNFC.Amiibo_Initialized_AppID.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_Country: " + myFileMessage.msgNFC.Amiibo_Country.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_Initialize_UserData: " + myFileMessage.msgNFC.Amiibo_Initialize_UserData.ToString() + "\n";
+            lblMessage2.Text += "Amiibo_LastModifiedDate: " + myFileMessage.msgNFC.Amiibo_LastModifiedDate.ToString() + "\n";
 
             lblSsbTp.Text = "";
             lblSsbTp.Text += "TP_APP_DATA: " + myFileMessage.msgTP.APP_DATA + "\n";
@@ -542,7 +542,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                     for (int i = 0; i < myFileList.Length; i++)
                     {
                         AmiiboFileMessage myFileMessageTemp = new AmiiboFileMessage(myFileList[i]);
-                        string newStr = myFileMessageTemp.DirectoryName + "\\" + myFileMessageTemp.McasName;
+                        string newStr = myFileMessageTemp.DirectoryName + "\\" + myFileMessageTemp.mcasName;
                         string temp = MyRename(myFileMessageTemp.FullName, newStr, false);
                         if (temp == "")
                         {
@@ -562,21 +562,6 @@ namespace AnterStudio.GameTools.AmiiboClass
             }
         }
         #endregion
-
-        private string ToHexString(byte[] bytes) // 0xae00cf => "AE00CF "
-        {
-            string hexString = string.Empty;
-            if (bytes != null)
-            {
-                StringBuilder strB = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    strB.Append(bytes[i].ToString("X2"));
-                }
-                hexString = strB.ToString();
-            }
-            return hexString;
-        }
     }
 }
 /*
