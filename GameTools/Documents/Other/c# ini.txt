@@ -1,0 +1,93 @@
+纯C#的ini格式配置文件读写 虽然C#里都是添加app.config 并且访问也很方便 ，有时候还是不习惯用他。那么我们来做个仿C++下的那种ini配置文件读写吧，其他人写的都是调用非托管kernel32.dll。我也用过 但是感觉兼容性有点不好 有时候会出现编码错误，毕竟一个是以前的系统一个是现在的系统。咱来写一个纯C#的ini格式配置文件读取，其实就是文本文件读写啦。但是我们要做的绝不仅仅是这样 是为了访问操作的方便 更是为了以后的使用。
+
+
+都知道ini格式的配置文件里各个配置项 其实就是一行一行的文本 key跟value 用等号隔开。
+像这样：
+grade=5 。
+各个配置项又进行分组 同类型的放到一起 称之为section 以中括号（[]）区分。
+像这样：
+[contact]
+qq=410910748
+website=assassinx.cnblogs.com
+[score]
+math=85
+Chinese=90
+geographic=60
+各个配置项的key在section内不可重复。
+
+在这里我们为了方便 去掉section的概念 ，实际上也用不怎么到。那么这样一来就可以把个个配置项理解成一个dictionary结构，方便我们存取等操作 。至于为什么一定要使用dictionary 因为在测试时我发现存取过程中他不会打乱元素的存放顺序 晕 就这样啊。 我们要做到就是根据key去取value。还有就是需要注意到我们有时候需要在配置文件里写注释怎么办呢？就是以分号（;）开头的行。这个问题我们可以在程序里为他初始化特殊的key+序号的形式 ，写入的时候也同样的进行判断。
+
+这整个过程就是：
+程序开始时遍历所有行 如果以分号（;）开头则存储此行不作为配置解释，如果不是 则解释此行 并放到dictionary集合里去。访问时 根据key获取value 就这么简单。注意注释行的处理  还有更改配置存回去行的先后顺序必须保持原样。
+
+好了开工吧：
+
+
+ 1 public class Config
+ 2 {
+ 3     public Dictionary<string, string> configData;
+ 4     string fullFileName;
+ 5     public Config(string _fileName)
+ 6     {
+ 7         configData = new Dictionary<string,string>();
+ 8         fullFileName = Application.StartupPath + @"\" + _fileName;
+ 9 
+10         bool hasCfgFile =File.Exists(Application.StartupPath + @"\" + _fileName);
+11         if (hasCfgFile == false)
+12         {
+13             StreamWriter writer = new StreamWriter(File.Create(Application.StartupPath + @"\" + _fileName), Encoding.Default);
+14             writer.Close();
+15         }
+16         StreamReader reader = new StreamReader(Application.StartupPath + @"\" + _fileName, Encoding.Default);
+17         string line;
+18 
+19         int indx = 0;
+20         while ((line = reader.ReadLine()) != null)
+21         {
+22             if (line.StartsWith(";") || string.IsNullOrEmpty(line))
+23                 configData.Add(";" + indx++, line);
+24             else
+25             {
+26                 string[] key_value = line.Split('=');
+27                 if (key_value.Length >= 2)
+28                     configData.Add(key_value[0], key_value[1]);
+29                 else
+30                     configData.Add(";" + indx++, line);
+31             }
+32         }
+33         reader.Close();
+34     }
+35 
+36     public string get(string key)
+37     {
+38         if (configData.Count <= 0)
+39             return null;
+40         else if(configData.ContainsKey(key))
+41             return configData[key].ToString();
+42         else
+43             return null;
+44     }
+45 
+46     public void set(string key, string value)
+47     {
+48         if (configData.ContainsKey(key))
+49             configData[key] = value;
+50         else
+51             configData.Add(key, value);
+52     }
+53 
+54     public void save()
+55     {
+56         StreamWriter writer = new StreamWriter(fullFileName,false,Encoding.Default);
+57         IDictionaryEnumerator enu = configData.GetEnumerator();
+58         while (enu.MoveNext())
+59         {
+60             if (enu.Key.ToString().StartsWith(";"))
+61                 writer.WriteLine(enu.Value);
+62             else
+63                 writer.WriteLine(enu.Key + "=" + enu.Value);
+64         }
+65         writer.Close();
+66     }
+67 }就这样吧 不用测试了，因为本人一直在用。
+

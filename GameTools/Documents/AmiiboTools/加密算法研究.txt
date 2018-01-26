@@ -1,0 +1,45 @@
+NTAG215(加密后)
+        ISO:14443-3
+        ID:0x00,0x01,0x02,0x04,0x05,0x06,0x07
+        ATQA:
+        SAK:
+        -------------000--------------
+        0x00:UID0
+        0x01:UID1
+        0x02:UID2
+        0x03:BCC0 = 0x88 ^ UID0 ^ UID1 ^ UID2
+        0x04:UID3
+        0x05:UID4
+        0x06:UID5
+        0x07:UID6
+        0x08:BCC1 = UID3 ^ UID4 ^ UID5 ^ UID6
+        0x09:INT
+        0x0A:LOCK0
+        0x0B:LOCK1
+        0x0C:OTP0
+        0x0D:OTP1
+        0x0E:OTP2
+        0x0F:OTP3
+        0x10~0x207:数据（0x1F8=504）
+        0x208:LOCK2
+        0x209:LOCK3
+        0x20A:LOCK4
+        0x20B:CHK
+        0x20C~0x20E:CFG,MIRROR,AUTHO
+        0x20F:
+        0x210~0x211:ACCESS
+        0x212:--
+        0x213:--
+        -------------532--------------
+        0x214:PWD0
+        0x215:PWD1
+        0x216:PWD2
+        0x217:PWD3
+        0x218:PACK0
+        0x219:PACK1
+        0x21A:--
+        0x21B:--
+        -------------540-------------- 
+
+
+04237E223A4D81 -> 04237E-D1-223A4D81-D4

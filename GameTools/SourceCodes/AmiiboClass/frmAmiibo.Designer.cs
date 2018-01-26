@@ -65,7 +65,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(478, 12);
+            this.btnOpen.Location = new System.Drawing.Point(492, 12);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // btnTo540
             // 
-            this.btnTo540.Location = new System.Drawing.Point(478, 68);
+            this.btnTo540.Location = new System.Drawing.Point(492, 68);
             this.btnTo540.Name = "btnTo540";
             this.btnTo540.Size = new System.Drawing.Size(75, 23);
             this.btnTo540.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             // btnRename
             // 
-            this.btnRename.Location = new System.Drawing.Point(478, 39);
+            this.btnRename.Location = new System.Drawing.Point(492, 39);
             this.btnRename.Name = "btnRename";
             this.btnRename.Size = new System.Drawing.Size(75, 23);
             this.btnRename.TabIndex = 4;
@@ -104,7 +104,7 @@
             // linkURL
             // 
             this.linkURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkURL.Location = new System.Drawing.Point(82, 538);
+            this.linkURL.Location = new System.Drawing.Point(80, 294);
             this.linkURL.Name = "linkURL";
             this.linkURL.Size = new System.Drawing.Size(270, 23);
             this.linkURL.TabIndex = 6;
@@ -112,9 +112,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(514, 538);
+            this.btnBack.Location = new System.Drawing.Point(492, 294);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(78, 23);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // 
             // lblURL
             // 
-            this.lblURL.Location = new System.Drawing.Point(14, 538);
+            this.lblURL.Location = new System.Drawing.Point(12, 294);
             this.lblURL.Name = "lblURL";
             this.lblURL.Size = new System.Drawing.Size(62, 23);
             this.lblURL.TabIndex = 8;
@@ -131,7 +131,7 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(623, 518);
+            this.btnList.Location = new System.Drawing.Point(492, 182);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 9;
@@ -141,7 +141,7 @@
             // 
             // btnRenameAll
             // 
-            this.btnRenameAll.Location = new System.Drawing.Point(733, 518);
+            this.btnRenameAll.Location = new System.Drawing.Point(492, 211);
             this.btnRenameAll.Name = "btnRenameAll";
             this.btnRenameAll.Size = new System.Drawing.Size(75, 23);
             this.btnRenameAll.TabIndex = 10;
@@ -151,7 +151,7 @@
             // 
             // btnMcasName
             // 
-            this.btnMcasName.Location = new System.Drawing.Point(843, 518);
+            this.btnMcasName.Location = new System.Drawing.Point(492, 240);
             this.btnMcasName.Name = "btnMcasName";
             this.btnMcasName.Size = new System.Drawing.Size(75, 23);
             this.btnMcasName.TabIndex = 11;
@@ -161,7 +161,7 @@
             // 
             // btnPicture
             // 
-            this.btnPicture.Location = new System.Drawing.Point(377, 538);
+            this.btnPicture.Location = new System.Drawing.Point(492, 124);
             this.btnPicture.Name = "btnPicture";
             this.btnPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPicture.TabIndex = 15;
@@ -176,24 +176,24 @@
             this.ricOut.Location = new System.Drawing.Point(595, 12);
             this.ricOut.Name = "ricOut";
             this.ricOut.ReadOnly = true;
-            this.ricOut.Size = new System.Drawing.Size(340, 500);
+            this.ricOut.Size = new System.Drawing.Size(340, 546);
             this.ricOut.TabIndex = 17;
             this.ricOut.Text = "";
             // 
             // lblSsbTp
             // 
             this.lblSsbTp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSsbTp.Location = new System.Drawing.Point(13, 295);
+            this.lblSsbTp.Location = new System.Drawing.Point(12, 331);
             this.lblSsbTp.Name = "lblSsbTp";
-            this.lblSsbTp.Size = new System.Drawing.Size(284, 230);
+            this.lblSsbTp.Size = new System.Drawing.Size(274, 230);
             this.lblSsbTp.TabIndex = 18;
             // 
             // lblMessage2
             // 
             this.lblMessage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMessage2.Location = new System.Drawing.Point(303, 295);
+            this.lblMessage2.Location = new System.Drawing.Point(292, 331);
             this.lblMessage2.Name = "lblMessage2";
-            this.lblMessage2.Size = new System.Drawing.Size(286, 230);
+            this.lblMessage2.Size = new System.Drawing.Size(297, 230);
             this.lblMessage2.TabIndex = 19;
             // 
             // frmAmiibo

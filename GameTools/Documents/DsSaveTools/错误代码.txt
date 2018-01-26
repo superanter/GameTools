@@ -1,0 +1,34 @@
+﻿错误代码为5位代码：
+E打头的是错误，M打头的是提示
+
+fMain类
+	提示：
+		MM001	请选择源存档文件
+		MM002	请选择M3存档对应的ROM
+		MM003	口袋妖怪强制转换提示
+		
+InputFileInfo类
+	错误：
+		EI001	GetInputFileMode方法错误，原因：源存档小于69字节
+		EI101	IsSpsFile方法错误
+		EI102	IsEEPROMFile方法错误
+		EI201	LoadNormalFile方法错误
+		EI202	LoadGdsFile方法错误
+		EI203	LoadNoGbaComFile方法错误
+		EI204	LoadDstFile方法错误
+		
+WriteData类
+	错误：
+		ED001	MainChange正常转换时写入失败！
+		ED002	MainChange无法识别源存档格式，虽然可以转换，但转换后的存档可能无法使用。
+		ED101	M3Adding中，存档模式未知
+		ED102	M3Adding中，写入失败
+		ED103	M3AddingDAT中，指定的dat存档格式未知
+		ED104	M3AddingDAT中，写入失败
+		ED105	DSLinkAdding中的错误
+		ED106	DeSmuMEAdding中的错误
+		ED201	PokemonChange中，口袋妖怪强制转换时写入失败！	
+		ED202	PokemonChange中，口袋妖怪强制转换无法识别源存档格式。
+		ED203	PokemonChange中，口袋妖怪强制转换源存档体积小于512K。
+	
+

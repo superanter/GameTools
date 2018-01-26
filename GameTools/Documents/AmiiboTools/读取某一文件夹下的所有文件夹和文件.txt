@@ -1,0 +1,110 @@
+C#怎么读取某一文件夹下的所有文件夹和文件
+梦魇UGSWI | 浏览 1809 次
+我有更好的答案
+发布于2016-08-08 11:35 最佳答案
+static List<string> list = new List<string>();//定义list变量，存放获取到的路径
+        public static List<string> getPath(string path)
+        {
+            DirectoryInfo dir = new DirectoryInfo(path);
+            FileInfo[] fil = dir.GetFiles();
+            DirectoryInfo[] dii = dir.GetDirectories();
+            foreach (FileInfo f in fil)
+            {
+                list.Add(f.FullName);//添加文件的路径到列表
+            }
+            //获取子文件夹内的文件列表，递归遍历
+            foreach (DirectoryInfo d in dii)
+            {
+                getPath(d.FullName);
+                list.Add(d.FullName);//添加文件夹的路径到列表
+            }
+            return list;
+        }
+调用此函数需要传入指定的文件夹路径，如 D:\MyFile .可以将该文件夹下的文件和子文件夹路径全部获取，并利用递归，获取子文件夹内所有内容。
+
+
+
+C#获取文件夹下的所有文件的文件名 
+ 
+
+String path = @"X:\xxx\xxx"; 
+  
+//第一种方法 
+var files = Directory.GetFiles(path, "*.txt"); 
+              
+foreach (var file in files) 
+    Console.WriteLine(file); 
+  
+//第二种方法 
+DirectoryInfo folder = new DirectoryInfo(path); 
+             
+foreach (FileInfo file in folder.GetFiles("*.txt")) 
+{ 
+    Console.WriteLine(file.FullName); 
+} 
+        比较喜欢第二种方法, 第二种方法获取了目录下每个文件的所有信息.
+
+
+
+
+
+C#4.0中可以用DirectoryInfo.EnumerateFiles，重载更好用～而且是yield return的哦～
+
+
+使用 EnumerateFiles 方法可以在返回整个集合前开始枚举(比如foreach)这个集合, 如果使用 GetFiles 方法, 则必须等到包含文件名的数组返回后才进行操作. 从这个角度来说 EnumerateFiles 会提高效率
+
+应该补上.文夹下的文件名和文件夹
+
+关于文件夹, 除了GetFiles和EnumerateFiles, 还有GetDirectories和EnumerateDirectories方法的.
+
+
+
+
+C#编程实现获取文件夹中所有文件的文件名
+
+这篇文章主要介绍了C#编程实现获取文件夹中所有文件的文件名,可实现获取特定目录下制定类型文件名称的功能,涉及C#针对文件与目录的遍历、查询等操作相关技巧,具有一定参考借鉴价值,需要的朋友可以参考下
+本文实例讲述了C#编程实现获取文件夹中所有文件的文件名。分享给大家供大家参考，具体如下：
+想实现这样一个功能：批量修改一个目录所有jpg文件的文件名，在其原始基础上加上特定字符串
+我先把一个目录里所有的格式为jpg的文件名存储到数组里，然后统一修改数组值来批量修改jpg文件的文件名
+代码如下：
+
+
+using System;
+using System.IO;
+namespace ConsoleApplication7
+{
+ /// <summary>
+ /// Class1 的摘要说明。
+ /// </summary>
+ class Class1
+ {
+ /// <summary>
+ /// 应用程序的主入口点。
+ /// </summary>
+ [STAThread]
+ static void Main(string[] args)
+ {
+  string dirp=@"d:\\d";
+  DirectoryInfo mydir = new DirectoryInfo(dirp);
+  foreach (FileSystemInfo fsi in mydir.GetFileSystemInfos())
+  {
+  if (fsi is FileInfo)
+  {
+    FileInfo fi = (FileInfo)fsi;
+    string x=System.IO.Path.GetDirectoryName(fi.FullName);
+    Console.WriteLine(x);
+    string s=System.IO.Path.GetExtension(fi.FullName);
+    string y=System.IO.Path.GetFileNameWithoutExtension(fi.FullName);
+    Console.WriteLine(y);
+    if(s==".jpg")
+    {
+      System.IO.File.Copy(fi.FullName,x+@"\oo"+fi.Name); //在原文件名前加上OO
+      System.IO.File.Delete(fi.FullName);
+    }
+  }
+  }
+  Console.WriteLine("成功");
+  Console.ReadLine();
+ }
+ }
+}

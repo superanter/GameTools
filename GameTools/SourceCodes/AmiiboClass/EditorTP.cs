@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TagMo
+namespace AnterStudio.GameTools.AmiiboClass
 {
+    //Code From TagMo
+
     class EditorTP
     {
         private static int OFFSET_APP_DATA = 0xED;

@@ -21,163 +21,170 @@
  * THE SOFTWARE.
  */
 
+/*
+ * 
+ * New LoadKeys(),by ANTer 2018-01-24
+ * 
+ */
+
+
 using System;
 using System.IO;
 using ANTer.BouncyCastle.AES_CTR_NoPadding;
 
 namespace LibAmiibo
 {
-    public class AmiiboKeys
-    {
-        public const int HMAC_POS_DATA = 0x008;
-        public const int HMAC_POS_TAG = 0x1B4;
+   public class AmiiboKeys
+   {
+       public const int HMAC_POS_DATA = 0x008;
+       public const int HMAC_POS_TAG = 0x1B4;
 
-        private AmiiboKeys() { }
+       private AmiiboKeys() { }
 
-        private KeygenMasterkeys data;
-        private KeygenMasterkeys tag;
+       private KeygenMasterkeys data;
+       private KeygenMasterkeys tag;
 
-        internal static AmiiboKeys Unserialize(BinaryReader reader)
-        {
-            return new AmiiboKeys
-            {
-                data = KeygenMasterkeys.Unserialize(reader),
-                tag = KeygenMasterkeys.Unserialize(reader)
-            };
-        }
+       internal static AmiiboKeys Unserialize(BinaryReader reader)
+       {
+           return new AmiiboKeys
+           {
+               data = KeygenMasterkeys.Unserialize(reader),
+               tag = KeygenMasterkeys.Unserialize(reader)
+           };
+       }
 
-        internal void Serialize(BinaryWriter writer)
-        {
-            this.data.Serialize(writer);
-            this.tag.Serialize(writer);
-        }
+       internal void Serialize(BinaryWriter writer)
+       {
+           this.data.Serialize(writer);
+           this.tag.Serialize(writer);
+       }
 
-        public bool Unpack(byte[] tag, byte[] plain)
-        {
-            byte[] internalBytes = NtagHelpers.GetInternalTag(tag);
+       public bool Unpack(byte[] tag, byte[] plain)
+       {
+           byte[] internalBytes = NtagHelpers.GetInternalTag(tag);
 
-            // Generate keys
-            KeygenDerivedkeys dataKeys = GenerateKey(this.data, internalBytes);
-            KeygenDerivedkeys tagKeys = GenerateKey(this.tag, internalBytes);
+           // Generate keys
+           KeygenDerivedkeys dataKeys = GenerateKey(this.data, internalBytes);
+           KeygenDerivedkeys tagKeys = GenerateKey(this.tag, internalBytes);
 
-            // Decrypt
-            dataKeys.Cipher(internalBytes, plain, false);
+           // Decrypt
+           dataKeys.Cipher(internalBytes, plain, false);
 
-            // Init OpenSSL HMAC context
-            HMac hmacCtx = new HMac(new Sha256Digest());
+           // Init OpenSSL HMAC context
+           HMac hmacCtx = new HMac(new Sha256Digest());
 
-            // Regenerate tag HMAC. Note: order matters, data HMAC depends on tag HMAC!
-            hmacCtx.Init(new KeyParameter(tagKeys.hmacKey));
-            hmacCtx.BlockUpdate(plain, 0x1D4, 0x34);
-            hmacCtx.DoFinal(plain, HMAC_POS_TAG);
+           // Regenerate tag HMAC. Note: order matters, data HMAC depends on tag HMAC!
+           hmacCtx.Init(new KeyParameter(tagKeys.hmacKey));
+           hmacCtx.BlockUpdate(plain, 0x1D4, 0x34);
+           hmacCtx.DoFinal(plain, HMAC_POS_TAG);
 
-            // Regenerate data HMAC
-            hmacCtx.Init(new KeyParameter(dataKeys.hmacKey));
-            hmacCtx.BlockUpdate(plain, 0x029, 0x1DF);
-            hmacCtx.DoFinal(plain, HMAC_POS_DATA);
+           // Regenerate data HMAC
+           hmacCtx.Init(new KeyParameter(dataKeys.hmacKey));
+           hmacCtx.BlockUpdate(plain, 0x029, 0x1DF);
+           hmacCtx.DoFinal(plain, HMAC_POS_DATA);
 
-            Array.Copy(tag, 0x208, plain, 0x208, 0x014);
+           Array.Copy(tag, 0x208, plain, 0x208, 0x014);
 
-            return
-                NativeHelpers.MemCmp(plain, internalBytes, HMAC_POS_DATA, 32) &&
-                NativeHelpers.MemCmp(plain, internalBytes, HMAC_POS_TAG, 32);
-        }
+           return
+               NativeHelpers.MemCmp(plain, internalBytes, HMAC_POS_DATA, 32) &&
+               NativeHelpers.MemCmp(plain, internalBytes, HMAC_POS_TAG, 32);
+       }
 
-        public void Pack(byte[] plain, byte[] tag)
-        {
-            byte[] cipher = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
+       public void Pack(byte[] plain, byte[] tag)
+       {
+           byte[] cipher = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
 
-            // Generate keys
-            var tagKeys = GenerateKey(this.tag, plain);
-            var dataKeys = GenerateKey(this.data, plain);
+           // Generate keys
+           var tagKeys = GenerateKey(this.tag, plain);
+           var dataKeys = GenerateKey(this.data, plain);
 
-            // Init OpenSSL HMAC context
-            HMac hmacCtx = new HMac(new Sha256Digest());
+           // Init OpenSSL HMAC context
+           HMac hmacCtx = new HMac(new Sha256Digest());
 
-            // Generate tag HMAC
-            hmacCtx.Init(new KeyParameter(tagKeys.hmacKey));
-            hmacCtx.BlockUpdate(plain, 0x1D4, 0x34);
-            hmacCtx.DoFinal(cipher, HMAC_POS_TAG);
+           // Generate tag HMAC
+           hmacCtx.Init(new KeyParameter(tagKeys.hmacKey));
+           hmacCtx.BlockUpdate(plain, 0x1D4, 0x34);
+           hmacCtx.DoFinal(cipher, HMAC_POS_TAG);
 
-            // Generate data HMAC
-            hmacCtx.Init(new KeyParameter(dataKeys.hmacKey));
-            hmacCtx.BlockUpdate(plain, 0x029, 0x18B);           // Data
-            hmacCtx.BlockUpdate(cipher, HMAC_POS_TAG, 0x20);    // Tag HMAC
-            hmacCtx.BlockUpdate(plain, 0x1D4, 0x34);            // Tag
-            hmacCtx.DoFinal(cipher, HMAC_POS_DATA);
+           // Generate data HMAC
+           hmacCtx.Init(new KeyParameter(dataKeys.hmacKey));
+           hmacCtx.BlockUpdate(plain, 0x029, 0x18B);           // Data
+           hmacCtx.BlockUpdate(cipher, HMAC_POS_TAG, 0x20);    // Tag HMAC
+           hmacCtx.BlockUpdate(plain, 0x1D4, 0x34);            // Tag
+           hmacCtx.DoFinal(cipher, HMAC_POS_DATA);
 
-            // Encrypt
-            dataKeys.Cipher(plain, cipher, true);
+           // Encrypt
+           dataKeys.Cipher(plain, cipher, true);
 
-            // Convert back to hardware
-            NtagHelpers.InternalToTag(cipher, tag);
+           // Convert back to hardware
+           NtagHelpers.InternalToTag(cipher, tag);
 
-            Array.Copy(plain, 0x208, tag, 0x208, 0x014);
-        }
+           Array.Copy(plain, 0x208, tag, 0x208, 0x014);
+       }
 
-        public static AmiiboKeys LoadKeys(string path)
-        {
-            if (!File.Exists(path))
-                return null;
+       public static AmiiboKeys LoadKeys(string path)
+       {
+           if (!File.Exists(path))
+               return null;
 
-            try
-            {
-                using (var reader = new BinaryReader(File.OpenRead(path)))
-                {
-                    var result = AmiiboKeys.Unserialize(reader);
+           try
+           {
+               using (var reader = new BinaryReader(File.OpenRead(path)))
+               {
+                   var result = AmiiboKeys.Unserialize(reader);
 
-                    if ((result.data.magicBytesSize > 16) || (result.tag.magicBytesSize > 16))
-                        return null;
+                   if ((result.data.magicBytesSize > 16) || (result.tag.magicBytesSize > 16))
+                       return null;
 
-                    return result;
-                }
-            }
-            catch
-            {
-                return null;
-            }
-        }
+                   return result;
+               }
+           }
+           catch
+           {
+               return null;
+           }
+       }
 
-        /// <summary>
-        /// New LoadKeys(),by ANTer 2018-01-24
-        /// </summary>
-        /// <param name="key_retail"></param>
-        /// <returns></returns>
-        public static AmiiboKeys LoadKeys(byte[] getKeyGen)
-        {
-            Stream stream = new MemoryStream(getKeyGen);
-            try
-            {
-                using (var reader = new BinaryReader(stream))
-                {
-                    var result = AmiiboKeys.Unserialize(reader);
+       /// <summary>
+       /// New LoadKeys(),by ANTer 2018-01-24
+       /// </summary>
+       /// <param name="key_retail"></param>
+       /// <returns></returns>
+       public static AmiiboKeys LoadKeys(byte[] getKeyGen)
+       {
+           Stream stream = new MemoryStream(getKeyGen);
+           try
+           {
+               using (var reader = new BinaryReader(stream))
+               {
+                   var result = AmiiboKeys.Unserialize(reader);
 
-                    if ((result.data.magicBytesSize > 16) || (result.tag.magicBytesSize > 16))
-                        return null;
+                   if ((result.data.magicBytesSize > 16) || (result.tag.magicBytesSize > 16))
+                       return null;
 
-                    return result;
-                }
-            }
-            catch
-            {
-                return null;
-            }
-        }
+                   return result;
+               }
+           }
+           catch
+           {
+               return null;
+           }
+       }
 
-        private static byte[] CalcSeed(byte[] dump)
-        {
-            byte[] key = new byte[KeygenMasterkeys.NFC3D_KEYGEN_SEED_SIZE];
-            Array.Copy(dump, 0x029, key, 0x00, 0x02);
-            Array.Copy(dump, 0x1D4, key, 0x10, 0x08);
-            Array.Copy(dump, 0x1D4, key, 0x18, 0x08);
-            Array.Copy(dump, 0x1E8, key, 0x20, 0x20);
-            return key;
-        }
+       private static byte[] CalcSeed(byte[] dump)
+       {
+           byte[] key = new byte[KeygenMasterkeys.NFC3D_KEYGEN_SEED_SIZE];
+           Array.Copy(dump, 0x029, key, 0x00, 0x02);
+           Array.Copy(dump, 0x1D4, key, 0x10, 0x08);
+           Array.Copy(dump, 0x1D4, key, 0x18, 0x08);
+           Array.Copy(dump, 0x1E8, key, 0x20, 0x20);
+           return key;
+       }
 
-        private KeygenDerivedkeys GenerateKey(KeygenMasterkeys masterKeys, byte[] dump)
-        {
-            byte[] seed = CalcSeed(dump);
-            return masterKeys.GenerateKey(seed);
-        }
-    }
+       private KeygenDerivedkeys GenerateKey(KeygenMasterkeys masterKeys, byte[] dump)
+       {
+           byte[] seed = CalcSeed(dump);
+           return masterKeys.GenerateKey(seed);
+       }
+   }
 }

@@ -1,0 +1,459 @@
+@_Tim_: could you try writing an amiibo with a couple pages different from normal? For page 0x02, make the last two bytes 0 (to disable static locking), leave the capability container (page 0x03) default (0xE1 0x10 0x3E 0x00) (the values on 3DSbrew don't really make sense given the spec), leave page 0x82 0 (to disable dynamic locking). Set page 0x83 to 0x00 0x00 0x00 0xFF to disable password checking, and page 0x84 to 0x10 0x00 0x00 0x00 to disable the config lock, count protection, and auth limit. I'm curious if the Wii U will read an Amiibo with all of the protection disabled (and a more standard capability container), or not (I suspect it checks at least some of these). I find it very interesting that the last byte of the capability container is 0xEE as 0xE is a proprietary value according to the spec (and the first byte being 0xF1 makes no sense as the spec says 0xE1 is a magic value).
+
+
+
+
+
+
+One other small problem, I'm not sure how to generate the 32 byte xorpad. The pastebin post a while back with all the keys in it had the AES IV and KeyY needed to create the xorpad, and I feel like it should be fairly straight forward with Decrypt9, but I'm not really that familiar with xorpad generation. Has anybody else done this before?
+
+
+
+Set1 keys:
+1st 3 are DEVs data (and they are all correct).
+2nd 3 are DEVs data and HMAC key is 830E75...
+
+Set2 keys:
+1st 3 are retail data and HMAC key is 1D164B...
+2nd 3 are retail data and HMAC key is 7F752D...
+
+
+As stated, algo for xorpad: AES-128 CTR mode: 1st key is AES KeyY, 2nd key is AES IV.
+
+Resulting xorpads are:
+495B197A5B802055AEE8AE8EA08E053233C770A8A99E6DAD6F1CA01FE3618022 (for DEVs)
+044917DC76B49640D6F83939960FAED4EF392FAAB21428AA21FB54E545054766 (for retail)
+
+
+1B+4bytes-PWD+2bytes ISO14443A-CRC (7 bytes total).
+
+and you should get 2bytes-PACK back as answer if the command got executed correctly.
+I suggest you to find and app that is able to manage ALL the NTAG215 command set (not only ISO14443A standard commands because 1B command is not standard, it is NXP proprietary) or to send the raw command with or without automatically calculating the ISO14443A-CRC.
+
+xorpads ARE NOT copyrighted materials... they are just... xorpads, so no reason to censor them;)
+
+
+
+Everything started fromthisgreat job.
+
+
+
+
+
+Alright, so I'm equipped with everything I need to give this a shot today:
+- blank NTAG215 tags
+- Amiibo dump
+- hex editor
+- the key to encrypt it
+- Android smartphone with AmiiWrite
+
+1) I decrypted the Amiibo dump
+2) I read the NTAG215 with Android app NFC TagInfo to get the 7-byte UID.
+3) I opened the Amiibo dump in a hex editor...
+
+Where is the location of the UID to change it?
+#179Jan 9, 2016
+javiMaD
+javiMaD
+Member
+Newcomer
+37
+45
+Jan 31, 2015
+0's and 1's
+fiveighteen said:¡ü
+Alright, so I'm equipped with everything I need to give this a shot today:
+- blank NTAG215 tags
+- Amiibo dump
+- hex editor
+- the key to encrypt it
+- Android smartphone with AmiiWrite
+
+1) I decrypted the Amiibo dump
+2) I read the NTAG215 with Android app NFC TagInfo to get the 7-byte UID.
+3) I opened the Amiibo dump in a hex editor...
+
+Where is the location of the UID to change it?
+Click to expand...
+First decrypt Amiibo and go to offset 0x1D4 (8 bytes UID BCC0)
+
+So the NTAG215 UID is 7 bytes, but the Amiibo UID is 8 bytes? How does that work - pad the end with 00?
+
+
+The UID is the first seven bytes of the encrypted dump, so you can search it the decrypted dump and change it.
+
+EDIT: javiMaD is right. The location of the UID in the decrypted dump starts at 0x1d4. Also, are you using the API or amiitool?
+
+NTAG 215 UID:
+04 C3 7A 52 C2 3E 80
+
+DUCK HUNT DUO UID:
+04 FC 30 40 82 03 49 80
+
+It concerns me that they both start with 04 and end with 80 but there's an extra byte in the middle of the Amiibo.
+
+Should I be changing Duck Hunt Duo to:
+04 C3 7A 52 C2 3E 80 80 ??
+
+Extra byte is BCC0 = 0x88 xor UID0 xor UID1 xor UID2
+
+88 xor 04 xor C3 xor 7A = 35
+
+04 C3 7A3552 C2 3E 80
+
+Oh, that's what you meant. I apologize for not understanding. Thanks so much for the info
+
+
+The first 10 bytes of the tag are determined by the NFC type A spec.
+
+0: UID0 - the manufacturer code, always 0x04 for any NXP tag
+1: UID1
+2: UID2
+3: BCC0 - CT ^ UID0 ^ UID1 ^ UID2 (CT is 0x88)
+4: UID3 - Can't be CT (0x88)
+5: UID4
+6: UID5
+7: UID6
+8: BCC1 - UID3 ^ UID4 ^ UID5 ^ UID6
+9: Internal - Always 0x48
+
+Note that you can't actually write to any of these bytes on an actual NTAG, the first two pages are locked at the factory, and trying to write values to the first two bytes of the 3rd page does nothing (thus the static lock bytes can be set without worrying about the first two bytes of the write). Also note, that tags with 4 or 10 byte UIDs have a different layout (all NTAG21x tags have 7 byte UIDs).
+
+
+
+PokeAcer said:¡ü
+EDIT: I'm essentially asking if someone knows an easy way to calculate that extra byte.
+(example for the UID I was using)
+
+Extra byte UID3:
+= 0x88 xor UID0 xor UID1 xor UID2
+= 88 xor 04 xor C3 xor 7A
+= ((10001000 xor 00000100) xor 11000011) xor 01111010
+= (10001100 xor 11000011) xor 01111010
+= 01001111 xor 01111010
+= 00110101
+= 35
+
+XOR Truth Table:
+AB | Q
+00 | 0
+01 | 1
+10 | 1
+11 | 0
+
+
+
+PokeAcer said:¡ü
+My head hurts from this xD
+If someone can make a way to calculate this either online or as a program, I swear I will <3 you forever
+You can usehttp://xor.pw/and the same logic as my above post.
+
+88 xor UID0 = VAL1
+VAL1 xor UID1 = VAL2
+VAL 2 xor UID2 =UID3
+
+Ex:
+88 xor 04 = 8C
+8C xor C3 = 4F
+4F xor 7A =35
+
+
+PHP (which is the worst langauge ever) actually supports xor, it is literally just "xor". It also supports hex litterals, so your code could look something like:
+
+$bcc0 = 0x88 xor $uid[0] xor $uid[1] xor $uid[2]
+$bcc1 = $uid[3] xor $uid[4] xor $uid[5] xor $uid[6]
+
+...I think I need to take a shower; I hate PHP
+
+
+asper said:¡ü
+You need to send this ISO14443A APDU:
+
+1B+4bytes-PWD+2bytes ISO14443A-CRC (7 bytes total).
+
+and you should get 2bytes-PACK back as answer if the command got executed correctly.
+I suggest you to find and app that is able to manage ALL the NTAG215 command set (not only ISO14443A standard commands because 1B command is not standard, it is NXP proprietary) or to send the raw command with or without automatically calculating the ISO14443A-CRC.
+1) Decrypted the Amiibo dump
+2) Read the NTAG215 with Android app NFC TagInfo to get the 7-byte UID.
+3) Calculated the UID3 byte.
+4) Opened the decrypted Amiibo dump in a hex editor and changed the UID to match the NTAG215
+5) Created the keyfile for amiitool
+6) Re-encrypted the Amiibo dump with "amiitool -e -k keys.bin -i decrypted.bin -o encrypted.bin"
+
+Now where does this part that you posted come into play? I'm trying to make sure I have all of my ducks in a row so I don't waste any tags here.
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	while (1) {
+		int UID[4];
+		UID[3] = 0x88;
+		cout << "Enter UID0" << endl << "0x";
+		cin >> hex >> UID[0];
+		cout << "Enter UID1" << endl << "0x";
+		cin >> hex >> UID[1];
+		cout << "Enter UID2" << endl << "0x";
+		cin >> hex >> UID[2];
+		for (int i = 0; i < 3; i++) {
+			UID[3] = UID[3] ^ UID[i];
+		}
+		cout << "UID3: " << uppercase << hex << UID[3] << " (0x" << UID[3] << ')' << endl << endl;
+		system("pause");
+	}
+}
+
+
+javiMaD said:¡ü
+Now with the correct PACK0 and PACK1 (0x80, 0x80) I get an error 168-0413
+I think there is another piece (hmac hash or something) that we are missing. I have checked everything about my clones, PWD, PACK, HMAC at 0x80, settings, etc. and everything checks out but they still don't work. As far as I can tell, 168-0413 is the Wii U equivalent of the 3DS 037-0524 error I have been getting. Has anybody successfully gotten a clone to work?
+
+PokeAcer said:¡ü
+Not at all. 215 has 540 bytes, Amiibo needs 540 bytes, and NTAG215s are 540 bytes. All others are lesser, on in the case with NTAG216s, too much
+Actually the problem isn't the size exactly, the problem is that the GET_VERSION command returns a different value on the NTAG216.
+
+
+True, but he was using a modified version of amiitool that I'm guessing corrected one of the other signatures. My gut says that it is likely the 0x20 block at 0x34 as that is locked, and isn't used as part of the per amiibo key generation. It could also be the section at 0x60 using a different HMAC key though (like the master one, or another all together).
+
+
+04237E223A4D81->04237ED1223A4D81D4
+
+
+There are a number of things you need:
+You have to update all 9 bytes of the UID, including the 2 BCC bytes.
+You need to update the HMAC signature at 0x80 (amiitool does this for you on reencryption).
+You have to re-encrypt the two encrypted segments (this is the main thing amiitool does on reencryption).
+You have to properly set the configuration pages on the clone (including the static lock bytes, CC, dynamic lock bytes, CFG0 and CFG1).
+You have to properly set the password on the cloned card (based on the UID)
+You have to properly set the pack on the cloned card (always the same value)
+And something else that we don't know about (my guess is the HMAC at 0x34).
+Until we know what that last piece is, it isn't actually possible to create a valid clone.
+
+
+
+fiveighteen said:¡ü
+So we need to write the first 9 bytes every time, not 8? Easy change to make, but nobody mentioned it before exceptSupercool330 on Page 10. I kind of thought it was done during the encryption or something for some reason. I'll make changes..
+In my tests I do the following: ["Step by step" guide]
+
+- Dump Amiibo
+- Decrypt Amiibo and save to amiibo_mod
+- Get UID and BCC0/1 from the blank tag
+- Put UID1/2/3 + BCC0 + UID4/5/6/7 at offset 0x1D4 (8 bytes)
+- Put BCC1 at offset 0x000 (1 byte)
+- Put write password at 0x214 (4 byte)
+- Put PACK0/1 at 0x218 (2 byte)
+- Save file and copy in a new file (amiibo_base)
+Now in amiibo_base
+- Change at 0x002 to 0x00 0x00 (2 bytes), default blank tag LOCK0/1
+- Change at 0x208 to 0x00 0x00 0x00 0xBD 0x04 0x00 0x00 0xFF 0x00 0x05 (10 bytes), default blank tag LOCK2-3-4/CFG/MIRROR/AUTH/ACCESS
+- Save
+- Encrypt amiibo_mod and amiibo_base
+- Write amiibo_base to blank tag
+- Write amiibo_mod to blank tag
+
+
+
+Looks good to me now.
+
+7-byte NTAG215 UID: 04C37A52C23E80
+
+BCC0 = 0x88 ^ UID0 ^ UID1 ^ UID2 = 0x88 ^ 0x04 ^ 0xC3 ^ 0x7A = 35
+BCC1 = UID3 ^ UID4 ^ UID5 ^ UID6 = 0x52 ^ 0xC2 ^ 0x3E ^ 0x80 = 2E
+
+9-byte UID: 04C37A3552C23E802E
+
+(That last "E" on yours doesn't get capitalized, but the rest of the letters do)
+
+
+
+Can someone send me a hash of the amiibo keyfile? I think mine's not correct.:unsure:
+Md5 of my keyfile: 2551afc7c8813008819836e9b619f7ed
+
+
+
+As an experiment, I scanned a link Amiibo, and restored it to a toad Amiibo (which writes everything except the locked pages from page 0x0D to 0x20), and it still scanned fine. This confirms that whatever the issue is, it is definitely somewhere in the locked area. There are three sections of memory in this locked region:
+
+0x34 - 0x54: A hash according to the doc on 3dbrew. This section is used as the third segment when computing the hash at 0x80.
+0x54 - 0x60: We know the first 8 bytes of this section are the Amiibo id that encodes the character. I'm not sure what the last 4 bytes are.
+0x60 - 0x80: Probably another hash according to the doc on 3dbrew. This section is used when computing the per Amiibo keys. It is the second half of the base seed.
+
+If these sections are in fact hashes, they must be of only immutable data such as the UID. Besides this section, every part of the user memory is writable, and apart from the UID, all CFG bytes are fixed (identical between Amiibo ). This means we only have a few options:
+
+0x34 - 0x54 is a hash using the per Amiibo hmac key or the master hmac key of some data from 0x54 - 0x80 plus the UID, and potentially some other salt (unlikely; normally the key is the salt).
+0x5C - 0x60 is actually the bit we are interested in somehow. I'm still trying to figure out exactly what this is.
+0x60 - 0x80 is a hash using the master hmac key of some data from 0x34 - 0x60 plus the UID.
+
+I tried all the obvious hash combinations (my best bet was 0x00-0x08 and then 0x54-0x80 since those are the last two segments used in the hash at 0x80), but couldn't find any matches. If we could figure out what 0x5C - 0x60 (page 23) is, it would be helpful.
+
+Edit: 0x5C - 0x60 doesn't seem to be a good candidate, there is far too little entropy there. Note though that it definitely isn't part of the character ID as two different Amiibos of the same character have different values.
+
+
+
+I just came to a realization. I was thinking about different sections of memory that could be hashed with the derived per amiibo hmac key, and I realized that you can't actually use that key since part of the seed is the write counter from the amiibo. However, the write counter isn't used with the "locked secret" keyset as the magic is 16 bytes long. This also totally explains why there are two sets of keys, the "unfixed infos" is used for the unfixed parts of the amiibo that can change, and the "locked secret" is used for the locked parts that can only be written once. This also explains why none of my hashing turned up any results; I was using the wrong keyset. I suspect we need to build a seed using the "locked secret" keyset, and then either hash it with the "locked secret" hmac key, take the first 32 bytes from the drbg, or generate a key with the drbg and decrypt/hash something. Regardless, the "locked secret" seed will still use the portion of the amiibo at 0x60, so almost certainly the target block of memory is 0x34-0x54. We just need to try various things until we get something that matches.
+
+
+I just came to a realization. I was thinking about different sections of memory that could be hashed with the derived per amiibo hmac key, and I realized that you can't actually use that key since part of the seed is the write counter from the amiibo. However, the write counter isn't used with the "locked secret" keyset as the magic is 16 bytes long. This also totally explains why there are two sets of keys, the "unfixed infos" is used for the unfixed parts of the amiibo that can change, and the "locked secret" is used for the locked parts that can only be written once. This also explains why none of my hashing turned up any results; I was using the wrong keyset. I suspect we need to build a seed using the "locked secret" keyset, and then either hash it with the "locked secret" hmac key, take the first 32 bytes from the drbg, or generate a key with the drbg and decrypt/hash something. Regardless, the "locked secret" seed will still use the portion of the amiibo at 0x60, so almost certainly the target block of memory is 0x34-0x54. We just need to try various things until we get something that matches.
+
+
+
+mznova said:¡ü
+I think most of us don't care about UI. You can have clickable text on a black screen.:D
+I care about UI
+
+I'm not actually comfortable posting code to do this (don't want to get in trouble with anybody, and the previous code I posted is really just a python port of amiitool with some added nfc stuff). The missing piece however is in fact using the locked secret keys to generate another derived keyset, and then using the hmac key from that keyset to hash the last two pieces hashed for the key at 0x80 (0x00 to 0x08 and 0x54 to 0x80). I actually just guessed this, and it was essentially my first guess after I thought to use the locked secret keys. I'll let somebody else write up the final code and share it.
+
+
+"The missing piece however is in fact using the locked secret keys to generate another derived keyset, and then using the hmac key from that keyset to hash the last two pieces hashed for the key at 0x80 (0x00 to 0x08 and 0x54 to 0x80)"
+
+Unfortunately I don't really understand this, I have a kind of idea of what this means, but not enough to code anything.
+
+
+
+
+You MAY get a ntag215 BUT it will NOT have "888 useable bytes".
+
+http://www.nxp.com/products/identif...144-504-888-bytes-user-memory:NTAG213_215_216
+
+EEPROM
+180, 540 or 924 bytes organized in 45, 135 or 231 pages with 4 bytes per page
+144, 504 or 888 bytes freely available user Read/Write area (36, 126 or 222 pages)
+4 bytes initialized capability container with one time programmable access bits
+Field programmable read-only locking function per page for the first 16 pages
+Field programmable read-only locking function above the first 16 pages per double page for NTAG213 or per 16 pages for NTAG215 and NTAG216
+Configurable password protection with optional limit of unsuccessful attempts
+Anti-tearing support for capability container (CC) and lock bits
+ECC supported originality check
+Data retention time of 10 years
+Write endurance 100,000 cycles
+
+
+
+
+Ok, back on track.
+We still have to know more about the amiibo data structure.This is the stuffwe know at the moment.@Supercool330said this a few days ago:
+Supercool330 said:¡ü
+I updated the layout on the Wikitemp Amiibo page to document the entire layout. I'll add descriptions for each byte when I have some time. There is really only two things I haven't figured out. The first is what the data on page 23 is used for. This is the page immediately after the character data pages, and as far as I can tell it isn't really used for anything currently. This means that if we are doing something wrong on this page (which is locked) it is possible that this could be used to detect a fake. If people could post UIDs along with pages 21 through 23, that would be great. The second thing is exactly how the 0x20 byte block at page 24 is generated. You can use whatever values you want here and the tag seems to work fine, so my assumption is that it is random (which makes sense as it is essentially used as salt for the DRBG used to generate per amiibo keys). However, if it is a hash of something, this could again be used to detect a fake. In fact, generating a valid (but corrupt) Amiibo dump is super easy, you can just set every byte to random, and then write the 2 pages with the character data.
+@Supercool330,take this. It's a lot of scanned amiibos info, it could be helpful to figure out the page 23.
+Also, we have to still to figure out this:
+Supercool330 said:¡ü
+The missing piece however is in fact using the locked secret keys to generate another derived keyset, and then using the hmac key from that keyset to hash the last two pieces hashed for the key at 0x80 (0x00 to 0x08 and 0x54 to 0x80).
+We will assume thatthe app@Skyforce77modded works, and can write bin files on blank tags. We can't test yet if the tags it writes work, but at least the interface does so. It would be great if him can fix his app to work on <5.0 devices. (It crashes when it tries to open the file browser on <5.0 devices)
+nurofen,PecrowandNightwishlike this.
+
+
+
+nurofen said: ¡ü
+I am stuck again, I think I am getting closer, but I want to check my keys file (The locked secret one, not the unfixed infos) can someone help me out here, maybe an md5 checksum or something?
+I posted the md5 checksum of the keyfile in this thread:
+fraret said: ¡ü
+Md5 of my keyfile: 2551afc7c8813008819836e9b619f7ed
+
+
+
+nurofen said:¡ü
+As I say, I am pretty close. I think I understand, but really need a few more clues / help from@Supercool330as he has got this to work.
+Basically I understand using the 'unfixed infos' key and hashing against 0x011:0x034,0x0A0:0x208,0x034:0x054,0x000:0x008 and 0x054:0x080 to produce the Unfixed HASH for the data at 0x80:0xA0
+
+Now what I think we need before we do this is create the 'Locked secret' HASH at 0x034:0x054. This is where I am stuck, I know we use the 'Locked secret' keyset but I can't work out which areas to HASH against , my guess would be the areas that are not updateable, i.e. 0x208:0x21c ,0x000:0x008 and 0x054:0x080.
+
+As the area 0x034:0x054 is not encrypted I should be able to check the generated data against the actual data. However I am not having much luck. It could be that my keyfile is incorrect.
+If anyone can give us some more clues that would be great.
+Using 'locked secret' keyset.
+
+'tag' format:
+Calc hash of (0x000:0x007 + 0x054:0x07F) (52 bytes), put this hash (32 bytes) at 0x034
+
+'internal' format:
+Calc hash of (0x1D4:0x207) (52 bytes), put this hash (32 bytes) at 0x1B4
+
+
+SHA1 please
+
+
+nurofen said:¡ü
+Thanks, I don't suppose you can give the md5 of the locked secret file?
+MD5 0ad86557c7ba9e75c79a7b43bb466333
+SHA1 ad676ac04c6e7861924093654bd67ff4807ebc53
+HiddenRambler,oldsk00l,Melon__Breadand1 other personlike this.
+
+Code:
+0C 0D 0E 0F
+
+b6 a3 c2 05
+74 00 00 10
+f2 cf d2 9b
+96 0f ae d4
+45 05 47 66
+
+
+
+Is your new keyset ok?
+MD5 45fd53569f5765eef9c337bd5172f937
+SHA1 bbdbb49a917d14f7a997d327ba40d40c39e606ce
+
+Is your new keyset ok?
+It is, hashes match. Kind of out of ideas at the moment. What did you write the data with, if you don't mind me asking?
+
+Well, seems like I missed somethimg important!
+Can someone clear what is meant by "new keyset". My "old keyset" is SHA-1: 125083246346D7FB76E198D759CF1167E503A662. What do I need for the "new keyset"?
+
+
+$ md5sum ~/javimadgit_amiitool/amiitool/all_in_one_keys.bin
+45fd53569f5765eef9c337bd5172f937 ~/javimadgit_amiitool/amiitool/all_in_one_keys.bin
+$ sha1sum ~/javimadgit_amiitool/amiitool/all_in_one_keys.bin
+bbdbb49a917d14f7a997d327ba40d40c39e606ce ~/javimadgit_amiitool/amiitool/all_in_one_keys.bin
+
+
+
+To find the key file Google:Use this to Encrypt your custom Amiibo NTag pastebin
+You'll find a .bin file, open in HxD and "split" it in two parts (the first 5 rows and the second 5 rows), then save the first part to "unfixed key.bin" and the second to "locked key.bin". Put the three .bin files (unfixed, key and amiibo) into your Android Phone, boot TagMo2, place a NFC tag under the phone and write the new amiibo
+
+
+sha256hmac(tagKeys.hmacKey, sizeof(tagKeys.hmacKey), plain + 0x1D4, 0x34, *****cipher***** + HMAC_POS_TAG); 
+sha256hmac(dataKeys.hmacKey, sizeof(dataKeys.hmacKey), ******plain***** + 0x029, 0x1DF, cipher + HMAC_POS_DATA);
+the tag checksum is used by the data checksum. however since the plain data is never updated the data checksum still uses the invalid checksum.
+
+if you look at@javiMaD's original code he does it correctly. Also@javiMaDyour latest code is also wrong due to merging the changes from upstream with this bug.
+
+tagmo2.1 work perfectly
+but after flash it isn't possible to format because page 13 to 31 is read only:(
+if you want try with blank tag i hope to made this with a good dump
+if you look lock byte lock0 lock1 lock2-lock4 you can see a value of defaut dump file but if you want format blank tag after a first flash you must write this byte to 00 value(default value of blank tag)
+
+
+
+Hi,
+
+i'm very new to this topic of amiibo spoofing. I've read a lot and got some NTAG215 to work with help of TagMo. Still i'm not sure if it makes sense to get a n2elite. I'm looking for the "safest" method that has the lowest possibility to get detected in future, because i'm afraid of getting my nintendo account flagged for cheating or get suspended or something else. If read of the current problem with allmost all amiibo dumbs beeing 540 bytes and not 572 bytes which could cause trouble in future. So my primary questions are the following:
+
+Is it possible to store an full 572b dump to an ntag215 which has only a size of 540b?
+
+How can a spoof of an unreleased amiibo (like the majoras mask link) can be an additional risk? Is it the bin file itself thats the threat or just the fact that the amiibo isnt released yet?
+
+Is it possible to detect the n2 elite as a non-amiibo because it is not a regular nfc tag like the ntag215?
+
+All in all: which method is safer n2 elite or ntag215?
+
+I love to support nintendo but in case of botw it's just rediculous... dont plan to spend so much money for figures that i didnt want to be in my living room only for ingame-items that i cant get another way. If i want an amiibo for the figure i will buy it anyway like the oncoming cloud amiibo:)
+
+Looking forward to your answers
+
+
+
+
+...Still i'm not sure if it makes sense to get a n2elite. I'm looking for the "safest" method that has the lowest possibility to get detected in future, because i'm afraid of getting my nintendo account flagged for cheating or get suspended or something else. If read of the current problem with allmost all amiibo dumbs beeing 540 bytes and not 572 bytes which could cause trouble in future....
+
+Is it possible to store an full 572b dump to an ntag215 which has only a size of 540b?
+Is it possible to detect the n2 elite as a non-amiibo because it is not a regular nfc tag like the ntag215?
+These two questions are related. The NTAG215 has a signature that authenticates that the card was made by the manufacturer that it claims to be (like NXP.) Those 32 extra bytes are the signature. An NTAG215 (whether it's blank, or an amiibo, or on a shelf) either already has a valid signature, or it's a knockoff. As long as your NTAG215 was legitimately manufactured, you're good. If not, there's nothing you can do about it except to get your tags from a reliable vendor.
+
+n2 wants 572 byte dumps so they canemulatethe same signature that therealsource NTAG215 had. Without it, the signature check would fail -IFNintendo ever decided to check it.
+
+TL;DR 572 vs 540 is a problem for tag emulation, not tag copying.
+How can a spoof of an unreleased amiibo (like the majoras mask link) can be an additional risk? Is it the bin file itself thats the threat or just the fact that the amiibo isnt released yet?
+The risk with unreleased amiibos is that since the amiibo isn't released, any one who is using it (unless Nintendo gave to them for testing) is cheating. In an online game/system, that would be pretty easy to detect. In a completely offline situation, it's not as much of a risk.
+All in all: which method is safer n2 elite or ntag215?
+Don't let people make choices for you. Just learn how things work, and draw your own conclusions. In regard to the signature matter, if I were Nintendo, and the signatures were affected by serials, I'd disable serials that I saw being used excessively. A move like that could cause problems for n2b

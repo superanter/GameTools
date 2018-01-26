@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;                        //FileInfo 2017-07-31
-using AmiiBomb;
 
 namespace AnterStudio.GameTools.AmiiboClass
 {
@@ -221,22 +220,24 @@ namespace AnterStudio.GameTools.AmiiboClass
 
             ShowMessage("");
 
+            string strSerAB = myFileMessage.SerA + myFileMessage.SerB;
+
             ShowMessage("Ser: " + myFileMessage.SerA + "-" + myFileMessage.SerB + "\n");
             ShowMessage("NTAG 215 ID: " + myFileMessage.NTAG_ID + "\n");
             ShowMessage("Size: " + myFileMessage.Lengh + "Bytes\n");
             //ShowMessage("Main Number: " + myFileMessage.MainNumber + "\n");
             ShowMessage("Amiibo Series: " + myFileMessage.AmiiboSeries + "\n");
-            ShowMessage("Game Short Name: " + myFileMessage.GameShortName + "\n");
-            ShowMessage("Type: " + myFileMessage.GameType + "\n");
-            ShowMessage("Name: " + myFileMessage.AmiiboName + "\n");
-            ShowMessage("Number: " + myFileMessage.Number + "\n");
+            ShowMessage("Game Short Name: " + myFileMessage.IdMessage.GameShortName + "\n");
+            ShowMessage("Type: " + myFileMessage.IdMessage.GameType + "\n");
+            ShowMessage("Name: " + myFileMessage.IdMessage.AmiiboName + "\n");
+            ShowMessage("Number: " + myFileMessage.IdMessage.Number + "\n");
             ShowMessage("CRC32: " + myFileMessage.CRC32 + "\n");
-            ShowMessage("01~04: " + myFileMessage.Ser01to04 + ": " + myFileMessage.Ser01to03string + " - " +myFileMessage.Ser01to04string + "\n");
-            ShowMessage("05~06:   " + myFileMessage.Ser05to06 + ": " + myFileMessage.Ser05to06 + "\n");
-            ShowMessage("07~08:   " + myFileMessage.Ser07to08 + ": " + myFileMessage.Ser07to08string + "\n");
-            ShowMessage("09~12: " + myFileMessage.Ser09to12 + ": " + myFileMessage.Ser09to12stringA + " - " + myFileMessage.Ser09to12stringB + "\n");
-            ShowMessage("13~14:   " + myFileMessage.Ser13to14 + ": " + myFileMessage.Ser13to14string + "\n");
-            ShowMessage("15~16:   " + myFileMessage.Ser15to16 + ": " + myFileMessage.Ser15to16string + "\n");
+            ShowMessage("01~04: " + strSerAB.Remove(4) + ": " + myFileMessage.IdMessage.Ser01to03string + " - " +myFileMessage.IdMessage.Ser01to04string + "\n");
+            ShowMessage("05~06:   " + strSerAB.Remove(0, 4).Remove(2) + ": " + myFileMessage.IdMessage.Ser05to06string + "\n");
+            ShowMessage("07~08:   " + strSerAB.Remove(0, 6).Remove(2) + ": " + myFileMessage.IdMessage.Ser07to08string + "\n");
+            ShowMessage("09~12: " + strSerAB.Remove(0, 8).Remove(4) + ": " + myFileMessage.IdMessage.Ser09to12stringA + " - " + myFileMessage.IdMessage.Ser09to12stringB + "\n");
+            ShowMessage("13~14:   " + strSerAB.Remove(0, 12).Remove(2) + ": " + myFileMessage.IdMessage.Ser13to14string + "\n");
+            ShowMessage("15~16:   " + strSerAB.Remove(0, 14) + ": " + myFileMessage.IdMessage.Ser15to16string + "\n");
             ShowMessage("MCAS Name:   " + myFileMessage.McasName + "\n");
         }
 
@@ -371,7 +372,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 
                     if(isTest)          //2017-09-29
                     {
-                        if (myFileMessageTemp.GameShortName != "")
+                        if (myFileMessageTemp.IdMessage.GameShortName != "")
                         {
                             FileInfo fi = new FileInfo(oldStr);
                             fi.MoveTo(newStr);

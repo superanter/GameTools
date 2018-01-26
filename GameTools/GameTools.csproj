@@ -69,7 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SourceCodes\AmiiboClass\NoUse\AESHelper.cs.txt" />
     <Compile Include="SourceCodes\AmiiboClass\AmiiboFileMessage.cs" />
     <Compile Include="SourceCodes\AmiiboClass\FileToCRC32.cs" />
     <Compile Include="SourceCodes\AmiiboClass\frmAmiibo.cs">
@@ -78,11 +77,10 @@
     <Compile Include="SourceCodes\AmiiboClass\frmAmiibo.Designer.cs">
       <DependentUpon>frmAmiibo.cs</DependentUpon>
     </Compile>
-    <Content Include="SourceCodes\AmiiboClass\NoUse\HashEncrypt.cs.txt" />
-    <Content Include="SourceCodes\AmiiboClass\NoUse\keygen.cs.txt" />
-    <Compile Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Amiibo_Class.cs" />
-    <Compile Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\CountryCode_Class.cs" />
-    <Compile Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Editor.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\AmiiboMessage.cs" />
+    <Content Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Amiibo_Class.cs.txt" />
+    <Content Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Editor.cs.txt" />
+    <Compile Include="SourceCodes\AmiiboClass\nfc_Message.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\AesFastEngine.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\BufferedBlockCipher.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\BufferedCipherBase.cs" />
@@ -94,9 +92,8 @@
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\ParametersWithIV.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\Sha256Digest.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\SicBlockCipher.cs" />
-    <Content Include="SourceCodes\AmiiboClass\NoUse\CSRG.cs.txt" />
-    <Compile Include="SourceCodes\AmiiboClass\Lib\TagMo\EditorSSB.cs" />
-    <Compile Include="SourceCodes\AmiiboClass\Lib\TagMo\EditorTP.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\EditorSSB.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\EditorTP.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\AmiiboKeys.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\ArraySegmentExtensions.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\DrbgCtx.cs" />
@@ -105,6 +102,7 @@
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\KeygenMasterkeys.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\NativeHelpers.cs" />
     <Compile Include="SourceCodes\AmiiboClass\Lib\LibAmiibo\NtagHelpers.cs" />
+    <Compile Include="SourceCodes\AmiiboClass\getMcasName.cs" />
     <Compile Include="SourceCodes\DsRomClass\frmDsRom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,14 +234,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SourceCodes\app.config" />
-    <None Include="SourceCodes\LangugePackINI\LangugePack_CHS.ini" />
-    <None Include="SourceCodes\LangugePackINI\LangugePack_CHT.ini" />
-    <None Include="SourceCodes\LangugePackINI\LangugePack_ENG.ini" />
+    <None Include="Resources\LangugePackINI\LangugePack_CHS.ini" />
+    <None Include="Resources\LangugePackINI\LangugePack_CHT.ini" />
+    <None Include="Resources\LangugePackINI\LangugePack_ENG.ini" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documents\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
