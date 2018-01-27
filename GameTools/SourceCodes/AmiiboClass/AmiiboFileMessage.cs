@@ -41,10 +41,6 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// </summary>
         public string NTAG_ID { get; }
         /// <summary>
-        /// 标识字符串AmiiboSeries
-        /// </summary>
-        public string AmiiboSeries { get; }
-        /// <summary>
         /// 文件标准文件名
         /// </summary>
         public string NewName { get; }
@@ -85,6 +81,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         public Message_TP msgTP;
         public Message_SSB msgSSB;
         public AmiiboMessage IdMessage;
+        public string[] myMessage;
 
         #endregion
 
@@ -125,8 +122,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                     this.AmiiboDataDecrypted = Decrypted;
                     this.msgNFC = new Message_NFC(AmiiboDataDecrypted);
 
-                    msgTP = new Message_TP(AmiiboDataDecrypted);
-                    msgSSB = new Message_SSB(AmiiboDataDecrypted);
+                    msgTP = new Message_TP(AmiiboDataDecrypted, msgNFC);
+                    msgSSB = new Message_SSB(AmiiboDataDecrypted, msgNFC);
                 }
                 catch
                 {
@@ -149,25 +146,22 @@ namespace AnterStudio.GameTools.AmiiboClass
 
             getMcasName myMcasName = new getMcasName(this.CRC32);
             this.mcasName = myMcasName.Mcas_Name;
-
-            string strSsbLevel = "-";
-            try
-            {
-                strSsbLevel = msgSSB.LEVEL.ToString();
-            }
-            catch
-            { }
-
+            
             this.NewName = this.isBegin04 ? "" : "[E]";
             this.NewName += "[" + this.IdMessage.GameShortName + "]";
             this.NewName += " " + this.IdMessage.Number + "-" + this.IdMessage.AmiiboName + " ";
             this.NewName += "[" + this.CRC32_Decrypted + "-" + this.NTAG_ID + "-" + this.Length.ToString("000") + "-" + this.CRC32 + "]";
-            this.NewName += "[" + strSsbLevel + "]";
+            if(msgSSB.canEdit)
+            {
+                this.NewName += "(" + this.msgSSB.LEVEL + ")";
+            }
             this.NewName += ".bin";
 
             this.NetPath = "http://amiibo.life/nfc/" + this.SerA + "-" + this.SerB;
             this.PicturePath = "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_" + this.SerA.ToLower() + "-" + this.SerB.ToLower() + ".png";
             //"image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png",
+
+            myMessage = this.GetMessage();
         }
         #endregion
 
@@ -212,6 +206,30 @@ namespace AnterStudio.GameTools.AmiiboClass
                 }
             }
             return StrReturn;
+        }
+
+        public string[] GetMessage()
+        {
+            string[] tempMessage = new string[16];
+
+            tempMessage[0] = "Ser: " + this.SerA + "-" + this.SerB + "\n";
+            tempMessage[1] = "NTAG 215 ID: " + this.NTAG_ID + "\n";
+            tempMessage[2] = "Size: " + this.Length + "Bytes\n";
+            //tempMessage[0] = "Main Number: " + myFileMessage.MainNumber + "\n";
+            tempMessage[3] = "Amiibo Series: " + this.IdMessage.AmiiboSeries + "\n";
+            tempMessage[4] = "Game Short Name: " + this.IdMessage.GameShortName + "\n";
+            tempMessage[5] = "Type: " + this.IdMessage.GameType + "\n";
+            tempMessage[6] = "Name: " + this.IdMessage.AmiiboName + "\n";
+            tempMessage[7] = "Number: " + this.IdMessage.Number + "\n";
+            tempMessage[8] = "CRC32: " + this.CRC32 + "\n";
+            tempMessage[9] = "01~04: " + this.SerA.Remove(4) + ": " + this.IdMessage.Ser01to03string + " - " + this.IdMessage.Ser01to04string + "\n";
+            tempMessage[10] = "05~06:   " + this.SerA.Remove(0, 4).Remove(2) + ": " + this.IdMessage.Ser05to06string + "\n";
+            tempMessage[11] = "07~08:   " + this.SerA.Remove(0, 6) + ": " + this.IdMessage.Ser07to08string + "\n";
+            tempMessage[12] = "09~12: " + this.SerB.Remove(4) + ": " + this.IdMessage.Ser09to12stringA + " - " + this.IdMessage.Ser09to12stringB + "\n";
+            tempMessage[13] = "13~14:   " + this.SerB.Remove(0, 4).Remove(2) + ": " + this.IdMessage.Ser13to14string + "\n";
+            tempMessage[14] = "15~16:   " + this.SerB.Remove(0, 6) + ": " + this.IdMessage.Ser15to16string + "\n";
+            tempMessage[15] = "MCAS Name:   " + this.mcasName + "\n";
+            return tempMessage;
         }
 
         #endregion

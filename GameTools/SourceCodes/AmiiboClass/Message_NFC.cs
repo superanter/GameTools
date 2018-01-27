@@ -19,6 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         public string Amiibo_Country { get; }
         public int Amiibo_Initialize_UserData { get; }
         public string Amiibo_LastModifiedDate { get; }
+        public string[] myMessage;
 
         #region 构造函数
         public Message_NFC()
@@ -40,6 +41,8 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.Amiibo_Country = this.Get_Amiibo_Country(AmiiboDataNew);
             this.Amiibo_Initialize_UserData = this.Get_Amiibo_Initialize_UserData(AmiiboDataNew);
             this.Amiibo_LastModifiedDate = this.Get_Amiibo_LastModifiedDate(AmiiboDataNew);
+
+            myMessage = GetMessage();
 
         }
         #endregion
@@ -137,7 +140,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             }
             catch { }
 
-            return myDT.ToShortDateString();
+            return myDT.ToString("yyyy-MM-dd");
         }
 
         private string Get_Country_Name(int ID)
@@ -291,5 +294,25 @@ namespace AnterStudio.GameTools.AmiiboClass
             { 177,   "Jordan" }
         };
         #endregion
+
+        public string[] GetMessage()
+        {
+            string[] tempMessage = new string[14];
+            tempMessage[0] = "NFC_ID: " + this.NFC_ID.ToString() + "\n";
+            tempMessage[1] = "Character_ID: " + this.Character_ID.ToString() + "\n";
+            tempMessage[2] = "GameSeries_ID: " + this.GameSeries_ID.ToString() + "\n";
+            tempMessage[3] = "\n";
+            tempMessage[4] = "Amiibo_Nickname: " + this.Amiibo_Nickname.ToString() + "\n";
+            tempMessage[5] = "\n";
+            tempMessage[6] = "Amiibo_Mii_Nickname: " + this.Amiibo_Mii_Nickname.ToString() + "\n";
+            tempMessage[7] = "\n";
+            tempMessage[8] = "Amiibo_Write_Counter: " + this.Amiibo_Write_Counter.ToString() + "\n";
+            tempMessage[9] = "Amiibo_AppID: " + this.Amiibo_AppID.ToString() + "\n";
+            tempMessage[10] = "Amiibo_Initialized_AppID: " + this.Amiibo_Initialized_AppID.ToString() + "\n";
+            tempMessage[11] = "Amiibo_Country: " + this.Amiibo_Country.ToString() + "\n";
+            tempMessage[12] = "Amiibo_Initialize_UserData: " + this.Amiibo_Initialize_UserData.ToString() + "\n";
+            tempMessage[13] = "Amiibo_LastModifiedDate: " + this.Amiibo_LastModifiedDate.ToString() + "\n";
+            return tempMessage;
+        }
     }
 }

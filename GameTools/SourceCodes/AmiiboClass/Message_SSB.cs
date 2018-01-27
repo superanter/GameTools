@@ -50,60 +50,93 @@ namespace AnterStudio.GameTools.AmiiboClass
 
         public int LEVEL = new int();
 
+        public string[] myMessage;
+        public bool canEdit;
+
         public Message_SSB()
         {
             throw new System.NotImplementedException();
         }
 
-        public Message_SSB(byte[] data)
+        public Message_SSB(byte[] data, Message_NFC msgNFC)
         {
 
-            LEVEL_THRESHOLDS = new int[]{ 0x00, 0x08, 0x010, 0x01D, 0x02D, 0x048,
-            0x05B, 0x075, 0x08D, 0x0AF, 0x0E1, 0x0103, 0x0126, 0x0149, 0x0172, 0x0196, 0x01BE, 0x01F7,
-            0x0216, 0x0240, 0x0278, 0x02A4, 0x02D6, 0x030E, 0x034C, 0x037C, 0x03BB, 0x03F4, 0x042A, 0x0440,
-            0x048A, 0x04B6,0x04E3, 0x053F, 0x056D, 0x059C, 0x0606, 0x0641, 0x0670, 0x069E, 0x06FC, 0x072E,
-            0x075D, 0x07B9, 0x07E7, 0x0844, 0x0875, 0x08D3, 0x0902, 0x093E};
-
-            SetXA();
-
-        APP_DATA = (int)data[OFFSET_APP_DATA];
-
-            APPEARANCE = (int)data[OFFSET_APPEARANCE]+1;
-
-            SPECIAL_NEUTRAL = (int)data[OFFSET_SPECIAL_NEUTRAL] + 1;
-            SPECIAL_SIDE_TO_SIDE = (int)data[OFFSET_SPECIAL_SIDE_TO_SIDE] + 1;
-            SPECIAL_UP = (int)data[OFFSET_SPECIAL_UP] + 1;
-            SPECIAL_DOWN = (int)data[OFFSET_SPECIAL_DOWN] + 1;
-
-            STATS_ATTACK = readStat(data, OFFSET_STATS_ATTACK);
-            STATS_DEFENSE = readStat(data, OFFSET_STATS_DEFENSE);
-            STATS_SPEED = readStat(data, OFFSET_STATS_SPEED);
-            try
+            //if (msgNFC.NFC_ID.Remove(6).Remove(0, 4) == "00" && msgNFC.Amiibo_AppID == "10110E00")
+            if (msgNFC.Amiibo_AppID == "10110E00")
             {
-                BONUS_EFFECT1 = XA[(int)data[OFFSET_BONUS_EFFECT1]];
+                canEdit = true;
+
+                LEVEL_THRESHOLDS = new int[]{ 0x00, 0x08, 0x010, 0x01D, 0x02D, 0x048,
+                    0x05B, 0x075, 0x08D, 0x0AF, 0x0E1, 0x0103, 0x0126, 0x0149, 0x0172, 0x0196, 0x01BE, 0x01F7,
+                    0x0216, 0x0240, 0x0278, 0x02A4, 0x02D6, 0x030E, 0x034C, 0x037C, 0x03BB, 0x03F4, 0x042A, 0x0440,
+                    0x048A, 0x04B6,0x04E3, 0x053F, 0x056D, 0x059C, 0x0606, 0x0641, 0x0670, 0x069E, 0x06FC, 0x072E,
+                    0x075D, 0x07B9, 0x07E7, 0x0844, 0x0875, 0x08D3, 0x0902, 0x093E};
+
+                SetXA();
+
+                APP_DATA = (int)data[OFFSET_APP_DATA];
+
+                APPEARANCE = (int)data[OFFSET_APPEARANCE] + 1;
+
+                SPECIAL_NEUTRAL = (int)data[OFFSET_SPECIAL_NEUTRAL] + 1;
+                SPECIAL_SIDE_TO_SIDE = (int)data[OFFSET_SPECIAL_SIDE_TO_SIDE] + 1;
+                SPECIAL_UP = (int)data[OFFSET_SPECIAL_UP] + 1;
+                SPECIAL_DOWN = (int)data[OFFSET_SPECIAL_DOWN] + 1;
+
+                STATS_ATTACK = readStat(data, OFFSET_STATS_ATTACK);
+                STATS_DEFENSE = readStat(data, OFFSET_STATS_DEFENSE);
+                STATS_SPEED = readStat(data, OFFSET_STATS_SPEED);
+                try
+                {
+                    BONUS_EFFECT1 = XA[(int)data[OFFSET_BONUS_EFFECT1]];
+                }
+                catch
+                {
+                    BONUS_EFFECT1 = "No Effect";
+                }
+                try
+                {
+                    BONUS_EFFECT2 = XA[(int)data[OFFSET_BONUS_EFFECT2]];
+                }
+                catch
+                {
+                    BONUS_EFFECT2 = "No Effect";
+                }
+                try
+                {
+                    BONUS_EFFECT3 = XA[(int)data[OFFSET_BONUS_EFFECT3]];
+                }
+                catch
+                {
+                    BONUS_EFFECT3 = "No Effect";
+                }
+
+
+                LEVEL = readLevel(data);
+
+                myMessage = GetMessage();
             }
-            catch
+            else
             {
-                BONUS_EFFECT1 = "No Effect";
-            }
-            try
-            {
-                BONUS_EFFECT2 = XA[(int)data[OFFSET_BONUS_EFFECT2]];
-            }
-            catch
-            {
-                BONUS_EFFECT2 = "No Effect";
-            }
-            try
-            {
-                BONUS_EFFECT3 = XA[(int)data[OFFSET_BONUS_EFFECT3]];
-            }
-            catch
-            {
-                BONUS_EFFECT3 = "No Effect";
+                canEdit = false;
+
+                APP_DATA = 0;
+                APPEARANCE = 0;
+                SPECIAL_NEUTRAL = 0;
+                SPECIAL_SIDE_TO_SIDE = 0;
+                SPECIAL_UP = 0;
+                SPECIAL_DOWN = 0;
+                STATS_ATTACK = 0;
+                STATS_DEFENSE = 0;
+                STATS_SPEED = 0;
+                BONUS_EFFECT1 = "";
+                BONUS_EFFECT2 = "";
+                BONUS_EFFECT3 = "";
+                LEVEL = 0;
+
+                myMessage = new string[0];
             }
 
-            LEVEL = readLevel(data);
         }
 
         private int readLevel(byte[] data)
@@ -232,6 +265,25 @@ namespace AnterStudio.GameTools.AmiiboClass
             XA[92] = "No respawn invincibilit";
 
 
+        }
+
+        public string[] GetMessage()
+        {
+            string[] tempMessage = new string[13];
+            tempMessage[0] = "APP_DATA: " + this.APP_DATA + "\n";
+            tempMessage[1] = "APPEARANCE: " + this.APPEARANCE + "\n";
+            tempMessage[2] = "LEVEL: " + this.LEVEL + "\n";
+            tempMessage[3] = "SPECIAL_NEUTRAL: " + this.SPECIAL_NEUTRAL + "\n";
+            tempMessage[4] = "SPECIAL_SIDE_TO_SIDE: " + this.SPECIAL_SIDE_TO_SIDE + "\n";
+            tempMessage[5] = "SPECIAL_UP: " + this.SPECIAL_UP + "\n";
+            tempMessage[6] = "SPECIAL_DOWN: " + this.SPECIAL_DOWN + "\n";
+            tempMessage[7] = "STATS_ATTACK: " + this.STATS_ATTACK + "\n";
+            tempMessage[8] = "STATS_DEFENSE: " + this.STATS_DEFENSE + "\n";
+            tempMessage[9] = "STATS_SPEED: " + this.STATS_SPEED + "\n";
+            tempMessage[10] = "BONUS_EFFECT1: " + this.BONUS_EFFECT1 + "\n";
+            tempMessage[11] = "BONUS_EFFECT2: " + this.BONUS_EFFECT2 + "\n";
+            tempMessage[12] = "BONUS_EFFECT3: " + this.BONUS_EFFECT3 + "\n";
+            return tempMessage;
         }
 
     }

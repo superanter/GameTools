@@ -176,31 +176,31 @@
             this.ricOut.Location = new System.Drawing.Point(595, 12);
             this.ricOut.Name = "ricOut";
             this.ricOut.ReadOnly = true;
-            this.ricOut.Size = new System.Drawing.Size(340, 546);
+            this.ricOut.Size = new System.Drawing.Size(340, 515);
             this.ricOut.TabIndex = 17;
             this.ricOut.Text = "";
             // 
             // lblSsbTp
             // 
             this.lblSsbTp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSsbTp.Location = new System.Drawing.Point(12, 331);
+            this.lblSsbTp.Location = new System.Drawing.Point(315, 331);
             this.lblSsbTp.Name = "lblSsbTp";
-            this.lblSsbTp.Size = new System.Drawing.Size(274, 230);
+            this.lblSsbTp.Size = new System.Drawing.Size(274, 196);
             this.lblSsbTp.TabIndex = 18;
             // 
             // lblMessage2
             // 
             this.lblMessage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMessage2.Location = new System.Drawing.Point(292, 331);
+            this.lblMessage2.Location = new System.Drawing.Point(12, 331);
             this.lblMessage2.Name = "lblMessage2";
-            this.lblMessage2.Size = new System.Drawing.Size(297, 230);
+            this.lblMessage2.Size = new System.Drawing.Size(297, 196);
             this.lblMessage2.TabIndex = 19;
             // 
             // frmAmiibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 570);
+            this.ClientSize = new System.Drawing.Size(947, 536);
             this.Controls.Add(this.lblMessage2);
             this.Controls.Add(this.lblSsbTp);
             this.Controls.Add(this.ricOut);
