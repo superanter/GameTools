@@ -141,7 +141,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.CRC32 = crc32.ComputeCRC32(this.AmiiboData,0, (int)this.Length);
             if(this.Length >= 532)                                                   //2017-09-29
             {
-                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x2c, 0x188);      //2018-01-26 0x2c~0x1b3 392
+                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);      //2018-01-27 0x28~0x1b3 396
             }
 
             getMcasName myMcasName = new getMcasName(this.CRC32);
