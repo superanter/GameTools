@@ -40,7 +40,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// </summary>
         /// <param name="buffer">要计算其CRC32代码的输入。</param>
         /// <returns>计算所得的CRC32代码。</returns>
-        public String ComputeCRC32(byte[] buffer)
+        public String ComputeCRC32_old(byte[] buffer)
         {
             //判断数组是否为空
             const string FOO = "-";
@@ -100,6 +100,15 @@ namespace AnterStudio.GameTools.AmiiboClass
             return String.Format("{0:X8}", crc);
         }
 
+        /// <summary>
+        /// 计算指定字节数组的CRC32值。
+        /// </summary>
+        /// <param name="buffer">要计算其CRC32代码的输入。</param>
+        /// <returns>计算所得的CRC32代码。</returns>
+        public String ComputeCRC32(byte[] buffer)
+        {
+            return ComputeCRC32(buffer, 0, buffer.Length);
+        }
 
 
 
