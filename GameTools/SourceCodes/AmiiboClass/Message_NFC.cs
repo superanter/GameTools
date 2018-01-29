@@ -130,7 +130,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             Array.Copy(internalTag, 0x02C + 0x006, Amiibo_Date_Buffer, 0x000, Amiibo_Date_Buffer.Length);
             Array.Reverse(Amiibo_Date_Buffer);
             int value = BitConverter.ToUInt16(Amiibo_Date_Buffer, 0);
-            DateTime myDT = new DateTime(1900, 1, 1);
+            DateTime myDT;
             try
             {
                 var day = value & 0x1F;
@@ -138,7 +138,10 @@ namespace AnterStudio.GameTools.AmiiboClass
                 var year = (value >> 9) & 0x7F;
                 myDT = new DateTime(2000 + year, month, day);
             }
-            catch { }
+            catch
+            {
+                myDT = new DateTime(2000, 1, 1);
+            }
 
             return myDT.ToString("yyyy-MM-dd");
         }
