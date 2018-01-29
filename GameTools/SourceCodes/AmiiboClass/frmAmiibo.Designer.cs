@@ -180,7 +180,7 @@
             this.ricOut.Location = new System.Drawing.Point(595, 12);
             this.ricOut.Name = "ricOut";
             this.ricOut.ReadOnly = true;
-            this.ricOut.Size = new System.Drawing.Size(340, 515);
+            this.ricOut.Size = new System.Drawing.Size(340, 475);
             this.ricOut.TabIndex = 17;
             this.ricOut.Text = "";
             // 
@@ -189,7 +189,7 @@
             this.lblSsbTp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSsbTp.Location = new System.Drawing.Point(315, 331);
             this.lblSsbTp.Name = "lblSsbTp";
-            this.lblSsbTp.Size = new System.Drawing.Size(274, 156);
+            this.lblSsbTp.Size = new System.Drawing.Size(274, 196);
             this.lblSsbTp.TabIndex = 18;
             // 
             // lblMessage2
@@ -202,7 +202,7 @@
             // 
             // lblNewUID
             // 
-            this.lblNewUID.Location = new System.Drawing.Point(315, 504);
+            this.lblNewUID.Location = new System.Drawing.Point(613, 507);
             this.lblNewUID.Name = "lblNewUID";
             this.lblNewUID.Size = new System.Drawing.Size(49, 23);
             this.lblNewUID.TabIndex = 20;
@@ -212,7 +212,7 @@
             // txtNewUID
             // 
             this.txtNewUID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNewUID.Location = new System.Drawing.Point(365, 503);
+            this.txtNewUID.Location = new System.Drawing.Point(682, 507);
             this.txtNewUID.Name = "txtNewUID";
             this.txtNewUID.Size = new System.Drawing.Size(107, 21);
             this.txtNewUID.TabIndex = 21;
@@ -220,7 +220,7 @@
             // 
             // btnRePack
             // 
-            this.btnRePack.Location = new System.Drawing.Point(492, 501);
+            this.btnRePack.Location = new System.Drawing.Point(811, 507);
             this.btnRePack.Name = "btnRePack";
             this.btnRePack.Size = new System.Drawing.Size(78, 23);
             this.btnRePack.TabIndex = 22;
