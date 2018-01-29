@@ -83,7 +83,6 @@ namespace AnterStudio.GameTools.AmiiboClass
         public AmiiboMessage IdMessage;
         public string[] myMessage;
         public byte[] Decrypted;
-        //public byte[] Encrypted;
         public AmiiboKeys AmiiKeys;
 
         #endregion
@@ -104,10 +103,10 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.DirectoryName = fi.DirectoryName;
             this.Length = fi.Length;
 
+            AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
             this.AmiiboData = GetFileData(this.FullName);
 
-            Start();
-            //RePack();
+            UnPack();
 
             myMessage = this.GetMessage();
         }
@@ -156,7 +155,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             return StrReturn;
         }
 
-        private void Start()
+        private void UnPack()
         {
             if (this.Length >= 532)                                          //2018-01-24
             {
@@ -172,7 +171,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 try
                 {
                     //AmiiKeys = AmiiboKeys.LoadKeys("KeyTemp.bin");
-                    AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
+                    //AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
                     AmiiKeys.Unpack(this.AmiiboData, Decrypted);
                     this.AmiiboDataDecrypted = Decrypted;
                     this.msgNFC = new Message_NFC(AmiiboDataDecrypted);

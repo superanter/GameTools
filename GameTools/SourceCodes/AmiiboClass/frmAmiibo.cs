@@ -538,6 +538,17 @@ namespace AnterStudio.GameTools.AmiiboClass
             w.Write(temp);
             sro.Close();
         }
+
+        private void btnUnPack_Click(object sender, EventArgs e)
+        {
+            if (txtFileName.Text != "")
+            {
+                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[Decrypted].bin", FileMode.Create);
+                BinaryWriter w = new BinaryWriter(sro);
+                w.Write(myFileMessage.AmiiboDataDecrypted);
+                sro.Close();
+            }
+        }
     }
 }
 /*

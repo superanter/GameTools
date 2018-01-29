@@ -47,6 +47,7 @@
             this.lblNewUID = new System.Windows.Forms.Label();
             this.txtNewUID = new System.Windows.Forms.TextBox();
             this.btnRePack = new System.Windows.Forms.Button();
+            this.btnUnPack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFileName
@@ -134,7 +135,7 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(492, 182);
+            this.btnList.Location = new System.Drawing.Point(492, 126);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 9;
@@ -144,7 +145,7 @@
             // 
             // btnRenameAll
             // 
-            this.btnRenameAll.Location = new System.Drawing.Point(492, 211);
+            this.btnRenameAll.Location = new System.Drawing.Point(492, 155);
             this.btnRenameAll.Name = "btnRenameAll";
             this.btnRenameAll.Size = new System.Drawing.Size(75, 23);
             this.btnRenameAll.TabIndex = 10;
@@ -154,7 +155,7 @@
             // 
             // btnMcasName
             // 
-            this.btnMcasName.Location = new System.Drawing.Point(492, 240);
+            this.btnMcasName.Location = new System.Drawing.Point(492, 184);
             this.btnMcasName.Name = "btnMcasName";
             this.btnMcasName.Size = new System.Drawing.Size(75, 23);
             this.btnMcasName.TabIndex = 11;
@@ -164,7 +165,7 @@
             // 
             // btnPicture
             // 
-            this.btnPicture.Location = new System.Drawing.Point(492, 124);
+            this.btnPicture.Location = new System.Drawing.Point(492, 97);
             this.btnPicture.Name = "btnPicture";
             this.btnPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPicture.TabIndex = 15;
@@ -227,11 +228,22 @@
             this.btnRePack.UseVisualStyleBackColor = true;
             this.btnRePack.Click += new System.EventHandler(this.btnRePack_Click);
             // 
+            // btnUnPack
+            // 
+            this.btnUnPack.Location = new System.Drawing.Point(492, 233);
+            this.btnUnPack.Name = "btnUnPack";
+            this.btnUnPack.Size = new System.Drawing.Size(75, 23);
+            this.btnUnPack.TabIndex = 23;
+            this.btnUnPack.Text = "UnPack";
+            this.btnUnPack.UseVisualStyleBackColor = true;
+            this.btnUnPack.Click += new System.EventHandler(this.btnUnPack_Click);
+            // 
             // frmAmiibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 536);
+            this.Controls.Add(this.btnUnPack);
             this.Controls.Add(this.btnRePack);
             this.Controls.Add(this.txtNewUID);
             this.Controls.Add(this.lblNewUID);
@@ -280,5 +292,6 @@
         private System.Windows.Forms.Label lblNewUID;
         private System.Windows.Forms.TextBox txtNewUID;
         private System.Windows.Forms.Button btnRePack;
+        private System.Windows.Forms.Button btnUnPack;
     }
 }
