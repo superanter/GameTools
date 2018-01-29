@@ -15,73 +15,76 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// <summary>
         /// 文件完整文件名
         /// </summary>
-        public string FullName { get; }
+        public string FullName { set; get; }
         /// <summary>
         /// 文件文件名
         /// </summary>
-        public string Name { get; }
+        public string Name { set; get; }
         /// <summary>
         /// 文件路径
         /// </summary>
-        public string DirectoryName { get; }
+        public string DirectoryName { set; get; }
         /// <summary>
         /// 文件体积
         /// </summary>
-        public long Length { get; }
+        public long Length { set; get; }
         /// <summary>
         /// 标识字符串1-8
         /// </summary>
-        public string SerA { get; }
+        public string SerA { set; get; }
         /// <summary>
         /// 标识字符串9-16
         /// </summary>
-        public string SerB { get; }
+        public string SerB { set; get; }
         /// <summary>
         /// NTAG215卡ID
         /// </summary>
-        public string NTAG_ID { get; }
+        public string NTAG_ID { set; get; }
         /// <summary>
         /// 文件标准文件名
         /// </summary>
-        public string NewName { get; }
+        public string NewName { set; get; }
         /// <summary>
         /// 图片路径
         /// </summary>
-        public string PicturePath { get; }
+        public string PicturePath { set; get; }
         /// <summary>
         /// 网络路径
         /// </summary>
-        public string NetPath { get; }
+        public string NetPath { set; get; }
         /// <summary>
         /// CRC32
         /// </summary>
-        public string CRC32 { get; }
+        public string CRC32 { set; get; }
         /// <summary>
         /// 文件MCAS标准文件名
         /// </summary>
-        public string mcasName { get; }
+        public string mcasName { set; get; }
         /// <summary>
         /// 是否为04开头
         /// </summary>
-        public bool isBegin04 { get; }
+        public bool isBegin04 { set; get; }
         /// <summary>
         /// 解密后的CRC32_Decrypted
         /// </summary>
-        public string CRC32_Decrypted { get; }
+        public string CRC32_Decrypted { set; get; }
         /// <summary>
         /// Amiibo完整数据
         /// </summary>
-        public byte[] AmiiboData { get; }
+        public byte[] AmiiboData { set; get; }
         /// <summary>
         /// Amiibo完整数据(解密后)
         /// </summary>
-        public byte[] AmiiboDataDecrypted { get; }
+        public byte[] AmiiboDataDecrypted { set; get; }
 
         public Message_NFC msgNFC;
         public Message_TP msgTP;
         public Message_SSB msgSSB;
         public AmiiboMessage IdMessage;
         public string[] myMessage;
+        public byte[] Decrypted;
+        //public byte[] Encrypted;
+        public AmiiboKeys AmiiKeys;
 
         #endregion
 
@@ -93,6 +96,8 @@ namespace AnterStudio.GameTools.AmiiboClass
 
         public AmiiboFileMessage(string AmiiboFileFullName)
         {
+            Decrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
+
             this.FullName = AmiiboFileFullName;
             FileInfo fi = new FileInfo(this.FullName);
             this.Name = fi.Name;
@@ -101,65 +106,8 @@ namespace AnterStudio.GameTools.AmiiboClass
 
             this.AmiiboData = GetFileData(this.FullName);
 
-            if (this.Length >= 532)                                          //2018-01-24
-            {
-                //解密
-                AmiiboKeys AmiiKeys;
-                if (AmiiboData.Length < NtagHelpers.NFC3D_AMIIBO_SIZE)
-                {
-                    byte[] AmiiboDataTemp = this.AmiiboData;
-                    Array.Resize(ref AmiiboDataTemp, NtagHelpers.NFC3D_AMIIBO_SIZE);
-                    this.AmiiboData = AmiiboDataTemp;
-                }
-                byte[] Decrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
-                //byte[] Encrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
-
-                try
-                {
-                    //AmiiKeys = AmiiboKeys.LoadKeys("KeyTemp.bin");
-                    AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
-                    AmiiKeys.Unpack(this.AmiiboData, Decrypted);
-                    this.AmiiboDataDecrypted = Decrypted;
-                    this.msgNFC = new Message_NFC(AmiiboDataDecrypted);
-
-                    msgTP = new Message_TP(AmiiboDataDecrypted, msgNFC);
-                    msgSSB = new Message_SSB(AmiiboDataDecrypted, msgNFC);
-                }
-                catch
-                {
-                }
-            }
-            this.NTAG_ID = GetFileString(0x00, 3) + GetFileString(0x04, 4);
-            this.SerA = GetFileString(0x54, 4);
-            this.SerB = GetFileString(0x58, 4);
-
-            this.isBegin04 = (GetFileString(0x00, 1) == "04") ? true : false;
-
-            IdMessage = new AmiiboMessage(this.SerA + this.SerB);            //2018-01-25
-
-            FileToCRC32 crc32 = new FileToCRC32();
-            this.CRC32 = crc32.ComputeCRC32(this.AmiiboData,0, (int)this.Length);
-            if(this.Length >= 532)                                                   //2017-09-29
-            {
-                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);      //2018-01-27 0x28~0x1b3 396
-            }
-
-            getMcasName myMcasName = new getMcasName(this.CRC32);
-            this.mcasName = myMcasName.Mcas_Name;
-            
-            this.NewName = this.isBegin04 ? "" : "[E]";
-            this.NewName += "[" + this.IdMessage.GameShortName + "]";
-            this.NewName += " " + this.IdMessage.Number + "-" + this.IdMessage.AmiiboName + " ";
-            this.NewName += "[" + this.CRC32_Decrypted + "-" + this.NTAG_ID + "-" + this.Length.ToString("000") + "-" + this.CRC32 + "]";
-            if(msgSSB.canEdit)
-            {
-                this.NewName += "(" + this.msgSSB.LEVEL + ")";
-            }
-            this.NewName += ".bin";
-
-            this.NetPath = "http://amiibo.life/nfc/" + this.SerA + "-" + this.SerB;
-            this.PicturePath = "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_" + this.SerA.ToLower() + "-" + this.SerB.ToLower() + ".png";
-            //"image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png",
+            Start();
+            //RePack();
 
             myMessage = this.GetMessage();
         }
@@ -208,6 +156,68 @@ namespace AnterStudio.GameTools.AmiiboClass
             return StrReturn;
         }
 
+        private void Start()
+        {
+            if (this.Length >= 532)                                          //2018-01-24
+            {
+                //解密
+
+                if (AmiiboData.Length < NtagHelpers.NFC3D_AMIIBO_SIZE)
+                {
+                    byte[] AmiiboDataTemp = this.AmiiboData;
+                    Array.Resize(ref AmiiboDataTemp, NtagHelpers.NFC3D_AMIIBO_SIZE);
+                    this.AmiiboData = AmiiboDataTemp;
+                }
+
+                try
+                {
+                    //AmiiKeys = AmiiboKeys.LoadKeys("KeyTemp.bin");
+                    AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
+                    AmiiKeys.Unpack(this.AmiiboData, Decrypted);
+                    this.AmiiboDataDecrypted = Decrypted;
+                    this.msgNFC = new Message_NFC(AmiiboDataDecrypted);
+
+                    msgTP = new Message_TP(AmiiboDataDecrypted, msgNFC);
+                    msgSSB = new Message_SSB(AmiiboDataDecrypted, msgNFC);
+                }
+                catch
+                {
+                }
+            }
+            this.NTAG_ID = GetFileString(0x00, 3) + GetFileString(0x04, 4);
+            this.SerA = GetFileString(0x54, 4);
+            this.SerB = GetFileString(0x58, 4);
+
+            this.isBegin04 = (GetFileString(0x00, 1) == "04") ? true : false;
+
+            IdMessage = new AmiiboMessage(this.SerA + this.SerB);            //2018-01-25
+
+            FileToCRC32 crc32 = new FileToCRC32();
+            this.CRC32 = crc32.ComputeCRC32(this.AmiiboData, 0, (int)this.Length);
+            if (this.Length >= 532)                                                   //2017-09-29
+            {
+                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);      //2018-01-27 0x28~0x1b3 396
+            }
+
+            getMcasName myMcasName = new getMcasName(this.CRC32);
+            this.mcasName = myMcasName.Mcas_Name;
+
+            this.NewName = this.isBegin04 ? "" : "[E]";
+            this.NewName += "[" + this.IdMessage.GameShortName + "]";
+            this.NewName += " " + this.IdMessage.Number + "-" + this.IdMessage.AmiiboName + " ";
+            this.NewName += "[" + this.CRC32_Decrypted + "-" + this.NTAG_ID + "-" + this.Length.ToString("000") + "-" + this.CRC32 + "]";
+            if (msgSSB.canEdit)
+            {
+                this.NewName += "(" + this.msgSSB.LEVEL + ")";
+            }
+            this.NewName += ".bin";
+
+            this.NetPath = "http://amiibo.life/nfc/" + this.SerA + "-" + this.SerB;
+            this.PicturePath = "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_" + this.SerA.ToLower() + "-" + this.SerB.ToLower() + ".png";
+            //"image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png",
+
+        }
+
         public string[] GetMessage()
         {
             string[] tempMessage = new string[16];
@@ -230,6 +240,26 @@ namespace AnterStudio.GameTools.AmiiboClass
             tempMessage[14] = "15~16:   " + this.SerB.Remove(0, 6) + ": " + this.IdMessage.Ser15to16string + "\n";
             tempMessage[15] = "MCAS Name:   " + this.mcasName + "\n";
             return tempMessage;
+        }
+
+        public byte[] RePack(string getUID)
+        {
+            byte[] tempDecrypted = Decrypted;
+            byte[] Encrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
+
+            tempDecrypted[0x1d4] = (byte)Convert.ToInt32(getUID.Substring(0, 2), 16);
+            tempDecrypted[0x1d5] = (byte)Convert.ToInt32(getUID.Substring(2, 2), 16);
+            tempDecrypted[0x1d6] = (byte)Convert.ToInt32(getUID.Substring(4, 2), 16);
+            tempDecrypted[0x1d7] = (byte)(0x88 ^ tempDecrypted[0x1d4] ^ tempDecrypted[0x1d5] ^ tempDecrypted[0x1d6]);
+            tempDecrypted[0x1d8] = (byte)Convert.ToInt32(getUID.Substring(6, 2), 16);
+            tempDecrypted[0x1d9] = (byte)Convert.ToInt32(getUID.Substring(8, 2), 16);
+            tempDecrypted[0x1da] = (byte)Convert.ToInt32(getUID.Substring(10, 2), 16);
+            tempDecrypted[0x1db] = (byte)Convert.ToInt32(getUID.Substring(12, 2), 16);
+            tempDecrypted[0x000] = (byte)(tempDecrypted[0x1d8] ^ tempDecrypted[0x1d9] ^ tempDecrypted[0x1da] ^ tempDecrypted[0x1db]);
+
+            AmiiKeys.Pack(tempDecrypted, Encrypted);
+            return Encrypted;
+
         }
 
         #endregion

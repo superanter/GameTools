@@ -63,8 +63,8 @@ namespace LibAmiibo
        {
            byte[] internalBytes = NtagHelpers.GetInternalTag(tag);
 
-           // Generate keys
-           KeygenDerivedkeys dataKeys = GenerateKey(this.data, internalBytes);
+            // Generate keys
+            KeygenDerivedkeys dataKeys = GenerateKey(this.data, internalBytes);
            KeygenDerivedkeys tagKeys = GenerateKey(this.tag, internalBytes);
 
            // Decrypt

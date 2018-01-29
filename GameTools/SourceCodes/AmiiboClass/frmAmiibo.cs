@@ -15,6 +15,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         private LangugePackClass.cAmiibo MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
         private AmiiboFileMessage myFileMessage;
+        string FileFullName;
 
 
         public frmAmiibo()
@@ -28,6 +29,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             MyLanguge = LangugePack;
             MyVersion = VersionPack;
             SetLanguge();
+            btnRePack.Enabled = false;
         }
         #region 控件(8个Button，1个LinkLable）
 
@@ -42,6 +44,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         {
             btnTo540.Enabled = false;
             string myString = OpenInputFile();
+            FileFullName = myString;
 
             if (myString != "")
             {
@@ -52,6 +55,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 {
                     btnTo540.Enabled = true;
                 }
+                txtNewUID.Text = myFileMessage.NTAG_ID.ToString();
+                btnRePack.Enabled = false;
             }
         }
 
@@ -206,7 +211,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             lblMessage2.Text = "";
             for (int i = 0; i < myFileMessage.msgNFC.myMessage.Length; i++)
             {
-                lblMessage2.Text += "  " + myFileMessage.msgNFC.myMessage[i];
+                lblMessage2.Text += myFileMessage.msgNFC.myMessage[i];
             }
 
             lblSsbTp.Text = "";
@@ -508,6 +513,31 @@ namespace AnterStudio.GameTools.AmiiboClass
             }
         }
         #endregion
+
+        private void txtNewUID_TextChanged(object sender, EventArgs e)
+        {
+            if(txtFileName.Text != "")
+            {
+                if (txtNewUID.TextLength == 14)
+                {
+                    btnRePack.Enabled = true;
+                }
+                else
+                {
+                    btnRePack.Enabled = false;
+                }
+            }
+
+        }
+
+        private void btnRePack_Click(object sender, EventArgs e)
+        {
+           byte[] temp =  myFileMessage.RePack(txtNewUID.Text);
+            FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length -4) + "-[" + txtNewUID.Text.ToUpper() +"].bin", FileMode.Create);
+            BinaryWriter w = new BinaryWriter(sro);
+            w.Write(temp);
+            sro.Close();
+        }
     }
 }
 /*

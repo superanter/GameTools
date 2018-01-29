@@ -44,6 +44,9 @@
             this.ricOut = new System.Windows.Forms.RichTextBox();
             this.lblSsbTp = new System.Windows.Forms.Label();
             this.lblMessage2 = new System.Windows.Forms.Label();
+            this.lblNewUID = new System.Windows.Forms.Label();
+            this.txtNewUID = new System.Windows.Forms.TextBox();
+            this.btnRePack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFileName
@@ -112,7 +115,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(492, 294);
+            this.btnBack.Location = new System.Drawing.Point(492, 290);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(78, 23);
             this.btnBack.TabIndex = 7;
@@ -185,7 +188,7 @@
             this.lblSsbTp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSsbTp.Location = new System.Drawing.Point(315, 331);
             this.lblSsbTp.Name = "lblSsbTp";
-            this.lblSsbTp.Size = new System.Drawing.Size(274, 196);
+            this.lblSsbTp.Size = new System.Drawing.Size(274, 156);
             this.lblSsbTp.TabIndex = 18;
             // 
             // lblMessage2
@@ -196,11 +199,42 @@
             this.lblMessage2.Size = new System.Drawing.Size(297, 196);
             this.lblMessage2.TabIndex = 19;
             // 
+            // lblNewUID
+            // 
+            this.lblNewUID.Location = new System.Drawing.Point(315, 504);
+            this.lblNewUID.Name = "lblNewUID";
+            this.lblNewUID.Size = new System.Drawing.Size(49, 23);
+            this.lblNewUID.TabIndex = 20;
+            this.lblNewUID.Text = "NewUID:";
+            this.lblNewUID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtNewUID
+            // 
+            this.txtNewUID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewUID.Location = new System.Drawing.Point(365, 503);
+            this.txtNewUID.Name = "txtNewUID";
+            this.txtNewUID.Size = new System.Drawing.Size(107, 21);
+            this.txtNewUID.TabIndex = 21;
+            this.txtNewUID.TextChanged += new System.EventHandler(this.txtNewUID_TextChanged);
+            // 
+            // btnRePack
+            // 
+            this.btnRePack.Location = new System.Drawing.Point(492, 501);
+            this.btnRePack.Name = "btnRePack";
+            this.btnRePack.Size = new System.Drawing.Size(78, 23);
+            this.btnRePack.TabIndex = 22;
+            this.btnRePack.Text = "RePack";
+            this.btnRePack.UseVisualStyleBackColor = true;
+            this.btnRePack.Click += new System.EventHandler(this.btnRePack_Click);
+            // 
             // frmAmiibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 536);
+            this.Controls.Add(this.btnRePack);
+            this.Controls.Add(this.txtNewUID);
+            this.Controls.Add(this.lblNewUID);
             this.Controls.Add(this.lblMessage2);
             this.Controls.Add(this.lblSsbTp);
             this.Controls.Add(this.ricOut);
@@ -243,5 +277,8 @@
         private System.Windows.Forms.RichTextBox ricOut;
         private System.Windows.Forms.Label lblSsbTp;
         private System.Windows.Forms.Label lblMessage2;
+        private System.Windows.Forms.Label lblNewUID;
+        private System.Windows.Forms.TextBox txtNewUID;
+        private System.Windows.Forms.Button btnRePack;
     }
 }

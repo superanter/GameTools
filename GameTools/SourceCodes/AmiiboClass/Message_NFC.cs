@@ -92,7 +92,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             return BitConverter.ToInt16(Amiibo_Write_Counter, 0).ToString();
         }
 
-        private string Get_Amiibo_AppID(byte[] internalTag)
+        private string Get_Amiibo_AppID(byte[] internalTag)  //0xB6-0xB9
         {
             byte[] Amiibo_AppID = new byte[0x04];
             Array.Copy(internalTag, 0x02C + 0x08A, Amiibo_AppID, 0x000, Amiibo_AppID.Length);
