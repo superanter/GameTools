@@ -145,12 +145,13 @@ namespace LibAmiibo
            }
        }
 
-       /// <summary>
-       /// New LoadKeys(),by ANTer 2018-01-24
-       /// </summary>
-       /// <param name="key_retail"></param>
-       /// <returns></returns>
-       public static AmiiboKeys LoadKeys(byte[] getKeyGen)
+
+        /// <summary>
+        /// New LoadKeys(),by ANTer 2018-01-24
+        /// </summary>
+        /// <param name="getKeyGen"></param>
+        /// <returns></returns>
+        public static AmiiboKeys LoadKeys(byte[] getKeyGen)
        {
            Stream stream = new MemoryStream(getKeyGen);
            try
