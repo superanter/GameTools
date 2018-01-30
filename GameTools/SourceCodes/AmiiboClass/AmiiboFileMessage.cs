@@ -76,6 +76,10 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// Amiibo完整数据(解密后)
         /// </summary>
         public byte[] AmiiboDataDecrypted { set; get; }
+        /// <summary>
+        /// 解密后的CRC32_block36
+        /// </summary>
+        public string CRC32_block36 { set; get; }
 
         public Message_NFC msgNFC;
         public Message_TP msgTP;
@@ -195,7 +199,8 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.CRC32 = crc32.ComputeCRC32(this.AmiiboData, 0, (int)this.Length);
             if (this.Length >= 532)                                                   //2017-09-29
             {
-                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);      //2018-01-27 0x28~0x1b3 396
+                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);      //2018-01-27 0x28~0x1B3 396
+                this.CRC32_block36 = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x1e4, 0x24);     //2018-01-30 0x1E4~0x207 36
             }
 
             getMcasName myMcasName = new getMcasName(this.CRC32);
@@ -204,7 +209,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.NewName = this.isBegin04 ? "" : "[E]";
             this.NewName += "[" + this.IdMessage.GameShortName + "]";
             this.NewName += " " + this.IdMessage.Number + "-" + this.IdMessage.AmiiboName + " ";
-            this.NewName += "[" + this.CRC32_Decrypted + "-" + this.NTAG_ID + "-" + this.Length.ToString("000") + "-" + this.CRC32 + "]";
+            this.NewName += "[" + this.CRC32_Decrypted + "-" + this.CRC32_block36 + "-" + this.NTAG_ID + "-" + this.Length.ToString("000") + "]";
             if (msgSSB.canEdit)
             {
                 this.NewName += "(" + this.msgSSB.LEVEL + ")";

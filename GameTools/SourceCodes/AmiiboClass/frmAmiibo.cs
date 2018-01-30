@@ -31,9 +31,9 @@ namespace AnterStudio.GameTools.AmiiboClass
             SetLanguge();
             btnRePack.Enabled = false;
         }
-        #region 控件(8个Button，1个LinkLable）
+        #region 控件(10个Button，1个LinkLable，2个TextBox）
 
-        #region 按键（8）
+        #region 按键（10）
 
         /// <summary>
         /// 打开文件按键 2017-08-01
@@ -171,6 +171,42 @@ namespace AnterStudio.GameTools.AmiiboClass
             catch { }
         }
 
+        /// <summary>
+        /// 重新打包加密到新的文件 2018-01-30
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRePack_Click(object sender, EventArgs e)
+        {
+            if (txtFileName.Text != "")
+            {
+                byte[] temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text);
+                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + txtNewUID.Text.ToUpper() + "].bin", FileMode.Create);
+                BinaryWriter w = new BinaryWriter(sro);
+                w.Write(temp);
+                sro.Close();
+                MessageBox.Show("OK");
+            }
+        }
+
+        /// <summary>
+        /// 将解密后的数据存储到到新的文件 2018-01-30
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUnPack_Click(object sender, EventArgs e)
+        {
+            if (txtFileName.Text != "")
+            {
+                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "[Decrypted].bin", FileMode.Create);
+                BinaryWriter w = new BinaryWriter(sro);
+                w.Write(myFileMessage.AmiiboDataDecrypted);
+                sro.Close();
+                MessageBox.Show("OK");
+            }
+
+        }
+
         #endregion
 
         #region LinkLable（1）
@@ -185,6 +221,40 @@ namespace AnterStudio.GameTools.AmiiboClass
             System.Diagnostics.Process.Start(myFileMessage.NetPath);
         }
 
+        #endregion
+
+        #region TextBox（2）
+
+        private void txtNewUID_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFileName.Text != "")
+            {
+                if (txtNewUID.TextLength == 14)
+                {
+                    btnRePack.Enabled = true;
+                }
+                else
+                {
+                    btnRePack.Enabled = false;
+                }
+            }
+
+        }
+
+        private void txtNewID_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFileName.Text != "")
+            {
+                if (txtNewID.TextLength == 16)
+                {
+                    btnRePack.Enabled = true;
+                }
+                else
+                {
+                    btnRePack.Enabled = false;
+                }
+            }
+        }
         #endregion
 
         #endregion
@@ -515,62 +585,6 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
         #endregion
 
-        private void txtNewUID_TextChanged(object sender, EventArgs e)
-        {
-            if(txtFileName.Text != "")
-            {
-                if (txtNewUID.TextLength == 14)
-                {
-                    btnRePack.Enabled = true;
-                }
-                else
-                {
-                    btnRePack.Enabled = false;
-                }
-            }
-
-        }
-
-        private void btnRePack_Click(object sender, EventArgs e)
-        {
-            if (txtFileName.Text != "")
-            {
-                byte[] temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text);
-                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + txtNewUID.Text.ToUpper() + "].bin", FileMode.Create);
-                BinaryWriter w = new BinaryWriter(sro);
-                w.Write(temp);
-                sro.Close();
-                MessageBox.Show("OK");
-            }
-        }
-
-        private void btnUnPack_Click(object sender, EventArgs e)
-        {
-            if (txtFileName.Text != "")
-            {
-                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[Decrypted].bin", FileMode.Create);
-                BinaryWriter w = new BinaryWriter(sro);
-                w.Write(myFileMessage.AmiiboDataDecrypted);
-                sro.Close();
-                MessageBox.Show("OK");
-            }
-
-        }
-
-        private void txtNewID_TextChanged(object sender, EventArgs e)
-        {
-            if (txtFileName.Text != "")
-            {
-                if (txtNewID.TextLength == 16)
-                {
-                    btnRePack.Enabled = true;
-                }
-                else
-                {
-                    btnRePack.Enabled = false;
-                }
-            }
-        }
     }
 }
 /*

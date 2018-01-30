@@ -65,7 +65,7 @@ namespace LibAmiibo
 
             // Generate keys
             KeygenDerivedkeys dataKeys = GenerateKey(this.data, internalBytes);
-           KeygenDerivedkeys tagKeys = GenerateKey(this.tag, internalBytes);
+            KeygenDerivedkeys tagKeys = GenerateKey(this.tag, internalBytes);
 
            // Decrypt
            dataKeys.Cipher(internalBytes, plain, false);
