@@ -206,7 +206,7 @@
             // 
             // lblNewUID
             // 
-            this.lblNewUID.Location = new System.Drawing.Point(14, 24);
+            this.lblNewUID.Location = new System.Drawing.Point(14, 22);
             this.lblNewUID.Name = "lblNewUID";
             this.lblNewUID.Size = new System.Drawing.Size(63, 23);
             this.lblNewUID.TabIndex = 20;
@@ -266,7 +266,7 @@
             // 
             // lblNewID
             // 
-            this.lblNewID.Location = new System.Drawing.Point(14, 62);
+            this.lblNewID.Location = new System.Drawing.Point(14, 59);
             this.lblNewID.Name = "lblNewID";
             this.lblNewID.Size = new System.Drawing.Size(63, 23);
             this.lblNewID.TabIndex = 23;
