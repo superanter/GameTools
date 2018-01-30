@@ -48,6 +48,10 @@
             this.txtNewUID = new System.Windows.Forms.TextBox();
             this.btnRePack = new System.Windows.Forms.Button();
             this.btnUnPack = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNewID = new System.Windows.Forms.TextBox();
+            this.lblNewID = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFileName
@@ -177,10 +181,10 @@
             // 
             this.ricOut.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ricOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ricOut.Location = new System.Drawing.Point(595, 12);
+            this.ricOut.Location = new System.Drawing.Point(596, 118);
             this.ricOut.Name = "ricOut";
             this.ricOut.ReadOnly = true;
-            this.ricOut.Size = new System.Drawing.Size(340, 475);
+            this.ricOut.Size = new System.Drawing.Size(340, 406);
             this.ricOut.TabIndex = 17;
             this.ricOut.Text = "";
             // 
@@ -202,25 +206,24 @@
             // 
             // lblNewUID
             // 
-            this.lblNewUID.Location = new System.Drawing.Point(613, 507);
+            this.lblNewUID.Location = new System.Drawing.Point(14, 24);
             this.lblNewUID.Name = "lblNewUID";
-            this.lblNewUID.Size = new System.Drawing.Size(49, 23);
+            this.lblNewUID.Size = new System.Drawing.Size(63, 23);
             this.lblNewUID.TabIndex = 20;
-            this.lblNewUID.Text = "NewUID:";
-            this.lblNewUID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNewUID.Text = "New UID:";
             // 
             // txtNewUID
             // 
             this.txtNewUID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNewUID.Location = new System.Drawing.Point(682, 507);
+            this.txtNewUID.Location = new System.Drawing.Point(83, 20);
             this.txtNewUID.Name = "txtNewUID";
-            this.txtNewUID.Size = new System.Drawing.Size(107, 21);
+            this.txtNewUID.Size = new System.Drawing.Size(122, 21);
             this.txtNewUID.TabIndex = 21;
             this.txtNewUID.TextChanged += new System.EventHandler(this.txtNewUID_TextChanged);
             // 
             // btnRePack
             // 
-            this.btnRePack.Location = new System.Drawing.Point(811, 507);
+            this.btnRePack.Location = new System.Drawing.Point(244, 58);
             this.btnRePack.Name = "btnRePack";
             this.btnRePack.Size = new System.Drawing.Size(78, 23);
             this.btnRePack.TabIndex = 22;
@@ -238,15 +241,45 @@
             this.btnUnPack.UseVisualStyleBackColor = true;
             this.btnUnPack.Click += new System.EventHandler(this.btnUnPack_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNewID);
+            this.groupBox1.Controls.Add(this.lblNewID);
+            this.groupBox1.Controls.Add(this.txtNewUID);
+            this.groupBox1.Controls.Add(this.lblNewUID);
+            this.groupBox1.Controls.Add(this.btnRePack);
+            this.groupBox1.Location = new System.Drawing.Point(596, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(339, 100);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "RePack";
+            // 
+            // txtNewID
+            // 
+            this.txtNewID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewID.Location = new System.Drawing.Point(83, 58);
+            this.txtNewID.Name = "txtNewID";
+            this.txtNewID.Size = new System.Drawing.Size(122, 21);
+            this.txtNewID.TabIndex = 24;
+            this.txtNewID.TextChanged += new System.EventHandler(this.txtNewID_TextChanged);
+            // 
+            // lblNewID
+            // 
+            this.lblNewID.Location = new System.Drawing.Point(14, 62);
+            this.lblNewID.Name = "lblNewID";
+            this.lblNewID.Size = new System.Drawing.Size(63, 23);
+            this.lblNewID.TabIndex = 23;
+            this.lblNewID.Text = "New ID:";
+            this.lblNewID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmAmiibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 536);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUnPack);
-            this.Controls.Add(this.btnRePack);
-            this.Controls.Add(this.txtNewUID);
-            this.Controls.Add(this.lblNewUID);
             this.Controls.Add(this.lblMessage2);
             this.Controls.Add(this.lblSsbTp);
             this.Controls.Add(this.ricOut);
@@ -266,6 +299,8 @@
             this.Name = "frmAmiibo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amiibo Tools v1.0.0";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +328,8 @@
         private System.Windows.Forms.TextBox txtNewUID;
         private System.Windows.Forms.Button btnRePack;
         private System.Windows.Forms.Button btnUnPack;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtNewID;
+        private System.Windows.Forms.Label lblNewID;
     }
 }

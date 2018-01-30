@@ -241,20 +241,37 @@ namespace AnterStudio.GameTools.AmiiboClass
             return tempMessage;
         }
 
-        public byte[] RePack(string getUID)
+        public byte[] RePack(string getUID,string getID)
         {
             byte[] tempDecrypted = Decrypted;
             byte[] Encrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
 
-            tempDecrypted[0x1d4] = (byte)Convert.ToInt32(getUID.Substring(0, 2), 16);
-            tempDecrypted[0x1d5] = (byte)Convert.ToInt32(getUID.Substring(2, 2), 16);
-            tempDecrypted[0x1d6] = (byte)Convert.ToInt32(getUID.Substring(4, 2), 16);
-            tempDecrypted[0x1d7] = (byte)(0x88 ^ tempDecrypted[0x1d4] ^ tempDecrypted[0x1d5] ^ tempDecrypted[0x1d6]);
-            tempDecrypted[0x1d8] = (byte)Convert.ToInt32(getUID.Substring(6, 2), 16);
-            tempDecrypted[0x1d9] = (byte)Convert.ToInt32(getUID.Substring(8, 2), 16);
-            tempDecrypted[0x1da] = (byte)Convert.ToInt32(getUID.Substring(10, 2), 16);
-            tempDecrypted[0x1db] = (byte)Convert.ToInt32(getUID.Substring(12, 2), 16);
-            tempDecrypted[0x000] = (byte)(tempDecrypted[0x1d8] ^ tempDecrypted[0x1d9] ^ tempDecrypted[0x1da] ^ tempDecrypted[0x1db]);
+            //UID
+            if(getUID.Length == 14)
+            {
+                tempDecrypted[0x1d4] = (byte)Convert.ToInt32(getUID.Substring(0, 2), 16);
+                tempDecrypted[0x1d5] = (byte)Convert.ToInt32(getUID.Substring(2, 2), 16);
+                tempDecrypted[0x1d6] = (byte)Convert.ToInt32(getUID.Substring(4, 2), 16);
+                tempDecrypted[0x1d7] = (byte)(0x88 ^ tempDecrypted[0x1d4] ^ tempDecrypted[0x1d5] ^ tempDecrypted[0x1d6]);
+                tempDecrypted[0x1d8] = (byte)Convert.ToInt32(getUID.Substring(6, 2), 16);
+                tempDecrypted[0x1d9] = (byte)Convert.ToInt32(getUID.Substring(8, 2), 16);
+                tempDecrypted[0x1da] = (byte)Convert.ToInt32(getUID.Substring(10, 2), 16);
+                tempDecrypted[0x1db] = (byte)Convert.ToInt32(getUID.Substring(12, 2), 16);
+                tempDecrypted[0x000] = (byte)(tempDecrypted[0x1d8] ^ tempDecrypted[0x1d9] ^ tempDecrypted[0x1da] ^ tempDecrypted[0x1db]);
+            }
+
+            //ID
+            if (getID.Length == 16)
+            {
+                tempDecrypted[0x1dc] = (byte)Convert.ToInt32(getID.Substring(0, 2), 16);
+                tempDecrypted[0x1dd] = (byte)Convert.ToInt32(getID.Substring(2, 2), 16);
+                tempDecrypted[0x1de] = (byte)Convert.ToInt32(getID.Substring(4, 2), 16);
+                tempDecrypted[0x1df] = (byte)Convert.ToInt32(getID.Substring(6, 2), 16);
+                tempDecrypted[0x1e0] = (byte)Convert.ToInt32(getID.Substring(8, 2), 16);
+                tempDecrypted[0x1e1] = (byte)Convert.ToInt32(getID.Substring(10, 2), 16);
+                tempDecrypted[0x1e2] = (byte)Convert.ToInt32(getID.Substring(12, 2), 16);
+                tempDecrypted[0x1e3] = (byte)Convert.ToInt32(getID.Substring(14, 2), 16);
+            }
 
             AmiiKeys.Pack(tempDecrypted, Encrypted);
             return Encrypted;

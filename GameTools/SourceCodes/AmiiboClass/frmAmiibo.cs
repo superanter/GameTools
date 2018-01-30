@@ -55,7 +55,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 {
                     btnTo540.Enabled = true;
                 }
-                txtNewUID.Text = myFileMessage.NTAG_ID.ToString();
+                txtNewUID.Text = myFileMessage.NTAG_ID;
+                txtNewID.Text = myFileMessage.SerA + myFileMessage.SerB;
                 btnRePack.Enabled = false;
             }
         }
@@ -532,11 +533,15 @@ namespace AnterStudio.GameTools.AmiiboClass
 
         private void btnRePack_Click(object sender, EventArgs e)
         {
-           byte[] temp =  myFileMessage.RePack(txtNewUID.Text);
-            FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length -4) + "-[" + txtNewUID.Text.ToUpper() +"].bin", FileMode.Create);
-            BinaryWriter w = new BinaryWriter(sro);
-            w.Write(temp);
-            sro.Close();
+            if (txtFileName.Text != "")
+            {
+                byte[] temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text);
+                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + txtNewUID.Text.ToUpper() + "].bin", FileMode.Create);
+                BinaryWriter w = new BinaryWriter(sro);
+                w.Write(temp);
+                sro.Close();
+                MessageBox.Show("OK");
+            }
         }
 
         private void btnUnPack_Click(object sender, EventArgs e)
@@ -547,6 +552,23 @@ namespace AnterStudio.GameTools.AmiiboClass
                 BinaryWriter w = new BinaryWriter(sro);
                 w.Write(myFileMessage.AmiiboDataDecrypted);
                 sro.Close();
+                MessageBox.Show("OK");
+            }
+
+        }
+
+        private void txtNewID_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFileName.Text != "")
+            {
+                if (txtNewID.TextLength == 16)
+                {
+                    btnRePack.Enabled = true;
+                }
+                else
+                {
+                    btnRePack.Enabled = false;
+                }
             }
         }
     }
