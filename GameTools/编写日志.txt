@@ -741,3 +741,7 @@
 [Amiibo]
 1、加入了修改Amiibo ID编码(8 Bytes)重新加密的功能；
 2、修改了规范重命名的命名规则：加入了未知的36 Bytes字节的CRC32，删除了完整文件的CRC32。
+
+2018-03-15
+[Amiibo]
+1、修改、优化 Message_TP.cs 代码；
