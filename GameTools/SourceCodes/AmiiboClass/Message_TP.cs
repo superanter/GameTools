@@ -69,13 +69,14 @@ namespace AnterStudio.GameTools.AmiiboClass
         public string[] GetMessage()
         {
             string[] tempMessage = new string[2];
+            tempMessage[0] = "LEVEL: " + this.TpLevers[this.LEVEL] + "\n";
+            tempMessage[1] = "HEARTS: " + this.TpHearts[this.HEARTS] + "\n";
+            return tempMessage;
+
             //tempMessage[0] = "APP_DATA: " + this.APP_DATA + "\n";
             //tempMessage[1] = "LEVEL: " + this.LEVEL + LevelMessage + "\n";
-            tempMessage[0] = "LEVEL: " + this.TpLevers[this.LEVEL]+ "\n";
             //tempMessage[2] = "HEARTS: " + (((float)(this.HEARTS * 25)) / 100).ToString() + "\n";
-            tempMessage[1] = "HEARTS: " + this.TpHearts[this.HEARTS] + "\n";
 
-            return tempMessage;
         }
 
 
