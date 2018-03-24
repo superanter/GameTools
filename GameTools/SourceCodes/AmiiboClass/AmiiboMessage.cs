@@ -97,13 +97,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 完整序列号 2018-01-24
+        /// 完整序列号 2018-03-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[712][];
+            string[][] strAmiiboName = new string[713][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "", "" };
@@ -818,6 +818,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[709] = new string[] { "05C1000003661302", "MSR", "Metroid: Samus Returns", "", "Metroid", "002", "709" };
             strAmiiboName[710] = new string[] { "05C0000003651302", "MSR", "Metroid: Samus Returns", "", "Samus Aran", "001", "710" };
             strAmiiboName[711] = new string[] { "3740000103741402", "SMC", "Super Mario Cereal", "", "Super Mario Cereal", "001", "711" };
+            strAmiiboName[712] = new string[] { "1D01000003750D02", "DEP", "Detective Pikachu", "", "Detective Pikachu", "001", "712" };
             /*
 [ZBW] 06 - Mipha(Zora Champion).bin?(Revali)	1	1	01070000-035A0902
 [ZBW] 07 - Daruk(Goron Champion).bin?(Mipha)	1	1	01050000-03580902	CRC32:
@@ -1004,7 +1005,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12A 2018-01-24
+        /// 09to12A 2018-03-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1721,6 +1722,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0372": return "Super Mario";
                 case "0373": return "Super Mario";
                 case "0374": return "Super Mario Cereal";
+                case "0375": return "Detective Pikachu";
                 default: return "";
 
             }
@@ -1775,7 +1777,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2018-01-24
+        /// 01to04 2018-03-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2298,6 +2300,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "1AC0": return "Lucario";
                 case "1B92": return "Greninja";
                 case "1D00": return "Shadow Mewtwo";
+                case "1D01": return "Detective Pikachu";
                 case "1F00": return "Kirby";
                 case "1F01": return "Meta Knight";
                 case "1F02": return "King Dedede";
@@ -2336,7 +2339,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12B 2018-01-24
+        /// 09to12B 2018-03-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -3053,6 +3056,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0372": return "Peach(Wedding)";
                 case "0373": return "Bowser(Wedding)";
                 case "0374": return "Super Mario Cereal";
+                case "0375": return "Detective Pikachu";
                 default: return "";
             }
         }

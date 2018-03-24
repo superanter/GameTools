@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2018-01-24
+        /// MCAS Name 2018-03-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -843,6 +843,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "238C61C6": return "[ZBW] 08 - Revali (Rito Champion).bin";
                 case "12256389": return "[ZBW] 09 - Urbosa (Gerudo Champion).bin";
                 case "3DD7B13E": return "[SMC] 01 - Super Mario Cereal.bin";
+                case "7E561FE9": return "[DEP] 01 - Detective Pikachu.bin";
                 default: return "";
             }
         }
