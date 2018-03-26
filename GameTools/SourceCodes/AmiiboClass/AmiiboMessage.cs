@@ -1313,7 +1313,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0740": return "Kid Icarus - Pit";
                 case "0741": return "Kid Icarus - Dark Pit";
                 case "0742": return "Kid Icarus - Palutena";
-                case "0780": return "Classic Nintendo - Mr. G&W";
+                case "0780": return "Classic Nintendo - Mr. Game & Watch";
                 case "0781": return "Classic Nintendo - R.O.B.";
                 case "0782": return "Classic Nintendo - Duck Hunt";
                 case "07C0": return "Mii - Mii";
