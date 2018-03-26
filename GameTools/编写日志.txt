@@ -752,4 +752,4 @@
 
 2018-03-26
 [Amiibo]
-1、修改、优化“AmiiboMessage.cs”；
+1、修改、优化“AmiiboMessage.cs”。
