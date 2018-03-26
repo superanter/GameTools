@@ -10,23 +10,26 @@ namespace AnterStudio.GameTools.AmiiboClass
         //查表获得游戏信息
 
         #region 访问器
-
+        /// <summary>
+        /// 标识字符串01-04string
+        /// </summary>
+        public string Ser01to04string { get; }
+        /// <summary>
+        /// 标识字符串05-06string
+        /// </summary>
+        public string Ser05to06string { get; }
         /// <summary>
         /// 标识字符串07-08string
         /// </summary>
         public string Ser07to08string { get; }
         /// <summary>
-        /// 标识字符串09-12stringA
+        /// 标识字符串09-12string
         /// </summary>
         public string Ser09to12string { get; }
         /// <summary>
         /// 标识字符串13-14string
         /// </summary>
         public string Ser13to14string { get; }
-        /// <summary>
-        /// 标识字符串01-04string
-        /// </summary>
-        public string Ser01to04string { get; }
         /// <summary>
         /// 标识字符串15-16string
         /// </summary>
@@ -35,10 +38,6 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// 标识字符串GameShortName
         /// </summary>
         public string GameShortName { get; }
-        /// <summary>
-        /// 标识字符串05-06
-        /// </summary>
-        public string Ser05to06string { get; }
         /// <summary>
         /// 标识字符串AmiiboSeries
         /// </summary>
