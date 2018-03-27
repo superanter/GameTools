@@ -227,16 +227,16 @@ namespace AnterStudio.GameTools.AmiiboClass
             tempMessage[3] = "Amiibo Series: " + this.IdMessage.AmiiboSeries + "\n";
             tempMessage[4] = "Game Short Name: " + this.IdMessage.GameShortName + "\n";
             tempMessage[5] = "Type: " + this.IdMessage.GameType + "\n";
-            tempMessage[6] = "Name: " + this.IdMessage.AmiiboName + "\n";
+            tempMessage[6] = "Name: " + this.IdMessage.AmiiboName.Replace("&", "&&") + "\n";
             tempMessage[7] = "Number: " + this.IdMessage.Number + "\n";
             tempMessage[8] = "CRC32: " + this.CRC32 + "\n";
-            tempMessage[9] = "01~04: " + this.SerA.Remove(4) + ": " + this.IdMessage.Ser01to04string + "\n";
+            tempMessage[9] = "01~04: " + this.SerA.Remove(4) + ": " + this.IdMessage.Ser01to04string.Replace("&","&&") + "\n";
             tempMessage[10] = "05~06:   " + this.SerA.Remove(0, 4).Remove(2) + ": " + this.IdMessage.Ser05to06string + "\n";
             tempMessage[11] = "07~08:   " + this.SerA.Remove(0, 6) + ": " + this.IdMessage.Ser07to08string + "\n";
-            tempMessage[12] = "09~12: " + this.SerB.Remove(4) + ": " + this.IdMessage.Ser09to12string + "\n";
+            tempMessage[12] = "09~12: " + this.SerB.Remove(4) + ": " + this.IdMessage.Ser09to12string.Replace("&", "&&") + "\n";
             tempMessage[13] = "13~14:   " + this.SerB.Remove(0, 4).Remove(2) + ": " + this.IdMessage.Ser13to14string + "\n";
             tempMessage[14] = "15~16:   " + this.SerB.Remove(0, 6) + ": " + this.IdMessage.Ser15to16string + "\n";
-            tempMessage[15] = "MCAS Name:   " + this.mcasName + "\n";
+            tempMessage[15] = "MCAS Name:   " + this.mcasName.Replace("&", "&&") + "\n";
             return tempMessage;
         }
 

@@ -756,4 +756,5 @@
 
 2018-03-27
 [Amiibo]
-1、修改AmiiboFileMessage.cs，修正了提取列表、批量改名时目录内含非标准bin文件时会出错的bug。
+1、修改AmiiboFileMessage.cs，修正了提取列表、批量改名时目录内含非标准bin文件时会出错的bug；
+2、修正了在界面上不显示“&”号的bug；

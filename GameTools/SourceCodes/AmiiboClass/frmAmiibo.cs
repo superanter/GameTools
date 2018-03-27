@@ -31,6 +31,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             SetLanguge();
             btnRePack.Enabled = false;
         }
+
         #region 控件(10个Button，1个LinkLable，2个TextBox）
 
         #region 按键（10）
