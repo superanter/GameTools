@@ -97,7 +97,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             throw new System.NotImplementedException();
         }
 
-        public AmiiboFileMessage(string AmiiboFileFullName)
+        public AmiiboFileMessage(string AmiiboFileFullName)         //2018-03-27
         {
             Decrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
 
@@ -107,12 +107,17 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.DirectoryName = fi.DirectoryName;
             this.Length = fi.Length;
 
-            AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
             this.AmiiboData = GetFileData(this.FullName);
 
-            UnPack();
+            FileToCRC32 crc32 = new FileToCRC32();
+            this.CRC32 = crc32.ComputeCRC32(this.AmiiboData, 0, (int)this.Length);
 
-            myMessage = this.GetMessage();
+            if (this.Length >= 532)
+            {
+                AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
+                UnPack();
+                myMessage = this.GetMessage();
+            }
         }
         #endregion
 
@@ -159,49 +164,40 @@ namespace AnterStudio.GameTools.AmiiboClass
             return StrReturn;
         }
 
-        private void UnPack()
+        private void UnPack()           //2018-03-27
         {
-            if (this.Length >= 532)                                          //2018-01-24
+            //解密
+            if (AmiiboData.Length < NtagHelpers.NFC3D_AMIIBO_SIZE)
             {
-                //解密
+                byte[] AmiiboDataTemp = this.AmiiboData;
+                Array.Resize(ref AmiiboDataTemp, NtagHelpers.NFC3D_AMIIBO_SIZE);
+                this.AmiiboData = AmiiboDataTemp;
+            }
 
-                if (AmiiboData.Length < NtagHelpers.NFC3D_AMIIBO_SIZE)
-                {
-                    byte[] AmiiboDataTemp = this.AmiiboData;
-                    Array.Resize(ref AmiiboDataTemp, NtagHelpers.NFC3D_AMIIBO_SIZE);
-                    this.AmiiboData = AmiiboDataTemp;
-                }
+            try
+            {
+                //AmiiKeys = AmiiboKeys.LoadKeys("KeyTemp.bin");
+                //AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
+                AmiiKeys.Unpack(this.AmiiboData, Decrypted);
+                this.AmiiboDataDecrypted = Decrypted;
+                this.msgNFC = new Message_NFC(AmiiboDataDecrypted);
 
-                try
-                {
-                    //AmiiKeys = AmiiboKeys.LoadKeys("KeyTemp.bin");
-                    //AmiiKeys = AmiiboKeys.LoadKeys(key_retail);
-                    AmiiKeys.Unpack(this.AmiiboData, Decrypted);
-                    this.AmiiboDataDecrypted = Decrypted;
-                    this.msgNFC = new Message_NFC(AmiiboDataDecrypted);
-
-                    msgTP = new Message_TP(AmiiboDataDecrypted, msgNFC);
-                    msgSSB = new Message_SSB(AmiiboDataDecrypted, msgNFC);
-                }
-                catch
-                {
-                }
+                msgTP = new Message_TP(AmiiboDataDecrypted, msgNFC);
+                msgSSB = new Message_SSB(AmiiboDataDecrypted, msgNFC);
+            }
+            catch
+            {
             }
             this.NTAG_ID = GetFileString(0x00, 3) + GetFileString(0x04, 4);
             this.SerA = GetFileString(0x54, 4);
             this.SerB = GetFileString(0x58, 4);
 
             this.isBegin04 = (GetFileString(0x00, 1) == "04") ? true : false;
-
             IdMessage = new AmiiboMessage(this.SerA + this.SerB);            //2018-01-25
 
             FileToCRC32 crc32 = new FileToCRC32();
-            this.CRC32 = crc32.ComputeCRC32(this.AmiiboData, 0, (int)this.Length);
-            if (this.Length >= 532)                                                   //2017-09-29
-            {
-                this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);      //2018-01-27 0x28~0x1B3 396
-                this.CRC32_block36 = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x1e4, 0x24);     //2018-01-30 0x1E4~0x207 36
-            }
+            this.CRC32_Decrypted = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x28, 0x18c);   //2018-01-27 0x28~0x1B3 396
+            this.CRC32_block36 = crc32.ComputeCRC32(this.AmiiboDataDecrypted, 0x1e4, 0x24);     //2018-01-30 0x1E4~0x207 36
 
             getMcasName myMcasName = new getMcasName(this.CRC32);
             this.mcasName = myMcasName.Mcas_Name;
@@ -219,7 +215,6 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.NetPath = "http://amiibo.life/nfc/" + this.SerA + "-" + this.SerB;
             this.PicturePath = "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_" + this.SerA.ToLower() + "-" + this.SerB.ToLower() + ".png";
             //"image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png",
-
         }
 
         public string[] GetMessage()

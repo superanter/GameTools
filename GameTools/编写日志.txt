@@ -753,3 +753,7 @@
 2018-03-26
 [Amiibo]
 1、修改、优化“AmiiboMessage.cs”。
+
+2018-03-27
+[Amiibo]
+1、修改AmiiboFileMessage.cs，修正了提取列表、批量改名时目录内含非标准bin文件时会出错的bug。
