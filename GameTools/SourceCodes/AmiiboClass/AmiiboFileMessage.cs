@@ -217,7 +217,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             //"image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png",
         }
 
-        public string[] GetMessage()
+        public string[] GetMessage()        //2018-03-29
         {
             string[] tempMessage = new string[16];
 
@@ -227,20 +227,20 @@ namespace AnterStudio.GameTools.AmiiboClass
             tempMessage[3] = "Amiibo Series: " + this.IdMessage.AmiiboSeries + "\n";
             tempMessage[4] = "Game Short Name: " + this.IdMessage.GameShortName + "\n";
             tempMessage[5] = "Type: " + this.IdMessage.GameType + "\n";
-            tempMessage[6] = "Name: " + this.IdMessage.AmiiboName.Replace("&", "&&") + "\n";
+            tempMessage[6] = "Name: " + this.IdMessage.AmiiboName + "\n";
             tempMessage[7] = "Number: " + this.IdMessage.Number + "\n";
             tempMessage[8] = "CRC32: " + this.CRC32 + "\n";
-            tempMessage[9] = "01~04: " + this.SerA.Remove(4) + ": " + this.IdMessage.Ser01to04string.Replace("&","&&") + "\n";
+            tempMessage[9] = "01~04: " + this.SerA.Remove(4) + ": " + this.IdMessage.Ser01to04string + "\n";
             tempMessage[10] = "05~06:   " + this.SerA.Remove(0, 4).Remove(2) + ": " + this.IdMessage.Ser05to06string + "\n";
             tempMessage[11] = "07~08:   " + this.SerA.Remove(0, 6) + ": " + this.IdMessage.Ser07to08string + "\n";
-            tempMessage[12] = "09~12: " + this.SerB.Remove(4) + ": " + this.IdMessage.Ser09to12string.Replace("&", "&&") + "\n";
+            tempMessage[12] = "09~12: " + this.SerB.Remove(4) + ": " + this.IdMessage.Ser09to12string + "\n";
             tempMessage[13] = "13~14:   " + this.SerB.Remove(0, 4).Remove(2) + ": " + this.IdMessage.Ser13to14string + "\n";
             tempMessage[14] = "15~16:   " + this.SerB.Remove(0, 6) + ": " + this.IdMessage.Ser15to16string + "\n";
-            tempMessage[15] = "MCAS Name:   " + this.mcasName.Replace("&", "&&") + "\n";
+            tempMessage[15] = "MCAS Name:   " + this.mcasName + "\n";
             return tempMessage;
         }
 
-        public byte[] RePack(string getUID,string getID)
+        public byte[] RePack(string getUID,string getID, int TpLevers, int TpHearts)        //2018-03-29
         {
             byte[] tempDecrypted = Decrypted;
             byte[] Encrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
@@ -270,6 +270,12 @@ namespace AnterStudio.GameTools.AmiiboClass
                 tempDecrypted[0x1e1] = (byte)Convert.ToInt32(getID.Substring(10, 2), 16);
                 tempDecrypted[0x1e2] = (byte)Convert.ToInt32(getID.Substring(12, 2), 16);
                 tempDecrypted[0x1e3] = (byte)Convert.ToInt32(getID.Substring(14, 2), 16);
+            }
+
+            if(TpLevers != -1 && TpHearts != -1)
+            {
+                tempDecrypted[0xED] = (byte)TpLevers;
+                tempDecrypted[0xED+1] = (byte)TpHearts;
             }
 
             AmiiKeys.Pack(tempDecrypted, Encrypted);

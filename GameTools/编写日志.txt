@@ -758,3 +758,8 @@
 [Amiibo]
 1、修改AmiiboFileMessage.cs，修正了提取列表、批量改名时目录内含非标准bin文件时会出错的bug；
 2、修正了在界面上不显示“&”号的bug；
+
+2018-03-29
+[Amiibo]
+1、修改主界面，改用RichTextBox控件显示各种信息；
+2、加入了修改TP信息的功能；

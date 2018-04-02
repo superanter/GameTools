@@ -14,7 +14,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         private static int OFFSET_LEVEL = OFFSET_APP_DATA;
         private static int OFFSET_HEARTS = OFFSET_APP_DATA + 0x01;
 
-        private string[] TpHearts = new string[81]
+        public string[] TpHearts = new string[81]
         {
             "0(Dead!?)","0+1/4","0+1/2","0+3/4","1","1+1/4","1+1/2","1+3/4","2","2+1/4",
             "2+1/2","2+3/4","3","3+1/4","3+1/2","3+3/4","4","4+1/4","4+1/2","4+3/4",
@@ -27,15 +27,15 @@ namespace AnterStudio.GameTools.AmiiboClass
             "20"
         };
 
-        private string[] TpLevers = new string[41]
-{
+        public string[] TpLevers = new string[41]
+        {
             "0","1","2","3","4","5 (Run 1 completed)","6","7","8","9",
             "10","11","12","13","14","15","16","17","18","19",
             "20 (Run 2 completed)","21","22","23","24","25","26","27","28","29",
             "30","31","32","33","34","35","36","37","38","39",
             "40 (completed)"
-};
-        //public int APP_DATA = new int();
+        };
+
         public int LEVEL = new int();
         public int HEARTS = new int();
         public string[] myMessage;
@@ -51,7 +51,6 @@ namespace AnterStudio.GameTools.AmiiboClass
             if(msgNFC.NFC_ID.Remove(8) == "01030000" && msgNFC.Amiibo_AppID == "1019C800")
             {
                 canEdit = true;
-                //APP_DATA = (int)date[OFFSET_APP_DATA];
                 LEVEL = (int)date[OFFSET_LEVEL];
                 HEARTS = (int)date[OFFSET_HEARTS];
                 myMessage = GetMessage();
@@ -59,7 +58,6 @@ namespace AnterStudio.GameTools.AmiiboClass
             else
             {
                 canEdit = false;
-                //APP_DATA = 0;
                 LEVEL = 0;
                 HEARTS = 0;
                 myMessage = new string[0];
@@ -72,11 +70,6 @@ namespace AnterStudio.GameTools.AmiiboClass
             tempMessage[0] = "LEVEL: " + this.TpLevers[this.LEVEL] + "\n";
             tempMessage[1] = "HEARTS: " + this.TpHearts[this.HEARTS] + "\n";
             return tempMessage;
-
-            //tempMessage[0] = "APP_DATA: " + this.APP_DATA + "\n";
-            //tempMessage[1] = "LEVEL: " + this.LEVEL + LevelMessage + "\n";
-            //tempMessage[2] = "HEARTS: " + (((float)(this.HEARTS * 25)) / 100).ToString() + "\n";
-
         }
 
 

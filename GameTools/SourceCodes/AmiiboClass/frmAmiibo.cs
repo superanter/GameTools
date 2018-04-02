@@ -32,7 +32,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             btnRePack.Enabled = false;
         }
 
-        #region 控件(10个Button，1个LinkLable，2个TextBox）
+        #region 控件(10个Button，1个LinkLable，2个TextBox，2个ComboBox）
 
         #region 按键（10）
 
@@ -173,7 +173,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 重新打包加密到新的文件 2018-01-30
+        /// 重新打包加密到新的文件 2018-03-29
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -181,8 +181,16 @@ namespace AnterStudio.GameTools.AmiiboClass
         {
             if (txtFileName.Text != "")
             {
-                byte[] temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text);
-                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + txtNewUID.Text.ToUpper() + "].bin", FileMode.Create);
+                byte[] temp;
+                if (myFileMessage.msgTP.canEdit)
+                {
+                    temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text, cboTpLevers.SelectedIndex, cboTpHearts.SelectedIndex);
+                }
+                else
+                {
+                    temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text, -1, -1);
+                }
+                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + DateTime.Now.ToString("yyyyMMddHHmmss") +"].bin", FileMode.Create);
                 BinaryWriter w = new BinaryWriter(sro);
                 w.Write(temp);
                 sro.Close();
@@ -258,12 +266,26 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
         #endregion
 
+        #region ComboBOx（2）
+
+        private void cboTpLevers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnRePack.Enabled = true;
+        }
+
+        private void cboTpHearts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnRePack.Enabled = true;
+        }
+
+        #endregion
+
         #endregion
 
         #region  其他方法 (3)
 
         /// <summary>
-        /// 在界面上显示文件内信息 2018-01-27
+        /// 在界面上显示文件内信息 2018-03-29
         /// </summary>
         /// <param name="FileFullName"></param>
         private void ShowFileMessage()
@@ -274,33 +296,40 @@ namespace AnterStudio.GameTools.AmiiboClass
             linkURL.Visible = true;
             linkURL.LinkVisited = true;
 
-            lblMessage.Text = "";
+            ricMessage.Text = "";
+            cboTpLevers.Text = "";
+            cboTpLevers.Items.Clear();
+            cboTpLevers.Refresh();
+            cboTpHearts.Text = "";
+            cboTpHearts.Items.Clear();
+            cboTpHearts.Refresh();
+            grpTP.Enabled = false;
+
             for (int i = 0; i < myFileMessage.myMessage.Length; i++)
             {
-                lblMessage.Text += myFileMessage.myMessage[i];
+                ricMessage.Text += myFileMessage.myMessage[i];
             }
-
-            lblMessage2.Text = "";
+            ricMessage.Text += "-------------------------------------\n";
             for (int i = 0; i < myFileMessage.msgNFC.myMessage.Length; i++)
-            {
-                lblMessage2.Text += myFileMessage.msgNFC.myMessage[i];
+            { 
+                ricMessage.Text += myFileMessage.msgNFC.myMessage[i];
             }
 
-            lblSsbTp.Text = "";
             if (myFileMessage.msgTP.canEdit)
             {
-                lblSsbTp.Text += "Wolf Link:\n";
-                for (int i = 0; i < myFileMessage.msgTP.myMessage.Length; i++)
-                {
-                    lblSsbTp.Text += "  " + myFileMessage.msgTP.myMessage[i];
-                }
+                grpTP.Enabled = true;
+                cboTpLevers.Items.AddRange(myFileMessage.msgTP.TpLevers);
+                cboTpLevers.SelectedIndex = myFileMessage.msgTP.LEVEL;
+                cboTpHearts.Items.AddRange(myFileMessage.msgTP.TpHearts);
+                cboTpHearts.SelectedIndex = myFileMessage.msgTP.HEARTS;
             }
             else if (myFileMessage.msgSSB.canEdit)
             {
-                lblSsbTp.Text += "Super Smash Bros:\n";
+                ricMessage.Text += "-------------------------------------\n";
+                ricMessage.Text += "Super Smash Bros:\n";
                 for (int i = 0; i < myFileMessage.msgSSB.myMessage.Length; i++)
                 {
-                    lblSsbTp.Text += "  " + myFileMessage.msgSSB.myMessage[i];
+                    ricMessage.Text += "  " + myFileMessage.msgSSB.myMessage[i];
                 }
             }
 

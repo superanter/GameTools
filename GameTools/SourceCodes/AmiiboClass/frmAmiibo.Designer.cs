@@ -33,7 +33,6 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnTo540 = new System.Windows.Forms.Button();
             this.btnRename = new System.Windows.Forms.Button();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.linkURL = new System.Windows.Forms.LinkLabel();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblURL = new System.Windows.Forms.Label();
@@ -42,16 +41,21 @@
             this.btnMcasName = new System.Windows.Forms.Button();
             this.btnPicture = new System.Windows.Forms.Button();
             this.ricOut = new System.Windows.Forms.RichTextBox();
-            this.lblSsbTp = new System.Windows.Forms.Label();
-            this.lblMessage2 = new System.Windows.Forms.Label();
             this.lblNewUID = new System.Windows.Forms.Label();
             this.txtNewUID = new System.Windows.Forms.TextBox();
             this.btnRePack = new System.Windows.Forms.Button();
             this.btnUnPack = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpTP = new System.Windows.Forms.GroupBox();
+            this.lblTpLevers = new System.Windows.Forms.Label();
+            this.cboTpHearts = new System.Windows.Forms.ComboBox();
+            this.cboTpLevers = new System.Windows.Forms.ComboBox();
+            this.lblTpHearts = new System.Windows.Forms.Label();
             this.txtNewID = new System.Windows.Forms.TextBox();
             this.lblNewID = new System.Windows.Forms.Label();
+            this.ricMessage = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
+            this.grpTP.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFileName
@@ -73,7 +77,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(492, 12);
+            this.btnOpen.Location = new System.Drawing.Point(397, 74);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 2;
@@ -83,7 +87,7 @@
             // 
             // btnTo540
             // 
-            this.btnTo540.Location = new System.Drawing.Point(492, 68);
+            this.btnTo540.Location = new System.Drawing.Point(397, 130);
             this.btnTo540.Name = "btnTo540";
             this.btnTo540.Size = new System.Drawing.Size(75, 23);
             this.btnTo540.TabIndex = 3;
@@ -93,7 +97,7 @@
             // 
             // btnRename
             // 
-            this.btnRename.Location = new System.Drawing.Point(492, 39);
+            this.btnRename.Location = new System.Drawing.Point(397, 101);
             this.btnRename.Name = "btnRename";
             this.btnRename.Size = new System.Drawing.Size(75, 23);
             this.btnRename.TabIndex = 4;
@@ -101,18 +105,10 @@
             this.btnRename.UseVisualStyleBackColor = true;
             this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
             // 
-            // lblMessage
-            // 
-            this.lblMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMessage.Location = new System.Drawing.Point(12, 68);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(460, 213);
-            this.lblMessage.TabIndex = 5;
-            // 
             // linkURL
             // 
             this.linkURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkURL.Location = new System.Drawing.Point(80, 294);
+            this.linkURL.Location = new System.Drawing.Point(80, 381);
             this.linkURL.Name = "linkURL";
             this.linkURL.Size = new System.Drawing.Size(270, 23);
             this.linkURL.TabIndex = 6;
@@ -120,7 +116,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(492, 290);
+            this.btnBack.Location = new System.Drawing.Point(999, 381);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(78, 23);
             this.btnBack.TabIndex = 7;
@@ -130,7 +126,7 @@
             // 
             // lblURL
             // 
-            this.lblURL.Location = new System.Drawing.Point(12, 294);
+            this.lblURL.Location = new System.Drawing.Point(12, 381);
             this.lblURL.Name = "lblURL";
             this.lblURL.Size = new System.Drawing.Size(62, 23);
             this.lblURL.TabIndex = 8;
@@ -139,7 +135,7 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(492, 126);
+            this.btnList.Location = new System.Drawing.Point(397, 188);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 9;
@@ -149,7 +145,7 @@
             // 
             // btnRenameAll
             // 
-            this.btnRenameAll.Location = new System.Drawing.Point(492, 155);
+            this.btnRenameAll.Location = new System.Drawing.Point(397, 217);
             this.btnRenameAll.Name = "btnRenameAll";
             this.btnRenameAll.Size = new System.Drawing.Size(75, 23);
             this.btnRenameAll.TabIndex = 10;
@@ -159,7 +155,7 @@
             // 
             // btnMcasName
             // 
-            this.btnMcasName.Location = new System.Drawing.Point(492, 184);
+            this.btnMcasName.Location = new System.Drawing.Point(397, 246);
             this.btnMcasName.Name = "btnMcasName";
             this.btnMcasName.Size = new System.Drawing.Size(75, 23);
             this.btnMcasName.TabIndex = 11;
@@ -169,7 +165,7 @@
             // 
             // btnPicture
             // 
-            this.btnPicture.Location = new System.Drawing.Point(492, 97);
+            this.btnPicture.Location = new System.Drawing.Point(397, 159);
             this.btnPicture.Name = "btnPicture";
             this.btnPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPicture.TabIndex = 15;
@@ -181,28 +177,12 @@
             // 
             this.ricOut.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ricOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ricOut.Location = new System.Drawing.Point(596, 118);
+            this.ricOut.Location = new System.Drawing.Point(737, 12);
             this.ricOut.Name = "ricOut";
             this.ricOut.ReadOnly = true;
-            this.ricOut.Size = new System.Drawing.Size(340, 406);
+            this.ricOut.Size = new System.Drawing.Size(340, 349);
             this.ricOut.TabIndex = 17;
             this.ricOut.Text = "";
-            // 
-            // lblSsbTp
-            // 
-            this.lblSsbTp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSsbTp.Location = new System.Drawing.Point(315, 331);
-            this.lblSsbTp.Name = "lblSsbTp";
-            this.lblSsbTp.Size = new System.Drawing.Size(274, 196);
-            this.lblSsbTp.TabIndex = 18;
-            // 
-            // lblMessage2
-            // 
-            this.lblMessage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMessage2.Location = new System.Drawing.Point(12, 331);
-            this.lblMessage2.Name = "lblMessage2";
-            this.lblMessage2.Size = new System.Drawing.Size(297, 196);
-            this.lblMessage2.TabIndex = 19;
             // 
             // lblNewUID
             // 
@@ -223,7 +203,7 @@
             // 
             // btnRePack
             // 
-            this.btnRePack.Location = new System.Drawing.Point(244, 58);
+            this.btnRePack.Location = new System.Drawing.Point(139, 190);
             this.btnRePack.Name = "btnRePack";
             this.btnRePack.Size = new System.Drawing.Size(78, 23);
             this.btnRePack.TabIndex = 22;
@@ -233,7 +213,7 @@
             // 
             // btnUnPack
             // 
-            this.btnUnPack.Location = new System.Drawing.Point(492, 233);
+            this.btnUnPack.Location = new System.Drawing.Point(397, 295);
             this.btnUnPack.Name = "btnUnPack";
             this.btnUnPack.Size = new System.Drawing.Size(75, 23);
             this.btnUnPack.TabIndex = 23;
@@ -243,17 +223,66 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.grpTP);
             this.groupBox1.Controls.Add(this.txtNewID);
             this.groupBox1.Controls.Add(this.lblNewID);
             this.groupBox1.Controls.Add(this.txtNewUID);
             this.groupBox1.Controls.Add(this.lblNewUID);
             this.groupBox1.Controls.Add(this.btnRePack);
-            this.groupBox1.Location = new System.Drawing.Point(596, 12);
+            this.groupBox1.Location = new System.Drawing.Point(489, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 100);
+            this.groupBox1.Size = new System.Drawing.Size(234, 228);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RePack";
+            // 
+            // grpTP
+            // 
+            this.grpTP.Controls.Add(this.lblTpLevers);
+            this.grpTP.Controls.Add(this.cboTpHearts);
+            this.grpTP.Controls.Add(this.cboTpLevers);
+            this.grpTP.Controls.Add(this.lblTpHearts);
+            this.grpTP.Enabled = false;
+            this.grpTP.Location = new System.Drawing.Point(9, 91);
+            this.grpTP.Name = "grpTP";
+            this.grpTP.Size = new System.Drawing.Size(208, 84);
+            this.grpTP.TabIndex = 29;
+            this.grpTP.TabStop = false;
+            this.grpTP.Text = "TP";
+            // 
+            // lblTpLevers
+            // 
+            this.lblTpLevers.Location = new System.Drawing.Point(6, 17);
+            this.lblTpLevers.Name = "lblTpLevers";
+            this.lblTpLevers.Size = new System.Drawing.Size(63, 23);
+            this.lblTpLevers.TabIndex = 26;
+            this.lblTpLevers.Text = "TP Lever";
+            // 
+            // cboTpHearts
+            // 
+            this.cboTpHearts.FormattingEnabled = true;
+            this.cboTpHearts.Location = new System.Drawing.Point(75, 54);
+            this.cboTpHearts.Name = "cboTpHearts";
+            this.cboTpHearts.Size = new System.Drawing.Size(117, 20);
+            this.cboTpHearts.TabIndex = 28;
+            this.cboTpHearts.SelectedIndexChanged += new System.EventHandler(this.cboTpHearts_SelectedIndexChanged);
+            // 
+            // cboTpLevers
+            // 
+            this.cboTpLevers.FormattingEnabled = true;
+            this.cboTpLevers.Location = new System.Drawing.Point(75, 15);
+            this.cboTpLevers.Name = "cboTpLevers";
+            this.cboTpLevers.Size = new System.Drawing.Size(117, 20);
+            this.cboTpLevers.TabIndex = 25;
+            this.cboTpLevers.SelectedIndexChanged += new System.EventHandler(this.cboTpLevers_SelectedIndexChanged);
+            // 
+            // lblTpHearts
+            // 
+            this.lblTpHearts.Location = new System.Drawing.Point(4, 55);
+            this.lblTpHearts.Name = "lblTpHearts";
+            this.lblTpHearts.Size = new System.Drawing.Size(63, 23);
+            this.lblTpHearts.TabIndex = 27;
+            this.lblTpHearts.Text = "TP Hearts";
             // 
             // txtNewID
             // 
@@ -273,15 +302,25 @@
             this.lblNewID.Text = "New ID:";
             this.lblNewID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // ricMessage
+            // 
+            this.ricMessage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ricMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ricMessage.Location = new System.Drawing.Point(12, 74);
+            this.ricMessage.Name = "ricMessage";
+            this.ricMessage.ReadOnly = true;
+            this.ricMessage.Size = new System.Drawing.Size(369, 287);
+            this.ricMessage.TabIndex = 25;
+            this.ricMessage.Text = "";
+            // 
             // frmAmiibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 536);
+            this.ClientSize = new System.Drawing.Size(1089, 416);
+            this.Controls.Add(this.ricMessage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUnPack);
-            this.Controls.Add(this.lblMessage2);
-            this.Controls.Add(this.lblSsbTp);
             this.Controls.Add(this.ricOut);
             this.Controls.Add(this.btnPicture);
             this.Controls.Add(this.btnMcasName);
@@ -290,7 +329,6 @@
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.linkURL);
-            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnRename);
             this.Controls.Add(this.btnTo540);
             this.Controls.Add(this.btnOpen);
@@ -301,6 +339,7 @@
             this.Text = "Amiibo Tools v1.0.0";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grpTP.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,7 +352,6 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnTo540;
         private System.Windows.Forms.Button btnRename;
-        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.LinkLabel linkURL;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblURL;
@@ -322,8 +360,6 @@
         private System.Windows.Forms.Button btnMcasName;
         private System.Windows.Forms.Button btnPicture;
         private System.Windows.Forms.RichTextBox ricOut;
-        private System.Windows.Forms.Label lblSsbTp;
-        private System.Windows.Forms.Label lblMessage2;
         private System.Windows.Forms.Label lblNewUID;
         private System.Windows.Forms.TextBox txtNewUID;
         private System.Windows.Forms.Button btnRePack;
@@ -331,5 +367,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNewID;
         private System.Windows.Forms.Label lblNewID;
+        private System.Windows.Forms.RichTextBox ricMessage;
+        private System.Windows.Forms.ComboBox cboTpLevers;
+        private System.Windows.Forms.Label lblTpLevers;
+        private System.Windows.Forms.ComboBox cboTpHearts;
+        private System.Windows.Forms.Label lblTpHearts;
+        private System.Windows.Forms.GroupBox grpTP;
     }
 }
