@@ -763,3 +763,7 @@
 [Amiibo]
 1、修改主界面，改用RichTextBox控件显示各种信息；
 2、加入了修改TP信息的功能；
+
+2018-08-27
+[Amiibo]
+1、加入了Splatoon的Pearl和Marina；

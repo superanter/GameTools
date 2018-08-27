@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2018-03-26
+        /// All 2018-08-27
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[713][];
+            string[][] strAmiiboName = new string[715][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -801,6 +801,8 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[710] = new string[] { "05C0000003651302", "MSR", "Metroid: Samus Returns", "", "Samus Aran", "001" };
             strAmiiboName[711] = new string[] { "3740000103741402", "SMC", "Super Mario Cereal", "", "Super Mario Cereal", "001" };
             strAmiiboName[712] = new string[] { "1D01000003750D02", "DEP", "Detective Pikachu", "", "Detective Pikachu", "001" };
+            strAmiiboName[713] = new string[] { "0803000003760402", "SPL", "Splatoon", "Wave 4", "Pearl", "012" };
+            strAmiiboName[714] = new string[] { "0804000003770402", "SPL", "Splatoon", "Wave 4", "Marina", "013" };
             /*
             [ZBW] 06 - Mipha(Zora Champion).bin?(Revali)	1	1	01070000-035A0902
             [ZBW] 07 - Daruk(Goron Champion).bin?(Mipha)	1	1	01050000-03580902	CRC32:
@@ -821,7 +823,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2018-03-26
+        /// 01to04 2018-08-27
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1319,6 +1321,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0800": return "Splatoon - Inkling";
                 case "0801": return "Splatoon - Callie";
                 case "0802": return "Splatoon - Marie";
+                case "0803": return "Splatoon - Pearl";
+                case "0804": return "Splatoon - Marina";
                 case "09C0": return "Mario Sports Superstars - Mario";
                 case "09C1": return "Mario Sports Superstars - Luigi";
                 case "09C2": return "Mario Sports Superstars - Peach";
@@ -1399,7 +1403,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2018-03-26
+        /// 09to12 2018-08-27
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2117,7 +2121,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0373": return "Super Mario - Bowser(Wedding)";
                 case "0374": return "Super Mario Cereal - Super Mario Cereal";
                 case "0375": return "Detective Pikachu - Detective Pikachu";
-
+                case "0376": return "Splatoon - Pearl";
+                case "0377": return "Splatoon - Marina";
                 default: return "";
 
             }

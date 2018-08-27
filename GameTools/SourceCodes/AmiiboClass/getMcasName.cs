@@ -844,6 +844,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "12256389": return "[ZBW] 09 - Urbosa (Gerudo Champion).bin";
                 case "3DD7B13E": return "[SMC] 01 - Super Mario Cereal.bin";
                 case "7E561FE9": return "[DEP] 01 - Detective Pikachu.bin";
+                case "2E9F7E59": return "[Splatoon] 12 - Pearl.bin";
+                case "2BBE9C60": return "[Splatoon] 13 - Marina.bin";
                 default: return "";
             }
         }
