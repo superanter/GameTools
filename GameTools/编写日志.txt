@@ -767,3 +767,8 @@
 2018-08-27
 [Amiibo]
 1、加入了Splatoon的Pearl和Marina；
+
+2018-09-06
+[Amiibo]
+1、删除了“Skylanders”的两行重复数据；
+2、优化了“Amiibo Database.xlsx”文件。

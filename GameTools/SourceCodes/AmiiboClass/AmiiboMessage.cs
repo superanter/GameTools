@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2018-08-27
+        /// All 2018-09-06
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[715][];
+            string[][] strAmiiboName = new string[713][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -277,10 +277,10 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[186] = new string[] { "0140000003550902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Guardian", "010" };
             strAmiiboName[187] = new string[] { "0101000003560902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Zelda", "013" };
             strAmiiboName[188] = new string[] { "01410000035C0902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Bokoblin", "009" };
-            strAmiiboName[189] = new string[] { "01070000035A0902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Mipha", "013" };
-            strAmiiboName[190] = new string[] { "0105000003580902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Daruk", "014" };
-            strAmiiboName[191] = new string[] { "01080000035B0902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Revali", "015" };
-            strAmiiboName[192] = new string[] { "0106000003590902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Urbosa", "016" };
+            strAmiiboName[189] = new string[] { "01070000035A0902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Mipha(Zora Champion)", "013" };
+            strAmiiboName[190] = new string[] { "0105000003580902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Daruk(Goron Champion)", "014" };
+            strAmiiboName[191] = new string[] { "01080000035B0902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Revali(Rito Champion)", "015" };
+            strAmiiboName[192] = new string[] { "0106000003590902", "LOZ", "The Legend of Zelda", "The Legend of Zelda Breath of the Wild Series", "Urbosa(Gerudo Champion)", "016" };
             strAmiiboName[193] = new string[] { "08000100003E0402", "SPL", "Splatoon", "Wave 1", "Inkling Girl", "002" };
             strAmiiboName[194] = new string[] { "08000200003F0402", "SPL", "Splatoon", "Wave 1", "Inkling Boy", "001" };
             strAmiiboName[195] = new string[] { "0800030000400402", "SPL", "Splatoon", "Wave 1", "Inkling Squid", "003" };
@@ -782,33 +782,26 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[691] = new string[] { "00800102035D0302", "YWW", "Yoshi's Woolly World", "", "Poochy", "005" };
             strAmiiboName[692] = new string[] { "0005FF00023A0702", "SKL", "Skylanders SuperChargers", "", "Hammer Slam Bowser", "001" };
             strAmiiboName[693] = new string[] { "0008FF00023B0702", "SKL", "Skylanders SuperChargers", "", "Turbo Charge Donkey Kong", "002" };
-            strAmiiboName[694] = new string[] { "0005FF00023A0702", "SKL", "Skylanders SuperChargers", "", "Dark Hammer Slam Bowser", "003" };
-            strAmiiboName[695] = new string[] { "0008FF00023B0702", "SKL", "Skylanders SuperChargers", "", "Dark Turbo Charge Donkey Kong", "004" };
-            strAmiiboName[696] = new string[] { "1F00000002540C02", "KIR", "Kirby", "", "Kirby", "001" };
-            strAmiiboName[697] = new string[] { "1F01000002550C02", "KIR", "Kirby", "", "Meta Knight", "002" };
-            strAmiiboName[698] = new string[] { "1F02000002560C02", "KIR", "Kirby", "", "King Dedede", "003" };
-            strAmiiboName[699] = new string[] { "1F03000002570C02", "KIR", "Kirby", "", "Waddle Dee", "004" };
-            strAmiiboName[700] = new string[] { "2106000003601202", "FIE", "Fire Emblem", "", "Alm", "001" };
-            strAmiiboName[701] = new string[] { "2107000003611202", "FIE", "Fire Emblem", "", "Celica", "002" };
-            strAmiiboName[702] = new string[] { "21080000036F1202", "FIE", "Fire Emblem", "", "Chrom", "003" };
-            strAmiiboName[703] = new string[] { "2109000003701202", "FIE", "Fire Emblem", "", "Tiki", "004" };
-            strAmiiboName[704] = new string[] { "35C0000002500A02", "SHK", "Shovel Knight", "", "Shovel Knight", "001" };
-            strAmiiboName[705] = new string[] { "22C00000003A0202", "CHI", "Chibi Robo", "", "Chibi Robo", "001" };
-            strAmiiboName[706] = new string[] { "1D000001025C0D02", "POK", "Pokkén Tournament", "", "Shadow Mewtwo", "001" };
-            strAmiiboName[707] = new string[] { "1F400000035E1002", "BOB", "BoxBoy!", "", "Qbby", "001" };
-            strAmiiboName[708] = new string[] { "06420000035F1102", "PIK", "Pikmin", "", "Pikmin", "001" };
-            strAmiiboName[709] = new string[] { "05C1000003661302", "MSR", "Metroid: Samus Returns", "", "Metroid", "002" };
-            strAmiiboName[710] = new string[] { "05C0000003651302", "MSR", "Metroid: Samus Returns", "", "Samus Aran", "001" };
-            strAmiiboName[711] = new string[] { "3740000103741402", "SMC", "Super Mario Cereal", "", "Super Mario Cereal", "001" };
-            strAmiiboName[712] = new string[] { "1D01000003750D02", "DEP", "Detective Pikachu", "", "Detective Pikachu", "001" };
-            strAmiiboName[713] = new string[] { "0803000003760402", "SPL", "Splatoon", "Wave 4", "Pearl", "012" };
-            strAmiiboName[714] = new string[] { "0804000003770402", "SPL", "Splatoon", "Wave 4", "Marina", "013" };
-            /*
-            [ZBW] 06 - Mipha(Zora Champion).bin?(Revali)	1	1	01070000-035A0902
-            [ZBW] 07 - Daruk(Goron Champion).bin?(Mipha)	1	1	01050000-03580902	CRC32:
-            [ZBW] 08 - Revali(Rito Champion).bin?(Urbosa)	1	1	01080000-035B0902 CRC32:
-            [ZBW] 09 - Urbosa(Gerudo Champion).bin?(Daruk)	1	1	01060000-03590902	CRC32:
-            */
+            strAmiiboName[694] = new string[] { "1F00000002540C02", "KIR", "Kirby", "", "Kirby", "001" };
+            strAmiiboName[695] = new string[] { "1F01000002550C02", "KIR", "Kirby", "", "Meta Knight", "002" };
+            strAmiiboName[696] = new string[] { "1F02000002560C02", "KIR", "Kirby", "", "King Dedede", "003" };
+            strAmiiboName[697] = new string[] { "1F03000002570C02", "KIR", "Kirby", "", "Waddle Dee", "004" };
+            strAmiiboName[698] = new string[] { "2106000003601202", "FIE", "Fire Emblem", "", "Alm", "001" };
+            strAmiiboName[699] = new string[] { "2107000003611202", "FIE", "Fire Emblem", "", "Celica", "002" };
+            strAmiiboName[700] = new string[] { "21080000036F1202", "FIE", "Fire Emblem", "", "Chrom", "003" };
+            strAmiiboName[701] = new string[] { "2109000003701202", "FIE", "Fire Emblem", "", "Tiki", "004" };
+            strAmiiboName[702] = new string[] { "35C0000002500A02", "SHK", "Shovel Knight", "", "Shovel Knight", "001" };
+            strAmiiboName[703] = new string[] { "22C00000003A0202", "CHI", "Chibi Robo", "", "Chibi Robo", "001" };
+            strAmiiboName[704] = new string[] { "1D000001025C0D02", "POK", "Pokkén Tournament", "", "Shadow Mewtwo", "001" };
+            strAmiiboName[705] = new string[] { "1F400000035E1002", "BOB", "BoxBoy!", "", "Qbby", "001" };
+            strAmiiboName[706] = new string[] { "06420000035F1102", "PIK", "Pikmin", "", "Pikmin", "001" };
+            strAmiiboName[707] = new string[] { "05C1000003661302", "MSR", "Metroid: Samus Returns", "", "Metroid", "002" };
+            strAmiiboName[708] = new string[] { "05C0000003651302", "MSR", "Metroid: Samus Returns", "", "Samus Aran", "001" };
+            strAmiiboName[709] = new string[] { "3740000103741402", "SMC", "Super Mario Cereal", "", "Super Mario Cereal", "001" };
+            strAmiiboName[710] = new string[] { "1D01000003750D02", "DEP", "Detective Pikachu", "", "Detective Pikachu", "001" };
+            strAmiiboName[711] = new string[] { "0803000003760402", "SPL", "Splatoon", "Wave 4", "Pearl", "012" };
+            strAmiiboName[712] = new string[] { "0804000003770402", "SPL", "Splatoon", "Wave 4", "Marina", "013" };
+
             #endregion
 
             for (int i = 1; i < strAmiiboName.Length; i++)
