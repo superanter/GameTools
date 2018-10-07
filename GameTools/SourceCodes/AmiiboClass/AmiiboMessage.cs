@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2018-09-06
+        /// All 2018-10-07
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[713][];
+            string[][] strAmiiboName = new string[714][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -801,6 +801,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[710] = new string[] { "1D01000003750D02", "DEP", "Detective Pikachu", "", "Detective Pikachu", "001" };
             strAmiiboName[711] = new string[] { "0803000003760402", "SPL", "Splatoon", "Wave 4", "Pearl", "012" };
             strAmiiboName[712] = new string[] { "0804000003770402", "SPL", "Splatoon", "Wave 4", "Marina", "013" };
+            strAmiiboName[713] = new string[] { "3480000003791502", "MM", "Mega Man", "", "Mega Man", "001" };
 
             #endregion
 
@@ -1396,7 +1397,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2018-08-27
+        /// 09to12 2018-10-07
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2116,13 +2117,14 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0375": return "Detective Pikachu - Detective Pikachu";
                 case "0376": return "Splatoon - Pearl";
                 case "0377": return "Splatoon - Marina";
+                case "0379": return "Mega Man - Mega Man";
                 default: return "";
 
             }
         }
 
         /// <summary>
-        /// 13to14 2018-01-24
+        /// 13to14 2018-10-07
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2151,6 +2153,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "12": return "Fire Emblem";
                 case "13": return "Metroid";
                 case "14": return "Kellogs";
+                case "15": return "Mega Man";
                 default: return "";
             }
         }

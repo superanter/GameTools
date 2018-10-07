@@ -772,3 +772,7 @@
 [Amiibo]
 1、删除了“Skylanders”的两行重复数据；
 2、优化了“Amiibo Database.xlsx”文件。
+
+2018-10-07
+[Amiibo]
+1、加入了“Mega Man”的一个Amiibo数据。

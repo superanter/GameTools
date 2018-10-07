@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2018-08-27
+        /// MCAS Name 2018-10-07
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -846,6 +846,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "7E561FE9": return "[DEP] 01 - Detective Pikachu.bin";
                 case "2E9F7E59": return "[Splatoon] 12 - Pearl.bin";
                 case "2BBE9C60": return "[Splatoon] 13 - Marina.bin";
+                case "9E00C8CC": return "[MM] 01 - Mega Man.bin";
                 default: return "";
             }
         }
