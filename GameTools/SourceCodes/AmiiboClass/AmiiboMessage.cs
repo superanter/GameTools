@@ -79,7 +79,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2019-01-21
+        /// All 2019-01-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -802,17 +802,14 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[711] = new string[] { "0803000003760402", "SPL", "Splatoon", "Wave 4", "Pearl", "012" };
             strAmiiboName[712] = new string[] { "0804000003770402", "SPL", "Splatoon", "Wave 4", "Marina", "013" };
             strAmiiboName[713] = new string[] { "3480000003791502", "MM", "Mega Man", "", "Mega Man", "001" };
-            strAmiiboName[714] = new string[] { "38C0000003911602", "D3", "Diablo III", "", "Loot Goblin", "001" };
-            strAmiiboName[715] = new string[] { "3380000003781402", "DS", "DS", "", "Solaire of Astora", "001" };
-            strAmiiboName[716] = new string[] { "08050200038F0402", "SPL", "Splatoon", "", "Octoling Boy", "015" };
-            strAmiiboName[717] = new string[] { "08050100038E0402", "SPL", "Splatoon", "", "Octoling Girl", "016" };
-            strAmiiboName[718] = new string[] { "0805030003900402", "SPL", "Splatoon", "", "Octoling Octopus", "021" };
-            strAmiiboName[719] = new string[] { "05840000037E0002", "SSB", "Super Smash Bros.", "", "Wolf", "063" };
-            strAmiiboName[720] = new string[] { "0800010003820002", "SSB", "Super Smash Bros.", "", "Inking", "064" };
-            strAmiiboName[721] = new string[] { "05C20000037F0002", "SSB", "Super Smash Bros.", "", "Blank Ridley", "065" };
-
-
-
+            strAmiiboName[714] = new string[] { "38C0000003911602", "D", "Diablo", "", "Loot Goblin", "001" };
+            strAmiiboName[715] = new string[] { "3380000003781402", "DS", "Dark Souls", "", "Solaire of Astora", "001" };
+            strAmiiboName[716] = new string[] { "08050100038E0402", "SPL", "Splatoon", "", "Octoling Girl", "014" };
+            strAmiiboName[717] = new string[] { "08050200038F0402", "SPL", "Splatoon", "", "Octoling Boy", "015" };
+            strAmiiboName[718] = new string[] { "0805030003900402", "SPL", "Splatoon", "", "Octoling Octopus", "016" };
+            strAmiiboName[719] = new string[] { "0800010003820002", "SSB", "Super Smash Bros.", "", "Inking", "063" };
+            strAmiiboName[720] = new string[] { "05C20000037F0002", "SSB", "Super Smash Bros.", "", "Blank Ridley", "064" };
+            strAmiiboName[721] = new string[] { "05840000037E0002", "SSB", "Super Smash Bros.", "", "Wolf", "065" };
 
             #endregion
 
@@ -828,7 +825,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2019-01-21
+        /// 01to04 2019-01-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1386,13 +1383,11 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "35C0": return "Shovel Knight - Shovel Knight";
                 case "3600": return "Final Fantasy - Cloud Strif";
                 case "3740": return "Super Mario Cereal - Super Mario Cereal";
-                case "38C0": return "Diablo III - Diablo III";
-                case "3380": return "DS - DS";
-                case "0805": return "Splatoon - Splatoon";
-                case "0584": return "Super Smash Bros. - Super Smash Bros.";
-                case "05C2": return "Super Smash Bros. - Super Smash Bros.";
-
-
+                case "38C0": return "Diablo - Loot Goblin";
+                case "3380": return "Dark Souls - Solaire of Astora";
+                case "0805": return "Splatoon - Octoling";
+                case "0584": return "Super Smash Bros. - Wolf";
+                case "05C2": return "Super Smash Bros. - Ridley";
 
                 default: return "";
             }
@@ -1415,7 +1410,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2019-01-21
+        /// 09to12 2019-01-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2136,18 +2131,14 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0376": return "Splatoon - Pearl";
                 case "0377": return "Splatoon - Marina";
                 case "0379": return "Mega Man - Mega Man";
-                case "0391": return "Diablo III - Loot Goblin";
-                case "0378": return "DS - Solaire of Astora";
+                case "0391": return "Diablo - Loot Goblin";
+                case "0378": return "Dark Souls - Solaire of Astora";
                 case "038F": return "Splatoon - Octoling Boy";
                 case "038E": return "Splatoon - Octoling Girl";
                 case "0390": return "Splatoon - Octoling Octopus";
                 case "037E": return "Super Smash Bros. - Wolf";
                 case "0382": return "Super Smash Bros. - Inking";
-                case "037F": return "Super Smash Bros. - Blank Ridley";
-
-
-
-
+                case "037F": return "Super Smash Bros. - Ridley";
 
                 default: return "";
 
@@ -2185,7 +2176,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "13": return "Metroid";
                 case "14": return "Kellogs";
                 case "15": return "Mega Man";
-                case "16": return "Diablo III";
+                case "16": return "Diablo";
                 default: return "";
             }
         }

@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2018-10-07
+        /// MCAS Name 2019-01-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -847,6 +847,14 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "2E9F7E59": return "[Splatoon] 12 - Pearl.bin";
                 case "2BBE9C60": return "[Splatoon] 13 - Marina.bin";
                 case "9E00C8CC": return "[MM] 01 - Mega Man.bin";
+                case "5E49F706": return "[SSB] 63 - Inkling.bin";
+                case "9297726B": return "[SSB] 64 - Ridley.bin";
+                case "4816400C": return "[SSB] 65 - Wolf.bin";
+                case "828C833B": return "[Splatoon] 14 - Octoling Girl.bin";
+                case "B66C0B7A": return "[Splatoon] 15 - Octoling Boy.bin";
+                case "E3F6F232": return "[Splatoon] 16 - Octoling Octopus.bin";
+                case "31897B9E": return "[D] 01 - Loot Goblin.bin";
+                case "DB717DBE": return "[DS] 01 - Solaire of Astora.bin";
                 default: return "";
             }
         }
