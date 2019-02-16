@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2019-01-24
+        /// All 2019-02-16
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[722][];
+            string[][] strAmiiboName = new string[725][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -810,6 +810,10 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[719] = new string[] { "0800010003820002", "SSB", "Super Smash Bros.", "", "Inking", "063" };
             strAmiiboName[720] = new string[] { "05C20000037F0002", "SSB", "Super Smash Bros.", "", "Blank Ridley", "064" };
             strAmiiboName[721] = new string[] { "05840000037E0002", "SSB", "Super Smash Bros.", "", "Wolf", "065" };
+            strAmiiboName[722] = new string[] { "00C00000037B0002", "SSB", "Super Smash Bros.", "", "King K. Rool", "066" };
+            strAmiiboName[723] = new string[] { "078F000003810002", "SSB", "Super Smash Bros.", "", "Ice Climbers", "067" };
+            strAmiiboName[724] = new string[] { "00240000038D0002", "SSB", "Super Smash Bros.", "", "Piranha Plant", "068" };
+
 
             #endregion
 
@@ -825,7 +829,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2019-01-24
+        /// 01to04 2019-02-16
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1388,6 +1392,10 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0805": return "Splatoon - Octoling";
                 case "0584": return "Super Smash Bros. - Wolf";
                 case "05C2": return "Super Smash Bros. - Ridley";
+                case "0024": return "Super Smash Bros. - Piranha Plant";
+                case "00C0": return "Super Smash Bros. - King K. Rool";
+                case "078F": return "Super Smash Bros. - Ice Climbers";
+
 
                 default: return "";
             }
@@ -1410,7 +1418,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2019-01-24
+        /// 09to12 2019-02-16
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2139,6 +2147,10 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "037E": return "Super Smash Bros. - Wolf";
                 case "0382": return "Super Smash Bros. - Inking";
                 case "037F": return "Super Smash Bros. - Ridley";
+                case "038D": return "Super Smash Bros. - Piranha Plant";
+                case "037B": return "Super Smash Bros. - King K. Rool";
+                case "0381": return "Super Smash Bros. - Ice Climbers";
+
 
                 default: return "";
 

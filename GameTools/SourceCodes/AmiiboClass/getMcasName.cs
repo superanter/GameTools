@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2019-01-24
+        /// MCAS Name 2019-02-16
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -855,6 +855,10 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "E3F6F232": return "[Splatoon] 16 - Octoling Octopus.bin";
                 case "31897B9E": return "[D] 01 - Loot Goblin.bin";
                 case "DB717DBE": return "[DS] 01 - Solaire of Astora.bin";
+                case "B57296F5": return "[SSB] 66 - King K Rool.bin";
+                case "DA77BB5D": return "[SSB] 67 - Ice Climbers.bin";
+                case "xxxxxxxx": return "[SSB] 68 - Piranha Plant";
+
                 default: return "";
             }
         }
