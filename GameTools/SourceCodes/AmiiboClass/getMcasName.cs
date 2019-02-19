@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2019-02-16
+        /// MCAS Name 2019-02-19
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -857,7 +857,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "DB717DBE": return "[DS] 01 - Solaire of Astora.bin";
                 case "B57296F5": return "[SSB] 66 - King K Rool.bin";
                 case "DA77BB5D": return "[SSB] 67 - Ice Climbers.bin";
-                case "xxxxxxxx": return "[SSB] 68 - Piranha Plant";
+                case "60E30C3F": return "[SSB] 68 - Piranha Plant.bin";
 
                 default: return "";
             }
