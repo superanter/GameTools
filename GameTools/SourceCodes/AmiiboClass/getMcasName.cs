@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2019-02-19
+        /// MCAS Name 2019-04-21
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -675,10 +675,10 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "16CC07E1": return "[SSB] 29 - Meta Knight.bin";
                 case "44704476": return "[SSB] 30 - Robin.bin";
                 case "7ECD1560": return "[SSB] 31 - Lucina.bin";
-                case "64922FAC": return "[SSB] 32 - Pac-Man.bin";
-                case "6DDAA1B2": return "[SSB] 33 - Wario.bin";
+                case "6DDAA1B2": return "[SSB] 32 - Wario.bin";
+                case "F3146954": return "[SSB] 33 - Charizard.bin";
                 case "8886B172": return "[SSB] 34 - Ness.bin";
-                case "F3146954": return "[SSB] 35 - Charizard.bin";
+                case "64922FAC": return "[SSB] 35 - Pac-Man.bin";
                 case "CE8490CA": return "[SSB] 36 - Greninja.bin";
                 case "BB8AE151": return "[SSB] 37 - Jigglypuff.bin";
                 case "5A0C69B4": return "[SSB] 38 - Palutena.bin";
@@ -847,17 +847,21 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "2E9F7E59": return "[Splatoon] 12 - Pearl.bin";
                 case "2BBE9C60": return "[Splatoon] 13 - Marina.bin";
                 case "9E00C8CC": return "[MM] 01 - Mega Man.bin";
-                case "5E49F706": return "[SSB] 63 - Inkling.bin";
-                case "9297726B": return "[SSB] 64 - Ridley.bin";
-                case "4816400C": return "[SSB] 65 - Wolf.bin";
+                case "4816400C": return "[SSB] 63 - Wolf.bin";
+                case "5E49F706": return "[SSB] 64 - Inkling.bin";
+                case "9297726B": return "[SSB] 65 - Ridley.bin";
                 case "828C833B": return "[Splatoon] 14 - Octoling Girl.bin";
                 case "B66C0B7A": return "[Splatoon] 15 - Octoling Boy.bin";
                 case "E3F6F232": return "[Splatoon] 16 - Octoling Octopus.bin";
                 case "31897B9E": return "[D] 01 - Loot Goblin.bin";
                 case "DB717DBE": return "[DS] 01 - Solaire of Astora.bin";
-                case "B57296F5": return "[SSB] 66 - King K Rool.bin";
-                case "DA77BB5D": return "[SSB] 67 - Ice Climbers.bin";
-                case "60E30C3F": return "[SSB] 68 - Piranha Plant.bin";
+                case "60E30C3F": return "[SSB] 66 - Piranha Plant.bin";
+                case "B57296F5": return "[SSB] 67 - King K Rool.bin";
+                case "DA77BB5D": return "[SSB] 68 - Ice Climbers.bin";
+                case "A8467D55": return "[SSB] 69 - Ken.bin";
+                case "A431EB2A": return "[SSB] 70 - Young Link.bin";
+                case "5FFD3284": return "[SSB] 71 - Daisy.bin";
+
 
                 default: return "";
             }

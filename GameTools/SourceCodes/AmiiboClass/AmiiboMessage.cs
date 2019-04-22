@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2019-02-16
+        /// All 2019-04-21
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[725][];
+            string[][] strAmiiboName = new string[728][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -807,12 +807,16 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[716] = new string[] { "08050100038E0402", "SPL", "Splatoon", "", "Octoling Girl", "014" };
             strAmiiboName[717] = new string[] { "08050200038F0402", "SPL", "Splatoon", "", "Octoling Boy", "015" };
             strAmiiboName[718] = new string[] { "0805030003900402", "SPL", "Splatoon", "", "Octoling Octopus", "016" };
-            strAmiiboName[719] = new string[] { "0800010003820002", "SSB", "Super Smash Bros.", "", "Inking", "063" };
-            strAmiiboName[720] = new string[] { "05C20000037F0002", "SSB", "Super Smash Bros.", "", "Blank Ridley", "064" };
-            strAmiiboName[721] = new string[] { "05840000037E0002", "SSB", "Super Smash Bros.", "", "Wolf", "065" };
-            strAmiiboName[722] = new string[] { "00C00000037B0002", "SSB", "Super Smash Bros.", "", "King K. Rool", "066" };
-            strAmiiboName[723] = new string[] { "078F000003810002", "SSB", "Super Smash Bros.", "", "Ice Climbers", "067" };
-            strAmiiboName[724] = new string[] { "00240000038D0002", "SSB", "Super Smash Bros.", "", "Piranha Plant", "068" };
+            strAmiiboName[719] = new string[] { "05840000037E0002", "SSB", "Super Smash Bros.", "", "Wolf", "063" };
+            strAmiiboName[720] = new string[] { "0800010003820002", "SSB", "Super Smash Bros.", "", "Inking", "064" };
+            strAmiiboName[721] = new string[] { "05C20000037F0002", "SSB", "Super Smash Bros.", "", "Ridley", "065" };
+            strAmiiboName[722] = new string[] { "00240000038D0002", "SSB", "Super Smash Bros.", "", "Piranha Plant", "066" };
+            strAmiiboName[723] = new string[] { "00C00000037B0002", "SSB", "Super Smash Bros.", "", "King K. Rool", "067" };
+            strAmiiboName[724] = new string[] { "078F000003810002", "SSB", "Super Smash Bros.", "", "Ice Climbers", "068" };
+            strAmiiboName[725] = new string[] { "34C1000003890002", "SSB", "Super Smash Bros.", "", "Ken", "069" };
+            strAmiiboName[726] = new string[] { "01000000037C0002", "SSB", "Super Smash Bros.", "", "Young Link", "070" };
+            strAmiiboName[727] = new string[] { "00130000037A0002", "SSB", "Super Smash Bros.", "", "Daisy", "071" };
+
 
 
             #endregion
@@ -829,7 +833,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2019-02-16
+        /// 01to04 2019-04-21
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1395,7 +1399,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0024": return "Super Smash Bros. - Piranha Plant";
                 case "00C0": return "Super Smash Bros. - King K. Rool";
                 case "078F": return "Super Smash Bros. - Ice Climbers";
-
+                case "34C1": return "Street fighter - Ken";
 
                 default: return "";
             }
@@ -1418,7 +1422,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2019-02-16
+        /// 09to12 2019-04-21
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2150,6 +2154,9 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "038D": return "Super Smash Bros. - Piranha Plant";
                 case "037B": return "Super Smash Bros. - King K. Rool";
                 case "0381": return "Super Smash Bros. - Ice Climbers";
+                case "0389": return "Super Smash Bros. - Ken";
+                case "037C": return "Super Smash Bros. - Young Link";
+                case "037A": return "Super Smash Bros. - Daisy";
 
 
                 default: return "";
