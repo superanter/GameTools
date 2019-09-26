@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2019-04-21
+        /// MCAS Name 2019-09-26
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -861,7 +861,13 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "A8467D55": return "[SSB] 69 - Ken.bin";
                 case "A431EB2A": return "[SSB] 70 - Young Link.bin";
                 case "5FFD3284": return "[SSB] 71 - Daisy.bin";
-
+                case "CDE8C618": return "[SSB] 72 - Pichu.bin";
+                case "34CBAA15": return "[SSB] 73 - Isabelle.bin";
+                case "7493F7B3": return "[SSB] 74 - Pokémon Trainer.bin";
+                case "675F0209": return "[SSB] 75 - Snake.bin";
+                case "FD74CB45": return "[SSB] 76 - Ivysaur.bin";
+                case "05E4EE38": return "[SSB] 77 - Squirtle.bin";
+                case "5F5B8163": return "[ZLA] 01 - Link.bin";
 
                 default: return "";
             }

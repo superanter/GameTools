@@ -31,7 +31,7 @@ namespace AnterStudio.GameTools
         public SoftVersion WiiSaveVersion = new SoftVersion("v1.1.1", "2017-08-02");
         public SoftVersion SwitchSaveVersion = new SoftVersion("v0.0.0", "2017-08-02");
         public SoftVersion DsRomVersion = new SoftVersion("v1.0.0", "2017-08-02");
-        public SoftVersion AmiiboVersion = new SoftVersion("v1.1.0", "2019-02-19");
+        public SoftVersion AmiiboVersion = new SoftVersion("v1.1.0", "2019-09-26");
         public SoftVersion OtherToolsVersion = new SoftVersion("v1.0.0", "2017-08-18");
     }
 }

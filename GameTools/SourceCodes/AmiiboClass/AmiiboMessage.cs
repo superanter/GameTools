@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2019-04-21
+        /// All 2019-09-26
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[728][];
+            string[][] strAmiiboName = new string[735][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -816,8 +816,13 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[725] = new string[] { "34C1000003890002", "SSB", "Super Smash Bros.", "", "Ken", "069" };
             strAmiiboName[726] = new string[] { "01000000037C0002", "SSB", "Super Smash Bros.", "", "Young Link", "070" };
             strAmiiboName[727] = new string[] { "00130000037A0002", "SSB", "Super Smash Bros.", "", "Daisy", "071" };
-
-
+            strAmiiboName[728] = new string[] { "19AC000003850002", "SSB", "Super Smash Bros.", "", "Pichu", "072" };
+            strAmiiboName[729] = new string[] { "01810000037D0002", "SSB", "Super Smash Bros.", "", "Isabelle", "073" };
+            strAmiiboName[730] = new string[] { "1D40000003870002", "SSB", "Super Smash Bros.", "", "Pokémon Trainer", "074" };
+            strAmiiboName[731] = new string[] { "37800000038A0002", "SSB", "Super Smash Bros.", "", "Snake", "075" };
+            strAmiiboName[732] = new string[] { "1902000003830002", "SSB", "Super Smash Bros.", "", "Ivysaur", "076" };
+            strAmiiboName[733] = new string[] { "1907000003840002", "SSB", "Super Smash Bros.", "", "Squirtle", "077" };
+            strAmiiboName[734] = new string[] { "0100000003990902", "ZLA", "The Legend of Zelda", "The Legend of Zelda Link's Awakening", "Link", "001" };
 
             #endregion
 
@@ -833,7 +838,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2019-04-21
+        /// 01to04 2019-09-26
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1400,6 +1405,11 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "00C0": return "Super Smash Bros. - King K. Rool";
                 case "078F": return "Super Smash Bros. - Ice Climbers";
                 case "34C1": return "Street fighter - Ken";
+                case "19AC": return "Pokemon - Pichu";
+                case "1D40": return "Pokemon - Pokémon Trainer";
+                case "3780": return "Metal Gear - Snake";
+                case "1902": return "Pokemon - Ivysaur";
+                case "1907": return "Pokemon - Squirtle";
 
                 default: return "";
             }
@@ -1422,7 +1432,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2019-04-21
+        /// 09to12 2019-09-26
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2157,6 +2167,13 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0389": return "Super Smash Bros. - Ken";
                 case "037C": return "Super Smash Bros. - Young Link";
                 case "037A": return "Super Smash Bros. - Daisy";
+                case "0385": return "Pichu - Pichu";
+                case "037D": return "Isabelle - Isabelle";
+                case "0387": return "Pokémon Trainer - Pokémon Trainer";
+                case "038A": return "Snake - Snake";
+                case "0383": return "Ivysaur - Ivysaur";
+                case "0384": return "Squirtle - Squirtle";
+                case "0399": return "Link - Link";
 
 
                 default: return "";
