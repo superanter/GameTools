@@ -868,6 +868,20 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "FD74CB45": return "[SSB] 76 - Ivysaur.bin";
                 case "05E4EE38": return "[SSB] 77 - Squirtle.bin";
                 case "5F5B8163": return "[ZLA] 01 - Link.bin";
+                case "300240A4": return "[SSB] 78 - Simon.bin";
+                case "5930A852": return "[SSB] 79 - Incineroar.bin";
+                case "CFA947F2": return "[SSB] 80 - Chrom.bin";
+                case "D631CD52": return "[SN] 02 - Plague Knight.bin";
+                case "E78BACA3": return "[SN] 03 - Specter Knight.bin";
+                case "2DA3DC18": return "[SN] 04 - King Knight.bin";
+                case "C623062A": return "[SN] 05 - Shovel Knight (Gold Edition).bin";
+                case "364E5729": return "[JPPB] 01 - Pawapuro.bin";
+                case "C191D44D": return "[JPPB] 02 - Ikari.bin";
+                case "5430E840": return "[JPPB] 03 - Yabe.bin";
+                case "0B832EB3": return "[JPPB] 04 - Hayakawa.bin";
+                case "66D0BEF6": return "[JPPB] 05 - Ganda.bin";
+                case "1D5BFDDE": return "[JPPB] 06 - Daijobu.bin";
+
 
                 default: return "";
             }
