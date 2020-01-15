@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2019-09-26
+        /// MCAS Name 2020-01-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
