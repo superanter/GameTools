@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2020-01-15
+        /// MCAS Name 2020-01-19
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -881,7 +881,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0B832EB3": return "[JPPB] 04 - Hayakawa.bin";
                 case "66D0BEF6": return "[JPPB] 05 - Ganda.bin";
                 case "1D5BFDDE": return "[JPPB] 06 - Daijobu.bin";
-
+                case "BD79FF89": return "[SSB] 81 - Dark Samus.bin";
+                case "A08140D5": return "[SSB] 82 - Richter.bin";
 
                 default: return "";
             }

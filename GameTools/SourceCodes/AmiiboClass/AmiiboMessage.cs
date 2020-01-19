@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2020-01-15
+        /// All 2020-01-19
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[748][];
+            string[][] strAmiiboName = new string[750][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -836,6 +836,8 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[745] = new string[] { "3803000103961702", "JPPB", "Jikkyou Powerful Pro Baseball", "", "Hayakawa", "004" };
             strAmiiboName[746] = new string[] { "3805000103981702", "JPPB", "Jikkyou Powerful Pro Baseball", "", "Ganda", "005" };
             strAmiiboName[747] = new string[] { "3802000103951702", "JPPB", "Jikkyou Powerful Pro Baseball", "", "Daijobu", "006" };
+            strAmiiboName[748] = new string[] { "05C3000003800002", "SSB", "Super Smash Bros.", "", "Dark Samus", "081" };
+            strAmiiboName[749] = new string[] { "37C10000038C0002", "SSB", "Super Smash Bros.", "", "Richter", "082" };
 
             #endregion
 
@@ -851,7 +853,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2020-01-15
+        /// 01to04 2020-01-19
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1423,7 +1425,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "3780": return "Metal Gear - Snake";
                 case "1902": return "Pokemon - Ivysaur";
                 case "1907": return "Pokemon - Squirtle";
-                case "37C0": return "(Simon) - Simon";
+                case "37C0": return "Castlevania - Simon";
                 case "1BD7": return "Pokemon - Chrom";
                 case "35C1": return "Shovel Knight - Plague Knight";
                 case "35C2": return "Shovel Knight - Specter Knight";
@@ -1434,6 +1436,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "3803": return "Jikkyou Powerful Pro Baseball - Hayakawa";
                 case "3805": return "Jikkyou Powerful Pro Baseball - Ganda";
                 case "3802": return "Jikkyou Powerful Pro Baseball - Daijobu";
+                case "05C3": return "Metroid - Dark Samus";
+                case "37C1": return "Castlevania - Richter";
 
                 default: return "";
             }
@@ -1456,7 +1460,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2020-01-15
+        /// 09to12 2020-01-19
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2211,6 +2215,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0396": return "Hayakawa - Hayakawa";
                 case "0398": return "Ganda - Ganda";
                 case "0395": return "Daijobu - Daijobu";
+                case "0380": return "Dark Samus - Dark Samus";
+                case "038C": return "Richter - Richter";
 
                 default: return "";
 
