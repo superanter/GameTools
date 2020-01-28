@@ -801,12 +801,12 @@
 
 2019-09-26
 [Amiibo]
-1、加入了7个新的Amiibo数据:SSB的72、73、74、75、76、77；ZLA的01；
+1、加入了7个新的Amiibo数据:SSB的72、73、74、75、76、77；ZLA的01。
 
 2020-01-15
 [Amiibo]
-1、加入了13个新的Amiibo数据:SSB的78-80；SN的02-05；Jikkyou Powerful Pro Baseball[JPPB]的01-06；
+1、加入了13个新的Amiibo数据:SSB的78-80；SN的02-05；Jikkyou Powerful Pro Baseball[JPPB]的01-06。
 
 2020-01-19
 [Amiibo]
-1、加入了2个新的Amiibo数据:SSB的81-82
+1、加入了2个新的Amiibo数据:SSB的81-82。
