@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AnterStudio.GameTools</RootNamespace>
     <AssemblyName>GameTools</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>SourceCodes\MainIcon.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>D1DEA0F43D0B10AD255C464474697FF8FF7C6F4B</ManifestCertificateThumbprint>
@@ -38,6 +38,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +49,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,6 +58,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -206,6 +209,7 @@
     <Content Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\AesFastEngine - 复制.txt" />
     <Content Include="SourceCodes\AmiiboClass\Lib\ANTer.BouncyCastle\AES_CTR_NoPadding\IBufferedCipher.cs.txt" />
     <Content Include="SourceCodes\MainIcon.ico" />
+    <None Include="app.config" />
     <None Include="Resources\Picture\anter256_01.bmp" />
     <None Include="Resources\Picture\anter32_01.gif" />
     <Content Include="编写日志.txt" />
