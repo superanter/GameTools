@@ -883,6 +883,16 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "1D5BFDDE": return "[JPPB] 06 - Daijobu.bin";
                 case "BD79FF89": return "[SSB] 81 - Dark Samus.bin";
                 case "A08140D5": return "[SSB] 82 - Richter.bin";
+                case "603EFD8E": return "[SM] 21 - Cat Mario.bin";
+                case "4617BBF3": return "[SM] 22 - Cat Peach.bin";
+                case "3A14C3D0": return "[SSB] 83 - Joker.bin";
+                case "CD47632E": return "[SSB] 84 - Hero.bin";
+                case "3DD9E8E8": return "[SSB] 85 - Banjo & Kazooie.bin";
+                case "41DF596B": return "[SSB] 86 - Terry.bin";
+                case "373799AD": return "[SSB] 87 - Byleth.bin";
+                case "16425CCF": return "[MHR] 01 - Palamute.bin";
+                case "AEB3F47B": return "[MHR] 02 - Magnamalo.bin";
+                case "CA4A2C33": return "[MHR] 03 - Palico.bin";
 
                 default: return "";
             }

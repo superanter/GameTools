@@ -810,3 +810,7 @@
 2020-01-19
 [Amiibo]
 1、加入了2个新的Amiibo数据:SSB的81-82。
+
+2021-04-15
+[Amiibo]
+1、加入了10个新的Amiibo数据:SSB的83-87,SM的21-22，Monster Hunter Rise[MHR]的01-03。

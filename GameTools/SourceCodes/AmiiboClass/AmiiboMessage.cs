@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2020-01-19
+        /// All 2021-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[750][];
+            string[][] strAmiiboName = new string[760][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -838,6 +838,16 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[747] = new string[] { "3802000103951702", "JPPB", "Jikkyou Powerful Pro Baseball", "", "Daijobu", "006" };
             strAmiiboName[748] = new string[] { "05C3000003800002", "SSB", "Super Smash Bros.", "", "Dark Samus", "081" };
             strAmiiboName[749] = new string[] { "37C10000038C0002", "SSB", "Super Smash Bros.", "", "Richter", "082" };
+            strAmiiboName[750] = new string[] { "0000030003A60102", "SM", "Mario", "Super Mario Figures", "Cat Mario", "021" };
+            strAmiiboName[751] = new string[] { "0002010003A70102", "SM", "Mario", "Super Mario Figures", "Cat Peach", "022" };
+            strAmiiboName[752] = new string[] { "3A00000003A10002", "SSB", "Super Smash Bros", "", "Joker", "083" };
+            strAmiiboName[753] = new string[] { "3640000003A20002", "SSB", "Super Smash Bros", "", "Hero", "084" };
+            strAmiiboName[754] = new string[] { "3B40000003A30002", "SSB", "Super Smash Bros", "", "Banjo & Kazooie", "085" };
+            strAmiiboName[755] = new string[] { "3C80000003A40002", "SSB", "Super Smash Bros", "", "Terry", "086" };
+            strAmiiboName[756] = new string[] { "210B000003A50002", "SSB", "Super Smash Bros", "", "Byleth", "087" };
+            strAmiiboName[757] = new string[] { "350A000004111802", "MHR", "Monster Hunter Rise", "", "Palamute", "001" };
+            strAmiiboName[758] = new string[] { "35080000040F1802", "MHR", "Monster Hunter Rise", "", "Magnamalo", "002" };
+            strAmiiboName[759] = new string[] { "3509000004101802", "MHR", "Monster Hunter Rise", "", "Palico", "003" };
 
             #endregion
 
@@ -853,7 +863,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2020-01-19
+        /// 01to04 2021-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1438,6 +1448,14 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "3802": return "Jikkyou Powerful Pro Baseball - Daijobu";
                 case "05C3": return "Metroid - Dark Samus";
                 case "37C1": return "Castlevania - Richter";
+                case "3A00": return "?1 - Joker";
+                case "3640": return "?2 - Hero";
+                case "3B40": return "?3 - Banjo & Kazooie";
+                case "3C80": return "?4 - Terry";
+                case "210B": return "Fire Emblem - Byleth";
+                case "350A": return "Monster Hunter - Palamute";
+                case "3508": return "Monster Hunter - Magnamalo";
+                case "3509": return "Monster Hunter - Palico";
 
                 default: return "";
             }
@@ -1460,7 +1478,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 09to12 2020-01-19
+        /// 09to12 2021-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2217,6 +2235,16 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0395": return "Daijobu - Daijobu";
                 case "0380": return "Dark Samus - Dark Samus";
                 case "038C": return "Richter - Richter";
+                case "03A6": return "Cat Mario - Cat Mario";
+                case "03A7": return "Cat Peach - Cat Peach";
+                case "03A1": return "Joker - Joker";
+                case "03A2": return "Hero - Hero";
+                case "03A3": return "Banjo & Kazooie - Banjo & Kazooie";
+                case "03A4": return "Terry - Terry";
+                case "03A5": return "Byleth - Byleth";
+                case "0411": return "Palamute - Palamute";
+                case "040F": return "Magnamalo - Magnamalo";
+                case "0410": return "Palico - Palico";
 
                 default: return "";
 
@@ -2224,7 +2252,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 13to14 2020-01-15
+        /// 13to14 2021-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2256,6 +2284,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "15": return "Mega Man";
                 case "16": return "Diablo";
                 case "17": return "Jikkyou Powerful Pro Baseball";
+                case "18": return "Monster Hunter Rise";
+
                 default: return "";
             }
         }
