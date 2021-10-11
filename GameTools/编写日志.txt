@@ -814,3 +814,12 @@
 2021-04-15
 [Amiibo]
 1、加入了10个新的Amiibo数据:SSB的83-87,SM的21-22，Monster Hunter Rise[MHR]的01-03。
+
+2021-10-11
+[Amiibo]
+1、加入了19个新的Amiibo数据:SSB的83-87,SM的21-22，Monster Hunter Rise[MHR]的01-03。
+	Metroi[MET]：03-04
+	Monster Hunter Stories[MET]:07-09
+	The Legend of Zelda - The Legend of Zelda Skyward Sword	[ZSS]:01
+	Mario - Super Nintendo World Power-Up Bands[SNW]:01-06
+	Yu-Gi-Oh![YU-GI-OH]:01-07
