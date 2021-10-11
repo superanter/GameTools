@@ -1,0 +1,312 @@
+/**
+ * Author: Peter Dragicevic [peter@petschko.org]
+ * Authors-Website: http://petschko.org/
+ * Date: 30.03.2017
+ * Time: 22:18
+ */
+
+/* Global-Reset */
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+/* Spaces, sizes etc */
+body {
+	padding: 0 40px;
+}
+
+footer {
+	margin-top: 2em;
+	padding-top: 1em;
+	margin-bottom: 2em;
+	border-top: #EBEBEB solid 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+input[type="file"] {
+	cursor: pointer;
+}
+
+input[type="radio"]{
+	margin-right: 5px;
+}
+
+label {
+	font-weight: normal;
+}
+
+.info {
+	border: 1px solid #000;
+	background-color: #FFF5D3;
+	padding: 15px 20px;
+}
+
+.title {
+	margin-bottom: 2em;
+}
+
+.title h1 {
+	margin-top: .25em;
+}
+
+img.logo {
+	max-width: 64px;
+}
+
+.content-container {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#headerInfo > div,
+.fileInfoArea > div {
+	margin: 10px 0;
+}
+
+#decryptCode {
+	width: 300px;
+	background-color: #FFABAB;
+}
+
+.fileList > button {
+	margin-bottom: 10px;
+}
+
+.fileInfo {
+	margin: 5px 0;
+}
+
+.fileInfo > span,
+.fileInfo > a,
+.fileInfo > s {
+	margin-right: 5px;
+}
+
+img.valid_css {
+	border: 0;
+	width: 88px;
+	height:31px;
+}
+
+div#headerInfo {
+	min-width: 350px;
+	margin-top: 10px;
+	padding: 10px 15px;
+	display: inline-block;
+	border: 1px dotted #808080;
+}
+
+div#headerInfo > h3 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+h1.inline-heading,
+h2.inline-heading,
+h3.inline-heading,
+h4.inline-heading,
+h5.inline-heading,
+h6.inline-heading {
+	display: inline-block;
+}
+
+div#headerInfo > div.tooltip {
+	margin-top: 0;
+}
+
+div#headerInfo label {
+	display: block;
+}
+
+div#headerInfo input[type="text"] {
+	margin-left: 10px;
+	float: right;
+}
+
+#howTo li {
+	margin-bottom: 10px;
+}
+
+/* Hide some info's (not important on local use) */
+.info,
+.css_valid {
+	display: none;
+}
+
+/* Backgrounds */
+noscript > div {
+	background-color: #FFABAB;
+	padding: 10px 20px;
+}
+
+.valid {
+	background-color: #B8FFAB !important;
+}
+
+.invalid {
+	background-color: #F00 !important;
+}
+
+.manualChange {
+	background-color: #FFE6AB !important;
+}
+
+/* Text-Colors align etc */
+a,
+.link {
+	color: #2F00EE;
+	border-color: #2F00EE;
+}
+
+a:visited {
+	color: #551A8B;
+}
+
+a:active,
+a:focus,
+.link:active,
+.link:focus {
+	color: #E00;
+	border-color: #E00;
+}
+
+a.btn {
+	color: #FFF;
+}
+
+.red,
+.errorFile {
+	color: #F00;
+}
+
+.grey {
+	color: #C9C9C9;
+}
+
+.yellow {
+	color: #B38400;
+}
+
+.green {
+	color: #00B700;
+}
+
+.center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/* 2 Rows */
+.wrapper {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.left, .right {
+	text-align: left;
+	vertical-align: top;
+	display: inline-block;
+	width: 45%;
+}
+
+/* Button-Image align fixes */
+button#encrypt {
+	padding-left: 0;
+}
+
+button#decrypt {
+	padding-left: 3px;
+}
+
+button#decrypt > img,
+button#decrypt > span,
+button#encrypt > img,
+button#encrypt > span {
+	vertical-align: middle;
+}
+
+/* Help stuff (like tooltips etc) */
+.link {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.link:active,
+.link:focus {
+	border: 1px dotted;
+}
+
+.help {
+	color: #B713FF;
+	border-color: #B713FF !important;
+}
+
+.tooltip.help {
+	opacity: 1;
+	z-index: auto;
+	position: relative;
+	display: inline-block; /* Ensure inline-block */
+	border-bottom: 1px dotted #555;
+	cursor: help;
+}
+
+.tooltip .tooltipText {
+	position: absolute;
+	visibility: hidden;
+	display: block;
+
+	margin-top: 10px;
+	min-width: 200px;
+	background-color: #555;
+	color: #FFF;
+	text-align: center;
+	padding: 5px 7px;
+	border-radius: 6px;
+
+	/* Fade in tooltip */
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.tooltipText.longText {
+	width: 400px;
+	font-size: 14px;
+}
+
+.tooltip:hover .tooltipText {
+	visibility: visible;
+	opacity: 1;
+	z-index: 999;
+}
+
+.tooltipText p {
+	margin: 0;
+}
+
+/* Media-Queries */
+@media all and (max-width: 800px) {
+	.left,
+	.right {
+		display: block;
+		width: 100%;
+	}
+
+	.right {
+		border-top: solid 2px #707070;
+		margin-top: 20px;
+	}
+}

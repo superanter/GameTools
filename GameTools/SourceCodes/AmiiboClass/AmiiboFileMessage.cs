@@ -102,7 +102,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             Decrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
 
             this.FullName = AmiiboFileFullName;
-            FileInfo fi = new FileInfo(this.FullName);
+            FileInfo fi = new FileInfo(FullName);
             this.Name = fi.Name;
             this.DirectoryName = fi.DirectoryName;
             this.Length = fi.Length;

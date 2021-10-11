@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// MCAS Name 2020-01-19
+        /// MCAS Name 2021-10-11
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -893,6 +893,26 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "16425CCF": return "[MHR] 01 - Palamute.bin";
                 case "AEB3F47B": return "[MHR] 02 - Magnamalo.bin";
                 case "CA4A2C33": return "[MHR] 03 - Palico.bin";
+                case "689781E1": return "[MET] 03 - Samus (Metroid Dread)";
+                case "131EE656": return "[MET] 04 - E.M.M.I.bin";
+                case "17500878": return "[MHS] 07 - Ena.bin";
+                case "311A58BA": return "[MHS] 08 - Razewing Ratha.bin";
+                case "5E6D6C69": return "[MHS] 09 - Tsukino.bin";
+                case "8E6A1D33": return "[ZSS] 01 - Zelda & Loftwing - Skyward Sword.bin";
+                case "2DB8A0DE": return "[SNW] 01 - Mario Power-Up Band.bin";
+                case "FE4EEEB0": return "[SNW] 02 - Luigi Power-Up Band.bin";
+                case "4FA5711D": return "[SNW] 03 - Peach Power-Up Band.bin";
+                case "6208E982": return "[SNW] 04 - Daisy Power-Up Band.bin";
+                case "1E27EE8C": return "[SNW] 05 - Toad Power-Up Band.bin";
+                case "8B2E9D85": return "[SNW] 06 - Yoshi Power-Up Band.bin";
+                case "7BDE7C73": return "[YU-GI-OH] 01 - Yuga Oudou.bin";
+                case "49E68A86": return "[YU-GI-OH] 02 - Tatsuhisa “Luke” Kamijō.bin";
+                case "DBA50FB8": return "[YU-GI-OH] 03 - Gakuto Sōgetsu.bin";
+                case "7781CD5F": return "[YU-GI-OH] 04 - Romin Kirishima.bin";
+                case "5755CEE2": return "[YU-GI-OH] 05 - Roa Kirishima.bin";
+                case "4FD0FA58": return "[YU-GI-OH] 06 - Nail Saionji.bin";
+                case "D63B9277": return "[YU-GI-OH] 07 - Asana Mutsuba.bin";
+
 
                 default: return "";
             }

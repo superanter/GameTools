@@ -79,13 +79,13 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// All 2021-04-15
+        /// All 2021-10-11
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[760][];
+            string[][] strAmiiboName = new string[779][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -848,6 +848,25 @@ namespace AnterStudio.GameTools.AmiiboClass
             strAmiiboName[757] = new string[] { "350A000004111802", "MHR", "Monster Hunter Rise", "", "Palamute", "001" };
             strAmiiboName[758] = new string[] { "35080000040F1802", "MHR", "Monster Hunter Rise", "", "Magnamalo", "002" };
             strAmiiboName[759] = new string[] { "3509000004101802", "MHR", "Monster Hunter Rise", "", "Palico", "003" };
+            strAmiiboName[760] = new string[] { "05C0000004121302", "MET", "Metroid", "", "Samus (Metroid Dread)", "003" };
+            strAmiiboName[761] = new string[] { "05C4000004131302", "MET", "Metroid", "", "E.M.M.I.", "004" };
+            strAmiiboName[762] = new string[] { "35060000040D0F02", "MHS", "Monster Hunter Stories", "", "Ena", "007" };
+            strAmiiboName[763] = new string[] { "35050000040C0F02", "MHS", "Monster Hunter Stories", "", "Razewing Ratha", "008" };
+            strAmiiboName[764] = new string[] { "35070000040E0F02", "MHS", "Monster Hunter Stories", "", "Tsukino", "009" };
+            strAmiiboName[765] = new string[] { "0101030004140902", "ZSS", "The Legend of Zelda", "The Legend of Zelda Skyward Sword", "Zelda & Loftwing - Skyward Sword", "001" };
+            strAmiiboName[766] = new string[] { "00000003039BFF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Mario Power-Up Band", "001" };
+            strAmiiboName[767] = new string[] { "00010003039CFF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Luigi Power-Up Band", "002" };
+            strAmiiboName[768] = new string[] { "00020003039DFF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Peach Power-Up Band", "003" };
+            strAmiiboName[769] = new string[] { "00130003039EFF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Daisy Power-Up Band", "004" };
+            strAmiiboName[770] = new string[] { "000A000303A0FF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Toad Power-Up Band", "005" };
+            strAmiiboName[771] = new string[] { "00030003039FFF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Yoshi Power-Up Band", "006" };
+            strAmiiboName[772] = new string[] { "3840000104241902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Yuga Oudou", "001" };
+            strAmiiboName[773] = new string[] { "3841000104251902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Tatsuhisa “Luke” Kamijō", "002" };
+            strAmiiboName[774] = new string[] { "3842000104261902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Gakuto Sōgetsu", "003" };
+            strAmiiboName[775] = new string[] { "3843000104271902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Romin Kirishima", "004" };
+            strAmiiboName[776] = new string[] { "3844000104281902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Roa Kirishima", "005" };
+            strAmiiboName[777] = new string[] { "3845000104291902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Nail Saionji", "006" };
+            strAmiiboName[778] = new string[] { "38460001042A1902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Asana Mutsuba", "007" };
 
             #endregion
 
@@ -863,7 +882,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 01to04 2021-04-15
+        /// 01to04 2021-10-11
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1456,13 +1475,24 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "350A": return "Monster Hunter - Palamute";
                 case "3508": return "Monster Hunter - Magnamalo";
                 case "3509": return "Monster Hunter - Palico";
+                case "05C4": return "Metroid - E.M.M.I.";
+                case "3506": return "Monster Hunter - Ena";
+                case "3505": return "Monster Hunter - Razewing Ratha";
+                case "3507": return "Monster Hunter - Tsukino";
+                case "3840": return "Yu-Gi-Oh! - Yuga Oudou";
+                case "3841": return "Yu-Gi-Oh! - Tatsuhisa “Luke” Kamijō";
+                case "3842": return "Yu-Gi-Oh! - Gakuto Sōgetsu";
+                case "3843": return "Yu-Gi-Oh! - Romin Kirishima";
+                case "3844": return "Yu-Gi-Oh! - Roa Kirishima";
+                case "3845": return "Yu-Gi-Oh! - Nail Saionji";
+                case "3846": return "Yu-Gi-Oh! - Asana Mutsuba";
 
                 default: return "";
             }
         }
 
         /// <summary>
-        /// 07to08 2017-08-01
+        /// 07to08 2021-10-11
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1473,12 +1503,13 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "00": return "Figures";
                 case "01": return "Cards";
                 case "02": return "Yarn";
+                case "03": return "Power-Up Band";
                 default: return "";
             }
         }
 
         /// <summary>
-        /// 09to12 2021-04-15
+        /// 09to12 2021-10-11
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2245,6 +2276,26 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "0411": return "Palamute - Palamute";
                 case "040F": return "Magnamalo - Magnamalo";
                 case "0410": return "Palico - Palico";
+                case "0412": return "Samus (Metroid Dread) - [MET] 03 - Samus (Metroid Dread)";
+                case "0413": return "E.M.M.I. - [MET] 04 - E.M.M.I.bin";
+                case "040D": return "Ena - [MHS] 07 - Ena.bin";
+                case "040C": return "Razewing Ratha - [MHS] 08 - Razewing Ratha.bin";
+                case "040E": return "Tsukino - [MHS] 09 - Tsukino.bin";
+                case "0414": return "Zelda & Loftwing - Skyward Sword - [ZSS] 01 - Zelda & Loftwing - Skyward Sword.bin";
+                case "039B": return "Mario Power-Up Band - [SNW] 01 - Mario Power-Up Band.bin";
+                case "039C": return "Luigi Power-Up Band - [SNW] 02 - Luigi Power-Up Band.bin";
+                case "039D": return "Peach Power-Up Band - [SNW] 03 - Peach Power-Up Band.bin";
+                case "039E": return "Daisy Power-Up Band - [SNW] 04 - Daisy Power-Up Band.bin";
+                case "03A0": return "Toad Power-Up Band - [SNW] 05 - Toad Power-Up Band.bin";
+                case "039F": return "Yoshi Power-Up Band - [SNW] 06 - Yoshi Power-Up Band.bin";
+                case "0424": return "Yuga Oudou - [YU-GI-OH] 01 - Yuga Oudou.bin";
+                case "0425": return "Tatsuhisa “Luke” Kamijō - [YU-GI-OH] 02 - Tatsuhisa “Luke” Kamijō.bin";
+                case "0426": return "Gakuto Sōgetsu - [YU-GI-OH] 03 - Gakuto Sōgetsu.bin";
+                case "0427": return "Romin Kirishima - [YU-GI-OH] 04 - Romin Kirishima.bin";
+                case "0428": return "Roa Kirishima - [YU-GI-OH] 05 - Roa Kirishima.bin";
+                case "0429": return "Nail Saionji - [YU-GI-OH] 06 - Nail Saionji.bin";
+                case "042A": return "Asana Mutsuba - [YU-GI-OH] 07 - Asana Mutsuba.bin";
+
 
                 default: return "";
 
@@ -2252,7 +2303,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 13to14 2021-04-15
+        /// 13to14 2021-10-11
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2285,6 +2336,8 @@ namespace AnterStudio.GameTools.AmiiboClass
                 case "16": return "Diablo";
                 case "17": return "Jikkyou Powerful Pro Baseball";
                 case "18": return "Monster Hunter Rise";
+                case "19": return "Yu-Gi-Oh!";
+                case "FF": return "Super Nintendo World Power-Up Bands";
 
                 default: return "";
             }
