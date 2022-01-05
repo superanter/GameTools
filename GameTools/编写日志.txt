@@ -822,4 +822,4 @@
 	Monster Hunter Stories[MET]:07-09
 	The Legend of Zelda - The Legend of Zelda Skyward Sword	[ZSS]:01
 	Mario - Super Nintendo World Power-Up Bands[SNW]:01-06
-	Yu-Gi-Oh![YU-GI-OH]:01-0711 
+	Yu-Gi-Oh![YU-GI-OH]:01-07
