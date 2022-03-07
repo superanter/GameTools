@@ -150,7 +150,6 @@ namespace AnterStudio.GameTools
         }
 
         #endregion
-        ·
 
     }
 }
