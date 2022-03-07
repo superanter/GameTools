@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AnterStudio.GameTools</RootNamespace>
     <AssemblyName>GameTools</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>SourceCodes\MainIcon.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>D1DEA0F43D0B10AD255C464474697FF8FF7C6F4B</ManifestCertificateThumbprint>
