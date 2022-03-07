@@ -17,7 +17,7 @@ namespace LibAmiibo
 {
     class Helper_Class
     {
-        [DllImport("user32.dll")] [return: MarshalAs(UnmanagedType.Bool)] static extern bool FlashWindowEx(ref FLASHWINFO pwfi);
+        [DllImport("user32.dll")][return: MarshalAs(UnmanagedType.Bool)] static extern bool FlashWindowEx(ref FLASHWINFO pwfi);
 
         [StructLayout(LayoutKind.Sequential)]
         public struct FLASHWINFO

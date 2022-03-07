@@ -21,9 +21,9 @@
  * THE SOFTWARE.
  */
 
+using ANTer.BouncyCastle.AES_CTR_NoPadding;
 using System;
 using System.Diagnostics;
-using ANTer.BouncyCastle.AES_CTR_NoPadding;
 
 namespace LibAmiibo
 {
@@ -46,7 +46,7 @@ namespace LibAmiibo
             // Initialize primitives
             this.used = false;
             this.iteration = 0;
-            this.buffer = new byte[sizeof (ushort) + seedSize];
+            this.buffer = new byte[sizeof(ushort) + seedSize];
 
             // The 16-bit counter is prepended to the seed when hashing, so we'll leave 2 bytes at the start
             Array.Copy(seed, 0, this.buffer, sizeof(ushort), seedSize);
@@ -65,13 +65,14 @@ namespace LibAmiibo
                 // If used at least once, reinitialize the HMAC
                 this.hmacCtx.Reset();
             }
-            else {
+            else
+            {
                 this.used = true;
             }
 
             // Store counter in big endian, and increment it
-            this.buffer[0] = (byte) (this.iteration >> 8);
-            this.buffer[1] = (byte) (this.iteration >> 0);
+            this.buffer[0] = (byte)(this.iteration >> 8);
+            this.buffer[1] = (byte)(this.iteration >> 0);
             this.iteration++;
 
             // Do HMAC magic

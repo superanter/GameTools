@@ -30,7 +30,7 @@ namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto.Macs
             if (IsFristUpdata)
             {
                 Array.Resize(ref tempHmac, len);
-                Array.Copy(input, inOff, tempHmac,0, len);
+                Array.Copy(input, inOff, tempHmac, 0, len);
                 IsFristUpdata = false;
             }
             else

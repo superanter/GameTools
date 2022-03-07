@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 
 namespace AnterStudio.GameTools.DsRomClass
@@ -17,7 +17,7 @@ namespace AnterStudio.GameTools.DsRomClass
             InitializeComponent();
         }
 
-        public frmDsRom(LangugePackClass.cDsRom LangugePack,SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
+        public frmDsRom(LangugePackClass.cDsRom LangugePack, SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
         {
             InitializeComponent();
             MyLanguge = LangugePack;
@@ -41,7 +41,7 @@ namespace AnterStudio.GameTools.DsRomClass
             {
                 FileInfo RomInfo = new FileInfo(strFileName);
                 txtName.Text = RomInfo.Name.ToString();
-                txtSize.Text = ((RomInfo.Length)/1024/1024).ToString() + "MB";
+                txtSize.Text = ((RomInfo.Length) / 1024 / 1024).ToString() + "MB";
                 string[] strGameInfo = GetRomMessage(strFileName);
                 txtGameName.Text = strGameInfo[1];
                 txtGameText.Text = strGameInfo[2];

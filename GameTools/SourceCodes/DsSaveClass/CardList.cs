@@ -1,5 +1,4 @@
-﻿using System;
-//using System.Text;
+﻿//using System.Text;
 
 namespace AnterStudio.GameTools.DsSaveClass
 {
@@ -9,8 +8,8 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         public static CardClass[][] GetCardDat()
         {
-           int NdsCards = 28 + 1;		//支持的NDS烧录卡的数量，“+1”前面的数字和DS烧录卡最大序号相同
-           int GbaCards = 7 + 1;		//支持的GBA烧录卡的数量，“+1”前面的数字和GBA烧录卡最大序号相同
+            int NdsCards = 28 + 1;      //支持的NDS烧录卡的数量，“+1”前面的数字和DS烧录卡最大序号相同
+            int GbaCards = 7 + 1;		//支持的GBA烧录卡的数量，“+1”前面的数字和GBA烧录卡最大序号相同
             CardClass[][] CardDat = new CardClass[2][];			//烧录卡信息数据
             CardDat[0] = new CardClass[NdsCards];
             CardDat[1] = new CardClass[GbaCards];

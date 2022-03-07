@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;                        //FileInfo 2017-07-31
 using System.Text;
 using System.Windows.Forms;
-using System.IO;                        //FileInfo 2017-07-31
 
 namespace AnterStudio.GameTools.AmiiboClass
 {
@@ -74,7 +69,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 string oldStr = myFileMessage.FullName;
                 string newStr = newStr = myFileMessage.DirectoryName + "\\" + txtNewFileName.Text;
 
-                string MessageTemp = MyRename(oldStr, newStr,true);
+                string MessageTemp = MyRename(oldStr, newStr, true);
 
                 if (MessageTemp == "")
                 {
@@ -190,7 +185,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 {
                     temp = myFileMessage.RePack(txtNewUID.Text, txtNewID.Text, -1, -1);
                 }
-                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + DateTime.Now.ToString("yyyyMMddHHmmss") +"].bin", FileMode.Create);
+                FileStream sro = new FileStream(this.FileFullName.Substring(0, this.FileFullName.Length - 4) + "-[" + DateTime.Now.ToString("yyyyMMddHHmmss") + "].bin", FileMode.Create);
                 BinaryWriter w = new BinaryWriter(sro);
                 w.Write(temp);
                 sro.Close();
@@ -311,7 +306,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             }
             ricMessage.Text += "-------------------------------------\n";
             for (int i = 0; i < myFileMessage.msgNFC.myMessage.Length; i++)
-            { 
+            {
                 ricMessage.Text += myFileMessage.msgNFC.myMessage[i];
             }
 
@@ -414,7 +409,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         /// <param name="oldStr"></param>
         /// <param name="newStr"></param>
         ///  <param name="isTest">是否校验</param>
-        private string MyRename(string oldStr ,string newStr,bool isTest)
+        private string MyRename(string oldStr, string newStr, bool isTest)
         {
             try
             {
@@ -422,7 +417,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                 {
                     AmiiboFileMessage myFileMessageTemp = new AmiiboFileMessage(oldStr);
 
-                    if(isTest)          //2017-09-29
+                    if (isTest)          //2017-09-29
                     {
                         if (myFileMessageTemp.IdMessage.GameShortName != "")
                         {
@@ -557,7 +552,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                     {
                         AmiiboFileMessage myFileMessageTemp = new AmiiboFileMessage(myFileList[i]);
                         string newStr = myFileMessageTemp.DirectoryName + "\\" + myFileMessageTemp.NewName;
-                       string temp = MyRename(myFileMessageTemp.FullName, newStr,true);
+                        string temp = MyRename(myFileMessageTemp.FullName, newStr, true);
                         if (temp == "")
                         {
                             RenameOK++;

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using LibAmiibo;
+using System;
 using System.IO;
-using LibAmiibo;
 
 namespace AnterStudio.GameTools.AmiiboClass
 {
@@ -154,7 +154,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         private string GetFileString(int FirstNo, int ReadLength)
         {
             string StrReturn = "";
-            if(AmiiboData.Length >= FirstNo + ReadLength)
+            if (AmiiboData.Length >= FirstNo + ReadLength)
             {
                 for (int i = FirstNo; i < FirstNo + ReadLength; i++)
                 {
@@ -240,13 +240,13 @@ namespace AnterStudio.GameTools.AmiiboClass
             return tempMessage;
         }
 
-        public byte[] RePack(string getUID,string getID, int TpLevers, int TpHearts)        //2018-03-29
+        public byte[] RePack(string getUID, string getID, int TpLevers, int TpHearts)        //2018-03-29
         {
             byte[] tempDecrypted = Decrypted;
             byte[] Encrypted = new byte[NtagHelpers.NFC3D_AMIIBO_SIZE];
 
             //UID
-            if(getUID.Length == 14)
+            if (getUID.Length == 14)
             {
                 tempDecrypted[0x1d4] = (byte)Convert.ToInt32(getUID.Substring(0, 2), 16);
                 tempDecrypted[0x1d5] = (byte)Convert.ToInt32(getUID.Substring(2, 2), 16);
@@ -272,10 +272,10 @@ namespace AnterStudio.GameTools.AmiiboClass
                 tempDecrypted[0x1e3] = (byte)Convert.ToInt32(getID.Substring(14, 2), 16);
             }
 
-            if(TpLevers != -1 && TpHearts != -1)
+            if (TpLevers != -1 && TpHearts != -1)
             {
                 tempDecrypted[0xED] = (byte)TpLevers;
-                tempDecrypted[0xED+1] = (byte)TpHearts;
+                tempDecrypted[0xED + 1] = (byte)TpHearts;
             }
 
             AmiiKeys.Pack(tempDecrypted, Encrypted);

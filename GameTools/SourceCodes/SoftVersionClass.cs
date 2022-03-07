@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AnterStudio.GameTools
+﻿namespace AnterStudio.GameTools
 {
     public class SoftVersionClass
     {
@@ -19,8 +14,8 @@ namespace AnterStudio.GameTools
             {
                 get { return editDate; }
             }
-            
-            internal SoftVersion(string getVersion,string getEditDate)
+
+            internal SoftVersion(string getVersion, string getEditDate)
             {
                 version = getVersion;
                 editDate = getEditDate;

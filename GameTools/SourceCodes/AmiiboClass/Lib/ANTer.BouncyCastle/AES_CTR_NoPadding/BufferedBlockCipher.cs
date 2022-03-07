@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 
 
 namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto

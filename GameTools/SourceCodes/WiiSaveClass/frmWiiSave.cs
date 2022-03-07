@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace AnterStudio.GameTools.WiiSaveClass
 {
@@ -246,7 +246,7 @@ namespace AnterStudio.GameTools.WiiSaveClass
             }
         }
 
-        private void SetLanguge() 
+        private void SetLanguge()
         {
             this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
             lblFile.Text = MyLanguge.Lable.FileName;

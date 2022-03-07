@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AnterStudio.GameTools.AmiiboClass
+﻿namespace AnterStudio.GameTools.AmiiboClass
 {
     class AmiiboMessage
     {
@@ -72,10 +67,10 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.Number = strT[5];
             this.Ser01to04string = GetAmiiboName01to04(AmiiboSer.Remove(4));
             this.Ser05to06string = AmiiboSer.Remove(0, 4).Remove(2).ToString();
-            this.Ser07to08string = GetAmiiboName07to08(AmiiboSer.Remove(0,6).Remove(2));
-            this.Ser09to12string = GetAmiiboName09to12(AmiiboSer.Remove(0,8).Remove(4));
+            this.Ser07to08string = GetAmiiboName07to08(AmiiboSer.Remove(0, 6).Remove(2));
+            this.Ser09to12string = GetAmiiboName09to12(AmiiboSer.Remove(0, 8).Remove(4));
             this.Ser13to14string = GetAmiiboName13to14(AmiiboSer.Remove(0, 12).Remove(2));
-            this.Ser15to16string = GetAmiiboName15to16(AmiiboSer.Remove(0,14));
+            this.Ser15to16string = GetAmiiboName15to16(AmiiboSer.Remove(0, 14));
         }
 
         /// <summary>

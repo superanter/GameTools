@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text;          //M3Adding.UnicodeEncoding
 using System.IO;            //FileStream
+using System.Text;          //M3Adding.UnicodeEncoding
 
 namespace AnterStudio.GameTools.DsSaveClass
 {
@@ -156,7 +156,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             }
         }
 
-        private static string DeSmuMEAdding(int CopyFileSize,FileStream sro)	//DeSmuME附加的122字节信息 2018-01-26
+        private static string DeSmuMEAdding(int CopyFileSize, FileStream sro)	//DeSmuME附加的122字节信息 2018-01-26
         {
             try
             {
@@ -174,7 +174,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                         temp[i] = 0x00;
                     }
 
-                    if(CopyFileSize == 64*1024)
+                    if (CopyFileSize == 64 * 1024)
                     {
                         temp[2] = 0x01;
                         temp[6] = 0x01;
@@ -216,7 +216,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #region 口袋妖怪强制转换程序（1）
 
-        public static string[]  PokemonChange(InputFileInfo ifiFileMode, string OutputName)		//口袋妖怪存档特殊转换
+        public static string[] PokemonChange(InputFileInfo ifiFileMode, string OutputName)		//口袋妖怪存档特殊转换
         {
             string[] PokemonString = new string[6];
             try
@@ -352,7 +352,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                 else if (mfiMainInfo.CardIs == 2)      // 目标存档为DSLink格式(CardIs=2)时，附加8K
                 {
                     iOutputLenghAdd = 8 * 1024;
-                    sReturnStr[0] = WriteData.DSLinkAdding(ifiFileMode,sro);
+                    sReturnStr[0] = WriteData.DSLinkAdding(ifiFileMode, sro);
                 }
                 else if (mfiMainInfo.CardIs == 3)      // 目标存档为DeSmuME模拟器的dsv格式(CardIs=3)时，附加122字节
                 {

@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AnterStudio.GameTools.OtherToolsClass
@@ -58,7 +52,7 @@ namespace AnterStudio.GameTools.OtherToolsClass
                 }
                 int lastDigit = x % 10;
 
-                txtSCSN_Out.Text = "SN: " + strInput.Remove(4, 8) + "-" + strInput.Remove(0, 4).Remove(5, 3) 
+                txtSCSN_Out.Text = "SN: " + strInput.Remove(4, 8) + "-" + strInput.Remove(0, 4).Remove(5, 3)
                     + "-" + strInput.Remove(0, 9) + lastDigit.ToString();
             }
             else

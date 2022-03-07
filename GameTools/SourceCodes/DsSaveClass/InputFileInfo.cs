@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.IO;
 using System.IO.Compression;
 
@@ -135,7 +134,7 @@ namespace AnterStudio.GameTools.DsSaveClass
         /// </summary>
         public string ErrorCode
         {
-            get{return errorCode;}
+            get { return errorCode; }
         }
 
         /// <summary>
@@ -143,7 +142,7 @@ namespace AnterStudio.GameTools.DsSaveClass
         /// </summary>
         private string SetErrorCode
         {
-            set{errorCode = errorBegin + value;}
+            set { errorCode = errorBegin + value; }
         }
 
         #endregion
@@ -456,7 +455,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                 BinaryReader r = new BinaryReader(sri);
                 int intTestSize = (int)sri.Length;
 
-                if(intTestSize == 520 * 1024)
+                if (intTestSize == 520 * 1024)
                 {
                     for (int i = 0; i < intTestSize; i++)
                     {

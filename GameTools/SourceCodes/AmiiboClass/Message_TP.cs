@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AnterStudio.GameTools.AmiiboClass
+﻿namespace AnterStudio.GameTools.AmiiboClass
 {
     //Code From TagMo
 
@@ -48,7 +43,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 
         public Message_TP(byte[] date, Message_NFC msgNFC)
         {
-            if(msgNFC.NFC_ID.Remove(8) == "01030000" && msgNFC.Amiibo_AppID == "1019C800")
+            if (msgNFC.NFC_ID.Remove(8) == "01030000" && msgNFC.Amiibo_AppID == "1019C800")
             {
                 canEdit = true;
                 LEVEL = (int)date[OFFSET_LEVEL];

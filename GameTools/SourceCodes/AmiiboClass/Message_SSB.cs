@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AnterStudio.GameTools.AmiiboClass
+﻿namespace AnterStudio.GameTools.AmiiboClass
 {
     //Code From TagMo
 
@@ -145,7 +140,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             value |= (data[OFFSET_LEVEL + 1] & 0xFF);
 
             for (int i = LEVEL_THRESHOLDS.Length - 1; i >= 0; i--)
-           {
+            {
                 if (LEVEL_THRESHOLDS[i] <= value)
                     return i + 1;
             }

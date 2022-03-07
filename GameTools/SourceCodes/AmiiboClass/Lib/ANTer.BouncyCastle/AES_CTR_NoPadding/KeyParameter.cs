@@ -6,17 +6,17 @@ namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto.Parameters
     {
         private readonly byte[] key;
         //0046
-		public KeyParameter(byte[] key)
-		{
-			if (key == null)
-				throw new ArgumentNullException("key");
-
-			this.key = (byte[]) key.Clone();
-		}
-        //0059
-		public byte[] GetKey()
+        public KeyParameter(byte[] key)
         {
-			return (byte[]) key.Clone();
+            if (key == null)
+                throw new ArgumentNullException("key");
+
+            this.key = (byte[])key.Clone();
+        }
+        //0059
+        public byte[] GetKey()
+        {
+            return (byte[])key.Clone();
         }
     }
 

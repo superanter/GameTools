@@ -99,7 +99,7 @@ namespace LibAmiibo
             // 5: Xor last bytes 0x20-0x3F of input seed with AES XOR pad and append them
             for (int i = 0; i < 32; i++)
             {
-                output[start + i] = (byte) (baseSeed[i + 32] ^ this.xorPad[i]);
+                output[start + i] = (byte)(baseSeed[i + 32] ^ this.xorPad[i]);
             }
             start += 32;
 

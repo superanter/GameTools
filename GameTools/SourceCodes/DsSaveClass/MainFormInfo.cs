@@ -1,5 +1,4 @@
-﻿using System;
-//using System.Text;
+﻿//using System.Text;
 
 namespace AnterStudio.GameTools.DsSaveClass
 {
@@ -34,9 +33,9 @@ namespace AnterStudio.GameTools.DsSaveClass
             PokemonChecked = false;
         }
 
-        public MainFormInfo(int mode,int size,
-            string inputName,string outputName, string m3LongName,string m3ShortName,string m3FileName,
-            int cardIs,bool m3DatChecked,bool pokemonChecked)
+        public MainFormInfo(int mode, int size,
+            string inputName, string outputName, string m3LongName, string m3ShortName, string m3FileName,
+            int cardIs, bool m3DatChecked, bool pokemonChecked)
         {
             this.Mode = mode;
             this.Size = size;

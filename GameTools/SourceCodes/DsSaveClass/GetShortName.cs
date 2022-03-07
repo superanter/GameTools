@@ -1,8 +1,7 @@
-﻿using System;
-using System.Text;                      //StringBuilder
-using System.Runtime.InteropServices;   //DllImport
+﻿using System.Diagnostics;               //Process
 using System.IO;                        //FileInfo
-using System.Diagnostics;               //Process
+using System.Runtime.InteropServices;   //DllImport
+using System.Text;                      //StringBuilder
 
 
 namespace AnterStudio.GameTools.DsSaveClass
@@ -34,7 +33,7 @@ namespace AnterStudio.GameTools.DsSaveClass
         {
             StringBuilder shortNameBuffer = new StringBuilder(256);
             int bufferSize = shortNameBuffer.Capacity;
-            int result = NativeMethods.GetShortPathName(fi.Name,shortNameBuffer,bufferSize);
+            int result = NativeMethods.GetShortPathName(fi.Name, shortNameBuffer, bufferSize);
             return shortNameBuffer.ToString();
         }
 

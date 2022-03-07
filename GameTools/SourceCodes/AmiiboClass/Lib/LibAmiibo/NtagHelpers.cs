@@ -147,7 +147,7 @@ namespace LibAmiibo
             result |= value.Month;
             result <<= 5;
             result |= value.Day;
-            return (ushort) result;
+            return (ushort)result;
         }
 
         public static byte[] StringToByteArrayFastest(string hex)
@@ -156,7 +156,7 @@ namespace LibAmiibo
                 throw new Exception("The binary key cannot have an odd number of digits");
 
             byte[] arr = new byte[hex.Length >> 1];
-          //  var hexLen = hex.Length;
+            //  var hexLen = hex.Length;
             for (int i = 0; i < (hex.Length >> 1); ++i)
             {
                 arr[i] = (byte)((GetHexVal(hex[i << 1]) << 4) + (GetHexVal(hex[(i << 1) + 1])));

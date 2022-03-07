@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AnterStudio.GameTools.AmiiboClass
+﻿namespace AnterStudio.GameTools.AmiiboClass
 {
     class getMcasName
     {

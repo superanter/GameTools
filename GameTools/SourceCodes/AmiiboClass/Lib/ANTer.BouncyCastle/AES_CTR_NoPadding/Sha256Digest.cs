@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto.Digests
+﻿namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto.Digests
 {
     class Sha256Digest
     {

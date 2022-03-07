@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
 
 //CRC32校验码计算方法 2017-08-23更新。
 namespace AnterStudio.GameTools.AmiiboClass

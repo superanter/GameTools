@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.IO;            //FileStream
 using System.Text;
-using System.IO;            //FileStream
 
 namespace AnterStudio.GameTools
 {
@@ -399,7 +397,7 @@ namespace AnterStudio.GameTools
 
         private void GetINI()
         {
-            string[] strLine =  File.ReadAllLines("LangugePack.ini", Encoding.Unicode);
+            string[] strLine = File.ReadAllLines("LangugePack.ini", Encoding.Unicode);
             string[][] strLanguge = new string[strLine.Length][];
             for (int i = 0; i < strLine.Length; i++)
             {
@@ -604,7 +602,7 @@ namespace AnterStudio.GameTools
 
             #endregion
         };
-            File.WriteAllLines("LangugePack.ini",strLanguge,Encoding.Unicode);
+            File.WriteAllLines("LangugePack.ini", strLanguge, Encoding.Unicode);
         }
     }
 }

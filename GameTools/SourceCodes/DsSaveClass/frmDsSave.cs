@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.IO;                        //FileInfo 2017-01-23
+using System.Windows.Forms;
 
 namespace AnterStudio.GameTools.DsSaveClass
 {
@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.DsSaveClass
             StartMain();            // 启动主窗口时，初始化项目
         }
 
-        public frmDsSave(LangugePackClass.cDsSave LangugePack,SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
+        public frmDsSave(LangugePackClass.cDsSave LangugePack, SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
         {
             InitializeComponent();
             this.MyLanguge = LangugePack;
@@ -68,7 +68,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #region 控件（11方法）
 
-            #region 控件.按钮（4）
+        #region 控件.按钮（4）
 
         private void btnOpen_Click(object sender, EventArgs e)              //2017-01-23
         {
@@ -154,7 +154,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #endregion
 
-            #region   控件.列表框（3）
+        #region   控件.列表框（3）
 
         private void cboMode_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -203,7 +203,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #endregion
 
-            #region 控件.复选框（2）
+        #region 控件.复选框（2）
 
         private void chkTest_CheckedChanged(object sender, EventArgs e)
         {
@@ -235,7 +235,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #endregion
 
-            #region 控件.文本框（1）
+        #region 控件.文本框（1）
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
@@ -244,7 +244,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #endregion
 
-            #region 控件.完整控制（1）
+        #region 控件.完整控制（1）
 
         private void myAllControl(bool boolOnOff)
         {
@@ -359,11 +359,11 @@ namespace AnterStudio.GameTools.DsSaveClass
                 string tmpError = GetErrorString(ErrorCode);
                 if (ErrorCode.StartsWith("E"))          // 输出错误信息
                 {
-                    MessageBox.Show( ErrorCode + " Error!\n\n" + tmpError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ErrorCode + " Error!\n\n" + tmpError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (ErrorCode.StartsWith("M"))     // 输出提示信息
                 {
-                    MessageBox.Show(tmpError,ErrorCode);
+                    MessageBox.Show(tmpError, ErrorCode);
                 }
             }
             else
@@ -376,7 +376,7 @@ namespace AnterStudio.GameTools.DsSaveClass
         {
             // Initializes the variables to pass to the MessageBox.Show method.
 
-            string message = "目标存档文件“" + txtOutputName  + "”已经存在，是否覆盖？";
+            string message = "目标存档文件“" + txtOutputName + "”已经存在，是否覆盖？";
             string caption = "文件已存在";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -471,7 +471,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #region 用户选择（4方法）
 
-            #region 用户选择.类型选择（2）
+        #region 用户选择.类型选择（2）
 
         private void ChangeMode()      //转换后类型列表
         {
@@ -522,7 +522,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #endregion
 
-            #region 用户选择.获取用户所做的选择（2）
+        #region 用户选择.获取用户所做的选择（2）
 
         private MainFormInfo GetMainInfo()       //2017-01-24
         {
@@ -611,7 +611,7 @@ namespace AnterStudio.GameTools.DsSaveClass
         {
             MainFormInfo mfiMainInfo = GetMainInfo();                               // 获取主界面信息
             InputFileInfo ifiFileMode = new InputFileInfo(mfiMainInfo.InputName);   // 获取源存档信息
-            
+
             if (ifiFileMode.ErrorCode == null)
             {
                 myAllControl(false);

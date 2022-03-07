@@ -4,8 +4,8 @@ namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto.Parameters
 {
     public class ParametersWithIV : ICipherParameters
     {
-		private readonly ICipherParameters	parameters;
-		private readonly byte[]				iv;
+        private readonly ICipherParameters parameters;
+        private readonly byte[] iv;
         //0047
         public ParametersWithIV(ICipherParameters parameters, byte[] iv) : this(parameters, iv, 0, iv.Length)
         {
@@ -24,10 +24,10 @@ namespace ANTer.BouncyCastle.AES_CTR_NoPadding  //Crypto.Parameters
         //0057
         public byte[] GetIV()
         {
-			return (byte[]) iv.Clone();
+            return (byte[])iv.Clone();
         }
 
-		public ICipherParameters Parameters
+        public ICipherParameters Parameters
         {
             get { return parameters; }
         }
