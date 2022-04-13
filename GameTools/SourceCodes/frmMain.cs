@@ -151,5 +151,16 @@ namespace AnterStudio.GameTools
 
         #endregion
 
+        private void btnJoyCon_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon();
+            if (JoyConForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+           JoyConForm.Dispose();
+            this.Visible = true;
+        }
     }
 }

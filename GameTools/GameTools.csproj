@@ -130,6 +130,13 @@
     <Compile Include="SourceCodes\frmAboutBox.Designer.cs">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="SourceCodes\JoyConClass\JonConFirmwave.cs" />
+    <Compile Include="SourceCodes\JoyConClass\frmJoyCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\JoyConClass\frmJoyCon.Designer.cs">
+      <DependentUpon>frmJoyCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="SourceCodes\LangugePackClass.cs" />
     <Compile Include="SourceCodes\frmMain.cs">
       <SubType>Form</SubType>
@@ -163,6 +170,9 @@
     <EmbeddedResource Include="SourceCodes\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\JoyConClass\frmJoyCon.resx">
+      <DependentUpon>frmJoyCon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.resx">
       <DependentUpon>frmOtherTools.cs</DependentUpon>

@@ -823,3 +823,7 @@
 	The Legend of Zelda - The Legend of Zelda Skyward Sword	[ZSS]:01
 	Mario - Super Nintendo World Power-Up Bands[SNW]:01-06
 	Yu-Gi-Oh![YU-GI-OH]:01-07
+
+2022-04-13
+	[Switch JoyConFirmwave]
+	1、开始测试Switch JoyCon 手柄的Firmwave备份文件读取功能，已实现最基本功能。
