@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// MCAS Name 2021-10-11
+        /// MCAS Name 2022-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -907,6 +907,54 @@
                 case "5755CEE2": return "[YU-GI-OH] 05 - Roa Kirishima.bin";
                 case "4FD0FA58": return "[YU-GI-OH] 06 - Nail Saionji.bin";
                 case "D63B9277": return "[YU-GI-OH] 07 - Asana Mutsuba.bin";
+                case "3C4EDCE8": return "[AC] 401 - Tom Nook";
+                case "5E9A3F5E": return "[AC] 402 - Timmy and Tommy";
+                case "CE364870": return "[AC] 403 - Isabelle";
+                case "4C84A3E6": return "[AC] 404 - Orville";
+                case "09639310": return "[AC] 405 - Wilbur";
+                case "1FA0C02A": return "[AC] 406 - Blathers";
+                case "A5C22981": return "[AC] 407 - Celeste";
+                case "BA6DE755": return "[AC] 408 - Mabel";
+                case "8798D66A": return "[AC] 409 - Sable";
+                case "5BA10889": return "[AC] 410 - Label";
+                case "CB1D8924": return "[AC] 411 - K.K.";
+                case "78EA423B": return "[AC] 412 - C.J.";
+                case "8FDFF40B": return "[AC] 413 - Flick";
+                case "63E1C58D": return "[AC] 414 - Daisy Mae";
+                case "A92CA771": return "[AC] 415 - Kicks";
+                case "AD0B8AF9": return "[AC] 416 - Saharah";
+                case "E22B0A70": return "[AC] 417 - Harvey";
+                case "B50C6373": return "[AC] 418 - Gulliver";
+                case "E03DC888": return "[AC] 419 - Wisp";
+                case "8D415FB5": return "[AC] 420 - Lottie";
+                case "300545AB": return "[AC] 421 - Niko";
+                case "4EC58275": return "[AC] 422 - Wardell";
+                case "ED4599F1": return "[AC] 423 - Tom Nook (Coat)";
+                case "33BE5A51": return "[AC] 424 - Isabelle (Sweater)";
+                case "746861E6": return "[AC] 425 - Sherb";
+                case "C1F88261": return "[AC] 426 - Megan";
+                case "BE7F33CD": return "[AC] 427 - Dom";
+                case "26A6AC67": return "[AC] 428 - Audie";
+                case "9E6E0BCC": return "[AC] 429 - Cyd";
+                case "B97D2995": return "[AC] 430 - Judy";
+                case "E6C9363A": return "[AC] 431 - Raymond";
+                case "C90AF62B": return "[AC] 432 - Reneigh";
+                case "9C7ACFFB": return "[AC] 433 - Sasha";
+                case "24FAA84C": return "[AC] 434 - Ione";
+                case "DF9B5E9E": return "[AC] 435 - Tiansheng";
+                case "B1F840DD": return "[AC] 436 - Shino";
+                case "B3DADD22": return "[AC] 437 - Marlo";
+                case "38B17628": return "[AC] 438 - Petri";
+                case "689DD1F6": return "[AC] 439 - Cephalobot";
+                case "84C8946F": return "[AC] 440 - Quinn";
+                case "A3ED6FCF": return "[AC] 441 - Chabwick";
+                case "49B8A1BA": return "[AC] 442 - Zoe";
+                case "DCDB62B8": return "[AC] 443 - Ace";
+                case "C570679D": return "[AC] 444 - Rio";
+                case "B4EA5CE3": return "[AC] 445 - Frett";
+                case "195B3C93": return "[AC] 446 - Azalea";
+                case "2CE90F69": return "[AC] 447 - Roswell";
+                case "07DC339B": return "[AC] 448 - Faith";
 
 
                 default: return "";

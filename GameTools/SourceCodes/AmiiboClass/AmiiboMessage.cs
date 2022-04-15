@@ -74,13 +74,13 @@
         }
 
         /// <summary>
-        /// All 2021-10-11
+        /// All 2022-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[779][];
+            string[][] strAmiiboName = new string[827][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -862,6 +862,54 @@
             strAmiiboName[776] = new string[] { "3844000104281902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Roa Kirishima", "005" };
             strAmiiboName[777] = new string[] { "3845000104291902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Nail Saionji", "006" };
             strAmiiboName[778] = new string[] { "38460001042A1902", "YU-GI-OH", "Yu-Gi-Oh!", "", "Asana Mutsuba", "007" };
+            strAmiiboName[779] = new string[] { "0183020103A80502", "ACC", "Animal Crossing", "Cards - Series 5", "Tom Nook", "401" };
+            strAmiiboName[780] = new string[] { "0184050103A90502", "ACC", "Animal Crossing", "Cards - Series 5", "Timmy and Tommy", "402" };
+            strAmiiboName[781] = new string[] { "0181040103AA0502", "ACC", "Animal Crossing", "Cards - Series 5", "Isabelle", "403" };
+            strAmiiboName[782] = new string[] { "0A00000103AB0502", "ACC", "Animal Crossing", "Cards - Series 5", "Orville", "404" };
+            strAmiiboName[783] = new string[] { "0A01000103AC0502", "ACC", "Animal Crossing", "Cards - Series 5", "Wilbur", "405" };
+            strAmiiboName[784] = new string[] { "0192000103AD0502", "ACC", "Animal Crossing", "Cards - Series 5", "Blathers", "406" };
+            strAmiiboName[785] = new string[] { "0193000103AE0502", "ACC", "Animal Crossing", "Cards - Series 5", "Celeste", "407" };
+            strAmiiboName[786] = new string[] { "0188000103AF0502", "ACC", "Animal Crossing", "Cards - Series 5", "Mabel", "408" };
+            strAmiiboName[787] = new string[] { "0187000103B00502", "ACC", "Animal Crossing", "Cards - Series 5", "Sable", "409" };
+            strAmiiboName[788] = new string[] { "0189010103B10502", "ACC", "Animal Crossing", "Cards - Series 5", "Label", "410" };
+            strAmiiboName[789] = new string[] { "0182000103B20502", "ACC", "Animal Crossing", "Cards - Series 5", "K.K.", "411" };
+            strAmiiboName[790] = new string[] { "0A02000103B30502", "ACC", "Animal Crossing", "Cards - Series 5", "C.J.", "412" };
+            strAmiiboName[791] = new string[] { "0A03000103B40502", "ACC", "Animal Crossing", "Cards - Series 5", "Flick", "413" };
+            strAmiiboName[792] = new string[] { "0A04000103B50502", "ACC", "Animal Crossing", "Cards - Series 5", "Daisy Mae", "414" };
+            strAmiiboName[793] = new string[] { "0194000103B60502", "ACC", "Animal Crossing", "Cards - Series 5", "Kicks", "415" };
+            strAmiiboName[794] = new string[] { "01A6000103B70502", "ACC", "Animal Crossing", "Cards - Series 5", "Saharah", "416" };
+            strAmiiboName[795] = new string[] { "0A05000103B80502", "ACC", "Animal Crossing", "Cards - Series 5", "Harvey", "417" };
+            strAmiiboName[796] = new string[] { "01A2000103B90502", "ACC", "Animal Crossing", "Cards - Series 5", "Gulliver", "418" };
+            strAmiiboName[797] = new string[] { "0A06000103BA0502", "ACC", "Animal Crossing", "Cards - Series 5", "Wisp", "419" };
+            strAmiiboName[798] = new string[] { "01C1020103BB0502", "ACC", "Animal Crossing", "Cards - Series 5", "Lottie", "420" };
+            strAmiiboName[799] = new string[] { "0A07000103BC0502", "ACC", "Animal Crossing", "Cards - Series 5", "Niko", "421" };
+            strAmiiboName[800] = new string[] { "0A08000103BD0502", "ACC", "Animal Crossing", "Cards - Series 5", "Wardell", "422" };
+            strAmiiboName[801] = new string[] { "0183030103BE0502", "ACC", "Animal Crossing", "Cards - Series 5", "Tom Nook (Coat)", "423" };
+            strAmiiboName[802] = new string[] { "0181050103BF0502", "ACC", "Animal Crossing", "Cards - Series 5", "Isabelle (Sweater)", "424" };
+            strAmiiboName[803] = new string[] { "0A09000103C00502", "ACC", "Animal Crossing", "Cards - Series 5", "Sherb", "425" };
+            strAmiiboName[804] = new string[] { "0A0A000103C10502", "ACC", "Animal Crossing", "Cards - Series 5", "Megan", "426" };
+            strAmiiboName[805] = new string[] { "0A0B000103C20502", "ACC", "Animal Crossing", "Cards - Series 5", "Dom", "427" };
+            strAmiiboName[806] = new string[] { "0A0C000103C30502", "ACC", "Animal Crossing", "Cards - Series 5", "Audie", "428" };
+            strAmiiboName[807] = new string[] { "0A0D000103C40502", "ACC", "Animal Crossing", "Cards - Series 5", "Cyd", "429" };
+            strAmiiboName[808] = new string[] { "0A0E000103C50502", "ACC", "Animal Crossing", "Cards - Series 5", "Judy", "430" };
+            strAmiiboName[809] = new string[] { "0A0F000103C60502", "ACC", "Animal Crossing", "Cards - Series 5", "Raymond", "431" };
+            strAmiiboName[810] = new string[] { "0A10000103C70502", "ACC", "Animal Crossing", "Cards - Series 5", "Reneigh", "432" };
+            strAmiiboName[811] = new string[] { "0A11000103C80502", "ACC", "Animal Crossing", "Cards - Series 5", "Sasha", "433" };
+            strAmiiboName[812] = new string[] { "0A12000103C90502", "ACC", "Animal Crossing", "Cards - Series 5", "Ione", "434" };
+            strAmiiboName[813] = new string[] { "0A13000103CA0502", "ACC", "Animal Crossing", "Cards - Series 5", "Tiansheng", "435" };
+            strAmiiboName[814] = new string[] { "0A14000103CB0502", "ACC", "Animal Crossing", "Cards - Series 5", "Shino", "436" };
+            strAmiiboName[815] = new string[] { "0A15000103CC0502", "ACC", "Animal Crossing", "Cards - Series 5", "Marlo", "437" };
+            strAmiiboName[816] = new string[] { "0A16000103CD0502", "ACC", "Animal Crossing", "Cards - Series 5", "Petri", "438" };
+            strAmiiboName[817] = new string[] { "0A17000103CE0502", "ACC", "Animal Crossing", "Cards - Series 5", "Cephalobot", "439" };
+            strAmiiboName[818] = new string[] { "0A18000103CF0502", "ACC", "Animal Crossing", "Cards - Series 5", "Quinn", "440" };
+            strAmiiboName[819] = new string[] { "0A19000103D00502", "ACC", "Animal Crossing", "Cards - Series 5", "Chabwick", "441" };
+            strAmiiboName[820] = new string[] { "0A1A000103D10502", "ACC", "Animal Crossing", "Cards - Series 5", "Zoe", "442" };
+            strAmiiboName[821] = new string[] { "0A1B000103D20502", "ACC", "Animal Crossing", "Cards - Series 5", "Ace", "443" };
+            strAmiiboName[822] = new string[] { "0A1C000103D30502", "ACC", "Animal Crossing", "Cards - Series 5", "Rio", "444" };
+            strAmiiboName[823] = new string[] { "0A1D000103D40502", "ACC", "Animal Crossing", "Cards - Series 5", "Frett", "445" };
+            strAmiiboName[824] = new string[] { "0A1E000103D50502", "ACC", "Animal Crossing", "Cards - Series 5", "Azalea", "446" };
+            strAmiiboName[825] = new string[] { "0A1F000103D60502", "ACC", "Animal Crossing", "Cards - Series 5", "Roswell", "447" };
+            strAmiiboName[826] = new string[] { "0A20000103D70502", "ACC", "Animal Crossing", "Cards - Series 5", "Faith", "448" };
 
             #endregion
 
@@ -877,7 +925,7 @@
         }
 
         /// <summary>
-        /// 01to04 2021-10-11
+        /// 01to04 2022-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1462,10 +1510,10 @@
                 case "3802": return "Jikkyou Powerful Pro Baseball - Daijobu";
                 case "05C3": return "Metroid - Dark Samus";
                 case "37C1": return "Castlevania - Richter";
-                case "3A00": return "?1 - Joker";
-                case "3640": return "?2 - Hero";
-                case "3B40": return "?3 - Banjo & Kazooie";
-                case "3C80": return "?4 - Terry";
+                case "3A00": return "Persona - Joker";
+                case "3640": return "Dragon Quest - Hero";
+                case "3B40": return "Banjo&Kazooie - Banjo & Kazooie";
+                case "3C80": return "Fatal Fury - Terry";
                 case "210B": return "Fire Emblem - Byleth";
                 case "350A": return "Monster Hunter - Palamute";
                 case "3508": return "Monster Hunter - Magnamalo";
@@ -1481,6 +1529,39 @@
                 case "3844": return "Yu-Gi-Oh! - Roa Kirishima";
                 case "3845": return "Yu-Gi-Oh! - Nail Saionji";
                 case "3846": return "Yu-Gi-Oh! - Asana Mutsuba";
+                case "0A00": return "Animal Crossing - Orville";
+                case "0A01": return "Animal Crossing - Wilbur";
+                case "0A02": return "Animal Crossing - C.J.";
+                case "0A03": return "Animal Crossing - Flick";
+                case "0A04": return "Animal Crossing - Daisy Mae";
+                case "0A05": return "Animal Crossing - Harvey";
+                case "0A06": return "Animal Crossing - Wisp";
+                case "0A07": return "Animal Crossing - Niko";
+                case "0A08": return "Animal Crossing - Wardell";
+                case "0A09": return "Animal Crossing - Sherb";
+                case "0A0A": return "Animal Crossing - Megan";
+                case "0A0B": return "Animal Crossing - Dom";
+                case "0A0C": return "Animal Crossing - Audie";
+                case "0A0D": return "Animal Crossing - Cyd";
+                case "0A0E": return "Animal Crossing - Judy";
+                case "0A0F": return "Animal Crossing - Raymond";
+                case "0A10": return "Animal Crossing - Reneigh";
+                case "0A11": return "Animal Crossing - Sasha";
+                case "0A12": return "Animal Crossing - Ione";
+                case "0A13": return "Animal Crossing - Tiansheng";
+                case "0A14": return "Animal Crossing - Shino";
+                case "0A15": return "Animal Crossing - Marlo";
+                case "0A16": return "Animal Crossing - Petri";
+                case "0A17": return "Animal Crossing - Cephalobot";
+                case "0A18": return "Animal Crossing - Quinn";
+                case "0A19": return "Animal Crossing - Chabwick";
+                case "0A1A": return "Animal Crossing - Zoe";
+                case "0A1B": return "Animal Crossing - Ace";
+                case "0A1C": return "Animal Crossing - Rio";
+                case "0A1D": return "Animal Crossing - Frett";
+                case "0A1E": return "Animal Crossing - Azalea";
+                case "0A1F": return "Animal Crossing - Roswell";
+                case "0A20": return "Animal Crossing - Faith";
 
                 default: return "";
             }
@@ -1504,7 +1585,7 @@
         }
 
         /// <summary>
-        /// 09to12 2021-10-11
+        /// 09to12 2022-04-15
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2290,6 +2371,54 @@
                 case "0428": return "Roa Kirishima - [YU-GI-OH] 05 - Roa Kirishima.bin";
                 case "0429": return "Nail Saionji - [YU-GI-OH] 06 - Nail Saionji.bin";
                 case "042A": return "Asana Mutsuba - [YU-GI-OH] 07 - Asana Mutsuba.bin";
+                case "03A8": return "Animal Crossing Cards - Tom Nook";
+                case "03A9": return "Animal Crossing Cards - Timmy and Tommy";
+                case "03AA": return "Animal Crossing Cards - Isabelle";
+                case "03AB": return "Animal Crossing Cards - Orville";
+                case "03AC": return "Animal Crossing Cards - Wilbur";
+                case "03AD": return "Animal Crossing Cards - Blathers";
+                case "03AE": return "Animal Crossing Cards - Celeste";
+                case "03AF": return "Animal Crossing Cards - Mabel";
+                case "03B0": return "Animal Crossing Cards - Sable";
+                case "03B1": return "Animal Crossing Cards - Label";
+                case "03B2": return "Animal Crossing Cards - K.K.";
+                case "03B3": return "Animal Crossing Cards - C.J.";
+                case "03B4": return "Animal Crossing Cards - Flick";
+                case "03B5": return "Animal Crossing Cards - Daisy Mae";
+                case "03B6": return "Animal Crossing Cards - Kicks";
+                case "03B7": return "Animal Crossing Cards - Saharah";
+                case "03B8": return "Animal Crossing Cards - Harvey";
+                case "03B9": return "Animal Crossing Cards - Gulliver";
+                case "03BA": return "Animal Crossing Cards - Wisp";
+                case "03BB": return "Animal Crossing Cards - Lottie";
+                case "03BC": return "Animal Crossing Cards - Niko";
+                case "03BD": return "Animal Crossing Cards - Wardell";
+                case "03BE": return "Animal Crossing Cards - Tom Nook (Coat)";
+                case "03BF": return "Animal Crossing Cards - Isabelle (Sweater)";
+                case "03C0": return "Animal Crossing Cards - Sherb";
+                case "03C1": return "Animal Crossing Cards - Megan";
+                case "03C2": return "Animal Crossing Cards - Dom";
+                case "03C3": return "Animal Crossing Cards - Audie";
+                case "03C4": return "Animal Crossing Cards - Cyd";
+                case "03C5": return "Animal Crossing Cards - Judy";
+                case "03C6": return "Animal Crossing Cards - Raymond";
+                case "03C7": return "Animal Crossing Cards - Reneigh";
+                case "03C8": return "Animal Crossing Cards - Sasha";
+                case "03C9": return "Animal Crossing Cards - Ione";
+                case "03CA": return "Animal Crossing Cards - Tiansheng";
+                case "03CB": return "Animal Crossing Cards - Shino";
+                case "03CC": return "Animal Crossing Cards - Marlo";
+                case "03CD": return "Animal Crossing Cards - Petri";
+                case "03CE": return "Animal Crossing Cards - Cephalobot";
+                case "03CF": return "Animal Crossing Cards - Quinn";
+                case "03D0": return "Animal Crossing Cards - Chabwick";
+                case "03D1": return "Animal Crossing Cards - Zoe";
+                case "03D2": return "Animal Crossing Cards - Ace";
+                case "03D3": return "Animal Crossing Cards - Rio";
+                case "03D4": return "Animal Crossing Cards - Frett";
+                case "03D5": return "Animal Crossing Cards - Azalea";
+                case "03D6": return "Animal Crossing Cards - Roswell";
+                case "03D7": return "Animal Crossing Cards - Faith";
 
 
                 default: return "";

@@ -158,7 +158,7 @@ namespace AnterStudio.GameTools.JoyConClass
             for (int i = 0; i < 0x08; i++)
                 this.OtaMagicData[i] = Data[0x1ff4 + i];
 
-            for (int i = 0; i < 0x4; i++)
+            for (int i = 0; i < 0x04; i++)
                 this.OtaFirmwareData[i] = Data[0x1ffc + i];
 
             for (int i = 0; i < 0x1000; i++)
