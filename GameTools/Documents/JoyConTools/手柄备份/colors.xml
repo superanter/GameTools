@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.1" />
+  </startup>
+  <!--Values are in RGB-->
+  <!--Color Presets for Retail Colors-->
+  <RetailColors>
+    <RC key="retailpreset_01" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_02" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_03" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_04" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_05" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_06" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_07" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_08" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_09" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_10" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_11" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_12" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_13" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_14" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_15" rgb_color="505050" tooltip="" />
+    <RC key="retailpreset_16" rgb_color="505050" tooltip="" />
+  </RetailColors>
+  <!--Color Presets for User Colors-->
+  <UserColors>
+    <UC key="userpreset_01" rgb_color="4655F5" tooltip="Blue" />
+    <UC key="userpreset_02" rgb_color="B400E6" tooltip="Neon Purple" />
+    <UC key="userpreset_03" rgb_color="FAA005" tooltip="Neon Orange" />
+    <UC key="userpreset_04" rgb_color="FFDC00" tooltip="Pokemon Let's Go! Pikachu" />
+    <UC key="userpreset_05" rgb_color="C88C32" tooltip="Pokemon Let's Go! Eevee" />
+    <UC key="userpreset_06" rgb_color="D7AA73" tooltip="Nintendo Labo Creators Contest Edition" />
+    <UC key="userpreset_07" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_08" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_09" rgb_color="00000A" tooltip="Blue" />
+    <UC key="userpreset_10" rgb_color="140014" tooltip="Neon Purple" />
+    <UC key="userpreset_11" rgb_color="0F0A00" tooltip="Neon Orange" />
+    <UC key="userpreset_12" rgb_color="322800" tooltip="Pokemon Let's Go! Pikachu" />
+    <UC key="userpreset_13" rgb_color="281900" tooltip="Pokemon Let's Go! Eevee" />
+    <UC key="userpreset_14" rgb_color="1E1914" tooltip="Nintendo Labo Creators Contest Edition" />
+    <UC key="userpreset_15" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_16" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_17" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_18" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_19" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_20" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_21" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_22" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_23" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_24" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_25" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_26" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_27" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_28" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_29" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_30" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_31" rgb_color="505050" tooltip="" />
+    <UC key="userpreset_32" rgb_color="505050" tooltip="" />
+  </UserColors>
+</configuration>

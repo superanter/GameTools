@@ -331,7 +331,7 @@ namespace AnterStudio.GameTools.AmiiboClass
         }
 
         /// <summary>
-        /// 输出十六进制内容 2017-08-28
+        /// 输出十六进制内容 2022-04-15
         /// </summary>
         /// <param name="myBytes"></param>
         private void ShowBytes(byte[] myBytes)
@@ -339,23 +339,14 @@ namespace AnterStudio.GameTools.AmiiboClass
             string strBytesOut = "";
             strBytesOut += "    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\r\n";
             strBytesOut += "    -----------------------------------------------\r\n";
-            for (int i = 0; i < myBytes.Length; i++)
+            for (int i = 0; i < myBytes.Length/0x10; i++)
             {
-                if (i % 16 == 0)
-                {
-                    strBytesOut += String.Format("{0:X2}", i / 16) + ": ";
-                }
-                strBytesOut += String.Format("{0:X2}", myBytes[i]);
-                if (i % 16 != 15)
-                {
-                    strBytesOut += " ";
-                }
-                else
-                {
-                    strBytesOut += "\r\n";
-                }
-
+                strBytesOut += String.Format("{0:X2}", i) + ": ";
+                strBytesOut += BitConverter.ToString(myBytes, i * 0x10, 0x10).Replace("-", " ") + "\r\n"; ;
             }
+            strBytesOut += String.Format("{0:X2}", myBytes.Length / 0x10)+ ": ";
+            strBytesOut += BitConverter.ToString(myBytes, myBytes.Length / 0x10*0x10,myBytes.Length%0x10).Replace("-"," ");
+
             strBytesOut += "\r\n    -----------------------------------------------\r\n";
             strBytesOut += "    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\r\n";
             this.ricOut.Text = strBytesOut;
@@ -612,12 +603,3 @@ namespace AnterStudio.GameTools.AmiiboClass
 
     }
 }
-/*
-                string url = string.Format(myFileMessage.PicturePath, 5, 123456);
-                System.Net.WebRequest webreq = System.Net.WebRequest.Create(url);
-                System.Net.WebResponse webres = webreq.GetResponse();
-                using (System.IO.Stream stream = webres.GetResponseStream())
-                {
-                    picBox.Image = Image.FromStream(stream);
-                }
-*/

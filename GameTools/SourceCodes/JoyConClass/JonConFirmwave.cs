@@ -1,4 +1,5 @@
 ﻿//using System.Text;
+using System;
 
 namespace AnterStudio.GameTools.JoyConClass
 {
@@ -68,11 +69,23 @@ namespace AnterStudio.GameTools.JoyConClass
         { 
             this.Data = Input;
             this.DataA = new byte[0x10];
-            this.DataG = new byte[0x0d];
-            for (int i = 0; i < 0x10; i++)
-                this.DataA[i] = this.Data[i];
-            for (int i = 0; i < 0x0d; i++)
-                this.DataG[i] = this.Data[0x50 + i];
+            this.DataB = new byte[0x01];
+            this.DataC = new byte[0x01];
+            this.DataD = new byte[0x18];
+            this.DataE = new byte[0x12];
+            this.DataF = new byte[0x01];
+            this.DataG = new byte[0x0D];
+            this.DataH = new byte[0x18];
+            this.DataI = new byte[0x12];
+            Buffer.BlockCopy(this.Data, 0x00, this.DataA, 0x0, 0x10);
+            Buffer.BlockCopy(this.Data, 0x12, this.DataB, 0x0, 0x01);
+            Buffer.BlockCopy(this.Data, 0x1B, this.DataC, 0x0, 0x01);
+            Buffer.BlockCopy(this.Data, 0x20, this.DataD, 0x0, 0x18);
+            Buffer.BlockCopy(this.Data, 0x3D, this.DataE, 0x0, 0x12);
+            Buffer.BlockCopy(this.Data, 0x4F, this.DataF, 0x0, 0x01);
+            Buffer.BlockCopy(this.Data, 0x50, this.DataG, 0x0, 0x0D);
+            Buffer.BlockCopy(this.Data, 0x80, this.DataH, 0x0, 0x18);
+            Buffer.BlockCopy(this.Data, 0x98, this.DataI, 0x0, 0x12);
 
         }
         #endregion
@@ -146,27 +159,13 @@ namespace AnterStudio.GameTools.JoyConClass
             this.FactorConfigurationData = new byte[0x1000];
             this.UserCalibrationData = new byte[0x1000];
 
-            for (int i = 0; i < 0x14; i++)
-                this.MagicNumberData[i] = Data[0x00 + i];
-
-            for (int i = 0; i < 0x06; i++)
-                this.MACData[i] = Data[0x15 + 0x05 - i];
-
-            for (int i = 0; i < 0x04; i++)
-                this.FactoryFirmewareData[i] = Data[0x3b3 + i];
-
-            for (int i = 0; i < 0x08; i++)
-                this.OtaMagicData[i] = Data[0x1ff4 + i];
-
-            for (int i = 0; i < 0x04; i++)
-                this.OtaFirmwareData[i] = Data[0x1ffc + i];
-
-            for (int i = 0; i < 0x1000; i++)
-                this.FactorConfigurationData[i] = Data[0x6000 + i];
-
-            for (int i = 0; i < 0x1000; i++)
-                this.UserCalibrationData[i] = Data[0x8000 + i];
-
+            Buffer.BlockCopy(this.Data, 0x0, this.MagicNumberData, 0x0, 0x14);
+            Buffer.BlockCopy(this.Data, 0x15, this.MACData, 0, 0x06);
+            Buffer.BlockCopy(this.Data, 0x3b3, this.FactoryFirmewareData,0x0,0x04);
+            Buffer.BlockCopy(this.Data, 0x1ff4, this.OtaMagicData, 0x0, 0x08);
+            Buffer.BlockCopy(this.Data, 0x1ffc, this.OtaFirmwareData, 0x0, 0x04);
+            Buffer.BlockCopy(this.Data, 0x6000, this.FactorConfigurationData, 0x0,0x1000);
+            Buffer.BlockCopy(this.Data, 0x8000, this.UserCalibrationData, 0x0, 0x1000);
 
             FactorConfiguration = new FactorConfigurationClass(FactorConfigurationData);
 
