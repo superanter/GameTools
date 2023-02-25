@@ -828,7 +828,7 @@
 	[Switch JoyConFirmwave]
 	1、开始测试Switch JoyCon 手柄的Firmwave备份文件读取功能，已实现最基本功能。
 
-2022-04-15
+2022-04-1 5
 [Amiibo]
 1、加入了Animal Crossing Cards - Series 5[ACC]新的401-448的48个数据；
 2、修改了[SSB]的083-086的01-04数据的说明。
