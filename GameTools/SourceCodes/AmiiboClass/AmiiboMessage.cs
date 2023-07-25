@@ -74,13 +74,13 @@
         }
 
         /// <summary>
-        /// All 2022-04-15
+        /// All 2023-07-25
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[827][];
+            string[][] strAmiiboName = new string[844][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -910,6 +910,23 @@
             strAmiiboName[824] = new string[] { "0A1E000103D50502", "ACC", "Animal Crossing", "Cards - Series 5", "Azalea", "446" };
             strAmiiboName[825] = new string[] { "0A1F000103D60502", "ACC", "Animal Crossing", "Cards - Series 5", "Roswell", "447" };
             strAmiiboName[826] = new string[] { "0A20000103D70502", "ACC", "Animal Crossing", "Cards - Series 5", "Faith", "448" };
+            strAmiiboName[827] = new string[] { "08050200041B0402", "SPL", "Splatoon", "", "Octoling (Blue)", "017" };
+            strAmiiboName[828] = new string[] { "0800010004150402", "SPL", "Splatoon", "", "Inkling (Yellow)", "018" };
+            strAmiiboName[829] = new string[] { "08060100041C0402", "SPL", "Splatoon", "", "Smallfry", "019" };
+            strAmiiboName[830] = new string[] { "0A400000041D0002", "SSB", "Super Smash Bros.", "", "Min Min", "088" };
+            strAmiiboName[831] = new string[] { "3DC1000004230002", "SSB", "Super Smash Bros.", "", "Alex", "089" };
+            strAmiiboName[832] = new string[] { "3DC0000004220002", "SSB", "Super Smash Bros.", "", "Steve", "089" };
+            strAmiiboName[833] = new string[] { "3601000004210002", "SSB", "Super Smash Bros.", "", "Sephiroth", "090" };
+            strAmiiboName[834] = new string[] { "33C0000004200002", "SSB", "Super Smash Bros.", "", "Kazuya", "091" };
+            strAmiiboName[835] = new string[] { "22420000041F0002", "SSB", "Super Smash Bros.", "", "Mythra", "092" };
+            strAmiiboName[836] = new string[] { "22410000041E0002", "SSB", "Super Smash Bros.", "", "Pyra", "092" };
+            strAmiiboName[837] = new string[] { "0100000004180902", "ZTK", "The Legend of Zelda", "Tears of the Kingdom", "Link", "001" };
+            strAmiiboName[838] = new string[] { "0100000004190902", "ZTK", "The Legend of Zelda", "Tears of the Kingdom", "Zelda [Spoof]", "002" };
+            strAmiiboName[839] = new string[] { "01000000041A0902", "ZTK", "The Legend of Zelda", "Tears of the Kingdom", "Ganondorf [Spoof]", "003" };
+            strAmiiboName[840] = new string[] { "350B0000042D1802", "MHR", "Monster Hunter Rise", "", "Malzeno", "004" };
+            strAmiiboName[841] = new string[] { "350A0100042C1802", "MHR", "Monster Hunter Rise", "", "Palamute (Canyne Malzeno X)", "005" };
+            strAmiiboName[842] = new string[] { "35090100042B1802", "MHR", "Monster Hunter Rise", "", "Palico (Felyne Malzeno X)", "006" };
+            strAmiiboName[843] = new string[] { "000000030430FF02", "SNW", "Mario", "Super Nintendo World Power-Up Bands", "Gold Mario Power-Up Band", "007" };
 
             #endregion
 
@@ -925,7 +942,7 @@
         }
 
         /// <summary>
-        /// 01to04 2022-04-15
+        /// 01to04 2023-07-25
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1562,6 +1579,15 @@
                 case "0A1E": return "Animal Crossing - Azalea";
                 case "0A1F": return "Animal Crossing - Roswell";
                 case "0A20": return "Animal Crossing - Faith";
+                case "0806": return "Splatoon - Smallfry";
+                case "2241": return "Xenoblade - Pyra";
+                case "2242": return "Xenoblade - Mythra";
+                case "0A40": return "Arms - Min Min";
+                case "3DC0": return "Minecraft - Steve";
+                case "3DC1": return "Minecraft - Alex";
+                case "33C0": return "Tekken - Kazuya";
+                case "350B": return "Monster Hunter - Malzeno";
+                case "3601": return "Final Fantasy - Sephiroth";
 
                 default: return "";
             }
@@ -1585,7 +1611,7 @@
         }
 
         /// <summary>
-        /// 09to12 2022-04-15
+        /// 09to12 2023-07-25
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2419,6 +2445,23 @@
                 case "03D5": return "Animal Crossing Cards - Azalea";
                 case "03D6": return "Animal Crossing Cards - Roswell";
                 case "03D7": return "Animal Crossing Cards - Faith";
+                case "041B": return "Splatoon - Octoling (Blue)";
+                case "0415": return "Splatoon - Inkling (Yellow)";
+                case "041C": return "Splatoon - Smallfry";
+                case "041D": return "Super Smash Bros - Min Min";
+                case "0423": return "Super Smash Bros - Alex";
+                case "0422": return "Super Smash Bros - Steve";
+                case "0421": return "Super Smash Bros - Sephiroth";
+                case "0420": return "Super Smash Bros - Kazuya";
+                case "041F": return "Super Smash Bros - Mythra";
+                case "041E": return "Super Smash Bros - Pyra";
+                case "0418": return "The Legend of Zelda - Link";
+                case "0419": return "The Legend of Zelda - Zelda [Spoof]";
+                case "041A": return "The Legend of Zelda - Ganondorf [Spoof]";
+                case "042D": return "Monster Hunter Rise - Malzeno";
+                case "042C": return "Monster Hunter Rise - Palamute (Canyne Malzeno X)";
+                case "042B": return "Monster Hunter Rise - Palico (Felyne Malzeno X)";
+                case "0430": return "Mario - Gold Mario Power-Up Band";
 
 
                 default: return "";

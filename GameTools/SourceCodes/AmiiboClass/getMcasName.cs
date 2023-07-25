@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// MCAS Name 2022-04-15
+        /// MCAS Name 2023-07-25
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -955,6 +955,23 @@
                 case "195B3C93": return "[AC] 446 - Azalea";
                 case "2CE90F69": return "[AC] 447 - Roswell";
                 case "07DC339B": return "[AC] 448 - Faith";
+                case "C4051E5E": return "[SPL] 17 - Octoling (Blue)";
+                case "3DF28DB0": return "[SPL] 18 - Inkling (Yellow)";
+                case "B310C0D0": return "[SPL] 19 - Smallfry";
+                case "1686278D": return "[SSB] 88 - Min Min";
+                case "D369C6F1": return "[SSB] 89 - Alex";
+                case "3CBC07A9": return "[SSB] 89 - Steve";
+                case "D9FE23F0": return "[SSB] 90 - Sephiroth";
+                case "33549FCE": return "[SSB] 91 - Kazuya";
+                case "939547D4": return "[SSB] 92 - Mythra";
+                case "8CD0DA69": return "[SSB] 92 - Pyra";
+                case "D0C27CEF": return "[ZTK] 01 - Link";
+                case "1AAB7A88": return "[ZTK] 02 - Zelda [Spoof]";
+                case "370584A1": return "[ZTK] 03 - Ganondorf [Spoof]";
+                case "3E81C7BA": return "[MHR] 04 - Malzeno";
+                case "23A169DE": return "[MHR] 05 - Palamute (Canyne Malzeno X)";
+                case "A4819223": return "[MHR] 06 - Palico (Felyne Malzeno X)";
+                case "0D3F9954": return "[SNW] 07 - Gold Mario Power-Up Band";
 
 
                 default: return "";
