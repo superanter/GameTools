@@ -12,9 +12,28 @@ namespace AnterStudio.GameTools.MameClass
             InitializeComponent();
         }
 
+        private string OpenInputFile(string strInput)
+        {
+            string OpenFilter = "";
+
+            OpenFilter += strInput;
+            OpenFilter += "All Files(*.*)|*.*";
+            try
+            {
+                OpenFileDialog dialogOpenFile = new OpenFileDialog();
+                dialogOpenFile.Filter = OpenFilter;
+                if (dialogOpenFile.ShowDialog() == DialogResult.OK)
+                {
+                    return dialogOpenFile.FileName;
+                }
+            }
+            catch { }
+            return "";
+        }
+       
         private void btnXml_Click(object sender, EventArgs e)
         {
-            string myString = OpenInputFile();
+            string myString = OpenInputFile("XML Files|*.xml|");
 
             if (myString != "")
             {
@@ -58,23 +77,35 @@ namespace AnterStudio.GameTools.MameClass
             }
         }
 
-        private string OpenInputFile()
+        private void btnPrn_Click(object sender, EventArgs e)
         {
-            string OpenFilter = "";
+            string myString = OpenInputFile("PRN Files|*.prn|");
 
-            OpenFilter += "XML Files|*.xml|";
-            OpenFilter += "All Files(*.*)|*.*";
-            try
+            if (myString != "")
             {
-                OpenFileDialog dialogOpenFile = new OpenFileDialog();
-                dialogOpenFile.Filter = OpenFilter;
-                if (dialogOpenFile.ShowDialog() == DialogResult.OK)
+                FileStream fileStream = new FileStream(myString, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader(fileStream);
+                long length = fileStream.Length;
+                byte[] bytes = new byte[length];
+                binaryReader.Read(bytes, 0, bytes.Length);
+                binaryReader.Close();
+                fileStream.Close();
+
+                for (int i = 0; i < bytes.Length; i++)
                 {
-                    return dialogOpenFile.FileName;
+                    if (bytes[i] > 0x80)
+                    {
+                        bytes[i] = Convert.ToByte(bytes[i] - 0x80);
+                    }
                 }
+
+                FileStream fileStream2 = new FileStream(myString + ".txt", FileMode.Create);
+                BinaryWriter binaryWriter = new BinaryWriter(fileStream2);
+                binaryWriter.Write(bytes);
+                binaryWriter.Close();
+                fileStream2.Close();
             }
-            catch { }
-            return "";
+
         }
     }
 }
