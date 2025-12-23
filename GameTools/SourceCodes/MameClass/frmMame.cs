@@ -37,6 +37,7 @@ namespace AnterStudio.GameTools.MameClass
 
             if (myString != "")
             {
+                this.Enabled = false;
                 string[] lines = File.ReadAllLines(myString);
                 string[] outs1 = new string[lines.Length];
                 int j = 0;
@@ -74,6 +75,7 @@ namespace AnterStudio.GameTools.MameClass
                 System.IO.File.WriteAllLines(myString + ".txt", outs2);
                 MessageBox.Show("OK, "+ iGames + " games, and " + outs2.Length + " lines out.");
                 iGames = 0;
+                this.Enabled = true;
             }
         }
 
@@ -83,6 +85,7 @@ namespace AnterStudio.GameTools.MameClass
 
             if (myString != "")
             {
+                this.Enabled = false;
                 FileStream fileStream = new FileStream(myString, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader(fileStream);
                 long length = fileStream.Length;
@@ -104,8 +107,9 @@ namespace AnterStudio.GameTools.MameClass
                 binaryWriter.Write(bytes);
                 binaryWriter.Close();
                 fileStream2.Close();
+                MessageBox.Show("OK");
+                this.Enabled = true;
             }
-
         }
     }
 }
