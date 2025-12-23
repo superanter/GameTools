@@ -144,6 +144,12 @@
     <Compile Include="SourceCodes\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="SourceCodes\MameClass\frmMame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SourceCodes\MameClass\frmMame.Designer.cs">
+      <DependentUpon>frmMame.cs</DependentUpon>
+    </Compile>
     <Compile Include="SourceCodes\OtherToolsClass\frmOtherTools.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\JoyConClass\frmJoyCon.resx">
       <DependentUpon>frmJoyCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\MameClass\frmMame.resx">
+      <DependentUpon>frmMame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.resx">
       <DependentUpon>frmOtherTools.cs</DependentUpon>

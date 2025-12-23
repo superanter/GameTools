@@ -162,5 +162,17 @@ namespace AnterStudio.GameTools
            JoyConForm.Dispose();
             this.Visible = true;
         }
+
+        private void btnMAME_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            MameClass.frmMame MameForm = new MameClass.frmMame();
+            if (MameForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+            MameForm.Dispose();
+            this.Visible = true;
+        }
     }
 }
