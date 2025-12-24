@@ -503,10 +503,10 @@
                 case "A4BD2BB2": return "[CR] 01 - Chibi-Robo.bin";
                 case "69852D0B": return "[FE] 01 - Alm.bin";
                 case "A2085DFA": return "[FE] 02 - Celica.bin";
-                case "F8A832FC": return "[Kirby] 01 - Kirby.bin";
-                case "2A4DAA8A": return "[Kirby] 02 - Meta Knight.bin";
-                case "E53F3A5D": return "[Kirby] 03 - King Dedede.bin";
-                case "BE6DE49A": return "[Kirby] 04 - Waddle Dee.bin";
+                case "F8A832FC": return "[KIR] 01 - Kirby.bin";
+                case "2A4DAA8A": return "[KIR] 02 - Meta Knight.bin";
+                case "E53F3A5D": return "[KIR] 03 - King Dedede.bin";
+                case "BE6DE49A": return "[KIR] 04 - Waddle Dee.bin";
                 case "C507DC41": return "[MSS] 01 - Mario (Soccer).bin";
                 case "15F33646": return "[MSS] 02 - Mario (Baseball).bin";
                 case "27F158F7": return "[MSS] 03 - Mario (Tennis).bin";

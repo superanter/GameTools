@@ -834,9 +834,9 @@
             strAmiiboName[748] = new string[] { "21080000036F1202", "FIE", "Fire Emblem", "", "Chrom", "003" };
             strAmiiboName[749] = new string[] { "2109000003701202", "FIE", "Fire Emblem", "", "Tiki", "004" };
             strAmiiboName[750] = new string[] { "35C0000002500A02", "SHK", "Shovel Knight", "", "Shovel Knight", "001" };
-            strAmiiboName[751] = new string[] { "22C00000003A0202", "CHI", "Chibi Robo", "", "Chibi Robo", "001" };
+            strAmiiboName[751] = new string[] { "22C00000003A0202", "CR", "Chibi Robo", "", "Chibi Robo", "001" };
             strAmiiboName[752] = new string[] { "1D000001025C0D02", "POK", "Pokkén Tournament", "", "Shadow Mewtwo", "001" };
-            strAmiiboName[753] = new string[] { "1F400000035E1002", "BOB", "BoxBoy!", "", "Qbby", "001" };
+            strAmiiboName[753] = new string[] { "1F400000035E1002", "BB", "BoxBoy!", "", "Qbby", "001" };
             strAmiiboName[754] = new string[] { "06420000035F1102", "PIK", "Pikmin", "", "Pikmin", "001" };
             strAmiiboName[755] = new string[] { "05C1000003661302", "MSR", "Metroid: Samus Returns", "", "Metroid", "002" };
             strAmiiboName[756] = new string[] { "05C0000003651302", "MSR", "Metroid: Samus Returns", "", "Samus Aran", "001" };
