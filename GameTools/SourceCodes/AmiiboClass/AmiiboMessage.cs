@@ -74,13 +74,13 @@
         }
 
         /// <summary>
-        /// All 2025-04-10
+        /// All 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
         private string[] GetAmiiboName(string AmiiboSer)
         {
-            string[][] strAmiiboName = new string[856][];
+            string[][] strAmiiboName = new string[933][];
 
             #region 构建数组
             strAmiiboName[0] = new string[] { "", "", "", "", "", "000" };
@@ -940,6 +940,83 @@
             strAmiiboName[854] = new string[] { "22430000043D1B02", "XBC", "Xenoblade Chronicles 3", "", "Noah", "001" };
             strAmiiboName[855] = new string[] { "22440000043E1B02", "XBC", "Xenoblade Chronicles 3", "", "Mio", "002" };
 
+            strAmiiboName[856] = new string[] { "1F00000004C41E03", "KAR", "Kirby", "", "[KAR] 01 - Kirby & Warp Star.bin", "001" };
+            strAmiiboName[857] = new string[] { "1F03010004C91E03", "KAR", "Kirby", "", "[KAR] 02 - Bandana Waddle Dee & Winged Star.bin", "002" };
+            strAmiiboName[858] = new string[] { "00080100042F1A02", "DK", "Mario", "Donkey Kong Bananza", "[DK] 01 - Donkey Kong and Pauline.bin", "001" };
+            strAmiiboName[859] = new string[] { "00000004043F1C02", "MMB", "Mario", "My Mario Wooden Blocks", "[MMB] 01 - Mario.bin", "001" };
+            strAmiiboName[860] = new string[] { "0001000404401C02", "MMB", "Mario", "My Mario Wooden Blocks", "[MMB] 02 - Luigi.bin", "002" };
+            strAmiiboName[861] = new string[] { "0002000404411C02", "MMB", "Mario", "My Mario Wooden Blocks", "[MMB] 03 - Peach.bin", "003" };
+            strAmiiboName[862] = new string[] { "0003000404421C02", "MMB", "Mario", "My Mario Wooden Blocks", "[MMB] 04 - Yoshi.bin", "004" };
+            strAmiiboName[863] = new string[] { "05C00000043B1302", "MP4", "Metroid", "Metroid Prime 4 - Beyond", "[MP4] 01 - Samus.bin", "001" };
+            strAmiiboName[864] = new string[] { "05C00000043A1302", "MP4", "Metroid", "Metroid Prime 4 - Beyond", "[MP4] 02 - Samus & Vi-O-La.bin", "002" };
+            strAmiiboName[865] = new string[] { "05C50000043C1302", "MP4", "Metroid", "Metroid Prime 4 - Beyond", "[MP4] 03 - Sylux.bin", "003" };
+            strAmiiboName[866] = new string[] { "34C2000104AB1D02", "SF6", "Street Fighter", "Cards", "[SF6] 01 - Luke.bin", "001" };
+            strAmiiboName[867] = new string[] { "34C3000104AD1D02", "SF6", "Street Fighter", "Cards", "[SF6] 02 - Jamie.bin", "002" };
+            strAmiiboName[868] = new string[] { "34CC000104B71D02", "SF6", "Street Fighter", "Cards", "[SF6] 03 - Manon.bin", "003" };
+            strAmiiboName[869] = new string[] { "34C4000104AF1D02", "SF6", "Street Fighter", "Cards", "[SF6] 04 - Kimberly.bin", "004" };
+            strAmiiboName[870] = new string[] { "34CD000104B81D02", "SF6", "Street Fighter", "Cards", "[SF6] 05 - Marisa.bin", "005" };
+            strAmiiboName[871] = new string[] { "34D0000104BB1D02", "SF6", "Street Fighter", "Cards", "[SF6] 06 - Lily.bin", "006" };
+            strAmiiboName[872] = new string[] { "34CE000104B91D02", "SF6", "Street Fighter", "Cards", "[SF6] 07 - JP.bin", "007" };
+            strAmiiboName[873] = new string[] { "34C7000104B21D02", "SF6", "Street Fighter", "Cards", "[SF6] 08 - Juri.bin", "008" };
+            strAmiiboName[874] = new string[] { "34CB000104B61D02", "SF6", "Street Fighter", "Cards", "[SF6] 09 - Dee Jay.bin", "009" };
+            strAmiiboName[875] = new string[] { "34D1000104BC1D02", "SF6", "Street Fighter", "Cards", "[SF6] 10 - Cammy.bin", "010" };
+            strAmiiboName[876] = new string[] { "34C0000104A81D02", "SF6", "Street Fighter", "Cards", "[SF6] 11 - Ryu.bin", "011" };
+            strAmiiboName[877] = new string[] { "34CA000104B51D02", "SF6", "Street Fighter", "Cards", "[SF6] 12 - E.Honda.bin", "012" };
+            strAmiiboName[878] = new string[] { "34C8000104B31D02", "SF6", "Street Fighter", "Cards", "[SF6] 13 - Blanka.bin", "013" };
+            strAmiiboName[879] = new string[] { "34C6000104B11D02", "SF6", "Street Fighter", "Cards", "[SF6] 14 - Guile.bin", "014" };
+            strAmiiboName[880] = new string[] { "34C1000104A91D02", "SF6", "Street Fighter", "Cards", "[SF6] 15 - Ken.bin", "015" };
+            strAmiiboName[881] = new string[] { "34C5000104B01D02", "SF6", "Street Fighter", "Cards", "[SF6] 16 - Chun-Li.bin", "016" };
+            strAmiiboName[882] = new string[] { "34CF000104BA1D02", "SF6", "Street Fighter", "Cards", "[SF6] 17 - Zangief.bin", "017" };
+            strAmiiboName[883] = new string[] { "34C9000104B41D02", "SF6", "Street Fighter", "Cards", "[SF6] 18 - Dhalsim.bin", "018" };
+            strAmiiboName[884] = new string[] { "34D2000104BD1D02", "SF6", "Street Fighter", "Cards", "[SF6] 19 - Rashid.bin", "019" };
+            strAmiiboName[885] = new string[] { "34D3000104BE1D02", "SF6", "Street Fighter", "Cards", "[SF6] 20 - A.K.I.bin", "020" };
+            strAmiiboName[886] = new string[] { "34D4000104BF1D02", "SF6", "Street Fighter", "Cards", "[SF6] 21 - ED.bin", "021" };
+            strAmiiboName[887] = new string[] { "34D5000104C01D02", "SF6", "Street Fighter", "Cards", "[SF6] 22 - Akuma.bin", "022" };
+            strAmiiboName[888] = new string[] { "34D6000104E11D02", "SF6", "Street Fighter", "Cards", "[SF6] 23 - M.Bison.bin", "023" };
+            strAmiiboName[889] = new string[] { "3C80000104E81D02", "SF6", "Street Fighter", "Cards", "[SF6] 24 - Terry.bin", "024" };
+            strAmiiboName[890] = new string[] { "3C81000104F21D02", "SF6", "Street Fighter", "Cards", "[SF6] 25 - Mai.bin", "025" };
+            strAmiiboName[891] = new string[] { "34D8000104E31D02", "SF6", "Street Fighter", "Cards", "[SF6] 26 - Elena.bin", "026" };
+            strAmiiboName[892] = new string[] { "34D9000104E41D02", "SF6", "Street Fighter", "Cards", "[SF6] 27 - Sagat.bin", "027" };
+            strAmiiboName[893] = new string[] { "34DA000104E51D02", "SF6", "Street Fighter", "Cards", "[SF6] 28 - C.Viper.bin", "028" };
+            strAmiiboName[894] = new string[] { "34DB000104E61D02", "SF6", "Street Fighter", "Cards", "[SF6] 29 - Alex.bin", "029" };
+            strAmiiboName[895] = new string[] { "34DC000104E71D02", "SF6", "Street Fighter", "Cards", "[SF6] 30 - Ingrid.bin", "030" };
+            strAmiiboName[896] = new string[] { "34C2000104CD1D02", "SF6", "Street Fighter", "Cards", "[SF6] 31 - Luke.bin", "031" };
+            strAmiiboName[897] = new string[] { "34C3000104CE1D02", "SF6", "Street Fighter", "Cards", "[SF6] 32 - Jamie.bin", "032" };
+            strAmiiboName[898] = new string[] { "34CC000104D71D02", "SF6", "Street Fighter", "Cards", "[SF6] 33 - Manon.bin", "033" };
+            strAmiiboName[899] = new string[] { "34C4000104CF1D02", "SF6", "Street Fighter", "Cards", "[SF6] 34 - Kimberly.bin", "034" };
+            strAmiiboName[900] = new string[] { "34CD000104D81D02", "SF6", "Street Fighter", "Cards", "[SF6] 35 - Marisa.bin", "035" };
+            strAmiiboName[901] = new string[] { "34D0000104DB1D02", "SF6", "Street Fighter", "Cards", "[SF6] 36 - Lily.bin", "036" };
+            strAmiiboName[902] = new string[] { "34CE000104D91D02", "SF6", "Street Fighter", "Cards", "[SF6] 37 - JP.bin", "037" };
+            strAmiiboName[903] = new string[] { "34C7000104D21D02", "SF6", "Street Fighter", "Cards", "[SF6] 38 - Juri.bin", "038" };
+            strAmiiboName[904] = new string[] { "34CB000104D61D02", "SF6", "Street Fighter", "Cards", "[SF6] 39 - Dee Jay.bin", "039" };
+            strAmiiboName[905] = new string[] { "34D1000104DC1D02", "SF6", "Street Fighter", "Cards", "[SF6] 40 - Cammy.bin", "040" };
+            strAmiiboName[906] = new string[] { "34C0000104CB1D02", "SF6", "Street Fighter", "Cards", "[SF6] 41 - Ryu.bin", "041" };
+            strAmiiboName[907] = new string[] { "34CA000104D51D02", "SF6", "Street Fighter", "Cards", "[SF6] 42 - E.Honda.bin", "042" };
+            strAmiiboName[908] = new string[] { "34C8000104D31D02", "SF6", "Street Fighter", "Cards", "[SF6] 43 - Blanka.bin", "043" };
+            strAmiiboName[909] = new string[] { "34C6000104D11D02", "SF6", "Street Fighter", "Cards", "[SF6] 44 - Guile.bin", "044" };
+            strAmiiboName[910] = new string[] { "34C1000104CC1D02", "SF6", "Street Fighter", "Cards", "[SF6] 45 - Ken.bin", "045" };
+            strAmiiboName[911] = new string[] { "34C5000104D01D02", "SF6", "Street Fighter", "Cards", "[SF6] 46 - Chun-Li.bin", "046" };
+            strAmiiboName[912] = new string[] { "34CF000104DA1D02", "SF6", "Street Fighter", "Cards", "[SF6] 47 - Zangief.bin", "047" };
+            strAmiiboName[913] = new string[] { "34C9000104D41D02", "SF6", "Street Fighter", "Cards", "[SF6] 48 - Dhalsim.bin", "048" };
+            strAmiiboName[914] = new string[] { "34D2000104DD1D02", "SF6", "Street Fighter", "Cards", "[SF6] 49 - Rashid.bin", "049" };
+            strAmiiboName[915] = new string[] { "34D3000104DE1D02", "SF6", "Street Fighter", "Cards", "[SF6] 50 - A.K.I.bin", "050" };
+            strAmiiboName[916] = new string[] { "34D4000104DF1D02", "SF6", "Street Fighter", "Cards", "[SF6] 51 - ED.bin", "051" };
+            strAmiiboName[917] = new string[] { "34D5000104E01D02", "SF6", "Street Fighter", "Cards", "[SF6] 52 - Akuma.bin", "052" };
+            strAmiiboName[918] = new string[] { "34D6000104EB1D02", "SF6", "Street Fighter", "Cards", "[SF6] 53 - M.Bison (Alt).bin", "053" };
+            strAmiiboName[919] = new string[] { "3C80000104F11D02", "SF6", "Street Fighter", "Cards", "[SF6] 54 - Terry (Alt).bin", "054" };
+            strAmiiboName[920] = new string[] { "3C81000104F31D02", "SF6", "Street Fighter", "Cards", "[SF6] 55 - Mai (Alt).bin", "055" };
+            strAmiiboName[921] = new string[] { "34D8000104EC1D02", "SF6", "Street Fighter", "Cards", "[SF6] 56 - Elena (Alt).bin", "056" };
+            strAmiiboName[922] = new string[] { "34D9000104ED1D02", "SF6", "Street Fighter", "Cards", "[SF6] 57 - Sagat (Alt).bin", "057" };
+            strAmiiboName[923] = new string[] { "34DA000104EE1D02", "SF6", "Street Fighter", "Cards", "[SF6] 58 - C.Viper (Alt).bin", "058" };
+            strAmiiboName[924] = new string[] { "34DB000104EF1D02", "SF6", "Street Fighter", "Cards", "[SF6] 59 - Alex (Alt).bin", "059" };
+            strAmiiboName[925] = new string[] { "34DC000104F01D02", "SF6", "Street Fighter", "Cards", "[SF6] 60 - Ingrid (Alt).bin", "060" };
+            strAmiiboName[926] = new string[] { "34C2000004AA1D02", "SF6", "Street Fighter", "Figures", "[SF6] 01 - Luke.bin", "001" };
+            strAmiiboName[927] = new string[] { "34C3000004AC1D02", "SF6", "Street Fighter", "Figures", "[SF6] 02 - Jamie.bin", "002" };
+            strAmiiboName[928] = new string[] { "34C4000004AE1D02", "SF6", "Street Fighter", "Figures", "[SF6] 03 - Kimberly.bin", "003" };
+            strAmiiboName[929] = new string[] { "010A000004A40902", "ZTK", "The Legend of Zelda", "The Legend of Zelda Tears of the Kingdom", "[ZTK] 04 - Sidon.bin", "004" };
+            strAmiiboName[930] = new string[] { "010B000004A50902", "ZTK", "The Legend of Zelda", "The Legend of Zelda Tears of the Kingdom", "[ZTK] 05 - Tulin.bin", "005" };
+            strAmiiboName[931] = new string[] { "010C000004A60902", "ZTK", "The Legend of Zelda", "The Legend of Zelda Tears of the Kingdom", "[ZTK] 06 - Yunobo.bin", "006" };
+            strAmiiboName[932] = new string[] { "0109000004A30902", "ZTK", "The Legend of Zelda", "The Legend of Zelda Tears of the Kingdom", "[ZTK] 07 - Riju.bin", "007" };
 
             #endregion
 
@@ -955,7 +1032,7 @@
         }
 
         /// <summary>
-        /// 01to04 2025-04-10
+        /// 01to04 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1607,13 +1684,45 @@
                 case "3DC0": return "Minecraft - Steve";
                 case "3DC1": return "Minecraft - Alex";
                 case "3F00": return "Kingdom Hearts - Sora";
+                case "05C5": return "Metroid - Sylux";
+                case "34C2": return "Street Fighter - Luke";
+                case "34C3": return "Street Fighter - Jamie";
+                case "34CC": return "Street Fighter - Manon";
+                case "34C4": return "Street Fighter - Kimberly";
+                case "34CD": return "Street Fighter - Marisa";
+                case "34D0": return "Street Fighter - Lily";
+                case "34CE": return "Street Fighter - JP";
+                case "34C7": return "Street Fighter - Juri";
+                case "34CB": return "Street Fighter - Dee Jay";
+                case "34D1": return "Street Fighter - Cammy";
+                case "34CA": return "Street Fighter - E.Honda";
+                case "34C8": return "Street Fighter - Blanka";
+                case "34C6": return "Street Fighter - Guile";
+                case "34C5": return "Street Fighter - Chun-Li";
+                case "34CF": return "Street Fighter - Zangief";
+                case "34C9": return "Street Fighter - Dhalsim";
+                case "34D2": return "Street Fighter - Rashid";
+                case "34D3": return "Street Fighter - A.K.I";
+                case "34D4": return "Street Fighter - ED";
+                case "34D5": return "Street Fighter - Akuma";
+                case "34D6": return "Street Fighter - M.Bison";
+                case "3C81": return "Fatal Fury - Mai";
+                case "34D8": return "Street Fighter - Elena";
+                case "34D9": return "Street Fighter - Sagat";
+                case "34DA": return "Street Fighter - C.Viper";
+                case "34DB": return "Street Fighter - Alex";
+                case "34DC": return "Street Fighter - Ingrid";
+                case "010A": return "The Legend of Zelda - Sidon";
+                case "010B": return "The Legend of Zelda - Tulin";
+                case "010C": return "The Legend of Zelda - Yunobo";
+                case "0109": return "The Legend of Zelda - Riju";
 
                 default: return "";
             }
         }
 
         /// <summary>
-        /// 07to08 2021-10-11
+        /// 07to08 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -1625,12 +1734,13 @@
                 case "01": return "Cards";
                 case "02": return "Yarn";
                 case "03": return "Power-Up Band";
+                case "04": return "Wooden Blocks";
                 default: return "";
             }
         }
 
         /// <summary>
-        /// 09to12 2025-04-10
+        /// 09to12 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2493,6 +2603,83 @@
                 case "042E": return "Kingdom Hearts - Sora.bin";
                 case "043D": return "Xenoblade - Noah.bin";
                 case "043E": return "Xenoblade - Mio.bin";
+                case "042F": return "Donkey Kong Bananza - [DK] 01 - Donkey Kong and Pauline.bin";
+                case "043A": return "Metroid Prime 4 - Beyond - [MP4] 02 - Samus & Vi-O-La.bin";
+                case "043B": return "Metroid Prime 4 - Beyond - [MP4] 01 - Samus.bin";
+                case "043C": return "Metroid Prime 4 - Beyond - [MP4] 03 - Sylux.bin";
+                case "043F": return "My Mario Wooden Blocks - [MMB] 01 - Mario.bin";
+                case "0440": return "My Mario Wooden Blocks - [MMB] 02 - Luigi.bin";
+                case "0441": return "My Mario Wooden Blocks - [MMB] 03 - Peach.bin";
+                case "0442": return "My Mario Wooden Blocks - [MMB] 04 - Yoshi.bin";
+                case "04A3": return "The Legend of Zelda - [ZTK] 07 - Riju.bin";
+                case "04A4": return "The Legend of Zelda - [ZTK] 04 - Sidon.bin";
+                case "04A5": return "The Legend of Zelda - [ZTK] 05 - Tulin.bin";
+                case "04A6": return "The Legend of Zelda - [ZTK] 06 - Yunobo.bin";
+                case "04A8": return "Street Fighter - [SF6] 11 - Ryu.bin";
+                case "04A9": return "Street Fighter - [SF6] 15 - Ken.bin";
+                case "04AA": return "Street Fighter - [SF6] 01 - Luke.bin";
+                case "04AB": return "Street Fighter - [SF6] 01 - Luke.bin";
+                case "04AC": return "Street Fighter - [SF6] 02 - Jamie.bin";
+                case "04AD": return "Street Fighter - [SF6] 02 - Jamie.bin";
+                case "04AE": return "Street Fighter - [SF6] 03 - Kimberly.bin";
+                case "04AF": return "Street Fighter - [SF6] 04 - Kimberly.bin";
+                case "04B0": return "Street Fighter - [SF6] 16 - Chun-Li.bin";
+                case "04B1": return "Street Fighter - [SF6] 14 - Guile.bin";
+                case "04B2": return "Street Fighter - [SF6] 08 - Juri.bin";
+                case "04B3": return "Street Fighter - [SF6] 13 - Blanka.bin";
+                case "04B4": return "Street Fighter - [SF6] 18 - Dhalsim.bin";
+                case "04B5": return "Street Fighter - [SF6] 12 - E.Honda.bin";
+                case "04B6": return "Street Fighter - [SF6] 09 - Dee Jay.bin";
+                case "04B7": return "Street Fighter - [SF6] 03 - Manon.bin";
+                case "04B8": return "Street Fighter - [SF6] 05 - Marisa.bin";
+                case "04B9": return "Street Fighter - [SF6] 07 - JP.bin";
+                case "04BA": return "Street Fighter - [SF6] 17 - Zangief.bin";
+                case "04BB": return "Street Fighter - [SF6] 06 - Lily.bin";
+                case "04BC": return "Street Fighter - [SF6] 10 - Cammy.bin";
+                case "04BD": return "Street Fighter - [SF6] 19 - Rashid.bin";
+                case "04BE": return "Street Fighter - [SF6] 20 - A.K.I.bin";
+                case "04BF": return "Street Fighter - [SF6] 21 - ED.bin";
+                case "04C0": return "Street Fighter - [SF6] 22 - Akuma.bin";
+                case "04C4": return "Kirby - [KAR] 01 - Kirby & Warp Star.bin";
+                case "04C9": return "Kirby - [KAR] 02 - Bandana Waddle Dee & Winged Star.bin";
+                case "04CB": return "Street Fighter - [SF6] 41 - Ryu.bin";
+                case "04CC": return "Street Fighter - [SF6] 45 - Ken.bin";
+                case "04CD": return "Street Fighter - [SF6] 31 - Luke.bin";
+                case "04CE": return "Street Fighter - [SF6] 32 - Jamie.bin";
+                case "04CF": return "Street Fighter - [SF6] 34 - Kimberly.bin";
+                case "04D0": return "Street Fighter - [SF6] 46 - Chun-Li.bin";
+                case "04D1": return "Street Fighter - [SF6] 44 - Guile.bin";
+                case "04D2": return "Street Fighter - [SF6] 38 - Juri.bin";
+                case "04D3": return "Street Fighter - [SF6] 43 - Blanka.bin";
+                case "04D4": return "Street Fighter - [SF6] 48 - Dhalsim.bin";
+                case "04D5": return "Street Fighter - [SF6] 42 - E.Honda.bin";
+                case "04D6": return "Street Fighter - [SF6] 39 - Dee Jay.bin";
+                case "04D7": return "Street Fighter - [SF6] 33 - Manon.bin";
+                case "04D8": return "Street Fighter - [SF6] 35 - Marisa.bin";
+                case "04D9": return "Street Fighter - [SF6] 37 - JP.bin";
+                case "04DA": return "Street Fighter - [SF6] 47 - Zangief.bin";
+                case "04DB": return "Street Fighter - [SF6] 36 - Lily.bin";
+                case "04DC": return "Street Fighter - [SF6] 40 - Cammy.bin";
+                case "04DD": return "Street Fighter - [SF6] 49 - Rashid.bin";
+                case "04DE": return "Street Fighter - [SF6] 50 - A.K.I.bin";
+                case "04DF": return "Street Fighter - [SF6] 51 - ED.bin";
+                case "04E0": return "Street Fighter - [SF6] 52 - Akuma.bin";
+                case "04E1": return "Street Fighter - [SF6] 23 - M.Bison.bin";
+                case "04E3": return "Street Fighter - [SF6] 26 - Elena.bin";
+                case "04E4": return "Street Fighter - [SF6] 27 - Sagat.bin";
+                case "04E5": return "Street Fighter - [SF6] 28 - C.Viper.bin";
+                case "04E6": return "Street Fighter - [SF6] 29 - Alex.bin";
+                case "04E7": return "Street Fighter - [SF6] 30 - Ingrid.bin";
+                case "04E8": return "Street Fighter - [SF6] 24 - Terry.bin";
+                case "04EB": return "Street Fighter - [SF6] 53 - M.Bison (Alt).bin";
+                case "04EC": return "Street Fighter - [SF6] 56 - Elena (Alt).bin";
+                case "04ED": return "Street Fighter - [SF6] 57 - Sagat (Alt).bin";
+                case "04EE": return "Street Fighter - [SF6] 58 - C.Viper (Alt).bin";
+                case "04EF": return "Street Fighter - [SF6] 59 - Alex (Alt).bin";
+                case "04F0": return "Street Fighter - [SF6] 60 - Ingrid (Alt).bin";
+                case "04F1": return "Street Fighter - [SF6] 54 - Terry (Alt).bin";
+                case "04F2": return "Street Fighter - [SF6] 25 - Mai.bin";
+                case "04F3": return "Street Fighter - [SF6] 55 - Mai (Alt).bin";
 
                 default: return "";
 
@@ -2500,7 +2687,7 @@
         }
 
         /// <summary>
-        /// 13to14 2025-04-10
+        /// 13to14 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2534,8 +2721,11 @@
                 case "17": return "Jikkyou Powerful Pro Baseball";
                 case "18": return "Monster Hunter Rise";
                 case "19": return "Yu-Gi-Oh! Rush Duel Saikyo Battle Royale";
-                case "1A": return "???";
+                case "1A": return "Donkey Kong Bananza";
                 case "1B": return "Xenoblade Chronicles";
+                case "1C": return "My Mario Wooden Blocks";
+                case "1D": return "Street Fighter";
+                case "1E": return "Kirby";
                 case "FF": return "Super Nintendo World Power-Up Bands";
 
                 default: return "";
@@ -2543,7 +2733,7 @@
         }
 
         /// <summary>
-        /// 15to16 2017-08-01
+        /// 15to16 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -2552,6 +2742,7 @@
             switch (AmiiboSer)
             {
                 case "02": return "Fixed";
+                case "03": return "Unknown";
                 default: return "";
             }
         }

@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// MCAS Name 2025-04-10
+        /// MCAS Name 2025-12-24
         /// </summary>
         /// <param name="AmiiboSer"></param>
         /// <returns></returns>
@@ -971,9 +971,12 @@
                 case "3E81C7BA": return "[MHR] 04 - Malzeno.bin";
                 case "23A169DE": return "[MHR] 05 - Palamute (Canyne Malzeno X).bin";
                 case "A4819223": return "[MHR] 06 - Palico (Felyne Malzeno X).bin";
-                case "0D3F9954": return "[SNW] 07 - Gold Mario Power-Up Band.bin";
-                case "5DFAA8A4": return "[SNW] 08 - Donkey Kong Power-Up Band.bin";
-                case "93BC9B37": return "[SNW] 09 - Diddy Kong Power-Up Band.bin";
+                //case "0D3F9954": return "[SNW] 07 - Gold Mario Power-Up Band.bin";
+                //case "5DFAA8A4": return "[SNW] 08 - Donkey Kong Power-Up Band.bin";
+                //case "93BC9B37": return "[SNW] 09 - Diddy Kong Power-Up Band.bin";
+                case "955B8DA2": return "[SNW] 07 - Gold Mario Power-Up Band.bin";
+                case "F5B1EF81": return "[SNW] 08 - Donkey Kong Power-Up Band.bin";
+                case "EF3616D6": return "[SNW] 09 - Diddy Kong Power-Up Band.bin";
                 case "1B69DD4D": return "[SPL] 20 - Shiver.bin";
                 case "F778724D": return "[SPL] 21 - Frye.bin";
                 case "3FEDFDCF": return "[SPL] 22 - Big Man.bin";
@@ -985,6 +988,83 @@
                 case "C501DC11": return "[XBC] 01 - Noah.bin";
                 case "75DB7EEA": return "[XBC] 02 - Mio.bin";
 
+                case "40762971": return "[KAR] 01 - Kirby & Warp Star.bin";
+                case "EC89F407": return "[KAR] 02 - Bandana Waddle Dee & Winged Star.bin";
+                case "966579F7": return "[DK] 01 - Donkey Kong and Pauline.bin";
+                case "7FCB87B7": return "[MMB] 01 - Mario.bin";
+                case "3B653285": return "[MMB] 02 - Luigi.bin";
+                case "DCF6F696": return "[MMB] 03 - Peach.bin";
+                case "A57433F8": return "[MMB] 04 - Yoshi.bin";
+                case "8C9D9D29": return "[MP4] 01 - Samus.bin";
+                case "014E2D64": return "[MP4] 02 - Samus & Vi-O-La.bin";
+                case "5B647D5C": return "[MP4] 03 - Sylux.bin";
+                case "5E87D065": return "[SF6] 01 - Luke.bin";
+                case "A89AF052": return "[SF6] 02 - Jamie.bin";
+                case "8E232018": return "[SF6] 03 - Manon.bin";
+                case "AEC59BA1": return "[SF6] 04 - Kimberly.bin";
+                case "59B2D027": return "[SF6] 05 - Marisa.bin";
+                case "2834952F": return "[SF6] 06 - Lily.bin";
+                case "48ACBB61": return "[SF6] 07 - JP.bin";
+                case "100545F9": return "[SF6] 08 - Juri.bin";
+                case "30D17065": return "[SF6] 09 - Dee Jay.bin";
+                case "A085FD39": return "[SF6] 10 - Cammy.bin";
+                case "74D6F723": return "[SF6] 11 - Ryu.bin";
+                case "3E0B87C5": return "[SF6] 12 - E.Honda.bin";
+                case "FD32ED35": return "[SF6] 13 - Blanka.bin";
+                case "AA85BD73": return "[SF6] 14 - Guile.bin";
+                case "9812308E": return "[SF6] 15 - Ken.bin";
+                case "1E79E43C": return "[SF6] 16 - Chun-Li.bin";
+                case "1269499A": return "[SF6] 17 - Zangief.bin";
+                case "E3C17F25": return "[SF6] 18 - Dhalsim.bin";
+                case "1E7C2864": return "[SF6] 19 - Rashid.bin";
+                case "EF0F747A": return "[SF6] 20 - A.K.I.bin";
+                case "6AF484AD": return "[SF6] 21 - ED.bin";
+                case "505B320C": return "[SF6] 22 - Akuma.bin";
+                case "F31B29A6": return "[SF6] 23 - M.Bison.bin";
+                case "7F690659": return "[SF6] 24 - Terry.bin";
+                case "D82C6E57": return "[SF6] 25 - Mai.bin";
+                case "5EEC98AA": return "[SF6] 26 - Elena.bin";
+                case "65C1496C": return "[SF6] 27 - Sagat.bin";
+                case "7F3959AC": return "[SF6] 28 - C.Viper.bin";
+                case "812B39F7": return "[SF6] 29 - Alex.bin";
+                case "0E146AC6": return "[SF6] 30 - Ingrid.bin";
+                case "4BDCBAFD": return "[SF6] 31 - Luke.bin";
+                case "CE5692F6": return "[SF6] 32 - Jamie.bin";
+                case "21885647": return "[SF6] 33 - Manon.bin";
+                case "485476A4": return "[SF6] 34 - Kimberly.bin";
+                case "4C622A86": return "[SF6] 35 - Marisa.bin";
+                case "20880365": return "[SF6] 36 - Lily.bin";
+                case "41E501E5": return "[SF6] 37 - JP.bin";
+                case "177C9040": return "[SF6] 38 - Juri.bin";
+                case "2165558D": return "[SF6] 39 - Dee Jay.bin";
+                case "6398F700": return "[SF6] 40 - Cammy.bin";
+                case "0D45E1C8": return "[SF6] 41 - Ryu.bin";
+                case "9AB3569A": return "[SF6] 42 - E.Honda.bin";
+                case "381A053C": return "[SF6] 43 - Blanka.bin";
+                case "8454ECDC": return "[SF6] 44 - Guile.bin";
+                case "A6E4E3C4": return "[SF6] 45 - Ken.bin";
+                case "6E6C5D09": return "[SF6] 46 - Chun-Li.bin";
+                case "2D558DF9": return "[SF6] 47 - Zangief.bin";
+                case "00EE84F9": return "[SF6] 48 - Dhalsim.bin";
+                case "44DCA8BE": return "[SF6] 49 - Rashid.bin";
+                case "B788C5F8": return "[SF6] 50 - A.K.I.bin";
+                case "006907DD": return "[SF6] 51 - ED.bin";
+                case "4B6E57EA": return "[SF6] 52 - Akuma.bin";
+                case "295C686D": return "[SF6] 53 - M.Bison (Alt).bin";
+                case "1B47AA0C": return "[SF6] 54 - Terry (Alt).bin";
+                case "362BB4F2": return "[SF6] 55 - Mai (Alt).bin";
+                case "D49DCE6F": return "[SF6] 56 - Elena (Alt).bin";
+                case "49F9BE35": return "[SF6] 57 - Sagat (Alt).bin";
+                case "C60B1514": return "[SF6] 58 - C.Viper (Alt).bin";
+                case "5D4E6930": return "[SF6] 59 - Alex (Alt).bin";
+                case "95B41B4C": return "[SF6] 60 - Ingrid (Alt).bin";
+                case "0884DAF5": return "[SF6] 01 - Luke.bin";
+                case "485FAB24": return "[SF6] 02 - Jamie.bin";
+                case "F096FB64": return "[SF6] 03 - Kimberly.bin";
+                case "CFC8476C": return "[ZTK] 04 - Sidon.bin";
+                case "641289F1": return "[ZTK] 05 - Tulin.bin";
+                case "DBABE862": return "[ZTK] 06 - Yunobo.bin";
+                case "74F2F5BD": return "[ZTK] 07 - Riju.bin";
 
                 default: return "";
             }
