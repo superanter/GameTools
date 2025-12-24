@@ -863,4 +863,4 @@
 2025-12-24
 [Amiibo]
 1、加入了77个Amiibo文件，修改了3个Mcas Amiibo文件的crc代码；
-2、修正了部分Amiibo中的文件名错误。
+2、修正了部分Amiibo中的文件名错误 。
