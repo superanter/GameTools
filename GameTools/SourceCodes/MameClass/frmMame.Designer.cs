@@ -59,6 +59,9 @@
             this.ClientSize = new System.Drawing.Size(413, 110);
             this.Controls.Add(this.btnPrn);
             this.Controls.Add(this.btnXml);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MameForm";

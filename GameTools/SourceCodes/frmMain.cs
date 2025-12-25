@@ -28,7 +28,7 @@ namespace AnterStudio.GameTools
 
         #endregion
 
-        #region  控件.按钮（7方法）
+        #region  控件.按钮（10方法）
 
         private void btnWiiSave_Click(object sender, EventArgs e)
         {
@@ -117,6 +117,30 @@ namespace AnterStudio.GameTools
             this.Visible = true;
         }
 
+        private void btnJoyCon_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon();
+            if (JoyConForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+           JoyConForm.Dispose();
+            this.Visible = true;
+        }
+
+        private void btnMAME_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            MameClass.frmMame MameForm = new MameClass.frmMame();
+            if (MameForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+            MameForm.Dispose();
+            this.Visible = true;
+        }
+
         #endregion
 
         #endregion
@@ -150,29 +174,5 @@ namespace AnterStudio.GameTools
         }
 
         #endregion
-
-        private void btnJoyCon_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon();
-            if (JoyConForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-           JoyConForm.Dispose();
-            this.Visible = true;
-        }
-
-        private void btnMAME_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            MameClass.frmMame MameForm = new MameClass.frmMame();
-            if (MameForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-            MameForm.Dispose();
-            this.Visible = true;
-        }
     }
 }
