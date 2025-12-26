@@ -156,6 +156,8 @@ namespace AnterStudio.GameTools
             lblDsRom.Text = MyVersionPack.DsRomVersion.EditDate;
             lblAmiibo.Text = MyVersionPack.AmiiboVersion.EditDate;
             lblOtherTools.Text = MyVersionPack.OtherToolsVersion.EditDate;
+            lblMame.Text = MyVersionPack.MameVersion.EditDate;
+            lblJoyCon.Text = MyVersionPack.JoyConVersion.EditDate;
         }
 
         private void LangugeLoad()

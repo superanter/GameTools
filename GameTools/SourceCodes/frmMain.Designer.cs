@@ -46,7 +46,7 @@
             this.btnOther = new System.Windows.Forms.Button();
             this.btnAmiibo = new System.Windows.Forms.Button();
             this.lblAmiibo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMame = new System.Windows.Forms.Label();
             this.btnMAME = new System.Windows.Forms.Button();
             this.lblJoyCon = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
@@ -127,7 +127,7 @@
             this.lblDsSave.Name = "lblDsSave";
             this.lblDsSave.Size = new System.Drawing.Size(130, 18);
             this.lblDsSave.TabIndex = 6;
-            this.lblDsSave.Text = "2017-02-08";
+            this.lblDsSave.Text = "yyyy-mm-dd";
             this.lblDsSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWiiSave
@@ -137,7 +137,7 @@
             this.lblWiiSave.Name = "lblWiiSave";
             this.lblWiiSave.Size = new System.Drawing.Size(130, 18);
             this.lblWiiSave.TabIndex = 7;
-            this.lblWiiSave.Text = "2009-04-20";
+            this.lblWiiSave.Text = "yyyy-mm-dd";
             this.lblWiiSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSwitchSave
@@ -147,7 +147,7 @@
             this.lblSwitchSave.Name = "lblSwitchSave";
             this.lblSwitchSave.Size = new System.Drawing.Size(130, 18);
             this.lblSwitchSave.TabIndex = 8;
-            this.lblSwitchSave.Text = "2017-01-24";
+            this.lblSwitchSave.Text = "yyyy-mm-dd";
             this.lblSwitchSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDsRom
@@ -157,7 +157,7 @@
             this.lblDsRom.Name = "lblDsRom";
             this.lblDsRom.Size = new System.Drawing.Size(130, 18);
             this.lblDsRom.TabIndex = 9;
-            this.lblDsRom.Text = "2017-02-06";
+            this.lblDsRom.Text = "yyyy-mm-dd";
             this.lblDsRom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDsRom
@@ -215,7 +215,7 @@
             this.lblOtherTools.Name = "lblOtherTools";
             this.lblOtherTools.Size = new System.Drawing.Size(130, 18);
             this.lblOtherTools.TabIndex = 12;
-            this.lblOtherTools.Text = "2017-08-18";
+            this.lblOtherTools.Text = "yyyy-mm-dd";
             this.lblOtherTools.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOther
@@ -255,18 +255,18 @@
             this.lblAmiibo.Name = "lblAmiibo";
             this.lblAmiibo.Size = new System.Drawing.Size(130, 18);
             this.lblAmiibo.TabIndex = 9;
-            this.lblAmiibo.Text = "2017-08-02";
+            this.lblAmiibo.Text = "yyyy-mm-dd";
             this.lblAmiibo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblMame
             // 
-            this.label1.Location = new System.Drawing.Point(39, 244);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "2025-12-25";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMame.Location = new System.Drawing.Point(39, 244);
+            this.lblMame.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMame.Name = "lblMame";
+            this.lblMame.Size = new System.Drawing.Size(130, 18);
+            this.lblMame.TabIndex = 9;
+            this.lblMame.Text = "yyyy-mm-dd";
+            this.lblMame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMAME
             // 
@@ -290,7 +290,7 @@
             this.lblJoyCon.Name = "lblJoyCon";
             this.lblJoyCon.Size = new System.Drawing.Size(130, 18);
             this.lblJoyCon.TabIndex = 14;
-            this.lblJoyCon.Text = "2022-04-18";
+            this.lblJoyCon.Text = "yyyy-mm-dd";
             this.lblJoyCon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMain
@@ -302,7 +302,7 @@
             this.Controls.Add(this.lblOtherTools);
             this.Controls.Add(this.btnJoyCon);
             this.Controls.Add(this.btnOther);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMame);
             this.Controls.Add(this.btnMAME);
             this.Controls.Add(this.lblDsRom);
             this.Controls.Add(this.lblAmiibo);
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Button btnOther;
         private System.Windows.Forms.Label lblOtherTools;
         private System.Windows.Forms.Button btnJoyCon;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMame;
         private System.Windows.Forms.Button btnMAME;
         private System.Windows.Forms.Label lblJoyCon;
     }
