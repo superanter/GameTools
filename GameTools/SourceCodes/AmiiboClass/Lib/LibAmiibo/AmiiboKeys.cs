@@ -28,9 +28,10 @@
  */
 
 
-using ANTer.BouncyCastle.AES_CTR_NoPadding;
 using System;
 using System.IO;
+
+using ANTer.BouncyCastle.AES_CTR_NoPadding;
 
 namespace LibAmiibo
 {

@@ -339,13 +339,13 @@ namespace AnterStudio.GameTools.AmiiboClass
             string strBytesOut = "";
             strBytesOut += "    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\r\n";
             strBytesOut += "    -----------------------------------------------\r\n";
-            for (int i = 0; i < myBytes.Length/0x10; i++)
+            for (int i = 0; i < myBytes.Length / 0x10; i++)
             {
                 strBytesOut += String.Format("{0:X2}", i) + ": ";
                 strBytesOut += BitConverter.ToString(myBytes, i * 0x10, 0x10).Replace("-", " ") + "\r\n"; ;
             }
-            strBytesOut += String.Format("{0:X2}", myBytes.Length / 0x10)+ ": ";
-            strBytesOut += BitConverter.ToString(myBytes, myBytes.Length / 0x10*0x10,myBytes.Length%0x10).Replace("-"," ");
+            strBytesOut += String.Format("{0:X2}", myBytes.Length / 0x10) + ": ";
+            strBytesOut += BitConverter.ToString(myBytes, myBytes.Length / 0x10 * 0x10, myBytes.Length % 0x10).Replace("-", " ");
 
             strBytesOut += "\r\n    -----------------------------------------------\r\n";
             strBytesOut += "    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\r\n";

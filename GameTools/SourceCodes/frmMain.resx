@@ -117,13 +117,465 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>711, 373</value>
+  </data>
+  <data name="&gt;&gt;lblJoyCon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblWiiSave.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="&gt;&gt;btnOther.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 24</value>
+  </data>
+  <data name="&gt;&gt;lblOtherTools.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnDsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;lblDsRom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblDsRom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnMAME.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnDsSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="btnSwitchSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblOtherTools.Location" type="System.Drawing.Point, System.Drawing">
+    <value>536, 244</value>
+  </data>
+  <data name="&gt;&gt;btnWiiSave.Name" xml:space="preserve">
+    <value>btnWiiSave</value>
+  </data>
+  <data name="btnOther.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="lblAmiibo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="&gt;&gt;lblAmiibo.Name" xml:space="preserve">
+    <value>lblAmiibo</value>
+  </data>
+  <data name="&gt;&gt;btnOther.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOther.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblDsSave.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblMame.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;btnAmiibo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDsSave.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnAmiibo.Text" xml:space="preserve">
+    <value>Amiibo</value>
+  </data>
+  <data name="btnWiiSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDsRom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>539, 35</value>
+  </data>
+  <data name="&gt;&gt;lblAmiibo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnMAME.Text" xml:space="preserve">
+    <value>MAME</value>
+  </data>
+  <data name="btnOther.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="btnDsRom.Text" xml:space="preserve">
+    <value>DS Rom</value>
+  </data>
+  <data name="lblJoyCon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="btnSwitchSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="lblMame.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="btnWiiSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="btnSwitchSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="btnDsSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="lblJoyCon.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
+    <value>btnExit</value>
+  </data>
+  <data name="&gt;&gt;btnMAME.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmMain</value>
+  </data>
+  <data name="btnWiiSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="btnSwitchSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblDsRom.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblMame.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblWiiSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 114</value>
+  </data>
+  <data name="&gt;&gt;lblSwitchSave.Name" xml:space="preserve">
+    <value>lblSwitchSave</value>
+  </data>
+  <data name="btnDsRom.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnSwitchSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblJoyCon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblDsSave.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;lblAmiibo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblAmiibo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="btnSwitchSave.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnJoyCon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblOtherTools.Name" xml:space="preserve">
+    <value>lblOtherTools</value>
+  </data>
+  <data name="btnJoyCon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="&gt;&gt;lblWiiSave.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnMAME.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="btnDsSave.Text" xml:space="preserve">
+    <value>DS Save</value>
+  </data>
+  <data name="lblAmiibo.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="btnWiiSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 35</value>
+  </data>
+  <data name="lblDsRom.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="lblWiiSave.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnMAME.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnMAME.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;btnWiiSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMame.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnDsSave.Name" xml:space="preserve">
+    <value>btnDsSave</value>
+  </data>
+  <data name="btnAmiibo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="lblJoyCon.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="&gt;&gt;btnJoyCon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSwitchSave.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Anter's Game Tools</value>
+  </data>
+  <data name="btnOther.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblMame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="btnMAME.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnWiiSave.Text" xml:space="preserve">
+    <value>Wii Save</value>
+  </data>
+  <data name="&gt;&gt;btnSwitchSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSwitchSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;btnSwitchSave.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblDsSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 114</value>
+  </data>
+  <data name="btnAmiibo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>711, 31</value>
+  </data>
+  <data name="btnJoyCon.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 18</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.Name" xml:space="preserve">
+    <value>btnAbout</value>
+  </data>
+  <data name="btnDsSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblDsRom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="btnDsRom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnDsSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 35</value>
+  </data>
+  <data name="lblOtherTools.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="btnDsSave.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnWiiSave.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="btnWiiSave.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnJoyCon.Name" xml:space="preserve">
+    <value>btnJoyCon</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 244</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="btnOther.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblDsRom.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnOther.Text" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="lblJoyCon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 244</value>
+  </data>
+  <data name="btnDsRom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="btnSwitchSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 35</value>
+  </data>
+  <data name="&gt;&gt;btnMAME.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblSwitchSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 114</value>
+  </data>
+  <data name="btnJoyCon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 165</value>
+  </data>
+  <data name="&gt;&gt;btnMAME.Name" xml:space="preserve">
+    <value>btnMAME</value>
+  </data>
+  <data name="&gt;&gt;btnDsRom.Name" xml:space="preserve">
+    <value>btnDsRom</value>
+  </data>
+  <data name="lblDsRom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="btnAmiibo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;lblSwitchSave.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblDsSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="&gt;&gt;btnJoyCon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblJoyCon.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblOtherTools.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDsSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnExit.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="&gt;&gt;btnAmiibo.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblSwitchSave.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblDsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 342</value>
+  </data>
+  <data name="btnMAME.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 165</value>
+  </data>
+  <data name="&gt;&gt;lblSwitchSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 38</value>
+  </data>
+  <data name="btnExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;lblWiiSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDsSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>557, 284</value>
+  </data>
+  <data name="btnJoyCon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnWiiSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnJoyCon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="lblAmiibo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 244</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSwitchSave.Text" xml:space="preserve">
+    <value>NS Save</value>
+  </data>
+  <data name="btnJoyCon.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblJoyCon.Name" xml:space="preserve">
+    <value>lblJoyCon</value>
+  </data>
+  <data name="btnDsRom.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnOther.Location" type="System.Drawing.Point, System.Drawing">
+    <value>539, 165</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;btnAmiibo.Name" xml:space="preserve">
+    <value>btnAmiibo</value>
+  </data>
+  <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 38</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAEBAQAAAABAAoAQAAJgAAACAgEAAAAAQA6AIAAE4BAAAoAAAAEAAAACAAAAABAAQAAAAAAIAA
@@ -146,4 +598,178 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
+  <data name="lblDsSave.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 284</value>
+  </data>
+  <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnJoyCon.Text" xml:space="preserve">
+    <value>JoyCon</value>
+  </data>
+  <data name="&gt;&gt;lblJoyCon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblAmiibo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblDsRom.Name" xml:space="preserve">
+    <value>lblDsRom</value>
+  </data>
+  <data name="lblWiiSave.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblWiiSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblDsRom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>539, 114</value>
+  </data>
+  <data name="lblMame.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="lblJoyCon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="btnDsSave.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;btnSwitchSave.Name" xml:space="preserve">
+    <value>btnSwitchSave</value>
+  </data>
+  <data name="&gt;&gt;lblWiiSave.Name" xml:space="preserve">
+    <value>lblWiiSave</value>
+  </data>
+  <data name="&gt;&gt;btnAmiibo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 21, 0</value>
+  </data>
+  <data name="&gt;&gt;btnDsRom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOther.Name" xml:space="preserve">
+    <value>btnOther</value>
+  </data>
+  <data name="btnAmiibo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnDsRom.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblAmiibo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblMame.Name" xml:space="preserve">
+    <value>lblMame</value>
+  </data>
+  <data name="lblOtherTools.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;lblDsSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="btnAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;lblDsSave.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;lblSwitchSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblOtherTools.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblOtherTools.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblSwitchSave.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="&gt;&gt;lblWiiSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblDsSave.Name" xml:space="preserve">
+    <value>lblDsSave</value>
+  </data>
+  <data name="&gt;&gt;lblDsRom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSwitchSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="btnAmiibo.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblOtherTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="lblWiiSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 18</value>
+  </data>
+  <data name="&gt;&gt;btnDsSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblAmiibo.Text" xml:space="preserve">
+    <value>yyyy-mm-dd</value>
+  </data>
+  <data name="btnOther.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnMAME.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="btnAmiibo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 165</value>
+  </data>
+  <data name="&gt;&gt;btnDsRom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMame.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWiiSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMame.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnDsRom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 75</value>
+  </data>
+  <data name="btnAbout.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="lblOtherTools.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>50</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

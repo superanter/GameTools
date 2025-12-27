@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnWiiSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 35</value>
+  </data>
+  <data name="btnSwitchSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 35</value>
+  </data>
+  <data name="btnJoyCon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 165</value>
+  </data>
+  <data name="btnMAME.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 165</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAQAAAABAAoAQAAJgAAACAgEAAAAAQA6AIAAE4BAAAoAAAAEAAAACAAAAABAAQAAAAAAIAA
+        AAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAACqqqqqqqqqAKqqqqqqqqoAqqqqqqqqqgCqqqqqqq
+        qqAKqqqqqqqqoAmZmZmZzMzACZmZmZnMzMAJmZmZmczMzAmZmZmZzMzACZmZzMzMzMAJmZnMzMzMwAmZ
+        mczMzMzACZmZzMzMzMAJmZnMzMzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAA
+        AAAAAAAAEAAAABAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD/
+        /wD/AAAA/wD/AP//AAD///8AAAAAAAAAAAAAAAAAAAAAAAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqq
+        qqqqqqqgCqqqqqqqqqqqqqqqqqqqoAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqqqqqqqqqgCqqqqqqq
+        qqqqqqqqqqqqoAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqqqqqqqqqgCqqqqqqqqqqqqqqqqqqqoAqq
+        qqqqqqqqqqqqqqqqqqAJmZmZmZmZmZmZnMzMzMzACZmZmZmZmZmZmZzMzMzMwAmZmZmZmZmZmZmczMzM
+        zMAJmZmZmZmZmZmZnMzMzMzACZmZmZmZmZmZmZzMzMzMwAmZmZmZmZmZmZmczMzMzMAJmZmZmZmZmZmZ
+        nMzMzMzACZmZmZmZmZmZmZzMzMzMwAmZmZmZmZmZmZmczMzMzMAJmZmZmZmZmZmZnMzMzMzACZmZmZmc
+        zMzMzMzMzMzMwAmZmZmZnMzMzMzMzMzMzMAJmZmZmZzMzMzMzMzMzMzACZmZmZmczMzMzMzMzMzMwAmZ
+        mZmZnMzMzMzMzMzMzMAJmZmZmZzMzMzMzMzMzMzACZmZmZmczMzMzMzMzMzMwAmZmZmZnMzMzMzMzMzM
+        zMAJmZmZmZzMzMzMzMzMzMzACZmZmZmczMzMzMzMzMzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

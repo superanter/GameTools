@@ -21,9 +21,10 @@
  * THE SOFTWARE.
  */
 
-using ANTer.BouncyCastle.AES_CTR_NoPadding;
 using System;
 using System.Diagnostics;
+
+using ANTer.BouncyCastle.AES_CTR_NoPadding;
 
 namespace LibAmiibo
 {

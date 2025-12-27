@@ -77,6 +77,17 @@ namespace AnterStudio.GameTools
             DsRomForm.Dispose();
             this.Visible = true;
         }
+        private void btnMAME_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            MameClass.frmMame MameForm = new MameClass.frmMame(MyLangugePack.Mame,MyVersionPack.MameVersion);
+            if (MameForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+            MameForm.Dispose();
+            this.Visible = true;
+        }
 
         private void btnAmiibo_Click(object sender, EventArgs e)
         {
@@ -87,6 +98,29 @@ namespace AnterStudio.GameTools
                 //We would apply changes here since the user accepted them
             }
             AmiiboForm.Dispose();
+            this.Visible = true;
+        }
+        private void btnOther_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            OtherToolsClass.frmOtherTools OtherForm = new OtherToolsClass.frmOtherTools(MyLangugePack.OtherTools, MyVersionPack.OtherToolsVersion);
+            if (OtherForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+            OtherForm.Dispose();
+            this.Visible = true;
+        }
+
+        private void btnJoyCon_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon(MyLangugePack.JoyCon, MyVersionPack.JoyConVersion);
+            if (JoyConForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //We would apply changes here since the user accepted them
+            }
+            JoyConForm.Dispose();
             this.Visible = true;
         }
 
@@ -105,41 +139,9 @@ namespace AnterStudio.GameTools
             Close();
         }
 
-        private void btnOther_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            OtherToolsClass.frmOtherTools OtherForm = new OtherToolsClass.frmOtherTools(MyLangugePack.OtherTools, MyVersionPack.OtherToolsVersion);
-            if (OtherForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-            OtherForm.Dispose();
-            this.Visible = true;
-        }
 
-        private void btnJoyCon_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon();
-            if (JoyConForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-           JoyConForm.Dispose();
-            this.Visible = true;
-        }
 
-        private void btnMAME_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            MameClass.frmMame MameForm = new MameClass.frmMame();
-            if (MameForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-            MameForm.Dispose();
-            this.Visible = true;
-        }
+
 
         #endregion
 
@@ -150,10 +152,12 @@ namespace AnterStudio.GameTools
         private void VersionLoad()
         {
             MyVersionPack = new SoftVersionClass();
+
             lblDsSave.Text = MyVersionPack.DsSaveVersion.EditDate;
             lblWiiSave.Text = MyVersionPack.WiiSaveVersion.EditDate;
             lblSwitchSave.Text = MyVersionPack.SwitchSaveVersion.EditDate;
             lblDsRom.Text = MyVersionPack.DsRomVersion.EditDate;
+
             lblAmiibo.Text = MyVersionPack.AmiiboVersion.EditDate;
             lblOtherTools.Text = MyVersionPack.OtherToolsVersion.EditDate;
             lblMame.Text = MyVersionPack.MameVersion.EditDate;

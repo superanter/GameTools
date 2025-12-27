@@ -19,6 +19,8 @@ namespace AnterStudio.GameTools
         public cDsSave DsSave;
         public cAmiibo Amiibo;
         public cOtherTools OtherTools;
+        public cMame Mame;
+        public cJoyCon JoyCon;
 
         public LangugePackClass()
         {
@@ -29,6 +31,8 @@ namespace AnterStudio.GameTools
             DsSave = new cDsSave();
             Amiibo = new cAmiibo();
             OtherTools = new cOtherTools();
+            Mame = new cMame();
+            JoyCon = new cJoyCon(); 
             SetDefault();
             FileInfo fileInfo = new FileInfo("LangugePack.ini");
             if (fileInfo.Exists)
@@ -143,6 +147,45 @@ namespace AnterStudio.GameTools
             public class button
             {
                 public string GoBack { get; set; }
+            }
+        }
+
+        public class cMame
+        {
+            public form Form = new form();
+            public lable Lable = new lable();
+            public button Button = new button();
+
+            public class form
+            {
+                public string Title { get; set; }
+            }
+            public class lable
+            {
+            }
+            public class button
+            {
+                public string Xml2Txt { get; set; }
+                public string Prn2Txt { get; set; }
+            }
+        }
+
+        public class cJoyCon
+        {
+            public form Form = new form();
+            public lable Lable = new lable();
+            public button Button = new button();
+
+            public class form
+            {
+                public string Title { get; set; }
+            }
+            public class lable
+            {
+            }
+            public class button
+            {
+                public string Read { get; set; }
             }
         }
 
@@ -393,6 +436,15 @@ namespace AnterStudio.GameTools
             OtherTools.Form.Title = "Other Game Tools";
             OtherTools.Button.GoBack = "返回";
 
+            //Mame
+            Mame.Form.Title = "MAME Tools";
+            Mame.Button.Xml2Txt = "转换Xml";
+            Mame.Button.Prn2Txt = "转换Prn";
+
+            //JoyCon
+            JoyCon.Form.Title = "JoyCon Tools";
+            JoyCon.Button.Read = "读取";
+
         }
 
         private void GetINI()
@@ -497,6 +549,11 @@ namespace AnterStudio.GameTools
                     case "Amiibo.Button.RenameAll": Amiibo.Button.RenameAll = str[1]; break;
                     case "Amiibo.Message.ListOpen": Amiibo.Message.ListOpen = str[1]; break;
                     case "Amiibo.Message.Error_List": Amiibo.Message.Error_List = str[1]; break;
+                    case "Mame.Form.Title": Mame.Form.Title = str[1];break;
+                    case "Mame.Button.Xml2Txt": Mame.Button.Xml2Txt = str[1]; break;
+                    case "Mame.Button.Prn2Txt": Mame.Button.Prn2Txt = str[1]; break;
+                    case "JoyCon.Form.Title": JoyCon.Form.Title = str[1];break;
+                    case "JoyCon.Button.Read": JoyCon.Button.Read = str[1]; break;
                 }
                 #endregion
             }
@@ -597,11 +654,16 @@ namespace AnterStudio.GameTools
                 "Amiibo.Message.ListOpen=请选取Amiibo bin文件所在目录",
                 "Amiibo.Message.Error_List=提取列表失败",
                 "OtherTools.Form.Title=Other Game Tools",
-                "OtherTools..Button.GoBack= 返回"
+                "OtherTools..Button.GoBack= 返回",
+                "Mame.Form.Title=Mame Tools",
+                "Mame.Button.Xml2Txt=转换Xml",
+                "Mame.Button.Prn2Txt=转换Prn",
+                "JoyCon.Form.Title=JoyCon Tools",
+                "JoyCon.Button.Read=读取"
 
-
-            #endregion
-        };
+                #endregion
+            }
+            ;
             File.WriteAllLines("LangugePack.ini", strLanguge, Encoding.Unicode);
         }
     }

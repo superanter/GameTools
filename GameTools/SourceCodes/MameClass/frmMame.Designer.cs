@@ -65,6 +65,7 @@
             this.Name = "frmMame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MameForm";
+            this.Load += new System.EventHandler(this.frmMame_Load);
             this.ResumeLayout(false);
 
         }

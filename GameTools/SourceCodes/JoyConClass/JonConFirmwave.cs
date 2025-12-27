@@ -19,7 +19,7 @@ namespace AnterStudio.GameTools.JoyConClass
         /// <summary>
         /// Firmware数据（512KB）
         /// </summary>
-        public byte[] DataB{ get; }
+        public byte[] DataB { get; }
 
         /// <summary>
         /// Firmware数据（512KB）
@@ -39,7 +39,7 @@ namespace AnterStudio.GameTools.JoyConClass
         /// <summary>
         /// Firmware数据（512KB）
         /// </summary>
-        public byte[] DataF { get;}
+        public byte[] DataF { get; }
 
         /// <summary>
         /// Firmware数据（512KB）
@@ -66,7 +66,7 @@ namespace AnterStudio.GameTools.JoyConClass
         }
 
         public FactorConfigurationClass(byte[] Input)
-        { 
+        {
             this.Data = Input;
             this.DataA = new byte[0x10];
             this.DataB = new byte[0x01];
@@ -103,7 +103,7 @@ namespace AnterStudio.GameTools.JoyConClass
         /// <summary>
         /// Magic Number Data
         /// </summary>
-        public byte[] MagicNumberData { get;}
+        public byte[] MagicNumberData { get; }
         /// <summary>
         /// MAC Data
         /// </summary>
@@ -132,7 +132,7 @@ namespace AnterStudio.GameTools.JoyConClass
         /// <summary>
         /// User Calibration Data
         /// </summary>
-       public FactorConfigurationClass FactorConfiguration { get; }
+        public FactorConfigurationClass FactorConfiguration { get; }
         /// <summary>
         /// User Calibration Data
         /// </summary>
@@ -161,10 +161,10 @@ namespace AnterStudio.GameTools.JoyConClass
 
             Buffer.BlockCopy(this.Data, 0x0, this.MagicNumberData, 0x0, 0x14);
             Buffer.BlockCopy(this.Data, 0x15, this.MACData, 0, 0x06);
-            Buffer.BlockCopy(this.Data, 0x3b3, this.FactoryFirmewareData,0x0,0x04);
+            Buffer.BlockCopy(this.Data, 0x3b3, this.FactoryFirmewareData, 0x0, 0x04);
             Buffer.BlockCopy(this.Data, 0x1ff4, this.OtaMagicData, 0x0, 0x08);
             Buffer.BlockCopy(this.Data, 0x1ffc, this.OtaFirmwareData, 0x0, 0x04);
-            Buffer.BlockCopy(this.Data, 0x6000, this.FactorConfigurationData, 0x0,0x1000);
+            Buffer.BlockCopy(this.Data, 0x6000, this.FactorConfigurationData, 0x0, 0x1000);
             Buffer.BlockCopy(this.Data, 0x8000, this.UserCalibrationData, 0x0, 0x1000);
 
             FactorConfiguration = new FactorConfigurationClass(FactorConfigurationData);

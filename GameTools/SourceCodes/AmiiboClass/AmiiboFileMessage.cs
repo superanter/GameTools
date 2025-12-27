@@ -1,6 +1,7 @@
-﻿using LibAmiibo;
-using System;
+﻿using System;
 using System.IO;
+
+using LibAmiibo;
 
 namespace AnterStudio.GameTools.AmiiboClass
 {

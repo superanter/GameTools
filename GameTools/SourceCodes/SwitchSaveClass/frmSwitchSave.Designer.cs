@@ -34,9 +34,10 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(18, 18);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(268, 68);
+            this.btnBack.Size = new System.Drawing.Size(449, 102);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "返回";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -44,11 +45,12 @@
             // 
             // frmSwitchSave
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 92);
+            this.ClientSize = new System.Drawing.Size(493, 138);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmSwitchSave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

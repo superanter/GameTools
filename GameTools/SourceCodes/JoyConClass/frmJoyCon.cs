@@ -7,12 +7,23 @@ namespace AnterStudio.GameTools.JoyConClass
 {
     public partial class frmJoyCon : Form
     {
+        private LangugePackClass.cJoyCon MyLanguge;
+        private SoftVersionClass.SoftVersion MyVersion;
+
         string FileFullName;
 
         public frmJoyCon()
         {
             InitializeComponent();
         }
+
+        public frmJoyCon(LangugePackClass.cJoyCon LangugePack, SoftVersionClass.SoftVersion VersionPack)
+        {
+            InitializeComponent();
+            MyLanguge = LangugePack;
+            MyVersion = VersionPack;
+        }
+
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
@@ -23,7 +34,7 @@ namespace AnterStudio.GameTools.JoyConClass
             byte[] MacTemp = new byte[aa.MACData.Length];
             for (int i = 0; i < aa.MACData.Length; i++)
             {
-                MacTemp[aa.MACData.Length-1-i] = aa.MACData[i];
+                MacTemp[aa.MACData.Length - 1 - i] = aa.MACData[i];
             }
 
             label1.Text = BitConverter.ToString(MacTemp).Replace("-", ":");
@@ -38,15 +49,15 @@ namespace AnterStudio.GameTools.JoyConClass
             label9.Text = BitConverter.ToString(aa.FactorConfiguration.DataH).Replace("-", " "); ;
             label10.Text = BitConverter.ToString(aa.FactorConfiguration.DataI).Replace("-", " "); ;
 
-                //this.Refresh();
+            //this.Refresh();
 
         }
 
-            /// <summary>
-            /// 打开bin文件 2017-08-01
-            /// </summary>
-            /// <returns></returns>
-            private string OpenInputFile()
+        /// <summary>
+        /// 打开bin文件 2017-08-01
+        /// </summary>
+        /// <returns></returns>
+        private string OpenInputFile()
         {
             string OpenFilter = "";
 
@@ -65,8 +76,16 @@ namespace AnterStudio.GameTools.JoyConClass
             return "";
         }
 
-    
+        private void frmJoyCon_Load(object sender, EventArgs e)
+        {
+            SetLanguge();
+        }
 
+        private void SetLanguge()
+        {
+            this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
+            btnOpen.Text = MyLanguge.Button.Read;
+        }
     }
 
 

@@ -8,7 +8,7 @@ namespace AnterStudio.GameTools.SwitchSaveClass
         private LangugePackClass.cSwitchSave MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
 
-        #region    构造函数（1办法）
+        #region    构造函数（2办法）
 
         public frmSwitchSave()
         {
