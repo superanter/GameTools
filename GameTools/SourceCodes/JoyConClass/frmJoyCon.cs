@@ -7,7 +7,6 @@ namespace AnterStudio.GameTools.JoyConClass
 {
     public partial class frmJoyCon : Form
     {
-        private LangugePackClass.cJoyCon MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
 
         string FileFullName;
@@ -17,13 +16,17 @@ namespace AnterStudio.GameTools.JoyConClass
             InitializeComponent();
         }
 
-        public frmJoyCon(LangugePackClass.cJoyCon LangugePack, SoftVersionClass.SoftVersion VersionPack)
+        public frmJoyCon(string language, SoftVersionClass.SoftVersion VersionPack)
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             InitializeComponent();
-            MyLanguge = LangugePack;
             MyVersion = VersionPack;
         }
-
+        private void frmJoyCon_Load(object sender, EventArgs e)
+        {
+            this.Text += " " + MyVersion.Version;
+        }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
@@ -76,18 +79,6 @@ namespace AnterStudio.GameTools.JoyConClass
             return "";
         }
 
-        private void frmJoyCon_Load(object sender, EventArgs e)
-        {
-            SetLanguge();
-        }
 
-        private void SetLanguge()
-        {
-            this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
-            btnOpen.Text = MyLanguge.Button.Read;
-        }
     }
-
-
-
 }

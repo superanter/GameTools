@@ -7,7 +7,6 @@ namespace AnterStudio.GameTools.DsRomClass
 {
     public partial class frmDsRom : Form
     {
-        private LangugePackClass.cDsRom MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
 
         #region 构造函数（2方法）
@@ -17,12 +16,12 @@ namespace AnterStudio.GameTools.DsRomClass
             InitializeComponent();
         }
 
-        public frmDsRom(LangugePackClass.cDsRom LangugePack, SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
+        public frmDsRom(string language, SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
             InitializeComponent();
-            MyLanguge = LangugePack;
             MyVersion = VersionPack;
-            SetLanguge();
+
         }
 
         #endregion
@@ -103,19 +102,11 @@ namespace AnterStudio.GameTools.DsRomClass
             return RomInfo;
         }
 
-        private void SetLanguge()                                   //2017-08-02
-        {
-            this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
-            lblName.Text = MyLanguge.Lable.FileName;
-            lblGameName.Text = MyLanguge.Lable.GameName;
-            lblGameText.Text = MyLanguge.Lable.GameText;
-            lblGameType.Text = MyLanguge.Lable.GameType;
-            lblSize.Text = MyLanguge.Lable.FileSize;
-            btnOpen.Text = MyLanguge.Button.Open;
-            btnBack.Text = MyLanguge.Button.GoBack;
-        }
-
         #endregion
 
+        private void frmDsRom_Load(object sender, EventArgs e)
+        {
+            this.Text += " " + MyVersion.Version;
+        }
     }
 }

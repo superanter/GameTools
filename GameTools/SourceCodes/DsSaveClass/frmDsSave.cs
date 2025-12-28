@@ -9,7 +9,7 @@ namespace AnterStudio.GameTools.DsSaveClass
     {
         CardClass[][] CardTypeInfo = CardList.GetCardDat();     // 烧录卡信息数据
         int[] UsedSize = new int[10];                           // 存档大小信息
-        private LangugePackClass.cDsSave MyLanguge;
+                                                                // private LangugePackClass.cDsSave MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
         #region 构造函数（1方法）
 
@@ -19,10 +19,11 @@ namespace AnterStudio.GameTools.DsSaveClass
             StartMain();            // 启动主窗口时，初始化项目
         }
 
-        public frmDsSave(LangugePackClass.cDsSave LangugePack, SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
+        public frmDsSave(string language, SoftVersionClass.SoftVersion VersionPack)         //2017-08-02
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
             InitializeComponent();
-            this.MyLanguge = LangugePack;
+            //this.MyLanguge = LangugePack;
             this.MyVersion = VersionPack;
             StartMain();            // 启动主窗口时，初始化项目
         }
@@ -40,28 +41,8 @@ namespace AnterStudio.GameTools.DsSaveClass
             // 类型选择列表
             ChangeMode();
 
-            SetLanguge();       //2017-02-08
-        }
-
-        private void SetLanguge()                                   //2017-02-08
-        {
-            this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
-            btnOpen.Text = MyLanguge.Button.Open;
-            btnChange.Text = MyLanguge.Button.Change;
-            btnExit.Text = MyLanguge.Button.GoBack;
-            btnM3Rom.Text = MyLanguge.Button.M3Rom;
-            grpOutput.Text = MyLanguge.GroupBox.Output;
-            grpM3.Text = MyLanguge.GroupBox.M3;
-            grpChangeMode.Text = MyLanguge.GroupBox.ChangeMode;
-            lblInput.Text = MyLanguge.Lable.InputFile;
-            lblOutput.Text = MyLanguge.Lable.OutputFile;
-            lblOutputFormat.Text = MyLanguge.Lable.OutputFormat;
-            lblOutputSize.Text = MyLanguge.Lable.OutputSize;
-            lblM3ShortName.Text = MyLanguge.Lable.M3ShortName;
-            lblM3LongName.Text = MyLanguge.Lable.M3LongName;
-            chkTest.Text = MyLanguge.CheckBox.Test;
-            chkPokemon.Text = MyLanguge.CheckBox.Pokemon;
-            chkM3DatFile.Text = MyLanguge.CheckBox.M3Dat;
+            //SetLanguge();       //2017-02-08
+            this.Text += " " + MyVersion.Version;
         }
 
         #endregion
@@ -154,7 +135,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
         #endregion
 
-        #region   控件.列表框（3）
+        #region   控件.列表框（2）
 
         private void cboMode_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -164,11 +145,6 @@ namespace AnterStudio.GameTools.DsSaveClass
             {
                 MainTest();
             }
-        }
-
-        private void cboLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //LanguageString = new LanguageClass(cboLanguage.SelectedIndex);
         }
 
         private void cboOutputFormat_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,7 +164,7 @@ namespace AnterStudio.GameTools.DsSaveClass
 
             ClearMessage();
 
-            ShowMessage(MyLanguge.Message.CardInfo);       //烧录卡说明：
+            ShowMessage(ApplyResource(this.GetType(), "Message_CardInfo"));       //烧录卡说明：
             ShowMessage(SelectedCardType.CardInfo);		//显示烧录卡说明信息
 
             if (SelectedCardType.CardIs == 1)
@@ -305,12 +281,12 @@ namespace AnterStudio.GameTools.DsSaveClass
             // 如果目标为M3的GBA格式1M存档，目标存档大小为“1M”，否则为实际值
             int intOutSize = (sReturnStr[5] == "true" ? 1024 * 1024 : Convert.ToInt32(sReturnStr[4]));  // 目标存档大小
 
-            ShowMessage(MyLanguge.Message.InputFormat + sReturnStr[1] + "\n");                               // 源存档格式：
-            ShowMessage(MyLanguge.Message.InputSize + SizeMessage(Convert.ToInt32(sReturnStr[2])) + "\n");   // 源存档大小：
-            ShowMessage(MyLanguge.Message.DateSize + SizeMessage(Convert.ToInt32(sReturnStr[3])) + "\n");    // 转换前大小：
-            ShowMessage(MyLanguge.Message.OutputFormat + SelectedCardType.CardSName + "\n");                 // 转换后格式：
-            ShowMessage(MyLanguge.Message.OutputSize + SizeMessage(intOutSize) + " \n");                     // 转换后大小：
-            ShowMessage("\n" + MyLanguge.Message.ChangeOk + "\n");                                           // 转换成功！
+            ShowMessage(ApplyResource(this.GetType(), "Message_InputFormat") + sReturnStr[1] + "\n");                               // 源存档格式：
+            ShowMessage(ApplyResource(this.GetType(), "Message_InputSize") + SizeMessage(Convert.ToInt32(sReturnStr[2])) + "\n");   // 源存档大小：
+            ShowMessage(ApplyResource(this.GetType(), "Message_DateSize") + SizeMessage(Convert.ToInt32(sReturnStr[3])) + "\n");    // 转换前大小：
+            ShowMessage(ApplyResource(this.GetType(), "Message_OutputFormat") + SelectedCardType.CardSName + "\n");                 // 转换后格式：
+            ShowMessage(ApplyResource(this.GetType(), "Message_OutputSize") + SizeMessage(intOutSize) + " \n");                     // 转换后大小：
+            ShowMessage("\n" + ApplyResource(this.GetType(), "Message_ChangeOk") + "\n");                                           // 转换成功！
         }
 
         private void ShowPokemonMessage(string[] temp)
@@ -319,12 +295,15 @@ namespace AnterStudio.GameTools.DsSaveClass
             ShowMessage("Input: " + temp[2] + "\n");
             ShowMessage("1: " + temp[3] + " times\n");
             ShowMessage("2: " + temp[4] + " times\n");
-            ShowMessage(MyLanguge.Message.Pokemon + temp[5] + "\n"); //使用存档：
-            ShowMessage("\n" + MyLanguge.Message.ChangeOk + "\n");         //转换成功！
+            ShowMessage(ApplyResource(this.GetType(), "Message_Pokemon") + temp[5] + "\n"); //使用存档：
+            ShowMessage("\n" + ApplyResource(this.GetType(), "Message_ChangeOk") + "\n");         //转换成功！
         }
 
         private string GetErrorString(string errorCode)     //2017-02-08
         {
+            return ApplyResource(this.GetType(), "Error_" + errorCode);
+
+            /*
             switch (errorCode)
             {
                 case "MM001": return MyLanguge.Error.MM001;
@@ -350,6 +329,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                 case "ED203": return MyLanguge.Error.ED203;
                 default: return "Unknown";
             }
+            */
         }
 
         private void ShowErrorMessage(string ErrorCode)     //btnChange_Click MainTest() StartChange()
@@ -570,7 +550,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                     strTest = strTest.Replace("128K", "256K").Replace("256K 256K", "256K");
                 }
                 ClearMessage();
-                ShowMessage(MyLanguge.Message.UsedSize + "\n");     //有用数据可能大小：
+                ShowMessage(ApplyResource(this.GetType(), "Message_UsedSize") + "\n");     //有用数据可能大小：
                 ShowMessage(strTest + "\n");
             }
             else
@@ -617,7 +597,7 @@ namespace AnterStudio.GameTools.DsSaveClass
                 myAllControl(false);
                 if (mfiMainInfo.PokemonChecked)
                 {
-                    ShowMessage(MyLanguge.Message.Pokemon + "\n");    //口袋妖怪强制转换：
+                    ShowMessage(ApplyResource(this.GetType(), "Message_Pokemon") + "\n");    //口袋妖怪强制转换：
                     string[] temp = WriteData.PokemonChange(ifiFileMode, mfiMainInfo.OutputName);
                     if (temp[0] == null)
                     {
@@ -649,5 +629,11 @@ namespace AnterStudio.GameTools.DsSaveClass
         }
 
         #endregion
+
+        public static string ApplyResource(Type resourceObject, string Name)
+        {
+            System.Resources.ResourceManager resoure = new System.Resources.ResourceManager(resourceObject);
+            return resoure.GetString(Name);
+        }
     }
 }

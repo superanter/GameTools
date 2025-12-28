@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblSavePath.Text" xml:space="preserve">
+    <value>存档路径</value>
+  </data>
+  <data name="lblOutput.Text" xml:space="preserve">
+    <value>目标文件</value>
+  </data>
+  <data name="lblInput.Text" xml:space="preserve">
+    <value>源文件</value>
+  </data>
+  <data name="btnChange.Text" xml:space="preserve">
+    <value>转换</value>
+  </data>
+  <data name="btnOpen.Text" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="chkTest.Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="grpChangeMode.Text" xml:space="preserve">
+    <value>转换模式</value>
+  </data>
+  <data name="lblOutputSize.Text" xml:space="preserve">
+    <value>输出大小</value>
+  </data>
+  <data name="lblOutputFormat.Text" xml:space="preserve">
+    <value>输出格式</value>
+  </data>
+  <data name="grpOutput.Text" xml:space="preserve">
+    <value>输出格式</value>
+  </data>
+  <data name="btnExit.Text" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="chkM3DatFile.Text" xml:space="preserve">
+    <value>Dat File</value>
+  </data>
+  <data name="lblM3LongName.Text" xml:space="preserve">
+    <value>长文件名</value>
+  </data>
+  <data name="lblM3ShortName.Text" xml:space="preserve">
+    <value>短文件名</value>
+  </data>
+  <data name="btnM3Rom.Text" xml:space="preserve">
+    <value>对应M3文件</value>
+  </data>
+  <data name="grpM3.Text" xml:space="preserve">
+    <value>M3 附加选项</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>小蚂蚁工作室ANTer欢迎您使用本软件</value>
+  </data>
+  <data name="chkPokemon.Text" xml:space="preserve">
+    <value>口袋妖怪强制转换（512K -&gt; 256K）</value>
+  </data>
+  <data name="Message_ChangeOK" xml:space="preserve">
+    <value>转换完成</value>
+  </data>
+  <data name="Message_SaveFile" xml:space="preserve">
+    <value>使用存档：</value>
+  </data>
+  <data name="Message_UsedSize" xml:space="preserve">
+    <value>有用数据可能大小：</value>
+  </data>
+  <data name="Message_Pokemon" xml:space="preserve">
+    <value>口袋妖怪强制转换：</value>
+  </data>
+  <data name="Message_CardInfo" xml:space="preserve">
+    <value>烧录卡说明：</value>
+  </data>
+  <data name="Message_InputFormat" xml:space="preserve">
+    <value>源存档格式：</value>
+  </data>
+  <data name="Message_OutputFormat" xml:space="preserve">
+    <value>转换后格式：</value>
+  </data>
+  <data name="Message_InputSize" xml:space="preserve">
+    <value>源存档大小：</value>
+  </data>
+  <data name="Message_OutputSize" xml:space="preserve">
+    <value>转换后大小：</value>
+  </data>
+  <data name="Message.DateSize" xml:space="preserve">
+    <value>转换前大小：</value>
+  </data>
+  <data name="Error_MM001" xml:space="preserve">
+    <value>请选择源存档文件</value>
+  </data>
+  <data name="Error_MM002" xml:space="preserve">
+    <value>请选择M3存档对应的ROM</value>
+  </data>
+  <data name="Error_MM003" xml:space="preserve">
+    <value>本功能仅限于将体积为512K的口袋妖怪珍珠/钻石存档\n转换成256K的存档，其它类型的转换请不要选择此功能。</value>
+  </data>
+  <data name="Error_EI001" xml:space="preserve">
+    <value>源存档信息提取错误</value>
+  </data>
+  <data name="Error_EI101" xml:space="preserve">
+    <value>Sps格式存档文件读取错误</value>
+  </data>
+  <data name="Error_EI102" xml:space="preserve">
+    <value>DSLink格式存档文件读取错误</value>
+  </data>
+  <data name="Error_EI201" xml:space="preserve">
+    <value>源存档读取错误</value>
+  </data>
+  <data name="Error_EI202" xml:space="preserve">
+    <value>Gds格式存档文件读取错误</value>
+  </data>
+  <data name="Error_EI203" xml:space="preserve">
+    <value>No$Gba格式存档文件读取错误</value>
+  </data>
+  <data name="Error_EI204" xml:space="preserve">
+    <value>Dst格式存档文件读取错误错误</value>
+  </data>
+  <data name="Error_ED001" xml:space="preserve">
+    <value>正常转换时写入失败！</value>
+  </data>
+  <data name="Error_ED002" xml:space="preserve">
+    <value>无法识别源存档格式，虽然可以转换，但转换后的存档可能无法使用。</value>
+  </data>
+  <data name="Error_ED101" xml:space="preserve">
+    <value>M3附加数据写入，存档模式未知（内部错误）</value>
+  </data>
+  <data name="Error_ED102" xml:space="preserve">
+    <value>M3附加数据写入，写入失败</value>
+  </data>
+  <data name="Error_ED103" xml:space="preserve">
+    <value>M3附加数据写入（DAT），指定的dat存档格式未知</value>
+  </data>
+  <data name="Error_ED104" xml:space="preserve">
+    <value>M3附加数据写入（DAT），写入失败</value>
+  </data>
+  <data name="Error_ED105" xml:space="preserve">
+    <value>DSLink附加数据写入错误</value>
+  </data>
+  <data name="Error_ED201" xml:space="preserve">
+    <value>口袋妖怪强制转换时写入失败！</value>
+  </data>
+  <data name="Error_ED202" xml:space="preserve">
+    <value>口袋妖怪强制转换无法识别源存档格式。</value>
+  </data>
+  <data name="Error_ED203" xml:space="preserve">
+    <value>口袋妖怪强制转换源存档体积小于512K。</value>
+  </data>
+  <data name="Error_ED106" xml:space="preserve">
+    <value>DeSmuME附加数据写入错误</value>
+  </data>
+</root>

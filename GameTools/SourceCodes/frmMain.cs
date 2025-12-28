@@ -5,35 +5,41 @@ namespace AnterStudio.GameTools
 {
     public partial class frmMain : Form
     {
-        private LangugePackClass MyLangugePack;
         private SoftVersionClass MyVersionPack;
+        private string language = "zh-CN";
 
         #region  构造函数（1方法）
 
         public frmMain()
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             InitializeComponent();
         }
         #endregion
 
-        #region  控件（8方法）
-
-        #region  控件.主窗口（1方法）
+        #region  控件.其它（2方法）
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             VersionLoad();
-            LangugeLoad();
+            cboLanguage.SelectedIndex = 0;
         }
 
+        private void cboLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            language = cboLanguage.SelectedItem.ToString();
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+            btnAbout.Text = ApplyResource(this.GetType(), "btnAbout.Text");
+            btnExit.Text = ApplyResource(this.GetType(), "btnExit.Text");
+        }
         #endregion
 
-        #region  控件.按钮（10方法）
-
+        #region  控件.按钮（8方法）
         private void btnWiiSave_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            WiiSaveClass.frmWiiSave WiiForm = new WiiSaveClass.frmWiiSave(MyLangugePack.WiiSave, MyVersionPack.WiiSaveVersion);
+            WiiSaveClass.frmWiiSave WiiForm = new WiiSaveClass.frmWiiSave(language, MyVersionPack.WiiSaveVersion);
             if (WiiForm.ShowDialog(this) == DialogResult.OK)
             {
                 //We would apply changes here since the user accepted them
@@ -41,11 +47,10 @@ namespace AnterStudio.GameTools
             WiiForm.Dispose();
             this.Visible = true;
         }
-
         private void btnDsSave_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            DsSaveClass.frmDsSave DsForm = new DsSaveClass.frmDsSave(MyLangugePack.DsSave, MyVersionPack.DsSaveVersion);
+            DsSaveClass.frmDsSave DsForm = new DsSaveClass.frmDsSave(language, MyVersionPack.DsSaveVersion);
             if (DsForm.ShowDialog(this) == DialogResult.OK)
             {
                 //We would apply changes here since the user accepted them
@@ -53,23 +58,10 @@ namespace AnterStudio.GameTools
             DsForm.Dispose();
             this.Visible = true;
         }
-
-        private void btnSwitchSave_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            SwitchSaveClass.frmSwitchSave SwitchSaveForm = new SwitchSaveClass.frmSwitchSave(MyLangugePack.SwitchSave, MyVersionPack.SwitchSaveVersion);
-            if (SwitchSaveForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-            SwitchSaveForm.Dispose();
-            this.Visible = true;
-        }
-
         private void btnDsRom_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            DsRomClass.frmDsRom DsRomForm = new DsRomClass.frmDsRom(MyLangugePack.DsRom, MyVersionPack.DsRomVersion);
+            DsRomClass.frmDsRom DsRomForm = new DsRomClass.frmDsRom(language, MyVersionPack.DsRomVersion);
             if (DsRomForm.ShowDialog(this) == DialogResult.OK)
             {
                 //We would apply changes here since the user accepted them
@@ -77,22 +69,10 @@ namespace AnterStudio.GameTools
             DsRomForm.Dispose();
             this.Visible = true;
         }
-        private void btnMAME_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            MameClass.frmMame MameForm = new MameClass.frmMame(MyLangugePack.Mame,MyVersionPack.MameVersion);
-            if (MameForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //We would apply changes here since the user accepted them
-            }
-            MameForm.Dispose();
-            this.Visible = true;
-        }
-
         private void btnAmiibo_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            AmiiboClass.frmAmiibo AmiiboForm = new AmiiboClass.frmAmiibo(MyLangugePack.Amiibo, MyVersionPack.AmiiboVersion);
+            AmiiboClass.frmAmiibo AmiiboForm = new AmiiboClass.frmAmiibo(language, MyVersionPack.AmiiboVersion);
             if (AmiiboForm.ShowDialog(this) == DialogResult.OK)
             {
                 //We would apply changes here since the user accepted them
@@ -103,7 +83,7 @@ namespace AnterStudio.GameTools
         private void btnOther_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            OtherToolsClass.frmOtherTools OtherForm = new OtherToolsClass.frmOtherTools(MyLangugePack.OtherTools, MyVersionPack.OtherToolsVersion);
+            OtherToolsClass.frmOtherTools OtherForm = new OtherToolsClass.frmOtherTools(language, MyVersionPack.OtherToolsVersion);
             if (OtherForm.ShowDialog(this) == DialogResult.OK)
             {
                 //We would apply changes here since the user accepted them
@@ -111,11 +91,10 @@ namespace AnterStudio.GameTools
             OtherForm.Dispose();
             this.Visible = true;
         }
-
         private void btnJoyCon_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon(MyLangugePack.JoyCon, MyVersionPack.JoyConVersion);
+            JoyConClass.frmJoyCon JoyConForm = new JoyConClass.frmJoyCon(language, MyVersionPack.JoyConVersion);
             if (JoyConForm.ShowDialog(this) == DialogResult.OK)
             {
                 //We would apply changes here since the user accepted them
@@ -123,7 +102,6 @@ namespace AnterStudio.GameTools
             JoyConForm.Dispose();
             this.Visible = true;
         }
-
         private void btnAbout_Click(object sender, EventArgs e)
         {
             frmAboutBox AbtForm = new frmAboutBox();
@@ -133,52 +111,37 @@ namespace AnterStudio.GameTools
             }
             AbtForm.Dispose();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-
-
-
-
         #endregion
 
-        #endregion
-
-        #region 版本和语言初始化 (2)
+        #region 版本和语言初始化 (2方法)
 
         private void VersionLoad()
         {
             MyVersionPack = new SoftVersionClass();
 
+            this.Text += " " + MyVersionPack.MainVersion.Version;
+
             lblDsSave.Text = MyVersionPack.DsSaveVersion.EditDate;
             lblWiiSave.Text = MyVersionPack.WiiSaveVersion.EditDate;
-            lblSwitchSave.Text = MyVersionPack.SwitchSaveVersion.EditDate;
             lblDsRom.Text = MyVersionPack.DsRomVersion.EditDate;
 
             lblAmiibo.Text = MyVersionPack.AmiiboVersion.EditDate;
             lblOtherTools.Text = MyVersionPack.OtherToolsVersion.EditDate;
-            lblMame.Text = MyVersionPack.MameVersion.EditDate;
             lblJoyCon.Text = MyVersionPack.JoyConVersion.EditDate;
         }
 
-        private void LangugeLoad()
+        public static string ApplyResource(Type resourceObject, string Name)
         {
-            MyLangugePack = new LangugePackClass();
-            LangugePackClass.cMainForm MyMainForm = MyLangugePack.MainForm;
-            if (MyLangugePack.IsFromINI)
-            {
-                toolStripStatusLabel1.Text = MyMainForm.Form.Languge + " " + MyMainForm.Form.Version + " by " + MyMainForm.Form.Editer;
-                this.Text = MyLangugePack.MainForm.Form.Title + " " + MyVersionPack.MainVersion.Version;
-            }
-            else
-            {
-                toolStripStatusLabel1.Text = "";
-            }
+            System.Resources.ResourceManager resoure = new System.Resources.ResourceManager(resourceObject);
+            return resoure.GetString(Name);
         }
 
         #endregion
+
     }
 }

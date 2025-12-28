@@ -117,7 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="btnAbout.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="btnExit.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAQAAAABAAoAQAAJgAAACAgEAAAAAQA6AIAAE4BAAAoAAAAEAAAACAAAAABAAQAAAAAAIAA
+        AAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAACqqqqqqqqqAKqqqqqqqqoAqqqqqqqqqgCqqqqqqq
+        qqAKqqqqqqqqoAmZmZmZzMzACZmZmZnMzMAJmZmZmczMzAmZmZmZzMzACZmZzMzMzMAJmZnMzMzMwAmZ
+        mczMzMzACZmZzMzMzMAJmZnMzMzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAA
+        AAAAAAAAEAAAABAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD/
+        /wD/AAAA/wD/AP//AAD///8AAAAAAAAAAAAAAAAAAAAAAAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqq
+        qqqqqqqgCqqqqqqqqqqqqqqqqqqqoAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqqqqqqqqqgCqqqqqqq
+        qqqqqqqqqqqqoAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqqqqqqqqqgCqqqqqqqqqqqqqqqqqqqoAqq
+        qqqqqqqqqqqqqqqqqqAJmZmZmZmZmZmZnMzMzMzACZmZmZmZmZmZmZzMzMzMwAmZmZmZmZmZmZmczMzM
+        zMAJmZmZmZmZmZmZnMzMzMzACZmZmZmZmZmZmZzMzMzMwAmZmZmZmZmZmZmczMzMzMAJmZmZmZmZmZmZ
+        nMzMzMzACZmZmZmZmZmZmZzMzMzMwAmZmZmZmZmZmZmczMzMzMAJmZmZmZmZmZmZnMzMzMzACZmZmZmc
+        zMzMzMzMzMzMwAmZmZmZnMzMzMzMzMzMzMAJmZmZmZzMzMzMzMzMzMzACZmZmZmczMzMzMzMzMzMwAmZ
+        mZmZnMzMzMzMzMzMzMAJmZmZmZzMzMzMzMzMzMzACZmZmZmczMzMzMzMzMzMwAmZmZmZnMzMzMzMzMzM
+        zMAJmZmZmZzMzMzMzMzMzMzACZmZmZmczMzMzMzMzMzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
+  </data>
+  <data name="Form_Languge" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="Form_Version" xml:space="preserve">
+    <value>1.0.0.0</value>
+  </data>
+  <data name="Form_Editer" xml:space="preserve">
+    <value>Anter</value>
+  </data>
+  <data name="Form_Title" xml:space="preserve">
+    <value>Anter's Game Tools</value>
+  </data>
 </root>

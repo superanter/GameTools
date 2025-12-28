@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOtherTools));
             this.btnBack = new System.Windows.Forms.Button();
             this.grpStarCraftSN = new System.Windows.Forms.GroupBox();
             this.txtSCSN_Out = new System.Windows.Forms.TextBox();
             this.txtSCSN_In = new System.Windows.Forms.TextBox();
+            this.grpMAME = new System.Windows.Forms.GroupBox();
+            this.btnXml = new System.Windows.Forms.Button();
+            this.btnPrn = new System.Windows.Forms.Button();
             this.grpStarCraftSN.SuspendLayout();
+            this.grpMAME.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(241, 78);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -49,47 +51,59 @@
             // 
             this.grpStarCraftSN.Controls.Add(this.txtSCSN_Out);
             this.grpStarCraftSN.Controls.Add(this.txtSCSN_In);
-            this.grpStarCraftSN.Location = new System.Drawing.Point(13, 13);
+            resources.ApplyResources(this.grpStarCraftSN, "grpStarCraftSN");
             this.grpStarCraftSN.Name = "grpStarCraftSN";
-            this.grpStarCraftSN.Size = new System.Drawing.Size(303, 58);
-            this.grpStarCraftSN.TabIndex = 1;
             this.grpStarCraftSN.TabStop = false;
-            this.grpStarCraftSN.Text = "StarCraft SN";
             // 
             // txtSCSN_Out
             // 
             this.txtSCSN_Out.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSCSN_Out.Location = new System.Drawing.Point(146, 20);
+            resources.ApplyResources(this.txtSCSN_Out, "txtSCSN_Out");
             this.txtSCSN_Out.Name = "txtSCSN_Out";
             this.txtSCSN_Out.ReadOnly = true;
-            this.txtSCSN_Out.Size = new System.Drawing.Size(142, 21);
-            this.txtSCSN_Out.TabIndex = 1;
-            this.txtSCSN_Out.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSCSN_In
             // 
             this.txtSCSN_In.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSCSN_In.Location = new System.Drawing.Point(18, 20);
+            resources.ApplyResources(this.txtSCSN_In, "txtSCSN_In");
             this.txtSCSN_In.Name = "txtSCSN_In";
-            this.txtSCSN_In.Size = new System.Drawing.Size(111, 21);
-            this.txtSCSN_In.TabIndex = 0;
-            this.txtSCSN_In.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSCSN_In.TextChanged += new System.EventHandler(this.txtSCSN_In_TextChanged);
+            // 
+            // grpMAME
+            // 
+            this.grpMAME.Controls.Add(this.btnPrn);
+            this.grpMAME.Controls.Add(this.btnXml);
+            resources.ApplyResources(this.grpMAME, "grpMAME");
+            this.grpMAME.Name = "grpMAME";
+            this.grpMAME.TabStop = false;
+            // 
+            // btnXml
+            // 
+            resources.ApplyResources(this.btnXml, "btnXml");
+            this.btnXml.Name = "btnXml";
+            this.btnXml.UseVisualStyleBackColor = true;
+            this.btnXml.Click += new System.EventHandler(this.btnXml_Click);
+            // 
+            // btnPrn
+            // 
+            resources.ApplyResources(this.btnPrn, "btnPrn");
+            this.btnPrn.Name = "btnPrn";
+            this.btnPrn.UseVisualStyleBackColor = true;
+            this.btnPrn.Click += new System.EventHandler(this.btnPrn_Click);
             // 
             // frmOtherTools
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 113);
+            this.Controls.Add(this.grpMAME);
             this.Controls.Add(this.grpStarCraftSN);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmOtherTools";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmOtherTools";
             this.grpStarCraftSN.ResumeLayout(false);
             this.grpStarCraftSN.PerformLayout();
+            this.grpMAME.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,5 +114,8 @@
         private System.Windows.Forms.GroupBox grpStarCraftSN;
         private System.Windows.Forms.TextBox txtSCSN_Out;
         private System.Windows.Forms.TextBox txtSCSN_In;
+        private System.Windows.Forms.GroupBox grpMAME;
+        private System.Windows.Forms.Button btnXml;
+        private System.Windows.Forms.Button btnPrn;
     }
 }

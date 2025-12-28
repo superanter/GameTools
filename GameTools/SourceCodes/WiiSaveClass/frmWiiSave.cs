@@ -6,7 +6,7 @@ namespace AnterStudio.GameTools.WiiSaveClass
 {
     public partial class frmWiiSave : Form
     {
-        private LangugePackClass.cWiiSave MyLanguge;
+        //private LangugePackClass.cWiiSave MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
 
         #region 构造函数（1方法）
@@ -16,10 +16,12 @@ namespace AnterStudio.GameTools.WiiSaveClass
             InitializeComponent();
         }
 
-        public frmWiiSave(LangugePackClass.cWiiSave LangugePack, SoftVersionClass.SoftVersion VersionPack)
+        public frmWiiSave(string language, SoftVersionClass.SoftVersion VersionPack)
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             InitializeComponent();
-            MyLanguge = LangugePack;
+            //MyLanguge = LangugePack;
             MyVersion = VersionPack;
         }
 
@@ -40,7 +42,8 @@ namespace AnterStudio.GameTools.WiiSaveClass
 
         private void frmWiiSave_Load(object sender, EventArgs e)
         {
-            SetLanguge();
+            //SetLanguge();
+            this.Text += " " + MyVersion.Version;
         }
 
         #endregion
@@ -244,22 +247,6 @@ namespace AnterStudio.GameTools.WiiSaveClass
                 case 'P': txtLanguage.Text = "欧版"; break;
                 default: txtLanguage.Text = "未知"; break;
             }
-        }
-
-        private void SetLanguge()
-        {
-            this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
-            lblFile.Text = MyLanguge.Lable.FileName;
-            lblFolder.Text = MyLanguge.Lable.SaveFolder;
-            lblLanguage.Text = MyLanguge.Lable.SaveLanguge;
-            lblName.Text = MyLanguge.Lable.GameName;
-            lblSize.Text = MyLanguge.Lable.SaveSize;
-            lblString.Text = MyLanguge.Lable.SaveText;
-            lblTest.Text = MyLanguge.Lable.SaveTest;
-            lblType.Text = MyLanguge.Lable.SaveType;
-            lblWeizhi.Text = MyLanguge.Lable.SaveIndex;
-            btnOpenSave.Text = MyLanguge.Button.Open;
-            btnExit.Text = MyLanguge.Button.GoBack;
         }
 
         #endregion

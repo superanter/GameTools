@@ -112,9 +112,225 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>362, 293</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 34</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
+    <value>btnBack</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtSCSN_Out.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 30</value>
+  </data>
+  <data name="txtSCSN_Out.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSCSN_Out.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 28</value>
+  </data>
+  <data name="txtSCSN_Out.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txtSCSN_Out.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_Out.Name" xml:space="preserve">
+    <value>txtSCSN_Out</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_Out.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_Out.Parent" xml:space="preserve">
+    <value>grpStarCraftSN</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_Out.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtSCSN_In.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 30</value>
+  </data>
+  <data name="txtSCSN_In.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSCSN_In.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 28</value>
+  </data>
+  <data name="txtSCSN_In.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtSCSN_In.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_In.Name" xml:space="preserve">
+    <value>txtSCSN_In</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_In.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_In.Parent" xml:space="preserve">
+    <value>grpStarCraftSN</value>
+  </data>
+  <data name="&gt;&gt;txtSCSN_In.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpStarCraftSN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="grpStarCraftSN.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="grpStarCraftSN.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="grpStarCraftSN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 87</value>
+  </data>
+  <data name="grpStarCraftSN.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grpStarCraftSN.Text" xml:space="preserve">
+    <value>StarCraft SN</value>
+  </data>
+  <data name="&gt;&gt;grpStarCraftSN.Name" xml:space="preserve">
+    <value>grpStarCraftSN</value>
+  </data>
+  <data name="&gt;&gt;grpStarCraftSN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpStarCraftSN.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpStarCraftSN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnPrn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnPrn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 44</value>
+  </data>
+  <data name="btnPrn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 38</value>
+  </data>
+  <data name="btnPrn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnPrn.Text" xml:space="preserve">
+    <value>转换prn文件</value>
+  </data>
+  <data name="&gt;&gt;btnPrn.Name" xml:space="preserve">
+    <value>btnPrn</value>
+  </data>
+  <data name="&gt;&gt;btnPrn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrn.Parent" xml:space="preserve">
+    <value>grpMAME</value>
+  </data>
+  <data name="&gt;&gt;btnPrn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnXml.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnXml.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 44</value>
+  </data>
+  <data name="btnXml.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 38</value>
+  </data>
+  <data name="btnXml.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnXml.Text" xml:space="preserve">
+    <value>转换xml文件</value>
+  </data>
+  <data name="&gt;&gt;btnXml.Name" xml:space="preserve">
+    <value>btnXml</value>
+  </data>
+  <data name="&gt;&gt;btnXml.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnXml.Parent" xml:space="preserve">
+    <value>grpMAME</value>
+  </data>
+  <data name="&gt;&gt;btnXml.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpMAME.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 139</value>
+  </data>
+  <data name="grpMAME.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 107</value>
+  </data>
+  <data name="grpMAME.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="grpMAME.Text" xml:space="preserve">
+    <value>MAME</value>
+  </data>
+  <data name="&gt;&gt;grpMAME.Name" xml:space="preserve">
+    <value>grpMAME</value>
+  </data>
+  <data name="&gt;&gt;grpMAME.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpMAME.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpMAME.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 18</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>492, 367</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>frmOtherTools</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmOtherTools</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

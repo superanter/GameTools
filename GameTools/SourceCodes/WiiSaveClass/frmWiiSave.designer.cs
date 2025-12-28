@@ -54,182 +54,121 @@
             // 
             // txtOpenSave
             // 
-            this.txtOpenSave.Location = new System.Drawing.Point(80, 16);
+            resources.ApplyResources(this.txtOpenSave, "txtOpenSave");
             this.txtOpenSave.Name = "txtOpenSave";
             this.txtOpenSave.ReadOnly = true;
-            this.txtOpenSave.Size = new System.Drawing.Size(382, 21);
-            this.txtOpenSave.TabIndex = 0;
             // 
             // btnOpenSave
             // 
-            this.btnOpenSave.Location = new System.Drawing.Point(353, 144);
+            resources.ApplyResources(this.btnOpenSave, "btnOpenSave");
             this.btnOpenSave.Name = "btnOpenSave";
-            this.btnOpenSave.Size = new System.Drawing.Size(54, 23);
-            this.btnOpenSave.TabIndex = 1;
-            this.btnOpenSave.Text = "打开";
             this.btnOpenSave.UseVisualStyleBackColor = true;
             this.btnOpenSave.Click += new System.EventHandler(this.btnOpenSave_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(413, 144);
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(49, 23);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "返回";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(8, 51);
+            resources.ApplyResources(this.lblName, "lblName");
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(53, 12);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "游戏名称";
             // 
             // lblString
             // 
-            this.lblString.AutoSize = true;
-            this.lblString.Location = new System.Drawing.Point(8, 83);
+            resources.ApplyResources(this.lblString, "lblString");
             this.lblString.Name = "lblString";
-            this.lblString.Size = new System.Drawing.Size(65, 12);
-            this.lblString.TabIndex = 4;
-            this.lblString.Text = "标志字符串";
             // 
             // lblType
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(152, 83);
+            resources.ApplyResources(this.lblType, "lblType");
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(29, 12);
-            this.lblType.TabIndex = 5;
-            this.lblType.Text = "类型";
             // 
             // lblLanguage
             // 
-            this.lblLanguage.AutoSize = true;
-            this.lblLanguage.Location = new System.Drawing.Point(373, 51);
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
             this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(29, 12);
-            this.lblLanguage.TabIndex = 6;
-            this.lblLanguage.Text = "版本";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(80, 45);
+            resources.ApplyResources(this.txtName, "txtName");
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(274, 21);
-            this.txtName.TabIndex = 7;
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(184, 80);
+            resources.ApplyResources(this.txtType, "txtType");
             this.txtType.Name = "txtType";
             this.txtType.ReadOnly = true;
-            this.txtType.Size = new System.Drawing.Size(162, 21);
-            this.txtType.TabIndex = 8;
             // 
             // txtString
             // 
-            this.txtString.Location = new System.Drawing.Point(88, 80);
+            resources.ApplyResources(this.txtString, "txtString");
             this.txtString.Name = "txtString";
             this.txtString.ReadOnly = true;
-            this.txtString.Size = new System.Drawing.Size(58, 21);
-            this.txtString.TabIndex = 9;
             // 
             // txtLanguage
             // 
-            this.txtLanguage.Location = new System.Drawing.Point(408, 48);
+            resources.ApplyResources(this.txtLanguage, "txtLanguage");
             this.txtLanguage.Name = "txtLanguage";
             this.txtLanguage.ReadOnly = true;
-            this.txtLanguage.Size = new System.Drawing.Size(54, 21);
-            this.txtLanguage.TabIndex = 10;
             // 
             // lblFile
             // 
-            this.lblFile.AutoSize = true;
-            this.lblFile.Location = new System.Drawing.Point(8, 19);
+            resources.ApplyResources(this.lblFile, "lblFile");
             this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size(53, 12);
-            this.lblFile.TabIndex = 11;
-            this.lblFile.Text = "存档文件";
             // 
             // lblSize
             // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(352, 83);
+            resources.ApplyResources(this.lblSize, "lblSize");
             this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(53, 12);
-            this.lblSize.TabIndex = 12;
-            this.lblSize.Text = "存档格数";
             // 
             // txtSize
             // 
-            this.txtSize.Location = new System.Drawing.Point(416, 80);
+            resources.ApplyResources(this.txtSize, "txtSize");
             this.txtSize.Name = "txtSize";
             this.txtSize.ReadOnly = true;
-            this.txtSize.Size = new System.Drawing.Size(46, 21);
-            this.txtSize.TabIndex = 13;
             // 
             // lblWeizhi
             // 
-            this.lblWeizhi.AutoSize = true;
-            this.lblWeizhi.Location = new System.Drawing.Point(8, 115);
+            resources.ApplyResources(this.lblWeizhi, "lblWeizhi");
             this.lblWeizhi.Name = "lblWeizhi";
-            this.lblWeizhi.Size = new System.Drawing.Size(101, 12);
-            this.lblWeizhi.TabIndex = 14;
-            this.lblWeizhi.Text = "标识字符串偏移量";
             // 
             // txtWeizhi
             // 
-            this.txtWeizhi.Location = new System.Drawing.Point(128, 112);
+            resources.ApplyResources(this.txtWeizhi, "txtWeizhi");
             this.txtWeizhi.Name = "txtWeizhi";
             this.txtWeizhi.ReadOnly = true;
-            this.txtWeizhi.Size = new System.Drawing.Size(100, 21);
-            this.txtWeizhi.TabIndex = 15;
             // 
             // lblTest
             // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(249, 115);
+            resources.ApplyResources(this.lblTest, "lblTest");
             this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(89, 12);
-            this.lblTest.TabIndex = 16;
-            this.lblTest.Text = "是否为标准存档";
             // 
             // txtTest
             // 
-            this.txtTest.Location = new System.Drawing.Point(344, 112);
+            resources.ApplyResources(this.txtTest, "txtTest");
             this.txtTest.Name = "txtTest";
             this.txtTest.ReadOnly = true;
-            this.txtTest.Size = new System.Drawing.Size(118, 21);
-            this.txtTest.TabIndex = 17;
             // 
             // txtFolder
             // 
-            this.txtFolder.Location = new System.Drawing.Point(96, 144);
+            resources.ApplyResources(this.txtFolder, "txtFolder");
             this.txtFolder.Name = "txtFolder";
             this.txtFolder.ReadOnly = true;
-            this.txtFolder.Size = new System.Drawing.Size(250, 21);
-            this.txtFolder.TabIndex = 18;
             // 
             // lblFolder
             // 
-            this.lblFolder.AutoSize = true;
-            this.lblFolder.Location = new System.Drawing.Point(8, 149);
+            resources.ApplyResources(this.lblFolder, "lblFolder");
             this.lblFolder.Name = "lblFolder";
-            this.lblFolder.Size = new System.Drawing.Size(65, 12);
-            this.lblFolder.TabIndex = 19;
-            this.lblFolder.Text = "存档全路径";
             // 
             // frmWiiSave
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 178);
             this.Controls.Add(this.lblFolder);
             this.Controls.Add(this.txtFolder);
             this.Controls.Add(this.txtTest);
@@ -251,10 +190,7 @@
             this.Controls.Add(this.btnOpenSave);
             this.Controls.Add(this.txtOpenSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWiiSave";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WII存档信息提取(V1.1)";
             this.Load += new System.EventHandler(this.frmWiiSave_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

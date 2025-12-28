@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAmiibo));
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.txtNewFileName = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
@@ -61,115 +62,81 @@
             // txtFileName
             // 
             this.txtFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFileName.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.txtFileName, "txtFileName");
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.ReadOnly = true;
-            this.txtFileName.Size = new System.Drawing.Size(460, 21);
-            this.txtFileName.TabIndex = 0;
             // 
             // txtNewFileName
             // 
             this.txtNewFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNewFileName.Location = new System.Drawing.Point(12, 39);
+            resources.ApplyResources(this.txtNewFileName, "txtNewFileName");
             this.txtNewFileName.Name = "txtNewFileName";
-            this.txtNewFileName.Size = new System.Drawing.Size(460, 21);
-            this.txtNewFileName.TabIndex = 1;
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(397, 74);
+            resources.ApplyResources(this.btnOpen, "btnOpen");
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnOpen.TabIndex = 2;
-            this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnTo540
             // 
-            this.btnTo540.Location = new System.Drawing.Point(397, 130);
+            resources.ApplyResources(this.btnTo540, "btnTo540");
             this.btnTo540.Name = "btnTo540";
-            this.btnTo540.Size = new System.Drawing.Size(75, 23);
-            this.btnTo540.TabIndex = 3;
-            this.btnTo540.Text = "To540Byte";
             this.btnTo540.UseVisualStyleBackColor = true;
             this.btnTo540.Click += new System.EventHandler(this.btnTo540_Click);
             // 
             // btnRename
             // 
-            this.btnRename.Location = new System.Drawing.Point(397, 101);
+            resources.ApplyResources(this.btnRename, "btnRename");
             this.btnRename.Name = "btnRename";
-            this.btnRename.Size = new System.Drawing.Size(75, 23);
-            this.btnRename.TabIndex = 4;
-            this.btnRename.Text = "Rename";
             this.btnRename.UseVisualStyleBackColor = true;
             this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
             // 
             // linkURL
             // 
             this.linkURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkURL.Location = new System.Drawing.Point(80, 381);
+            resources.ApplyResources(this.linkURL, "linkURL");
             this.linkURL.Name = "linkURL";
-            this.linkURL.Size = new System.Drawing.Size(270, 23);
-            this.linkURL.TabIndex = 6;
             this.linkURL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkURL_LinkClicked);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(999, 381);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(78, 23);
-            this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblURL
             // 
-            this.lblURL.Location = new System.Drawing.Point(12, 381);
+            resources.ApplyResources(this.lblURL, "lblURL");
             this.lblURL.Name = "lblURL";
-            this.lblURL.Size = new System.Drawing.Size(62, 23);
-            this.lblURL.TabIndex = 8;
-            this.lblURL.Text = "LinkURL:";
-            this.lblURL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(397, 188);
+            resources.ApplyResources(this.btnList, "btnList");
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
-            this.btnList.TabIndex = 9;
-            this.btnList.Text = "List";
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnRenameAll
             // 
-            this.btnRenameAll.Location = new System.Drawing.Point(397, 217);
+            resources.ApplyResources(this.btnRenameAll, "btnRenameAll");
             this.btnRenameAll.Name = "btnRenameAll";
-            this.btnRenameAll.Size = new System.Drawing.Size(75, 23);
-            this.btnRenameAll.TabIndex = 10;
-            this.btnRenameAll.Text = "RenameAll";
             this.btnRenameAll.UseVisualStyleBackColor = true;
             this.btnRenameAll.Click += new System.EventHandler(this.btnRenameAll_Click);
             // 
             // btnMcasName
             // 
-            this.btnMcasName.Location = new System.Drawing.Point(397, 246);
+            resources.ApplyResources(this.btnMcasName, "btnMcasName");
             this.btnMcasName.Name = "btnMcasName";
-            this.btnMcasName.Size = new System.Drawing.Size(75, 23);
-            this.btnMcasName.TabIndex = 11;
-            this.btnMcasName.Text = "MCAS Name";
             this.btnMcasName.UseVisualStyleBackColor = true;
             this.btnMcasName.Click += new System.EventHandler(this.btnMcasName_Click);
             // 
             // btnPicture
             // 
-            this.btnPicture.Location = new System.Drawing.Point(397, 159);
+            resources.ApplyResources(this.btnPicture, "btnPicture");
             this.btnPicture.Name = "btnPicture";
-            this.btnPicture.Size = new System.Drawing.Size(75, 23);
-            this.btnPicture.TabIndex = 15;
-            this.btnPicture.Text = "Picture";
             this.btnPicture.UseVisualStyleBackColor = true;
             this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
             // 
@@ -177,47 +144,33 @@
             // 
             this.ricOut.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ricOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ricOut.Location = new System.Drawing.Point(737, 12);
+            resources.ApplyResources(this.ricOut, "ricOut");
             this.ricOut.Name = "ricOut";
             this.ricOut.ReadOnly = true;
-            this.ricOut.Size = new System.Drawing.Size(340, 349);
-            this.ricOut.TabIndex = 17;
-            this.ricOut.Text = "";
             // 
             // lblNewUID
             // 
-            this.lblNewUID.Location = new System.Drawing.Point(14, 22);
+            resources.ApplyResources(this.lblNewUID, "lblNewUID");
             this.lblNewUID.Name = "lblNewUID";
-            this.lblNewUID.Size = new System.Drawing.Size(63, 23);
-            this.lblNewUID.TabIndex = 20;
-            this.lblNewUID.Text = "New UID:";
             // 
             // txtNewUID
             // 
             this.txtNewUID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNewUID.Location = new System.Drawing.Point(83, 20);
+            resources.ApplyResources(this.txtNewUID, "txtNewUID");
             this.txtNewUID.Name = "txtNewUID";
-            this.txtNewUID.Size = new System.Drawing.Size(122, 21);
-            this.txtNewUID.TabIndex = 21;
             this.txtNewUID.TextChanged += new System.EventHandler(this.txtNewUID_TextChanged);
             // 
             // btnRePack
             // 
-            this.btnRePack.Location = new System.Drawing.Point(139, 190);
+            resources.ApplyResources(this.btnRePack, "btnRePack");
             this.btnRePack.Name = "btnRePack";
-            this.btnRePack.Size = new System.Drawing.Size(78, 23);
-            this.btnRePack.TabIndex = 22;
-            this.btnRePack.Text = "RePack";
             this.btnRePack.UseVisualStyleBackColor = true;
             this.btnRePack.Click += new System.EventHandler(this.btnRePack_Click);
             // 
             // btnUnPack
             // 
-            this.btnUnPack.Location = new System.Drawing.Point(397, 295);
+            resources.ApplyResources(this.btnUnPack, "btnUnPack");
             this.btnUnPack.Name = "btnUnPack";
-            this.btnUnPack.Size = new System.Drawing.Size(75, 23);
-            this.btnUnPack.TabIndex = 23;
-            this.btnUnPack.Text = "UnPack";
             this.btnUnPack.UseVisualStyleBackColor = true;
             this.btnUnPack.Click += new System.EventHandler(this.btnUnPack_Click);
             // 
@@ -229,12 +182,9 @@
             this.groupBox1.Controls.Add(this.txtNewUID);
             this.groupBox1.Controls.Add(this.lblNewUID);
             this.groupBox1.Controls.Add(this.btnRePack);
-            this.groupBox1.Location = new System.Drawing.Point(489, 12);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(234, 228);
-            this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "RePack";
             // 
             // grpTP
             // 
@@ -242,82 +192,58 @@
             this.grpTP.Controls.Add(this.cboTpHearts);
             this.grpTP.Controls.Add(this.cboTpLevers);
             this.grpTP.Controls.Add(this.lblTpHearts);
-            this.grpTP.Enabled = false;
-            this.grpTP.Location = new System.Drawing.Point(9, 91);
+            resources.ApplyResources(this.grpTP, "grpTP");
             this.grpTP.Name = "grpTP";
-            this.grpTP.Size = new System.Drawing.Size(208, 84);
-            this.grpTP.TabIndex = 29;
             this.grpTP.TabStop = false;
-            this.grpTP.Text = "TP";
             // 
             // lblTpLevers
             // 
-            this.lblTpLevers.Location = new System.Drawing.Point(6, 17);
+            resources.ApplyResources(this.lblTpLevers, "lblTpLevers");
             this.lblTpLevers.Name = "lblTpLevers";
-            this.lblTpLevers.Size = new System.Drawing.Size(63, 23);
-            this.lblTpLevers.TabIndex = 26;
-            this.lblTpLevers.Text = "TP Lever";
             // 
             // cboTpHearts
             // 
             this.cboTpHearts.FormattingEnabled = true;
-            this.cboTpHearts.Location = new System.Drawing.Point(75, 54);
+            resources.ApplyResources(this.cboTpHearts, "cboTpHearts");
             this.cboTpHearts.Name = "cboTpHearts";
-            this.cboTpHearts.Size = new System.Drawing.Size(117, 20);
-            this.cboTpHearts.TabIndex = 28;
             this.cboTpHearts.SelectedIndexChanged += new System.EventHandler(this.cboTpHearts_SelectedIndexChanged);
             // 
             // cboTpLevers
             // 
             this.cboTpLevers.FormattingEnabled = true;
-            this.cboTpLevers.Location = new System.Drawing.Point(75, 15);
+            resources.ApplyResources(this.cboTpLevers, "cboTpLevers");
             this.cboTpLevers.Name = "cboTpLevers";
-            this.cboTpLevers.Size = new System.Drawing.Size(117, 20);
-            this.cboTpLevers.TabIndex = 25;
             this.cboTpLevers.SelectedIndexChanged += new System.EventHandler(this.cboTpLevers_SelectedIndexChanged);
             // 
             // lblTpHearts
             // 
-            this.lblTpHearts.Location = new System.Drawing.Point(4, 55);
+            resources.ApplyResources(this.lblTpHearts, "lblTpHearts");
             this.lblTpHearts.Name = "lblTpHearts";
-            this.lblTpHearts.Size = new System.Drawing.Size(63, 23);
-            this.lblTpHearts.TabIndex = 27;
-            this.lblTpHearts.Text = "TP Hearts";
             // 
             // txtNewID
             // 
             this.txtNewID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNewID.Location = new System.Drawing.Point(83, 58);
+            resources.ApplyResources(this.txtNewID, "txtNewID");
             this.txtNewID.Name = "txtNewID";
-            this.txtNewID.Size = new System.Drawing.Size(122, 21);
-            this.txtNewID.TabIndex = 24;
             this.txtNewID.TextChanged += new System.EventHandler(this.txtNewID_TextChanged);
             // 
             // lblNewID
             // 
-            this.lblNewID.Location = new System.Drawing.Point(14, 59);
+            resources.ApplyResources(this.lblNewID, "lblNewID");
             this.lblNewID.Name = "lblNewID";
-            this.lblNewID.Size = new System.Drawing.Size(63, 23);
-            this.lblNewID.TabIndex = 23;
-            this.lblNewID.Text = "New ID:";
-            this.lblNewID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ricMessage
             // 
             this.ricMessage.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ricMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ricMessage.Location = new System.Drawing.Point(12, 74);
+            resources.ApplyResources(this.ricMessage, "ricMessage");
             this.ricMessage.Name = "ricMessage";
             this.ricMessage.ReadOnly = true;
-            this.ricMessage.Size = new System.Drawing.Size(369, 287);
-            this.ricMessage.TabIndex = 25;
-            this.ricMessage.Text = "";
             // 
             // frmAmiibo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 416);
             this.Controls.Add(this.ricMessage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUnPack);
@@ -335,8 +261,6 @@
             this.Controls.Add(this.txtNewFileName);
             this.Controls.Add(this.txtFileName);
             this.Name = "frmAmiibo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Amiibo Tools v1.0.0";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grpTP.ResumeLayout(false);

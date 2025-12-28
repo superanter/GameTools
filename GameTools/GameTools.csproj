@@ -137,18 +137,11 @@
     <Compile Include="SourceCodes\JoyConClass\frmJoyCon.Designer.cs">
       <DependentUpon>frmJoyCon.cs</DependentUpon>
     </Compile>
-    <Compile Include="SourceCodes\LangugePackClass.cs" />
     <Compile Include="SourceCodes\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SourceCodes\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SourceCodes\MameClass\frmMame.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SourceCodes\MameClass\frmMame.Designer.cs">
-      <DependentUpon>frmMame.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCodes\OtherToolsClass\frmOtherTools.cs">
       <SubType>Form</SubType>
@@ -158,30 +151,54 @@
     </Compile>
     <Compile Include="SourceCodes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SourceCodes\AmiiboClass\frmAmiibo.en.resx">
+      <DependentUpon>frmAmiibo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\AmiiboClass\frmAmiibo.resx">
       <DependentUpon>frmAmiibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\AmiiboClass\frmAmiibo.zh-CN.resx">
+      <DependentUpon>frmAmiibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\DsRomClass\frmDsRom.en.resx">
+      <DependentUpon>frmDsRom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\DsRomClass\frmDsRom.resx">
       <DependentUpon>frmDsRom.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\DsRomClass\frmDsRom.zh-CN.resx">
+      <DependentUpon>frmDsRom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\DsSaveClass\frmDsSave.en.resx">
+      <DependentUpon>frmDsSave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\DsSaveClass\frmDsSave.resx">
       <DependentUpon>frmDsSave.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\DsSaveClass\frmDsSave.zh-CN.resx">
+      <DependentUpon>frmDsSave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\frmAboutBox.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\frmMain.en.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\frmMain.zh-CN.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\JoyConClass\frmJoyCon.resx">
       <DependentUpon>frmJoyCon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SourceCodes\MameClass\frmMame.resx">
-      <DependentUpon>frmMame.cs</DependentUpon>
+    <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.en.resx">
+      <DependentUpon>frmOtherTools.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.resx">
       <DependentUpon>frmOtherTools.cs</DependentUpon>
@@ -191,9 +208,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SourceCodes\SwitchSaveClass\frmSwitchSave.resx">
-      <DependentUpon>frmSwitchSave.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.zh-CN.resx">
+      <DependentUpon>frmOtherTools.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\WiiSaveClass\frmWiiSave.resx">
       <DependentUpon>frmWiiSave.cs</DependentUpon>
@@ -210,12 +226,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SourceCodes\SoftVersionClass.cs" />
-    <Compile Include="SourceCodes\SwitchSaveClass\frmSwitchSave.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SourceCodes\SwitchSaveClass\frmSwitchSave.Designer.cs">
-      <DependentUpon>frmSwitchSave.cs</DependentUpon>
-    </Compile>
     <Compile Include="SourceCodes\WiiSaveClass\frmWiiSave.cs">
       <SubType>Form</SubType>
     </Compile>

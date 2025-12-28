@@ -7,7 +7,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 {
     public partial class frmAmiibo : Form
     {
-        private LangugePackClass.cAmiibo MyLanguge;
+        // private LangugePackClass.cAmiibo MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
         private AmiiboFileMessage myFileMessage;
         string FileFullName;
@@ -18,12 +18,15 @@ namespace AnterStudio.GameTools.AmiiboClass
             InitializeComponent();
         }
 
-        public frmAmiibo(LangugePackClass.cAmiibo LangugePack, SoftVersionClass.SoftVersion VersionPack)
+        public frmAmiibo(string language, SoftVersionClass.SoftVersion VersionPack)
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             InitializeComponent();
-            MyLanguge = LangugePack;
+            //MyLanguge = LangugePack;
             MyVersion = VersionPack;
-            SetLanguge();
+            //SetLanguge();
+            this.Text += " " + MyVersion.Version;
             btnRePack.Enabled = false;
         }
 
@@ -73,7 +76,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 
                 if (MessageTemp == "")
                 {
-                    MessageBox.Show(MyLanguge.Message.OK);
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_OK"));
                     this.txtFileName.Text = txtNewFileName.Text;
                     btnTo540.Enabled = false;
                     myFileMessage = new AmiiboFileMessage(newStr);
@@ -102,11 +105,11 @@ namespace AnterStudio.GameTools.AmiiboClass
                         try
                         {
                             ChangeSize(myFileMessage.FullName);
-                            MessageBox.Show(MyLanguge.Message.OK);
+                            MessageBox.Show(ApplyResource(this.GetType(), "Message.OK"));
                         }
                         catch
                         {
-                            MessageBox.Show(MyLanguge.Message.Error_To540);
+                            MessageBox.Show(ApplyResource(this.GetType(), "Message_Error_To540"));
                         }
                     }
                 }
@@ -352,21 +355,6 @@ namespace AnterStudio.GameTools.AmiiboClass
             this.ricOut.Text = strBytesOut;
         }
 
-        /// <summary>
-        /// 变更界面语言要素 2017-08-02
-        /// </summary>
-        private void SetLanguge()
-        {
-            this.Text = MyLanguge.Form.Title + " " + MyVersion.Version;
-            this.btnBack.Text = MyLanguge.Button.GoBack;
-            this.btnOpen.Text = MyLanguge.Button.Open;
-            this.btnTo540.Text = MyLanguge.Button.To540;
-            this.btnRename.Text = MyLanguge.Button.Rename;
-            this.lblURL.Text = MyLanguge.Lable.LinkURL;
-            this.btnList.Text = MyLanguge.Button.List;
-            this.btnRenameAll.Text = MyLanguge.Button.RenameAll;
-        }
-
         #endregion
 
         #region 按键指定方法 (6)
@@ -417,7 +405,7 @@ namespace AnterStudio.GameTools.AmiiboClass
                         }
                         else
                         {
-                            return (MyLanguge.Message.Error_FileError);
+                            return (ApplyResource(this.GetType(), "Message_Error_FileError"));
                         }
                     }
                     else
@@ -428,12 +416,12 @@ namespace AnterStudio.GameTools.AmiiboClass
                 }
                 else
                 {
-                    return (MyLanguge.Message.Error_FileExists);
+                    return (ApplyResource(this.GetType(), "Message_Error_FileExists"));
                 }
             }
             catch
             {
-                return (MyLanguge.Message.Error_Rename);
+                return (ApplyResource(this.GetType(), "Message_Error_Rename"));
             }
             return ("");
         }
@@ -497,7 +485,7 @@ namespace AnterStudio.GameTools.AmiiboClass
 
 
             FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.Description = MyLanguge.Button.List + ":" + MyLanguge.Message.ListOpen;
+            dialog.Description = ApplyResource(this.GetType(), "Button_List") + ":" + ApplyResource(this.GetType(), "Message_ListOpen");
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -513,11 +501,11 @@ namespace AnterStudio.GameTools.AmiiboClass
                         temp[i] = myFileMessage.DirectoryName + "," + myFileMessage.Name + "," + myFileMessage.SerA + "-" + myFileMessage.SerB + ",Head:" + myFileMessage.NTAG_ID + ",CRC32:" + myFileMessage.CRC32;
                     }
                     File.WriteAllLines(strOutFullName, temp, Encoding.UTF8);
-                    MessageBox.Show(MyLanguge.Message.OK);
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_OK"));
                 }
                 catch
                 {
-                    MessageBox.Show(MyLanguge.Message.Error_List);
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_Error_List"));
                 }
 
             }
@@ -532,7 +520,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             int RenameOK = 0;
             int RenameError = 0;
             FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.Description = MyLanguge.Button.RenameAll + ":" + MyLanguge.Message.ListOpen;
+            dialog.Description = ApplyResource(this.GetType(), "Button_RenameAll") + ":" + ApplyResource(this.GetType(), "Message_ListOpen");
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -553,11 +541,11 @@ namespace AnterStudio.GameTools.AmiiboClass
                             RenameError++;
                         }
                     }
-                    MessageBox.Show(MyLanguge.Message.OK + "  OK:" + RenameOK.ToString() + "  Error:" + RenameError.ToString());
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_OK") + "  OK:" + RenameOK.ToString() + "  Error:" + RenameError.ToString());
                 }
                 catch
                 {
-                    MessageBox.Show(MyLanguge.Message.Error_Rename);
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_Error_Rename"));
                 }
             }
         }
@@ -570,7 +558,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             int RenameOK = 0;
             int RenameError = 0;
             FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.Description = "MCAS" + ":" + MyLanguge.Message.ListOpen;
+            dialog.Description = "MCAS" + ":" + ApplyResource(this.GetType(), "Message_ListOpen");
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -591,15 +579,21 @@ namespace AnterStudio.GameTools.AmiiboClass
                             RenameError++;
                         }
                     }
-                    MessageBox.Show(MyLanguge.Message.OK + "  OK:" + RenameOK.ToString() + "  Error:" + RenameError.ToString());
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_OK") + "  OK:" + RenameOK.ToString() + "  Error:" + RenameError.ToString());
                 }
                 catch
                 {
-                    MessageBox.Show(MyLanguge.Message.Error_Rename);
+                    MessageBox.Show(ApplyResource(this.GetType(), "Message_Error_Rename"));
                 }
             }
         }
         #endregion
+
+        public static string ApplyResource(Type resourceObject, string Name)
+        {
+            System.Resources.ResourceManager resoure = new System.Resources.ResourceManager(resourceObject);
+            return resoure.GetString(Name);
+        }
 
     }
 }
