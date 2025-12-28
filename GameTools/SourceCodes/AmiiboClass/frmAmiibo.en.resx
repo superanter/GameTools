@@ -136,7 +136,7 @@
     <value>List</value>
   </data>
   <data name="btnRenameAll.Text" xml:space="preserve">
-    <value>RenameAll</value>
+    <value>Rename All</value>
   </data>
   <data name="btnMcasName.Text" xml:space="preserve">
     <value>MCAS Name</value>
@@ -152,9 +152,6 @@
   </data>
   <data name="btnUnPack.Text" xml:space="preserve">
     <value>UnPack</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>RePack</value>
   </data>
   <data name="grpTP.Text" xml:space="preserve">
     <value>TP</value>
@@ -175,24 +172,27 @@
     <value>OK</value>
   </data>
   <data name="Message_Error_FileError" xml:space="preserve">
-    <value>文件错误</value>
+    <value>File Error</value>
   </data>
   <data name="Message_Error_FileExists" xml:space="preserve">
-    <value>文件已存在</value>
+    <value>The file already exists</value>
   </data>
   <data name="Message_Error_Rename" xml:space="preserve">
-    <value>重命名失败</value>
+    <value>Rename Error</value>
   </data>
   <data name="Message_Error_To540" xml:space="preserve">
-    <value>转换失败</value>
+    <value>Change Error</value>
   </data>
   <data name="Button_List" xml:space="preserve">
-    <value>提取列表</value>
+    <value>Get List</value>
   </data>
   <data name="Button_RenameAll" xml:space="preserve">
-    <value>批量重命名</value>
+    <value>Rename ALL</value>
   </data>
   <data name="Message_Error_List" xml:space="preserve">
-    <value>提取列表失败</value>
+    <value>Get List Error</value>
+  </data>
+  <data name="grpRePack.Text" xml:space="preserve">
+    <value>RePack</value>
   </data>
 </root>

@@ -143,11 +143,11 @@
     <Compile Include="SourceCodes\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="SourceCodes\OtherToolsClass\frmOtherTools.cs">
+    <Compile Include="SourceCodes\OtherClass\frmOther.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SourceCodes\OtherToolsClass\frmOtherTools.Designer.cs">
-      <DependentUpon>frmOtherTools.cs</DependentUpon>
+    <Compile Include="SourceCodes\OtherClass\frmOther.Designer.cs">
+      <DependentUpon>frmOther.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCodes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,22 +194,31 @@
     <EmbeddedResource Include="SourceCodes\frmMain.zh-CN.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\JoyConClass\frmJoyCon.en.resx">
+      <DependentUpon>frmJoyCon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\JoyConClass\frmJoyCon.resx">
       <DependentUpon>frmJoyCon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.en.resx">
-      <DependentUpon>frmOtherTools.cs</DependentUpon>
+    <EmbeddedResource Include="SourceCodes\JoyConClass\frmJoyCon.zh-CN.resx">
+      <DependentUpon>frmJoyCon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.resx">
-      <DependentUpon>frmOtherTools.cs</DependentUpon>
+    <EmbeddedResource Include="SourceCodes\OtherClass\frmOther.en.resx">
+      <DependentUpon>frmOther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\OtherClass\frmOther.resx">
+      <DependentUpon>frmOther.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SourceCodes\OtherToolsClass\frmOtherTools.zh-CN.resx">
-      <DependentUpon>frmOtherTools.cs</DependentUpon>
+    <EmbeddedResource Include="SourceCodes\OtherClass\frmOther.zh-CN.resx">
+      <DependentUpon>frmOther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourceCodes\WiiSaveClass\frmWiiSave.en.resx">
+      <DependentUpon>frmWiiSave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SourceCodes\WiiSaveClass\frmWiiSave.resx">
       <DependentUpon>frmWiiSave.cs</DependentUpon>
@@ -232,6 +241,9 @@
     <Compile Include="SourceCodes\WiiSaveClass\frmWiiSave.designer.cs">
       <DependentUpon>frmWiiSave.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SourceCodes\WiiSaveClass\frmWiiSave.zh-CN.resx">
+      <DependentUpon>frmWiiSave.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SourceCodes\AmiiboClass\Lib\AmiiBomb\Main_Form.cs.txt" />
@@ -267,9 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SourceCodes\app.config" />
-    <None Include="Resources\LangugePackINI\LangugePack_CHS.ini" />
-    <None Include="Resources\LangugePackINI\LangugePack_CHT.ini" />
-    <None Include="Resources\LangugePackINI\LangugePack_ENG.ini" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

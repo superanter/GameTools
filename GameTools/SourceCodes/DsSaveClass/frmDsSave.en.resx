@@ -118,150 +118,150 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblSavePath.Text" xml:space="preserve">
-    <value>存档路径</value>
+    <value>Path</value>
   </data>
   <data name="lblOutput.Text" xml:space="preserve">
-    <value>目标文件</value>
+    <value>Output</value>
   </data>
   <data name="lblInput.Text" xml:space="preserve">
-    <value>源文件</value>
+    <value>Input</value>
   </data>
   <data name="btnChange.Text" xml:space="preserve">
-    <value>转换</value>
+    <value>Change</value>
   </data>
   <data name="btnOpen.Text" xml:space="preserve">
-    <value>打开</value>
+    <value>Open</value>
   </data>
   <data name="chkTest.Text" xml:space="preserve">
-    <value>测试</value>
+    <value>Test</value>
   </data>
   <data name="grpChangeMode.Text" xml:space="preserve">
-    <value>转换模式</value>
+    <value>Mode</value>
   </data>
   <data name="lblOutputSize.Text" xml:space="preserve">
-    <value>输出大小</value>
+    <value>Output Size</value>
   </data>
   <data name="lblOutputFormat.Text" xml:space="preserve">
-    <value>输出格式</value>
+    <value>Output Mode</value>
   </data>
   <data name="grpOutput.Text" xml:space="preserve">
-    <value>输出格式</value>
+    <value>Output Mode</value>
   </data>
   <data name="btnExit.Text" xml:space="preserve">
-    <value>返回</value>
+    <value>Back</value>
   </data>
   <data name="chkM3DatFile.Text" xml:space="preserve">
-    <value>Dat File</value>
+    <value>M3 Dat File</value>
   </data>
   <data name="lblM3LongName.Text" xml:space="preserve">
-    <value>长文件名</value>
+    <value>Long File Name</value>
   </data>
   <data name="lblM3ShortName.Text" xml:space="preserve">
-    <value>短文件名</value>
+    <value>Short File Name</value>
   </data>
   <data name="btnM3Rom.Text" xml:space="preserve">
-    <value>对应M3文件</value>
+    <value>For M3 Rom</value>
   </data>
   <data name="grpM3.Text" xml:space="preserve">
-    <value>M3 附加选项</value>
+    <value>M3 Adding</value>
   </data>
   <data name="lblMessage.Text" xml:space="preserve">
-    <value>小蚂蚁工作室ANTer欢迎您使用本软件</value>
+    <value>Anter Studio</value>
   </data>
   <data name="chkPokemon.Text" xml:space="preserve">
-    <value>口袋妖怪强制转换（512K -&gt; 256K）</value>
+    <value>Pokmon Change (512K -&gt; 256K)</value>
   </data>
   <data name="Message_ChangeOK" xml:space="preserve">
-    <value>转换完成</value>
+    <value>Change OK</value>
   </data>
   <data name="Message_SaveFile" xml:space="preserve">
-    <value>使用存档：</value>
+    <value>Use:</value>
   </data>
   <data name="Message_UsedSize" xml:space="preserve">
-    <value>有用数据可能大小：</value>
+    <value>Used Size:</value>
   </data>
   <data name="Message_Pokemon" xml:space="preserve">
-    <value>口袋妖怪强制转换：</value>
+    <value>Pokemon Change:</value>
   </data>
   <data name="Message_CardInfo" xml:space="preserve">
-    <value>烧录卡说明：</value>
+    <value>Card Message:</value>
   </data>
   <data name="Message_InputFormat" xml:space="preserve">
-    <value>源存档格式：</value>
+    <value>Input Mode:</value>
   </data>
   <data name="Message_OutputFormat" xml:space="preserve">
-    <value>转换后格式：</value>
+    <value>Output Mode:</value>
   </data>
   <data name="Message_InputSize" xml:space="preserve">
-    <value>源存档大小：</value>
+    <value>Input Size:</value>
   </data>
   <data name="Message_OutputSize" xml:space="preserve">
-    <value>转换后大小：</value>
+    <value>Output Size:</value>
   </data>
   <data name="Message.DateSize" xml:space="preserve">
-    <value>转换前大小：</value>
+    <value>Input Size:</value>
   </data>
   <data name="Error_MM001" xml:space="preserve">
-    <value>请选择源存档文件</value>
+    <value>Error_MM001 请选择源存档文件</value>
   </data>
   <data name="Error_MM002" xml:space="preserve">
-    <value>请选择M3存档对应的ROM</value>
+    <value>Error_MM002 请选择M3存档对应的ROM</value>
   </data>
   <data name="Error_MM003" xml:space="preserve">
-    <value>本功能仅限于将体积为512K的口袋妖怪珍珠/钻石存档\n转换成256K的存档，其它类型的转换请不要选择此功能。</value>
+    <value>Error_MM003 本功能仅限于将体积为512K的口袋妖怪珍珠/钻石存档\n转换成256K的存档，其它类型的转换请不要选择此功能。</value>
   </data>
   <data name="Error_EI001" xml:space="preserve">
-    <value>源存档信息提取错误</value>
+    <value>Error_EI001 源存档信息提取错误</value>
   </data>
   <data name="Error_EI101" xml:space="preserve">
-    <value>Sps格式存档文件读取错误</value>
+    <value>Error_EI101 Sps格式存档文件读取错误</value>
   </data>
   <data name="Error_EI102" xml:space="preserve">
-    <value>DSLink格式存档文件读取错误</value>
+    <value>Error_EI102 DSLink格式存档文件读取错误</value>
   </data>
   <data name="Error_EI201" xml:space="preserve">
-    <value>源存档读取错误</value>
+    <value>Error_EI201 源存档读取错误</value>
   </data>
   <data name="Error_EI202" xml:space="preserve">
-    <value>Gds格式存档文件读取错误</value>
+    <value>Error_EI202 Gds格式存档文件读取错误</value>
   </data>
   <data name="Error_EI203" xml:space="preserve">
-    <value>No$Gba格式存档文件读取错误</value>
+    <value>Error_EI203 No$Gba格式存档文件读取错误</value>
   </data>
   <data name="Error_EI204" xml:space="preserve">
-    <value>Dst格式存档文件读取错误错误</value>
+    <value>Error_EI204 Dst格式存档文件读取错误错误</value>
   </data>
   <data name="Error_ED001" xml:space="preserve">
-    <value>正常转换时写入失败！</value>
+    <value>Error_ED001 正常转换时写入失败！</value>
   </data>
   <data name="Error_ED002" xml:space="preserve">
-    <value>无法识别源存档格式，虽然可以转换，但转换后的存档可能无法使用。</value>
+    <value>Error_ED002 无法识别源存档格式，虽然可以转换，但转换后的存档可能无法使用。</value>
   </data>
   <data name="Error_ED101" xml:space="preserve">
-    <value>M3附加数据写入，存档模式未知（内部错误）</value>
+    <value>Error_ED101 M3附加数据写入，存档模式未知（内部错误）</value>
   </data>
   <data name="Error_ED102" xml:space="preserve">
-    <value>M3附加数据写入，写入失败</value>
+    <value>Error_ED102 M3附加数据写入，写入失败</value>
   </data>
   <data name="Error_ED103" xml:space="preserve">
-    <value>M3附加数据写入（DAT），指定的dat存档格式未知</value>
+    <value>Error_ED103 M3附加数据写入（DAT），指定的dat存档格式未知</value>
   </data>
   <data name="Error_ED104" xml:space="preserve">
-    <value>M3附加数据写入（DAT），写入失败</value>
+    <value>Error_ED104 M3附加数据写入（DAT），写入失败</value>
   </data>
   <data name="Error_ED105" xml:space="preserve">
-    <value>DSLink附加数据写入错误</value>
+    <value>Error_ED105 DSLink附加数据写入错误</value>
   </data>
   <data name="Error_ED201" xml:space="preserve">
-    <value>口袋妖怪强制转换时写入失败！</value>
+    <value>Error_ED201 口袋妖怪强制转换时写入失败！</value>
   </data>
   <data name="Error_ED202" xml:space="preserve">
-    <value>口袋妖怪强制转换无法识别源存档格式。</value>
+    <value>Error_ED202 口袋妖怪强制转换无法识别源存档格式。</value>
   </data>
   <data name="Error_ED203" xml:space="preserve">
-    <value>口袋妖怪强制转换源存档体积小于512K。</value>
+    <value>Error_ED203 口袋妖怪强制转换源存档体积小于512K。</value>
   </data>
   <data name="Error_ED106" xml:space="preserve">
-    <value>DeSmuME附加数据写入错误</value>
+    <value>Error_ED106 DeSmuME附加数据写入错误</value>
   </data>
 </root>

@@ -487,7 +487,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblNewUID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpRePack</value>
   </data>
   <data name="&gt;&gt;lblNewUID.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -511,7 +511,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtNewUID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpRePack</value>
   </data>
   <data name="&gt;&gt;txtNewUID.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -538,7 +538,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnRePack.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpRePack</value>
   </data>
   <data name="&gt;&gt;btnRePack.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -577,7 +577,7 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;grpTP.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpRePack</value>
   </data>
   <data name="&gt;&gt;grpTP.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -589,7 +589,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtNewID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpRePack</value>
   </data>
   <data name="&gt;&gt;txtNewID.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -601,40 +601,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblNewID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpRePack</value>
   </data>
   <data name="&gt;&gt;lblNewID.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 555</value>
-  </data>
-  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>669, 177</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>RePack</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;lblTpLevers.Name" xml:space="preserve">
     <value>lblTpLevers</value>
@@ -828,9 +798,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1268, 752</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
@@ -838,7 +805,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Amiibo Tools v1.0.0</value>
+    <value>Amiibo Tools</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmAmiibo</value>
@@ -846,31 +813,34 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Message_ListOpen" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="grpRePack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 555</value>
   </data>
-  <data name="Message_OK" xml:space="preserve">
-    <value>操作完成</value>
+  <data name="grpRePack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="Message_Error_FileError" xml:space="preserve">
-    <value>文件错误</value>
+  <data name="grpRePack.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="Message_Error_FileExists" xml:space="preserve">
-    <value>文件已存在</value>
+  <data name="grpRePack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>669, 177</value>
   </data>
-  <data name="Message_Error_Rename" xml:space="preserve">
-    <value>重命名失败</value>
+  <data name="grpRePack.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
-  <data name="Message_Error_To540" xml:space="preserve">
-    <value>转换失败</value>
+  <data name="grpRePack.Text" xml:space="preserve">
+    <value>重新打包</value>
   </data>
-  <data name="Button_List" xml:space="preserve">
-    <value>提取列表</value>
+  <data name="&gt;&gt;grpRePack.Name" xml:space="preserve">
+    <value>grpRePack</value>
   </data>
-  <data name="Button_RenameAll" xml:space="preserve">
-    <value>批量重命名</value>
+  <data name="&gt;&gt;grpRePack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Message_Error_List" xml:space="preserve">
-    <value>提取列表失败</value>
+  <data name="&gt;&gt;grpRePack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpRePack.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

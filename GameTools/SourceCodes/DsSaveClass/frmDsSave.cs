@@ -23,7 +23,6 @@ namespace AnterStudio.GameTools.DsSaveClass
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
             InitializeComponent();
-            //this.MyLanguge = LangugePack;
             this.MyVersion = VersionPack;
             StartMain();            // 启动主窗口时，初始化项目
         }

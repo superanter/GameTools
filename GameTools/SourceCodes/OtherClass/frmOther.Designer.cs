@@ -1,6 +1,6 @@
 ﻿namespace AnterStudio.GameTools.OtherToolsClass
 {
-    partial class frmOtherTools
+    partial class frmOther
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOtherTools));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOther));
             this.btnBack = new System.Windows.Forms.Button();
             this.grpStarCraftSN = new System.Windows.Forms.GroupBox();
             this.txtSCSN_Out = new System.Windows.Forms.TextBox();
             this.txtSCSN_In = new System.Windows.Forms.TextBox();
             this.grpMAME = new System.Windows.Forms.GroupBox();
-            this.btnXml = new System.Windows.Forms.Button();
             this.btnPrn = new System.Windows.Forms.Button();
+            this.btnXml = new System.Windows.Forms.Button();
             this.grpStarCraftSN.SuspendLayout();
             this.grpMAME.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             // 
             // grpStarCraftSN
             // 
+            this.grpStarCraftSN.BackColor = System.Drawing.SystemColors.ControlLight;
             this.grpStarCraftSN.Controls.Add(this.txtSCSN_Out);
             this.grpStarCraftSN.Controls.Add(this.txtSCSN_In);
             resources.ApplyResources(this.grpStarCraftSN, "grpStarCraftSN");
@@ -71,18 +72,12 @@
             // 
             // grpMAME
             // 
+            this.grpMAME.BackColor = System.Drawing.SystemColors.ControlLight;
             this.grpMAME.Controls.Add(this.btnPrn);
             this.grpMAME.Controls.Add(this.btnXml);
             resources.ApplyResources(this.grpMAME, "grpMAME");
             this.grpMAME.Name = "grpMAME";
             this.grpMAME.TabStop = false;
-            // 
-            // btnXml
-            // 
-            resources.ApplyResources(this.btnXml, "btnXml");
-            this.btnXml.Name = "btnXml";
-            this.btnXml.UseVisualStyleBackColor = true;
-            this.btnXml.Click += new System.EventHandler(this.btnXml_Click);
             // 
             // btnPrn
             // 
@@ -91,7 +86,14 @@
             this.btnPrn.UseVisualStyleBackColor = true;
             this.btnPrn.Click += new System.EventHandler(this.btnPrn_Click);
             // 
-            // frmOtherTools
+            // btnXml
+            // 
+            resources.ApplyResources(this.btnXml, "btnXml");
+            this.btnXml.Name = "btnXml";
+            this.btnXml.UseVisualStyleBackColor = true;
+            this.btnXml.Click += new System.EventHandler(this.btnXml_Click);
+            // 
+            // frmOther
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +102,7 @@
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmOtherTools";
+            this.Name = "frmOther";
             this.grpStarCraftSN.ResumeLayout(false);
             this.grpStarCraftSN.PerformLayout();
             this.grpMAME.ResumeLayout(false);

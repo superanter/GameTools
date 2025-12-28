@@ -151,7 +151,7 @@
     <value>返回</value>
   </data>
   <data name="chkM3DatFile.Text" xml:space="preserve">
-    <value>Dat File</value>
+    <value>M3 Dat文件</value>
   </data>
   <data name="lblM3LongName.Text" xml:space="preserve">
     <value>长文件名</value>

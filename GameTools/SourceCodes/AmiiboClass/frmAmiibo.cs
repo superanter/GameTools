@@ -7,7 +7,6 @@ namespace AnterStudio.GameTools.AmiiboClass
 {
     public partial class frmAmiibo : Form
     {
-        // private LangugePackClass.cAmiibo MyLanguge;
         private SoftVersionClass.SoftVersion MyVersion;
         private AmiiboFileMessage myFileMessage;
         string FileFullName;
@@ -23,9 +22,7 @@ namespace AnterStudio.GameTools.AmiiboClass
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
 
             InitializeComponent();
-            //MyLanguge = LangugePack;
             MyVersion = VersionPack;
-            //SetLanguge();
             this.Text += " " + MyVersion.Version;
             btnRePack.Enabled = false;
         }

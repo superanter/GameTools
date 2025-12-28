@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 293</value>
+    <value>362, 266</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -133,7 +133,7 @@
     <value>0</value>
   </data>
   <data name="btnBack.Text" xml:space="preserve">
-    <value>Back</value>
+    <value>返回</value>
   </data>
   <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
     <value>btnBack</value>
@@ -309,14 +309,14 @@
   <data name="&gt;&gt;grpMAME.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>9, 18</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>492, 367</value>
+    <value>492, 315</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -328,7 +328,7 @@
     <value>frmOtherTools</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmOtherTools</value>
+    <value>frmOther</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

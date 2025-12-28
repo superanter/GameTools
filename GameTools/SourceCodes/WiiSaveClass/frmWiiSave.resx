@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dialogOpenWiiSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dialogOpenWiiSave.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
   <data name="txtOpenSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 24</value>
   </data>
@@ -277,7 +277,7 @@
     <value>5</value>
   </data>
   <data name="lblType.Text" xml:space="preserve">
-    <value>类型</value>
+    <value>存档类型</value>
   </data>
   <data name="&gt;&gt;lblType.Name" xml:space="preserve">
     <value>lblType</value>
@@ -663,9 +663,9 @@
   <data name="&gt;&gt;lblFolder.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>9, 18</value>
   </data>
@@ -701,7 +701,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>WII存档信息提取(V1.1)</value>
+    <value>WII存档信息提取</value>
   </data>
   <data name="&gt;&gt;dialogOpenWiiSave.Name" xml:space="preserve">
     <value>dialogOpenWiiSave</value>

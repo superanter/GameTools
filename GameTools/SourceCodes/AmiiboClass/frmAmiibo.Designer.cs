@@ -46,7 +46,7 @@
             this.txtNewUID = new System.Windows.Forms.TextBox();
             this.btnRePack = new System.Windows.Forms.Button();
             this.btnUnPack = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpRePack = new System.Windows.Forms.GroupBox();
             this.grpTP = new System.Windows.Forms.GroupBox();
             this.lblTpLevers = new System.Windows.Forms.Label();
             this.cboTpHearts = new System.Windows.Forms.ComboBox();
@@ -55,7 +55,7 @@
             this.txtNewID = new System.Windows.Forms.TextBox();
             this.lblNewID = new System.Windows.Forms.Label();
             this.ricMessage = new System.Windows.Forms.RichTextBox();
-            this.groupBox1.SuspendLayout();
+            this.grpRePack.SuspendLayout();
             this.grpTP.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,17 +174,17 @@
             this.btnUnPack.UseVisualStyleBackColor = true;
             this.btnUnPack.Click += new System.EventHandler(this.btnUnPack_Click);
             // 
-            // groupBox1
+            // grpRePack
             // 
-            this.groupBox1.Controls.Add(this.grpTP);
-            this.groupBox1.Controls.Add(this.txtNewID);
-            this.groupBox1.Controls.Add(this.lblNewID);
-            this.groupBox1.Controls.Add(this.txtNewUID);
-            this.groupBox1.Controls.Add(this.lblNewUID);
-            this.groupBox1.Controls.Add(this.btnRePack);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.grpRePack.Controls.Add(this.grpTP);
+            this.grpRePack.Controls.Add(this.txtNewID);
+            this.grpRePack.Controls.Add(this.lblNewID);
+            this.grpRePack.Controls.Add(this.txtNewUID);
+            this.grpRePack.Controls.Add(this.lblNewUID);
+            this.grpRePack.Controls.Add(this.btnRePack);
+            resources.ApplyResources(this.grpRePack, "grpRePack");
+            this.grpRePack.Name = "grpRePack";
+            this.grpRePack.TabStop = false;
             // 
             // grpTP
             // 
@@ -245,7 +245,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ricMessage);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpRePack);
             this.Controls.Add(this.btnUnPack);
             this.Controls.Add(this.ricOut);
             this.Controls.Add(this.btnPicture);
@@ -261,8 +261,8 @@
             this.Controls.Add(this.txtNewFileName);
             this.Controls.Add(this.txtFileName);
             this.Name = "frmAmiibo";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpRePack.ResumeLayout(false);
+            this.grpRePack.PerformLayout();
             this.grpTP.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,7 +288,7 @@
         private System.Windows.Forms.TextBox txtNewUID;
         private System.Windows.Forms.Button btnRePack;
         private System.Windows.Forms.Button btnUnPack;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpRePack;
         private System.Windows.Forms.TextBox txtNewID;
         private System.Windows.Forms.Label lblNewID;
         private System.Windows.Forms.RichTextBox ricMessage;

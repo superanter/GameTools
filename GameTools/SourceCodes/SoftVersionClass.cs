@@ -29,6 +29,6 @@
 
         public SoftVersion AmiiboVersion = new SoftVersion("v1.1.0", "2025-12-25");
         public SoftVersion JoyConVersion = new SoftVersion("v1.0.0", "2022-04-18");
-        public SoftVersion OtherToolsVersion = new SoftVersion("v1.0.0", "2025-12-28");
+        public SoftVersion OtherVersion = new SoftVersion("v1.0.0", "2025-12-28");
     }
 }

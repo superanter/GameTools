@@ -117,25 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnBack.Text" xml:space="preserve">
-    <value>返回</value>
+  <data name="btnOpenSave.Text" xml:space="preserve">
+    <value>Open</value>
   </data>
-  <data name="btnOpen.Text" xml:space="preserve">
-    <value>打开</value>
+  <data name="btnExit.Text" xml:space="preserve">
+    <value>Back</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
-    <value>Rom名称</value>
+    <value>Game Name</value>
+  </data>
+  <data name="lblString.Text" xml:space="preserve">
+    <value>SN String</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>Save Type</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Save File</value>
   </data>
   <data name="lblSize.Text" xml:space="preserve">
-    <value>Rom体积</value>
+    <value>Save Size</value>
   </data>
-  <data name="lblGameName.Text" xml:space="preserve">
-    <value>游戏名称标识</value>
+  <data name="lblWeizhi.Text" xml:space="preserve">
+    <value>String Index</value>
   </data>
-  <data name="lblGameText.Text" xml:space="preserve">
-    <value>游戏识别码</value>
+  <data name="lblTest.Text" xml:space="preserve">
+    <value>Is Normal？</value>
   </data>
-  <data name="lblGameType.Text" xml:space="preserve">
-    <value>游戏类型</value>
+  <data name="lblFolder.Text" xml:space="preserve">
+    <value>Save Folder</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Wii Save File Message</value>
   </data>
 </root>

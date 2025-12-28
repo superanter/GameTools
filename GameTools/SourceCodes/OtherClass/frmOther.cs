@@ -4,16 +4,16 @@ using System.Windows.Forms;
 
 namespace AnterStudio.GameTools.OtherToolsClass
 {
-    public partial class frmOtherTools : Form
+    public partial class frmOther : Form
     {
         private SoftVersionClass.SoftVersion MyVersion;
 
-        public frmOtherTools()
+        public frmOther()
         {
             InitializeComponent();
         }
 
-        public frmOtherTools(string language, SoftVersionClass.SoftVersion VersionPack)
+        public frmOther(string language, SoftVersionClass.SoftVersion VersionPack)
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
 

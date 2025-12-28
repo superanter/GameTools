@@ -875,4 +875,5 @@
 
 2025-12-28
 1.完成了多语言界面的新的实现方法，删除了原来的LangugePackClass.cs，具体的文本翻译还需要今后慢慢修改；
-2.将MAME合并进了OtherTools，删除了无任何功能的SwitchSave功能，主界面功能从8个缩减的6个。
+2.将MAME合并进了OtherTools，删除了无任何功能的SwitchSave功能，主界面功能从8个缩减的6个；
+3.完成了除DsSave的错误提示之外的所有zh-CN、en两种语言的文本文件。

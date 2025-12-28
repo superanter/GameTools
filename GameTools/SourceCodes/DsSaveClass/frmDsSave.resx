@@ -946,7 +946,7 @@
     <value>7</value>
   </data>
   <data name="chkM3DatFile.Text" xml:space="preserve">
-    <value>Dat File</value>
+    <value>M3 Dat文件</value>
   </data>
   <data name="&gt;&gt;chkM3DatFile.Name" xml:space="preserve">
     <value>chkM3DatFile</value>

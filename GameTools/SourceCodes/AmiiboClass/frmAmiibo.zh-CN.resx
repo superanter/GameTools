@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnOpen.Text" xml:space="preserve">
-    <value>打开</value>
+    <value>打开文件</value>
   </data>
   <data name="btnTo540.Text" xml:space="preserve">
     <value>转为540字节</value>
@@ -133,10 +133,10 @@
     <value>LinkURL:</value>
   </data>
   <data name="btnList.Text" xml:space="preserve">
-    <value>列表</value>
+    <value>提取列表</value>
   </data>
   <data name="btnRenameAll.Text" xml:space="preserve">
-    <value>重命名所有</value>
+    <value>批量重命名</value>
   </data>
   <data name="btnMcasName.Text" xml:space="preserve">
     <value>MCAS文件名</value>
@@ -152,9 +152,6 @@
   </data>
   <data name="btnUnPack.Text" xml:space="preserve">
     <value>解包</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>重新打包</value>
   </data>
   <data name="grpTP.Text" xml:space="preserve">
     <value>TP</value>
@@ -194,5 +191,8 @@
   </data>
   <data name="Message_Error_List" xml:space="preserve">
     <value>提取列表失败</value>
+  </data>
+  <data name="grpRePack.Text" xml:space="preserve">
+    <value>重新打包</value>
   </data>
 </root>

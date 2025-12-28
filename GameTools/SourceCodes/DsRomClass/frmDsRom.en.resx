@@ -140,7 +140,7 @@
     <value>71, 18</value>
   </data>
   <data name="lblGameName.Text" xml:space="preserve">
-    <value>Name Sn</value>
+    <value>Game Sn</value>
   </data>
   <data name="lblGameText.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 18</value>
